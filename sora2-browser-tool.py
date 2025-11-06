@@ -180,7 +180,7 @@ class Main(QMainWindow):
 
         ua_label = self.cfg["window"].get("user_agent","Default (Engine)")
         if ua_label.startswith('Default'):
-            self.current_ua = 'DEFAULT'
+            self.current_ua = 'Default (Engine)'
         else:
             self.current_ua = PRESET_UAS.get(ua_label, ua_label)
             try:
