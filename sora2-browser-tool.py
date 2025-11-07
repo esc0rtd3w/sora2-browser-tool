@@ -26,6 +26,7 @@ os.environ.setdefault(
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "sora2_config.json")
 USER_SITES_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_sites.json")
 USER_PROMPTS_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_prompts.json")
+USER_PERSONS_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_persons.json")
 
 DEFAULT_CHROME_UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -61,8 +62,23 @@ def load_config():
 
 def save_config(cfg):
     try:
+        # Preserve existing base fields; only update window/ui. Never touch persons/sites/prompts here.
+        existing = {}
+        if os.path.exists(CONFIG_PATH):
+            try:
+                with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+                    existing = json.load(f) or {}
+            except Exception:
+                existing = {}
+        # Merge: keep version if present; update window and ui from current cfg
+        if "version" in cfg:
+            existing["version"] = cfg.get("version")
+        existing["window"] = cfg.get("window", existing.get("window", {}))
+        if isinstance(cfg.get("ui"), dict):
+            existing["ui"] = cfg.get("ui")
+        # Explicitly DO NOT alter base defaults for persons/sites/prompts
         with open(CONFIG_PATH, "w", encoding="utf-8") as f:
-            json.dump(cfg, f, indent=2)
+            json.dump(existing, f, indent=2, ensure_ascii=False)
     except Exception as e:
         QMessageBox.critical(None, "Config Save Error", str(e))
 
