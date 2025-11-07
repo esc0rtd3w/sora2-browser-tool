@@ -2108,5 +2108,11 @@
     "Yvette Guilbert",
     "Zachary Taylor",
     "Zheng He"
-  ]
+  ],
+  "ui": {
+    "prompts_splitter_sizes": [
+      680,
+      520
+    ]
+  }
 }

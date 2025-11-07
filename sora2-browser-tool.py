@@ -7,7 +7,7 @@ import os, sys, re, json, tempfile, random, mimetypes, pathlib, webbrowser
 from urllib.parse import urlparse
 
 from PyQt6.QtCore import Qt, QUrl, QSize
-from PyQt6.QtWidgets import (
+from PyQt6.QtWidgets import (QTextEdit, 
     QApplication, QMainWindow, QSplitter, QWidget, QVBoxLayout, QHBoxLayout,
     QListWidget, QListWidgetItem, QPushButton, QLineEdit, QComboBox, QLabel,
     QMessageBox, QInputDialog, QTabWidget
@@ -90,16 +90,23 @@ def save_user_sites(sites):
         return False
 
 def load_or_init_user_prompts(default_prompts):
-    """Load user prompts from USER_PROMPTS_PATH; if missing, seed with defaults and write file."""
+    """Load user prompts; if file missing or empty, seed with defaults and persist. Return the list."""
     try:
         if os.path.exists(USER_PROMPTS_PATH):
             with open(USER_PROMPTS_PATH, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            prompts = data.get("prompts", data if isinstance(data, list) else [])
+            if isinstance(data, dict):
+                prompts = data.get("prompts", [])
+            elif isinstance(data, list):
+                prompts = data
+            else:
+                prompts = []
         else:
             prompts = list(default_prompts)
-            with open(USER_PROMPTS_PATH, "w", encoding="utf-8") as f:
-                json.dump({"prompts": prompts}, f, indent=2)
+        if not isinstance(prompts, list) or len(prompts) == 0:
+            prompts = list(default_prompts)
+        with open(USER_PROMPTS_PATH, "w", encoding="utf-8") as f:
+            json.dump({"prompts": prompts}, f, indent=2, ensure_ascii=False)
         return prompts
     except Exception:
         return list(default_prompts)
@@ -146,21 +153,26 @@ def sanitize_person_name(name: str) -> str:
     return s
 
 def load_or_init_user_persons(default_persons):
+    """Load user persons; if file missing or empty, seed with defaults and persist. Return the list."""
     try:
         if os.path.exists(USER_PERSONS_PATH):
             with open(USER_PERSONS_PATH, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            persons = data.get("persons", data if isinstance(data, list) else [])
+            if isinstance(data, dict):
+                persons = data.get("persons", [])
+            elif isinstance(data, list):
+                persons = data
+            else:
+                persons = []
         else:
             persons = list(default_persons)
-            with open(USER_PERSONS_PATH, "w", encoding="utf-8") as f:
-                json.dump({"persons": persons}, f, indent=2, ensure_ascii=False)
-        persons = [sanitize_person_name(x) for x in persons]
-        persons = [x for x in persons if x]
-        persons = list(dict.fromkeys(persons))
+        if not isinstance(persons, list) or len(persons) == 0:
+            persons = list(default_persons)
+        with open(USER_PERSONS_PATH, "w", encoding="utf-8") as f:
+            json.dump({"persons": persons}, f, indent=2, ensure_ascii=False)
         return persons
     except Exception:
-        return [sanitize_person_name(x) for x in (default_persons or []) if sanitize_person_name(x)]
+        return list(default_persons)
 
 def save_user_persons(persons):
     try:
@@ -183,6 +195,25 @@ class Browser(QWebEngineView):
         s.setAttribute(QWebEngineSettings.WebAttribute.JavascriptCanAccessClipboard, True)
 
 class Main(QMainWindow):
+
+    def _get_prompt_pid(self, obj, text):
+        """Return a stable id for the selected prompt, using explicit id
+        or hashing "title|text" when no explicit id is present."""
+        import hashlib
+        if isinstance(obj, dict):
+            pid = obj.get("id")
+            title = obj.get("title", "")
+            base_text = obj.get("text", text or "")
+        else:
+            pid = None
+            title = ""
+            base_text = text or ""
+        if not pid:
+            pid = hashlib.sha1((title + "|" + (base_text or "")).encode("utf-8")).hexdigest()
+        return pid
+
+
+
     def __init__(self):
         super().__init__()
         self.cfg = load_config()
@@ -370,6 +401,8 @@ class Main(QMainWindow):
         rp_v.addWidget(rp_header, 0)
 
         self.user_prompts = load_or_init_user_prompts(self.cfg.get("prompts", []))
+        self._manual_placeholder_cache = {}  # remembers manual "" values per prompt
+
 
         self._prompt_objs = _normalize_prompts_list(self.user_prompts)
         self.user_persons = load_or_init_user_persons(self.cfg.get("persons", []))
@@ -398,9 +431,36 @@ class Main(QMainWindow):
 
         # Prompts list (single; filtered by Category)
         self.promptList = QListWidget()
+        self.promptList.setTextElideMode(Qt.TextElideMode.ElideNone)
+        self.promptList.setWordWrap(True)
         self.promptList.itemClicked.connect(self.copy_selected_prompt)
-        rp_v.addWidget(self.promptList, 1)
+        # Preview on the right
+        self.previewEdit = QTextEdit()
+        self.previewEdit.setReadOnly(True)
+        self.previewEdit.setPlaceholderText("Prompt preview…")
+        self.previewEdit.setLineWrapMode(QTextEdit.LineWrapMode.WidgetWidth)
+        # Splitter to hold list + preview
+        self.promptsSplitter = QSplitter(Qt.Orientation.Horizontal)
+        self.promptsSplitter.addWidget(self.promptList)
+        self.promptsSplitter.addWidget(self.previewEdit)
+        _sizes = (self.cfg.get('ui', {}) or {}).get('prompts_splitter_sizes', [680, 520])
+        try:
+            self.promptsSplitter.setSizes([int(_sizes[0]), int(_sizes[1])])
+        except Exception:
+            pass
+        rp_v.addWidget(self.promptsSplitter, 1)
+        # Live preview updates
+        try:
+            self.promptList.currentItemChanged.connect(self.update_prompt_preview)
+            self.person1Box.currentIndexChanged.connect(lambda _: self.update_prompt_preview())
+            self.person2Box.currentIndexChanged.connect(lambda _: self.update_prompt_preview())
+        except Exception:
+            pass
         self.refresh_prompts_list()
+        try:
+            self.update_prompt_preview()
+        except Exception:
+            pass
 
         # add left/right panes to the actions splitter
         self.actionsSplit.addWidget(leftActions)
@@ -764,79 +824,114 @@ class Main(QMainWindow):
         if not item:
             QMessageBox.information(self, "Copy Prompt", "No prompt selected.")
             return
-        obj = item.data(Qt.ItemDataRole.UserRole)
-        text = (obj.get("text") if isinstance(obj, dict) else item.text())
 
-        # Replace the first two "" with Person 1 and Person 2 (exact, no parentheses)
+        obj = item.data(Qt.ItemDataRole.UserRole)
+        base_text = (obj.get("text") if isinstance(obj, dict) else item.text()) or ""
+
+        pid = self._get_prompt_pid(obj, base_text)
+        if not hasattr(self, "_manual_placeholder_cache"):
+            self._manual_placeholder_cache = {}
+        cached_vals = list(self._manual_placeholder_cache.get(pid, []))
+
         def replace_once(s, val):
-            if not val:
-                return s
-            return re.sub(r'""', f'"{val}"', s, count=1)
+            return re.sub(r'""', f'"{val}"', s, count=1) if val else s
 
         p1 = self.person1Box.currentText() if hasattr(self, "person1Box") and self.person1Box.currentIndex() > 0 else ""
         p2 = self.person2Box.currentText() if hasattr(self, "person2Box") and self.person2Box.currentIndex() > 0 else ""
+        txt = replace_once(base_text, p1)
+        txt = replace_once(txt, p2)
 
+        for v in cached_vals:
+            if v:
+                txt = re.sub(r'""', f'"{v}"', txt, count=1)
+
+        remaining = len(re.findall(r'""', txt))
+        if remaining > 0:
+            resp = QMessageBox.question(
+                self,
+                'Fill Empty Fields?',
+                f'There are {remaining} empty "" fields.\nDo you want to fill them now?',
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                QMessageBox.StandardButton.Yes
+            )
+            if resp == QMessageBox.StandardButton.Yes:
+                applied = []
+                for i in range(remaining):
+                    val, ok = QInputDialog.getText(self, "Fill Placeholder", f'Value for placeholder #{i+1}:')
+                    if ok and val:
+                        txt = re.sub(r'""', f'"{val}"', txt, count=1)
+                        applied.append(val)
+                if applied:
+                    self._manual_placeholder_cache[pid] = cached_vals + applied
+
+        QApplication.clipboard().setText(txt)
+        self.statusBar().showMessage("Prompt copied to clipboard.", 3000)
+        try:
+            self.update_prompt_preview()
+        except Exception:
+            pass
+
+    def update_prompt_preview(self, *_):
+        import re
+        # Get selected item safely
+        try:
+            item = self.promptList.currentItem()
+        except Exception:
+            item = None
+
+        if not item:
+            try:
+                self.previewEdit.clear()
+            except Exception:
+                pass
+            return
+
+        # Resolve base_text from item/obj
+        try:
+            obj = item.data(Qt.ItemDataRole.UserRole)
+        except Exception:
+            obj = None
+        if isinstance(obj, dict):
+            base_text = obj.get('text') or obj.get('prompt') or ''
+        else:
+            try:
+                base_text = item.text() or ''
+            except Exception:
+                base_text = ''
+
+        text = base_text  # ensure defined
+
+        # Helper: replace the first "" with val
+        def replace_once(s, val):
+            return re.sub(r'""', f'"{val}"', s, count=1) if (s and val) else s
+
+        # Apply Person 1 / Person 2 to first two slots
+        try:
+            p1 = self.person1Box.currentText() if hasattr(self, 'person1Box') and self.person1Box.currentIndex() > 0 else ''
+        except Exception:
+            p1 = ''
+        try:
+            p2 = self.person2Box.currentText() if hasattr(self, 'person2Box') and self.person2Box.currentIndex() > 0 else ''
+        except Exception:
+            p2 = ''
         text = replace_once(text, p1)
         text = replace_once(text, p2)
 
-        QApplication.clipboard().setText(text)
-        self.statusBar().showMessage("Prompt copied to clipboard.", 2000)
+        # Apply cached manual entries (left-to-right)
+        try:
+            pid = self._get_prompt_pid(obj, base_text)
+            cached_vals = getattr(self, '_manual_placeholder_cache', {}).get(pid, [])
+        except Exception:
+            cached_vals = []
+        for v in cached_vals:
+            if v:
+                text = re.sub(r'""', f'"{v}"', text, count=1)
 
-        # Fill "" placeholders with selected persons
-        def inject_person(s: str, name: str):
-            if not name:
-                return s
-            i = s.find('""')
-            return s if i == -1 else s[:i+2] + ' (' + name + ')' + s[i+2:]
-        p1 = self.person1Box.currentText() if self.person1Box.currentIndex() > 0 else ''
-        p2 = self.person2Box.currentText() if self.person2Box.currentIndex() > 0 else ''
-        text = inject_person(text, p1)
-        text = inject_person(text, p2)
-
-        QApplication.clipboard().setText(text)
-        self.statusBar().showMessage("Prompt copied.", 1500)
-
-        # Fill "" placeholders with selected persons and optional user inputs
-        def replace_first_empty(s, repl):
-            return re.sub(r'""', f'"{repl}"', s, count=1)
-
-        p1 = self.person1Box.currentText() if hasattr(self, 'person1Box') else "— None —"
-        p2 = self.person2Box.currentText() if hasattr(self, 'person2Box') else "— None —"
-        if p1 == "— None —":
-            p1 = None
-        if p2 == "— None —":
-            p2 = None
-
-        # Apply Person 1 then Person 2
-        if p1:
-            text = replace_first_empty(text, p1)
-        if p2:
-            text = replace_first_empty(text, p2)
-
-        # Check for remaining empty ""
-        remaining = len(re.findall(r'""', text))
-        if remaining > 0:
-            resp = QMessageBox.question(
-                self, "Fill Empty Fields?",
-                f"There are {remaining} empty \"\" fields.\nDo you want to fill them now?",
-                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No, QMessageBox.StandardButton.No
-            )
-            if resp == QMessageBox.StandardButton.Yes:
-                # Ask user for each remaining value, in order
-                values = []
-                for i in range(remaining):
-                    val, ok = QInputDialog.getText(self, "Fill Placeholder",
-                                                   f'Enter text for placeholder #{i+1} (leave blank to keep empty):')
-                    if not ok:
-                        val = ""
-                    values.append(val)
-                # Replace sequentially
-                for val in values:
-                    if val:
-                        text = re.sub(r'""', f'"{val}"', text, count=1)
-
-        QApplication.clipboard().setText(text)
-        self.statusBar().showMessage("Prompt copied to clipboard.", 3000)
+        # Push to preview
+        try:
+            self.previewEdit.setPlainText(text or '')
+        except Exception:
+            pass
     def add_prompt_dialog(self):
         text, ok = QInputDialog.getMultiLineText(self, "Add Prompt", "Prompt text:")
         if not ok or not text.strip():
@@ -857,6 +952,27 @@ class Main(QMainWindow):
         save_user_prompts(self.user_prompts)
         self.refresh_prompts_list()
         self.statusBar().showMessage("Prompt added.", 3000)
+    def save_splitter_sizes(self):
+        try:
+            sizes = self.promptsSplitter.sizes()
+        except Exception:
+            sizes = None
+        if not sizes:
+            return
+        if not isinstance(self.cfg.get("ui"), dict):
+            self.cfg["ui"] = {}
+        self.cfg["ui"]["prompts_splitter_sizes"] = [int(s) for s in sizes]
+        try:
+            with open(CONFIG_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except Exception:
+            data = {}
+        if not isinstance(data.get("ui"), dict):
+            data["ui"] = {}
+        data["ui"]["prompts_splitter_sizes"] = [int(s) for s in sizes]
+        with open(CONFIG_PATH, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+
 
     def restore_default_prompts(self):
         if QMessageBox.question(self, "Restore Default Prompts", "Replace your user prompts with the base defaults?") != QMessageBox.StandardButton.Yes:
@@ -1016,6 +1132,13 @@ def main():
     app = QApplication(sys.argv)
     w = Main(); w.show()
     sys.exit(app.exec())
+
+    def closeEvent(self, event):
+        try:
+            self.save_splitter_sizes()
+        except Exception:
+            pass
+        super().closeEvent(event)
 
 if __name__ == "__main__":
     main()
