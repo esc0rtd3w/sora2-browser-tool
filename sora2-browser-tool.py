@@ -92,7 +92,7 @@ def load_or_init_user_sites(default_sites):
         else:
             sites = list(default_sites)
             with open(USER_SITES_PATH, "w", encoding="utf-8") as f:
-                json.dump({"sites": sites}, f, indent=2)
+                json.dump({"sites": sites}, f, indent=2, ensure_ascii=False)
         return sites
     except Exception:
         return list(default_sites)
@@ -100,7 +100,10 @@ def load_or_init_user_sites(default_sites):
 def save_user_sites(sites):
     try:
         with open(USER_SITES_PATH, "w", encoding="utf-8") as f:
-            json.dump({"sites": sites}, f, indent=2)
+            json.dump({"sites": sites}, f, indent=2, ensure_ascii=False)
+        return True
+    except Exception:
+        return False
         return True
     except Exception:
         return False
@@ -130,7 +133,10 @@ def load_or_init_user_prompts(default_prompts):
 def save_user_prompts(prompts):
     try:
         with open(USER_PROMPTS_PATH, "w", encoding="utf-8") as f:
-            json.dump({"prompts": prompts}, f, indent=2)
+            json.dump({"prompts": prompts}, f, indent=2, ensure_ascii=False)
+        return True
+    except Exception:
+        return False
         return True
     except Exception:
         return False
