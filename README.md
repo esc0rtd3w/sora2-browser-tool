@@ -7,6 +7,6 @@ Features
 - User files created for custom sites, characters, and prompts
 - Customizable prompts with import/export
 - Customizable list of persons (characters) saved in json format
-- Can change user agent is needed (most times breaks captchas)
+- Can change user agent if needed (most times breaks captchas)
 
 <img src="https://i.imgur.com/OwfNusm.png" alt="Sora2 Browser Tool">
