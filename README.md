@@ -8,5 +8,6 @@ Features
 - Customizable prompts with import/export
 - Customizable list of persons (characters) saved in json format
 - Can change user agent if needed (most times breaks captchas)
+- Added preview window and autofill for persons (characters) or manual entry in prompts
 
 <img src="https://i.imgur.com/OwfNusm.png" alt="Sora2 Browser Tool">
