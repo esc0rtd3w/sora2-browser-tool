@@ -3,6 +3,30 @@
 
 # Sora 2 Browser Tool
 
+# --- Dependency bootstrap ---
+def _check_dependencies():
+    import importlib, subprocess, sys, traceback
+    missing = []
+    for mod, pkg in [("PyQt6", "PyQt6"), ("PyQt6.QtWebEngineWidgets", "PyQt6-WebEngine")]:
+        try:
+            importlib.import_module(mod)
+        except Exception:
+            missing.append(pkg)
+    if missing:
+        try:
+            print("[Deps] Installing:", ", ".join(missing))
+            subprocess.check_call([sys.executable, "-m", "pip", "install", *missing])
+            print("[Deps] Install complete.")
+        except Exception as e:
+            print("[Deps] Auto-install failed. Run:", sys.executable, "-m pip install", " ".join(missing))
+            print("[Deps] Error:", e)
+            traceback.print_exc()
+
+try:
+    _check_dependencies()
+except Exception:
+    pass
+
 import os, sys, re, json, tempfile, random, mimetypes, pathlib, webbrowser
 from urllib.parse import urlparse
 
