@@ -1,5 +1,5 @@
 {
-  "version": "1.1.25",
+  "version": "1.2.0",
   "window": {
     "width": 1920,
     "height": 1080,
@@ -913,32 +913,647 @@
     }
   ],
   "prompts": [
-    "create a realistic wwe tag team promo with \"\" and \"\", and allow both of them to say a few words. Make it funny, and entertaining like a real wwe promo. Create it in the 90s era style wwf. The characters should be as close to their originals as possible.",
-    "create a scene for bob ross painting \"\"'s car. Make a funny back and forth exchange with the awkward moment and anger, sarcasm, etc from persons car owner. Let both of them say a few words back and forth. Make it funny and entertaining. The characters should respond in line with their character traits, and the car should match the style of the person. Also make sure the voices match the correct person talking.",
-    "create a scene in the style of bob ross painting a portrait of a guest sitting in a chair next to him, but the twist is bob ross is the one getting the portrait done of him by another person. The other person is going to do the painting. The guest is \"\". Let both of them say a few words back and forth. Make it funny and entertaining. The characters should respond in line with their character traits.",
-    "create a realistic \"price is right\" game intro scene with bob barker and a guest who won the bidding game. The guest is \"\", and allow both of them to say a few words. Make it funny, and entertaining like a real aired tv show. Create it in the 80s era style. The characters should be as close to their originals as possible.",
-    "create a realistic slap fight contest between \"\" and \"\". Make the characters as close to their actual counterparts as possible. It should have the classic smack talk and chalking before the slap.",
-    "create a scene in the style of the show \"COPS\" where \"\" is being questioned about something and probably getting detained or arrested. Make it funny. Allow the perp and the police officer(s) to each say a couple funny but believable and semi-serious lines back and forth. Make it seem real. Put the text of what the person is accused of or did in a news chyron. Make the news station believable, but funny. Its a normal interaction, and they dont look at the camera.",
-    "create a scene where \"\" is rubbing a magic lamp and the genie comes out in classic fashion. The genie is \"\". There is a short, funny back and forth about 3 wishes. Make it fit into 10 second window",
-    "create a realistic scene of a UFC cage match with 2 Karens fighting it out.  They both have colored hair and tattoos and piercings. They are polar opposites. Let them talk smack and react to each other while fighting",
-    "create a realistic 10 second scene at a mcdonalds drive-thru where the camera is looking at the front passenger side of the car from a short distance. The pickup window and customers car are both in frame, slightly zoomed in. The customer is \"\" and the employee at the window is \"\". They have a friendly back and forth about something wrong with the order. Make sure to keep the physics proper with the employee inside the building with the window open and the customer inside the driver seat of the car with his window rolled down. The amount rolled down can be random, but must be down enough to pay and get the food, unless the conversation has something to do with a rolled up window needed. The car should match the style of the character. Keep both characters how they were in real life.",
-    "Create a realistic game show jeopardy scene introducing the players, with alex trebec hosting. The players should have their names written on each screen like in the real game show. They should not have any money yet displayed. The players are \"\", \"\", and \"\". Keep it in the theme of the 90's set. Each character should dress, act, and talk like their originals. Make it funny and entertaining. Keep responses short. The scene is just the intro where alex talks quickly to each player. There will be 3 additional scenes, one for each player that will follow.",
-    "Create a realistic game show jeopardy scene introducing the players, with alex trebec hosting. The players should have their names written on each screen like in the real game show. They should not have any money yet displayed. The players are \"\", \"\", and \"\". Keep it in the theme of the 90's set. Each character should dress, act, and talk like their originals. Make it funny and entertaining. Keep responses short. The scene is with alex introducing the player \"\".",
-    "create a realistic ring doorbell perspective scene. The scene is a small \"fender bender\" aftermath with 2 people talking about the crash. The 1st person is \"\" driving an appropriate style car for them, and the 2nd person is \"\" also driving an appropriate car for them. They have some back and forth banter, make it funny and entertaining.",
-    "create a realistic scene of people at a farmers fruits and veggies market. The focus will be on 2 characters. First character is \"\" and the 2nd character is \"\". They see each other and start reminiscing because they havent seen each other in a while. They have a short casual conversation.",
-    "create a realistic scene of people at a farmers fruits and veggies market. The focus will be on 2 characters. First character is \"\" and the 2nd character is \"\". They see each other and greet with a greeting and handshake, and have a short casual conversation. They are dressed and talk in the style and manner they were in real life. Make sure the voices match the proper character. Put them in 80s/90s style",
-    "create a scene in the style of a disney 15 second promo video. Make it about \"\" and \"\"",
-    "create a cartoon like scene in the style of a disney 15 second promo video. Make it about \"\" and \"\". Make it about the two of them teaming up to fight crime",
-    "create a cartoon like scene in the style of a disney 15 second promo video. Make it about \"\" and \"\". Make it about the two of them teaming up to fight crime. Have a montage of them doing crime stuff and beating up bad guys",
-    "create a realistic spring scene where \"\" is walking out to the mailbox to check the mail. Make the house style, mailbox style, car, etc match the character. Have them say a couple funny things when they check the mailbox and find something good, bad, or other in there. Choose what they find.",
-    "create a realistic summer scene where \"\" is walking out to the mailbox to check the mail. Make the house style, mailbox style, car, etc match the character. Have them say a couple funny things when they check the mailbox and find something good, bad, or other in there. Choose what they find.",
-    "create a realistic fall scene where \"\" is walking out to the mailbox to check the mail. Make the house style, mailbox style, car, etc match the character. Have them say a couple funny things when they check the mailbox and find something good, bad, or other in there. Choose what they find.",
-    "create a realistic winter scene where \"\" is walking out to the mailbox to check the mail. Make the house style, mailbox style, car, etc match the character. Have them say a couple funny things when they check the mailbox and find something good, bad, or other in there. Choose what they find.",
-    "create a realistic neighborhood scene where there are 2 neighbors having a casual exchange. The first character is \"\" and the 2nd character is \"\". Make it funny and entertaining. The characters stuff should match their style.",
-    "create a realistic fall scene where \"\" is walking out to the mailbox to check the mail. Make the house style, mailbox style, car, etc match the character. Have them say a couple funny things when they check the mailbox and find something good, bad, or other in there. Choose what they find.",
-    "create a scene with a style of normal characters, but as babies. Keep the style the same as their real life counterpart. The scene is a podcast, and the first character is \"\". The second character is \"\". Make it funny and entertaining. Make sure the style, voices, etc matches the real character. Make sure to not swap the voices, and ensure the voice is correct for each character, this is important, double check this.",
-    "create a scene with a style of normal characters, but as babies. Keep the style the same as their real life counterpart. The scene is a golf course and the first character is \"\". The second character is \"\". Make it funny and entertaining. Make sure the style, voices, etc matches the real character. Make sure to not swap the voices, and ensure the voice is correct for each character, this is important, double check this.",
-    "create a scene with a style of normal characters, but as babies. Keep the style the same as their real life counterpart. The scene is a playground, and the first character is \"\". The second character is \"\". Make it funny and entertaining. Make sure the style, voices, etc matches the real character. Make sure to not swap the voices, and ensure the voice is correct for each character, this is important, double check this."
+    {
+      "id": "entrance",
+      "title": "Entrance",
+      "category": "Core",
+      "tags": [
+        "arena",
+        "duo",
+        "finishers",
+        "pyro"
+      ],
+      "text": "Write an over-the-top ring entrance package for \"\" & \"\".\nInclude titantron graphics, pyro beats, signature taunts, and a short mic burst from each.\nInvent 2\u20133 finisher names themed to their legacies.\nRUNTIME: \"\" . { \"\" } HARD RULES: historically respectful; no living people; avoid real brands/songs.\nEnd with a shoutable 4\u20138 word tag."
+    },
+    {
+      "id": "fish",
+      "title": "Fish",
+      "category": "Core",
+      "tags": [
+        "arena",
+        "banter",
+        "comedy",
+        "fish-out-of-water"
+      ],
+      "text": "Write a fish-out-of-water comedy vignette in an arena where \"\" and \"\" are in unlikely roles (merch booth, commentary desk, backstage cooking show).\nBeat order: establishing shot, A speaks (3\u20135 lines), B speaks (3\u20135 lines), sight-gag, one-liner closer.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "debate",
+      "title": "Debate",
+      "category": "Core",
+      "tags": [
+        "crowd",
+        "mic",
+        "rebuttals",
+        "showdown"
+      ],
+      "text": "Write an epic arena debate showdown between \"\" and \"\" with pumped crowd (lights, chants, cameras).\nOpenings (5\u20136 punchy lines each), 4\u20135 rebuttal volleys, then comedic handshake or staredown.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "duet",
+      "title": "Duet",
+      "category": "Core",
+      "tags": [
+        "crowd",
+        "music",
+        "performance",
+        "theatrical"
+      ],
+      "text": "Write a battle-of-the-bands / performance clash where \"\" and \"\" trade musical/theatrical motifs as a wrestling angle.\nInclude stage directions, crowd reactions, and two invented move/performance names that riff on their legacies.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "docu",
+      "title": "Docu",
+      "category": "Core",
+      "tags": [
+        "3-act",
+        "documentary",
+        "hype",
+        "tag-team"
+      ],
+      "text": "Write a sports-documentary hype package about \"\" & \"\" becoming a tag team, with gravelly VO, archival-style flashes, and an accelerating score.\nInclude 3-act beats: origin spark, early clash, united mission.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "montage",
+      "title": "Montage",
+      "category": "Core",
+      "tags": [
+        "lights",
+        "sfx",
+        "shots",
+        "training"
+      ],
+      "text": "Write a shot-listed training/hype montage for \"\" & \"\" with escalating drills, crowd teases, and a final bell.\nUse single-line shots: [SHOT] description; sprinkle [SFX] and [LIGHTS].\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "commentary",
+      "title": "Commentary",
+      "category": "Core",
+      "tags": [
+        "banter",
+        "desk",
+        "match",
+        "plug"
+      ],
+      "text": "Write a color commentary desk segment with \"\" & \"\" bantering while a chaotic match unfolds ringside.\nGive each 5\u20136 nimble quips, one misunderstanding gag, and a hot plug for the main event (generic, no brands).\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "bobross_guest_portrait",
+      "title": "Bobross Guest Portrait",
+      "category": "Bob Ross",
+      "tags": [
+        "bob-ross",
+        "portrait",
+        "studio",
+        "wholesome"
+      ],
+      "text": "CAST: Bob Ross \u2014 Soft-spoken TV painter; calm encouragement.; \"\" \u2014 \"\".\nSET: Cozy studio, easel at frame-left; guest sits on a chair at frame-right.\nFORMAT (enforce):\n- [WIDE] Palette tap; gentle intro from Bob Ross.\n- [TWO-SHOT] \"\": 1\u20132 lighthearted lines about posing.\n- [CUT-IN] Brush swish; Bob Ross offers soothing guidance and a happy accident joke.\n- [PING-PONG] Short back-and-forth banter (2\u20133 exchanges).\n- [FINALE] Reveal the portrait; mutual smiles; soft chuckle.\nDIALOGUE: Keep voices in-character; warm, kind humor; no brands or real songs.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "bobross_multiverse_duo",
+      "title": "Bobross Multiverse Duo",
+      "category": "Bob Ross",
+      "tags": [
+        "banter",
+        "bob-ross",
+        "multiverse",
+        "surreal"
+      ],
+      "text": "CAST: Bob Ross \u2014 Kind, serene mentor; happy little trees.; Bob Ross \u2014 A parallel Bob\u2014slightly different cadence.\nSET: Studio folds into a multi-dimensional space; frames within frames.\nFORMAT (enforce):\n- [WIDE] Palette clink; painter greets guest Bob.\n- [SPLIT-FRAME] Tiny portals show rapid variations of their banter across universes.\n- [PING-PONG] 3\u20134 quick exchanges riffing on \"happy accidents\" and mirrored brushstrokes.\n- [CASCADE] Snapshots of alternate Bobs nodding in approval (no brands/songs).\n- [FINALE] Reveal a surreal portrait containing nested portraits of Bob Ross.\nDIALOGUE: Gentle, humorous, supportive; stay true to persona.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "bobross_crowd_multiverse",
+      "title": "Bobross Crowd Multiverse",
+      "category": "Bob Ross",
+      "tags": [
+        "bob-ross",
+        "crowd",
+        "multiverse",
+        "outdoors"
+      ],
+      "text": "CAST: Bob Ross (primary painter) and Bob Ross (guest), plus a crowd of hundreds of Bob Ross variants painting outdoors.\nSET: Open meadow; easels forming concentric rings; soft breeze; birds (generic).\nFORMAT (enforce):\n- [AERIAL] A sea of afros and easels; gentle murmur of approval.\n- [TWO-SHOT] Primary painter Bob chats with guest Bob (2\u20133 lines each).\n- [CUTAWAYS] Different Bob variants add tiny details in parallel universes.\n- [MONTAGE] Rapid micro-interactions (3\u20134 beats) with playful, wholesome humor.\n- [FINALE] Pan out to reveal a multi-dimensional portrait blooming across the field.\nDIALOGUE: Wholesome, encouraging; character-faithful; avoid brands/songs.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "podcast_scene",
+      "title": "Podcast Scene",
+      "category": "Broadcast/Civic",
+      "tags": [
+        "banter",
+        "dialogue",
+        "podcast",
+        "studio"
+      ],
+      "text": "FORMAT (enforce):\n- TITLE: Catchy podcast episode title with a hint at the twist.\n- SETTING: Sound-treated studio; close mics; cozy lighting; cups of coffee.\n- HOST: \"\" \u2014 \"\"\n- GUEST: \"\" \u2014 \"\"\n- DIALOGUE: Naturalistic, quick but clear; occasional (overlapping), (laughs).\n- BEATS: cold open hook -> topic pivot -> surprising reveal -> callback -> sign-off.\n- SHOT LIST: Establishing wide -> alternating close-ups -> two-shot for punchlines -> waveform LED cutaway.\n- AUDIO: Subtle foley (chair creak, page flips) and room tone.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "newscast_scene",
+      "title": "Newscast Scene",
+      "category": "Broadcast/Civic",
+      "tags": [
+        "anchor",
+        "b-roll",
+        "field",
+        "news"
+      ],
+      "text": "FORMAT (enforce):\n- PROGRAM: Evening news; neutral lower-thirds; no real logos.\n- ANCHOR (studio): \"\" \u2014 \"\"\n- REPORTER (field): \"\" \u2014 \"\"\n- FLOW: headline cold open -> anchor intro -> live toss -> on-site color -> quick vox pop -> back to desk.\n- VISUALS: OTS graphics; satellite delay micro-pauses; IFB taps.\n- TONE: Crisp, factual, non-partisan.\n- B-ROLL: 3 short illustrative cutaways; describe generically where brands would appear.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "presidential_speaking",
+      "title": "Presidential Speaking",
+      "category": "Broadcast/Civic",
+      "tags": [
+        "civic",
+        "podium",
+        "press",
+        "speech"
+      ],
+      "text": "FORMAT (enforce):\n- SETTING: Formal podium; flags; press pool; teleprompter glass.\n- SPEAKER: \"\" \u2014 \"\" \u2014 inclusive, civic tone; no campaign language.\n- SUPPORT: \"\" \u2014 \"\" \u2014 acts as press secretary/ASL interpreter/aide.\n- STRUCTURE: acknowledgement -> main initiative -> brief human story -> call to unity -> measured close.\n- DEVICES: light anaphora, triads; avoid slogans.\n- CUTAWAYS: respectful audience reactions; note-taking reporters; flashes; no chants.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "panel_roundtable",
+      "title": "Panel Roundtable",
+      "category": "Broadcast/Civic",
+      "tags": [
+        "crosstalk",
+        "moderation",
+        "panel",
+        "tv"
+      ],
+      "text": "FORMAT (enforce):\n- SETUP: Semi-circular desk; 4 seats; neutral backdrop; descriptive name placards.\n- MODERATOR: \"\" \u2014 \"\"\n- FEATURED GUEST: \"\" \u2014 \"\"\n- ADDITIONAL GUESTS: 2 invented neutral personas for contrast.\n- FLOW: moderator intro -> turn-taking -> brief clash -> clarifying summary -> lightning-round takeaways.\n- SPEAK TAGS: Prefix lines with SPEAKER:. Cross-talk short and readable.\n- CAMERA: opening wide -> singles for hot takes -> overhead for crosstalk -> closing wide with sting.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "podcast_remote",
+      "title": "Podcast Remote",
+      "category": "Broadcast/Civic",
+      "tags": [
+        "banter",
+        "lag",
+        "podcast",
+        "remote"
+      ],
+      "text": "FORMAT (enforce):\n- SETTING: Split-screen remote call; clean backdrops; both on cardioid mics; subtle room tone.\n- HOST: \"\" \u2014 \"\"\n- REMOTE GUEST: \"\" \u2014 \"\"\n- BEATS: witty hello -> quick lag joke -> topic deep-dive -> surprising reveal -> neat sign-off.\n- CAMERA: Picture-in-picture reactions; occasional waveform overlay.\n- TECH: Minor latency moments, echo cancellation, and a brief reconnect beat.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "town_hall_qa",
+      "title": "Town Hall Qa",
+      "category": "Broadcast/Civic",
+      "tags": [
+        "audience",
+        "civic",
+        "moderator",
+        "qa"
+      ],
+      "text": "FORMAT (enforce):\n- SETTING: Civic auditorium; neutral signage; hand-held audience mic; respectful crowd.\n- MODERATOR: \"\" \u2014 \"\"\n- SPEAKER: \"\" \u2014 \"\" \u2014 answers with inclusive, neutral language.\n- Q&A: 2 audience questions; concise, respectful answers.\n- SHOTS: Wide -> medium -> close-up; quick cutaways to nodding listeners.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "press_briefing",
+      "title": "Press Briefing",
+      "category": "Broadcast/Civic",
+      "tags": [
+        "factual",
+        "lectern",
+        "press",
+        "q&a"
+      ],
+      "text": "FORMAT (enforce):\n- SETTING: Press room lectern; backdrop; note cards; flashes; no logos.\n- SPOKESPERSON: \"\" \u2014 \"\"\n- KEY STATEMENT: One clear paragraph with 2 supporting points.\n- Q&A: \"\" \u2014 \"\" \u2014 asks 2 concise questions; answers stay measured and factual.\n- STAGE DIRECTIONS: [PAUSE], [GLANCE TO NOTES], [NEXT QUESTION].\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "awards_presenter",
+      "title": "Awards Presenter",
+      "category": "Broadcast/Civic",
+      "tags": [
+        "awards",
+        "banter",
+        "envelope",
+        "stage"
+      ],
+      "text": "FORMAT (enforce):\n- SETTING: Awards stage; glossy lights; envelope; orchestra sting cues.\n- PRESENTER A: \"\" \u2014 \"\"\n- PRESENTER B: \"\" \u2014 \"\"\n- PATTER: playful banter -> quick joke -> heartfelt note -> read nominees (generic) -> announce winner (generic).\n- SHOTS: Wide reveal -> singles for banter -> envelope close-up -> winner walk-up hint (generic).\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "museum_docent_tour",
+      "title": "Museum Docent Tour",
+      "category": "Broadcast/Civic",
+      "tags": [
+        "docent",
+        "gallery",
+        "museum",
+        "tour"
+      ],
+      "text": "FORMAT (enforce):\n- SETTING: Quiet gallery; echoes; soft spotlights; placards (no real titles).\n- DOCENT: \"\" \u2014 \"\" \u2014 gives vivid but concise descriptions.\n- VISITOR: \"\" \u2014 \"\" \u2014 asks curious questions.\n- STOPS: 3 exhibits described generically (materials, era, motif).\n- CAMERA: Glidecam moves; cut-ins on textures; over-shoulder plaque reading.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "classroom_mini_lecture",
+      "title": "Classroom Mini Lecture",
+      "category": "Broadcast/Civic",
+      "tags": [
+        "board",
+        "classroom",
+        "lecture",
+        "students"
+      ],
+      "text": "FORMAT (enforce):\n- SETTING: Classroom; chalk squeak; projector hum; attentive students.\n- INSTRUCTOR: \"\" \u2014 \"\" \u2014 explains a concept clearly with an example.\n- STUDENT: \"\" \u2014 \"\" \u2014 asks one clarifying question.\n- BOARD: 3 concise lines; stepwise; readable.\n- CLOSER: one-sentence takeaway + light class reaction.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "podcast_remote_persona",
+      "title": "Podcast Remote Persona",
+      "category": "Persona Variants",
+      "tags": [
+        "persona",
+        "podcast",
+        "remote"
+      ],
+      "text": "FORMAT (enforce):\n- Roles: Create a HOST persona and a REMOTE GUEST persona with contrasting yet complementary expertise (invent names).\n- Keep all brand references generic.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "town_hall_qa_persona",
+      "title": "Town Hall Qa Persona",
+      "category": "Persona Variants",
+      "tags": [
+        "civic",
+        "persona",
+        "qa"
+      ],
+      "text": "FORMAT (enforce):\n- Roles: Create a MODERATOR and a SPEAKER persona; audience personas ask neutral, concise questions (invent names).\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "press_briefing_persona",
+      "title": "Press Briefing Persona",
+      "category": "Persona Variants",
+      "tags": [
+        "briefing",
+        "persona",
+        "press"
+      ],
+      "text": "FORMAT (enforce):\n- Roles: Persona for spokesperson and reporter; neutral, factual tone; no brands/logos.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "awards_presenter_persona",
+      "title": "Awards Presenter Persona",
+      "category": "Persona Variants",
+      "tags": [
+        "awards",
+        "banter",
+        "persona"
+      ],
+      "text": "FORMAT (enforce):\n- Roles: Two presenter personas with playful chemistry; nominees and winner described generically.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "museum_docent_tour_persona",
+      "title": "Museum Docent Tour Persona",
+      "category": "Persona Variants",
+      "tags": [
+        "museum",
+        "persona",
+        "tour"
+      ],
+      "text": "FORMAT (enforce):\n- Roles: Create a DOCENT persona and a VISITOR persona; exhibits described generically, no real titles.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "classroom_mini_lecture_persona",
+      "title": "Classroom Mini Lecture Persona",
+      "category": "Persona Variants",
+      "tags": [
+        "classroom",
+        "lecture",
+        "persona"
+      ],
+      "text": "FORMAT (enforce):\n- Roles: Create an INSTRUCTOR persona and a STUDENT persona; clear board notes; one clarifying question.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "surreal_travelogue",
+      "title": "Surreal Travelogue",
+      "category": "Stylized/Genre",
+      "tags": [
+        "duo",
+        "impossible",
+        "surreal",
+        "travel"
+      ],
+      "text": "VOICE: \"\" \u2014 dreamy, hyperbolic travel host; \"\" \u2014 sardonic sidekick; ping-pong narration.\nFORMAT:\n- COLD OPEN: A location reveal that shouldn\u2019t exist (e.g., a city built on the back of a moving whale).\n- STOPS: 3 impossible attractions; each with a one-line local legend.\n- CUTAWAYS: Ultra-brief sensory flashes in parentheses.\n- BUTTON: Souvenir gag that breaks the laws of physics.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "noir_detective_monologue",
+      "title": "Noir Detective Monologue",
+      "category": "Stylized/Genre",
+      "tags": [
+        "metaphor",
+        "monologue",
+        "noir",
+        "rain"
+      ],
+      "text": "VOICE: Hard-boiled narrator; second-person addresses to a rainy city.\nFORMAT:\n- OPEN: Desk lamp halo; cigarette plume described non-glamorously.\n- CASE: 3 clue beats; one red herring; one gut-punch metaphor.\n- MEET: \"\" walks in; \"\" follows\u2014shadow on shadow.\n- BUTTON: Last-line sting; neon flicker.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "retro_infomercial",
+      "title": "Retro Infomercial",
+      "category": "Stylized/Genre",
+      "tags": [
+        "camp",
+        "gadget",
+        "infomercial",
+        "retro"
+      ],
+      "text": "SCENARIO: 1980s-style infomercial for a wildly unnecessary household gadget.\nFORMAT:\n- HOSTS: Over-caffeinated duo doing contrived demos.\n- PROBLEM MONTAGE: 4 black-and-white \u201cbefore\u201d vignettes.\n- MIRACLE FIX: Gadget solves them with campy transitions.\n- FINE PRINT: One long, comedic disclaimer line.\n- CTA: Euphoric but non-commercial phrasing (no pricing).\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "space_mission_control",
+      "title": "Space Mission Control",
+      "category": "Stylized/Genre",
+      "tags": [
+        "checklist",
+        "mission",
+        "space",
+        "tension"
+      ],
+      "text": "SCENARIO: Tense but successful mission control sequence; launch to critical event.\nFORMAT (enforce):\n- ROLES: Guidance, CAPCOM, Flight Director; crisp callouts.\n- CHECKS: Short go/no-go roll; cross-checks; telemetry spikes noted.\n- CUTS: Split screens; gloved hands; generic badges (no brands/gov logos).\n- BUTTON: Cheer that stays professional.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "food_ad",
+      "title": "Food Ad",
+      "category": "Stylized/Genre",
+      "tags": [
+        "food",
+        "macro",
+        "product",
+        "spot"
+      ],
+      "text": "SCENARIO: Stylish product spot featuring \"\".\nFORMAT:\n- HERO SHOTS: Slow motion pour/sizzle/tear; macro textures; abstract backdrops.\n- TASTE VO: \"\" delivers 2 vivid flavor lines; \"\" counters with 2 complementary lines.\n- DISCLAIMER: No endorsements; generic language only.\n- BUTTON: A playful non-slogan tag.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "taste_test",
+      "title": "Taste Test",
+      "category": "Stylized/Genre",
+      "tags": [
+        "blind",
+        "food",
+        "host",
+        "split-screen"
+      ],
+      "text": "SCENARIO: Split-screen blind taste test between two generic brands.\nFORMAT:\n1) [INTRO] Host frames it as friendly and non-definitive.\n2) [A FIRST SIP] \"\" : 2\u20133 precise sensory notes.\n3) [B FIRST SIP] \"\" : 2\u20133 complementary/contrasting notes.\n4) [BRAND PERSONA BEAT] silent/minimal nods; outfit colors & subtle logo-styled details emphasized.\n5) [DECISION] friendly wrap-up with subjective, non-definitive preference.\nRUNTIME: \"\" . { \"\" }\nUse short, cinematic lines; no endorsements/pricing."
+    },
+    {
+      "id": "food_ad_persona",
+      "title": "Food Ad Persona",
+      "category": "Stylized/Genre",
+      "tags": [
+        "food",
+        "macro",
+        "persona",
+        "product"
+      ],
+      "text": "SCENARIO: Stylish product spot featuring a Fictional Brand Persona.\nBrand Persona \u2014 \"\" (wearing \"\", \"\"; vibe: \"\").\nFORMAT:\n- HERO SHOTS: Slow motion pour/sizzle/tear; macro textures; abstract backdrops.\n- TASTE VO: \"\" delivers 2 vivid flavor lines; \"\" counters with 2 complementary lines.\n- DISCLAIMER: No endorsements; generic language only.\n- BUTTON: A playful non-slogan tag.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "taste_test_persona",
+      "title": "Taste Test Persona",
+      "category": "Stylized/Genre",
+      "tags": [
+        "blind",
+        "food",
+        "persona",
+        "split-screen"
+      ],
+      "text": "SCENARIO: Split-screen blind taste test between two generic brands.\nBrand Persona \u2014 \"\" (wearing \"\", \"\"; vibe: \"\").\nFORMAT:\n1) [INTRO] Host frames it as friendly and non-definitive.\n2) [A FIRST SIP] \"\" : 2\u20133 precise sensory notes.\n3) [B FIRST SIP] \"\" : 2\u20133 complementary/contrasting notes.\n4) [BRAND PERSONA BEAT] silent/minimal nods; outfit colors & subtle logo-styled details emphasized.\n5) [DECISION] friendly wrap-up with subjective, non-definitive preference.\nRUNTIME: \"\" . { \"\" }\nUse short, cinematic lines; no endorsements/pricing."
+    },
+    {
+      "id": "mall_cop_chase",
+      "title": "Mall Cop Chase",
+      "category": "Fun & Cool",
+      "tags": [
+        "chase",
+        "comedy",
+        "mall",
+        "security"
+      ],
+      "text": "SCENARIO: Overdramatic mall security chase through a food court.\nFORMAT:\n  - COLD OPEN: Security cam text overlay + dramatic slow\u2011mo fry spill.\n  - DIALOGUE: \"\" (rookie mall cop) vs \"\" (alleged pretzel bandit). Rapid exchanges, whistle blasts, absurd PA announcements.\n  - GAGS: 3 escalating sight gags (e.g., mobility scooter drift, pretzel\u2011tongs nunchucks, inflatable mascot tackle).\n  - BUTTON: Freeze\u2011frame citation written like a movie poster tagline.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "awkward_first_date_speedrun",
+      "title": "Awkward First Date Speedrun",
+      "category": "Fun & Cool",
+      "tags": [
+        "comedy",
+        "date",
+        "hud",
+        "speedrun"
+      ],
+      "text": "SCENARIO: A first date performed like a video\u2011game speedrun.\nFORMAT:\n  - HUD: Minimal on\u2011screen timers/checkpoints described in brackets.\n  - DIALOGUE: Staccato, polite chaos; glitch\u2011skip small talk; any % PB energy.\n  - SPLITS: 4 micro\u2011sections (Meet, Order, Vulnerable Overshare, Goodbye) with comedic time saves.\n  - FAILSTATE: 1 hilarious soft\u2011reset (spilled drink, wrong name, etc.).\n  - COMMENTARY: A deadpan announcer calls out \u2018gold splits.\u2019\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "time_travel_customer_support",
+      "title": "Time Travel Customer Support",
+      "category": "Fun & Cool",
+      "tags": [
+        "calls",
+        "comedy",
+        "support",
+        "time-travel"
+      ],
+      "text": "SCENARIO: A customer support line that takes calls from different centuries.\nFORMAT:\n  - CAST: \"\" (support rep) + \"\" (time\u2011displaced caller of the minute).\n  - QUEUE: 4 ultra\u2011short calls (medieval scribe, 1920s inventor, far\u2011future teen, Paleolithic hunter).\n  - ISSUE CARDS: Each call has a one\u2011line \u2018ticket title\u2019 and a quirky resolution.\n  - HOLD MUSIC: Describe it humorously once.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "heist_planning_groupchat",
+      "title": "Heist Planning Groupchat",
+      "category": "Fun & Cool",
+      "tags": [
+        "groupchat",
+        "heist",
+        "low-stakes",
+        "twist"
+      ],
+      "text": "SCENARIO: A chaotic group chat planning an absurdly low\u2011stakes heist (e.g., rescuing a beloved office plant).\nFORMAT:\n  - UI: Messages labeled with usernames; occasional sticker/gif descriptions in brackets.\n  - THREADS: 3 sub\u2011threads (blueprints, disguises, alibi).\n  - TWIST: A helpful janitor quietly does the heist mid-chat.\n  - BUTTON: A triumphant \u2018mission accomplished\u2019 typo.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "cooking_show_chaos_mode",
+      "title": "Cooking Show Chaos Mode",
+      "category": "Fun & Cool",
+      "tags": [
+        "assistant",
+        "chaos",
+        "cooking",
+        "host"
+      ],
+      "text": "SCENARIO: A cooking show where every step goes off the rails but still works out.\nFORMAT:\n  - HOST: \"\" tries to keep it together; \"\" is the chaotic assistant.\n  - RECIPE: 5 micro-steps; one accidental ingredient that becomes the signature.\n  - GAGS: 3 sight gags with utensils/appliances.\n  - BUTTON: Perfect-looking dish with one insane garnish.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "office_printer_exorcism",
+      "title": "Office Printer Exorcism",
+      "category": "Fun & Cool",
+      "tags": [
+        "exorcism",
+        "it",
+        "office",
+        "printer"
+      ],
+      "text": "SCENARIO: An office exorcism for a haunted printer.\nFORMAT:\n  - CAST: \"\" (IT \u2018priest\u2019) + \"\" (panicked project manager) + one timid intern.\n  - RITUAL: 4 escalating steps (turn it off/on, sprinkle toner, chant driver versions, slap the tray).\n  - MANIFESTATION: The printer spits out an ominous but helpful flowchart.\n  - BUTTON: The ghost now handles weekly reports.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "pet_translator_infomercial",
+      "title": "Pet Translator Infomercial",
+      "category": "Fun & Cool",
+      "tags": [
+        "gadget",
+        "infomercial",
+        "late-night",
+        "pets"
+      ],
+      "text": "SCENARIO: Late\u2011night infomercial for a gadget that translates pet thoughts.\nFORMAT:\n  - HOSTS: Duo banter, rapid cuts, mock testimonials (dog, cat, turtle).\n  - FEATURES: 5 ridiculous bullet points; one honest limitation.\n  - DISCLAIMER: Comically long micro\u2011print line.\n  - CALL TO ACTION: Euphoric but non\u2011commercial phrasing (no pricing).\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "medieval_open_mic",
+      "title": "Medieval Open Mic",
+      "category": "Fun & Cool",
+      "tags": [
+        "acts",
+        "medieval",
+        "open-mic",
+        "tavern"
+      ],
+      "text": "SCENARIO: Open mic night at a medieval tavern.\nFORMAT:\n  - HOST: Bell\u2011ringing MC introduces acts.\n  - LINEUP: 4 micro\u2011acts (bard one\u2011liner, herbalist slam poem, squire prop comedy, monk beatbox).\n  - CROWD: Peasants heckle in adorable archaic burns.\n  - FINAL: Dragon shows up as supportive stagehand.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "haunted_house_listing",
+      "title": "Haunted House Listing",
+      "category": "Fun & Cool",
+      "tags": [
+        "ghosts",
+        "haunted",
+        "listing",
+        "real-estate"
+      ],
+      "text": "SCENARIO: Real\u2011estate listing for a charmingly haunted house.\nFORMAT:\n  - HEADER: Listing title + square footage + century built.\n  - FEATURES: 6 bullets mixing cozy details with ghostly perks.\n  - DISCLOSURES: 3 playful \u2018known phenomena\u2019.\n  - TAGLINE: A punny closer an agent would love.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "tiny_superhero_job_interview",
+      "title": "Tiny Superhero Job Interview",
+      "category": "Fun & Cool",
+      "tags": [
+        "interview",
+        "superhero",
+        "tests",
+        "tiny"
+      ],
+      "text": "SCENARIO: A job interview where the candidate is a thumb\u2011sized superhero.\nFORMAT:\n  - PANEL: Interviewer (\"\") vs micro\u2011hero (\"\").\n  - TASKS: 3 absurd practical tests (lift a stapler, navigate coffee foam, rescue a crumb).\n  - ACCOMMODATIONS: Creative workplace adjustments.\n  - OFFER: A sincere, funny closing line.\nRUNTIME: \"\" . { \"\" }"
+    },
+    {
+      "id": "custom0001",
+      "title": "create a realistic wwe tag team promo with \"\" and \"\", and al",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a realistic wwe tag team promo with \"\" and \"\", and allow both of them to say a few words. Make it funny, and entertaining like a real wwe promo. Create it in the 90s era style wwf. The characters should be as close to their originals as possible."
+    },
+    {
+      "id": "custom0002",
+      "title": "create a scene for bob ross painting \"\"'s car. Make a funny ",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a scene for bob ross painting \"\"'s car. Make a funny back and forth exchange with the awkward moment and anger, sarcasm, etc from persons car owner. Let both of them say a few words back and forth. Make it funny and entertaining. The characters should respond in line with their character traits, and the car should match the style of the person. Also make sure the voices match the correct person talking."
+    },
+    {
+      "id": "custom0003",
+      "title": "create a scene in the style of bob ross painting a portrait ",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a scene in the style of bob ross painting a portrait of a guest sitting in a chair next to him, but the twist is bob ross is the one getting the portrait done of him by another person. The other person is going to do the painting. The guest is \"\". Let both of them say a few words back and forth. Make it funny and entertaining. The characters should respond in line with their character traits."
+    },
+    {
+      "id": "custom0004",
+      "title": "create a realistic \"price is right\" game intro scene with bo",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a realistic \"price is right\" game intro scene with bob barker and a guest who won the bidding game. The guest is \"\", and allow both of them to say a few words. Make it funny, and entertaining like a real aired tv show. Create it in the 80s era style. The characters should be as close to their originals as possible."
+    },
+    {
+      "id": "custom0005",
+      "title": "create a realistic slap fight contest between \"\" and \"\". Mak",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a realistic slap fight contest between \"\" and \"\". Make the characters as close to their actual counterparts as possible. It should have the classic smack talk and chalking before the slap."
+    },
+    {
+      "id": "custom0006",
+      "title": "create a scene in the style of the show \"COPS\" where \"\" is b",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a scene in the style of the show \"COPS\" where \"\" is being questioned about something and probably getting detained or arrested. Make it funny. Allow the perp and the police officer(s) to each say a couple funny but believable and semi-serious lines back and forth. Make it seem real. Put the text of what the person is accused of or did in a news chyron. Make the news station believable, but funny. Its a normal interaction, and they dont look at the camera."
+    },
+    {
+      "id": "custom0007",
+      "title": "create a scene where \"\" is rubbing a magic lamp and the geni",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a scene where \"\" is rubbing a magic lamp and the genie comes out in classic fashion. The genie is \"\". There is a short, funny back and forth about 3 wishes. Make it fit into 10 second window"
+    },
+    {
+      "id": "custom0008",
+      "title": "create a realistic scene of a UFC cage match with 2 Karens f",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a realistic scene of a UFC cage match with 2 Karens fighting it out.  They both have colored hair and tattoos and piercings. They are polar opposites. Let them talk smack and react to each other while fighting"
+    },
+    {
+      "id": "custom0009",
+      "title": "create a realistic 10 second scene at a mcdonalds drive-thru",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a realistic 10 second scene at a mcdonalds drive-thru where the camera is looking at the front passenger side of the car from a short distance. The pickup window and customers car are both in frame, slightly zoomed in. The customer is \"\" and the employee at the window is \"\". They have a friendly back and forth about something wrong with the order. Make sure to keep the physics proper with the employee inside the building with the window open and the customer inside the driver seat of the car with his window rolled down. The amount rolled down can be random, but must be down enough to pay and get the food, unless the conversation has something to do with a rolled up window needed. The car should match the style of the character. Keep both characters how they were in real life."
+    },
+    {
+      "id": "custom0010",
+      "title": "Create a realistic game show jeopardy scene introducing the ",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistic game show jeopardy scene introducing the players, with alex trebec hosting. The players should have their names written on each screen like in the real game show. They should not have any money yet displayed. The players are \"\", \"\", and \"\". Keep it in the theme of the 90's set. Each character should dress, act, and talk like their originals. Make it funny and entertaining. Keep responses short. The scene is just the intro where alex talks quickly to each player. There will be 3 additional scenes, one for each player that will follow."
+    },
+    {
+      "id": "custom0011",
+      "title": "Create a realistic game show jeopardy scene introducing the ",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistic game show jeopardy scene introducing the players, with alex trebec hosting. The players should have their names written on each screen like in the real game show. They should not have any money yet displayed. The players are \"\", \"\", and \"\". Keep it in the theme of the 90's set. Each character should dress, act, and talk like their originals. Make it funny and entertaining. Keep responses short. The scene is with alex introducing the player \"\"."
+    },
+    {
+      "id": "custom0012",
+      "title": "create a realistic ring doorbell perspective scene. The scen",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a realistic ring doorbell perspective scene. The scene is a small \"fender bender\" aftermath with 2 people talking about the crash. The 1st person is \"\" driving an appropriate style car for them, and the 2nd person is \"\" also driving an appropriate car for them. They have some back and forth banter, make it funny and entertaining."
+    },
+    {
+      "id": "custom0013",
+      "title": "create a realistic scene of people at a farmers fruits and v",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a realistic scene of people at a farmers fruits and veggies market. The focus will be on 2 characters. First character is \"\" and the 2nd character is \"\". They see each other and start reminiscing because they havent seen each other in a while. They have a short casual conversation."
+    },
+    {
+      "id": "custom0014",
+      "title": "create a realistic scene of people at a farmers fruits and v",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a realistic scene of people at a farmers fruits and veggies market. The focus will be on 2 characters. First character is \"\" and the 2nd character is \"\". They see each other and greet with a greeting and handshake, and have a short casual conversation. They are dressed and talk in the style and manner they were in real life. Make sure the voices match the proper character. Put them in 80s/90s style"
+    },
+    {
+      "id": "custom0015",
+      "title": "create a scene in the style of a disney 15 second promo vide",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a scene in the style of a disney 15 second promo video. Make it about \"\" and \"\""
+    },
+    {
+      "id": "custom0016",
+      "title": "create a cartoon like scene in the style of a disney 15 seco",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a cartoon like scene in the style of a disney 15 second promo video. Make it about \"\" and \"\". Make it about the two of them teaming up to fight crime"
+    },
+    {
+      "id": "custom0017",
+      "title": "create a cartoon like scene in the style of a disney 15 seco",
+      "category": "Custom",
+      "tags": [],
+      "text": "create a cartoon like scene in the style of a disney 15 second promo video. Make it about \"\" and \"\". Make it about the two of them teaming up to fight crime. Have a montage of them doing crime stuff and beating up bad guys"
+    }
   ],
   "persons": [
     "Abel Tasman",

@@ -112,6 +112,31 @@ def save_user_prompts(prompts):
     except Exception:
         return False
 
+# --- Prompt helpers ---
+def _p_to_obj(p, idx=0):
+    if isinstance(p, dict):
+        text = str(p.get("text") or p.get("prompt") or "").strip()
+        title = p.get("title") or (text.splitlines()[0][:60] if text else "Untitled")
+        cat = p.get("category") or "Base"
+        tags = p.get("tags") or []
+        pid = p.get("id") or f"p{idx:04d}"
+        return {"id": pid, "title": title, "category": cat, "tags": tags, "text": text}
+    else:
+        text = str(p or "").strip()
+        title = (text.splitlines()[0][:60] if text else "Untitled")
+        return {"id": f"p{idx:04d}", "title": title, "category": "Base", "tags": [], "text": text}
+
+def _normalize_prompts_list(prompts):
+    return [_p_to_obj(p, i) for i, p in enumerate(prompts or [])]
+
+def _extract_categories(objs):
+    seen = set(); cats = []
+    for o in objs:
+        c = o.get("category") or "Base"
+        if c not in seen:
+            seen.add(c); cats.append(c)
+    return cats
+
 
 
 def sanitize_person_name(name: str) -> str:
@@ -346,30 +371,36 @@ class Main(QMainWindow):
 
         self.user_prompts = load_or_init_user_prompts(self.cfg.get("prompts", []))
 
+        self._prompt_objs = _normalize_prompts_list(self.user_prompts)
         self.user_persons = load_or_init_user_persons(self.cfg.get("persons", []))
 
-        # --- Person selectors (Person 1 & Person 2) ---
+        # --- Category + Person selectors ---
         personRow = QHBoxLayout()
-        personRow.addWidget(QLabel("Person 1:"))
+        personRow.addWidget(QLabel("Category:"))
+        self.categoryBox = QComboBox(); self.categoryBox.addItem("Show All")
+        self.categoryBox.currentIndexChanged.connect(self.refresh_prompts_list)
+        personRow.addWidget(self.categoryBox)
+        personRow.addSpacing(12)
+        lblP1 = QLabel("Person 1:"); lblP1.setStyleSheet("font-size: 11px;")
+        personRow.addWidget(lblP1)
         self.person1Box = QComboBox()
         self.person1Box.addItem("— None —")
         self.person1Box.addItems(self.user_persons)
         personRow.addWidget(self.person1Box)
         personRow.addSpacing(8)
-        personRow.addWidget(QLabel("Person 2:"))
+        lblP2 = QLabel("Person 2:"); lblP2.setStyleSheet("font-size: 11px;")
+        personRow.addWidget(lblP2)
         self.person2Box = QComboBox()
         self.person2Box.addItem("— None —")
         self.person2Box.addItems(self.user_persons)
         personRow.addWidget(self.person2Box)
         rp_v.addLayout(personRow)
 
+        # Prompts list (single; filtered by Category)
         self.promptList = QListWidget()
-        for p in self.user_prompts:
-            it = QListWidgetItem(p)
-            it.setToolTip(p)
-            self.promptList.addItem(it)
         self.promptList.itemClicked.connect(self.copy_selected_prompt)
         rp_v.addWidget(self.promptList, 1)
+        self.refresh_prompts_list()
 
         # add left/right panes to the actions splitter
         self.actionsSplit.addWidget(leftActions)
@@ -518,7 +549,8 @@ class Main(QMainWindow):
         if getattr(self, "_syncing_splitters", False):
             return
         self._apply_split_sizes(self.contentSplit.sizes())
-# --- Layout toggle ---
+        
+    # --- Layout toggle ---
     def update_toggle_label(self):
         self.btnToggle.setText("Top/Bottom" if self.contentSplit.orientation()==Qt.Orientation.Horizontal else "Left/Right")
 
@@ -698,19 +730,71 @@ class Main(QMainWindow):
     # --- Prompts helpers ---
     def refresh_prompts_list(self):
         self.promptList.clear()
-        for p in self.user_prompts:
-            it = QListWidgetItem(p); it.setToolTip(p)
+        # normalize merged prompts list (supports string or object items)
+        self._prompt_objs = _normalize_prompts_list(self.user_prompts)
+        # rebuild categories (keep selection)
+        if hasattr(self, 'categoryBox'):
+            cur = self.categoryBox.currentText() if self.categoryBox.currentIndex() >= 0 else 'Show All'
+            cats = _extract_categories(self._prompt_objs)
+            self.categoryBox.blockSignals(True)
+            self.categoryBox.clear(); self.categoryBox.addItem('Show All')
+            for c in cats:
+                self.categoryBox.addItem(c)
+            idx = self.categoryBox.findText(cur)
+            self.categoryBox.setCurrentIndex(idx if idx >= 0 else 0)
+            self.categoryBox.blockSignals(False)
+            selected = self.categoryBox.currentText()
+        else:
+            selected = 'Show All'
+        for obj in self._prompt_objs:
+            cat = obj.get('category') or 'Base'
+            if selected != 'Show All' and cat != selected:
+                continue
+            title = obj.get('title') or 'Untitled'
+            it = QListWidgetItem(f"{cat} · {title}")
+            it.setData(Qt.ItemDataRole.UserRole, obj)
+            it.setToolTip(obj.get('text',''))
             self.promptList.addItem(it)
 
-    
     def copy_selected_prompt(self):
+        import re
         item = self.promptList.currentItem()
         if not item:
             item = self.promptList.item(0)
         if not item:
             QMessageBox.information(self, "Copy Prompt", "No prompt selected.")
             return
-        text = item.text()
+        obj = item.data(Qt.ItemDataRole.UserRole)
+        text = (obj.get("text") if isinstance(obj, dict) else item.text())
+
+        # Replace the first two "" with Person 1 and Person 2 (exact, no parentheses)
+        def replace_once(s, val):
+            if not val:
+                return s
+            return re.sub(r'""', f'"{val}"', s, count=1)
+
+        p1 = self.person1Box.currentText() if hasattr(self, "person1Box") and self.person1Box.currentIndex() > 0 else ""
+        p2 = self.person2Box.currentText() if hasattr(self, "person2Box") and self.person2Box.currentIndex() > 0 else ""
+
+        text = replace_once(text, p1)
+        text = replace_once(text, p2)
+
+        QApplication.clipboard().setText(text)
+        self.statusBar().showMessage("Prompt copied to clipboard.", 2000)
+
+        # Fill "" placeholders with selected persons
+        def inject_person(s: str, name: str):
+            if not name:
+                return s
+            i = s.find('""')
+            return s if i == -1 else s[:i+2] + ' (' + name + ')' + s[i+2:]
+        p1 = self.person1Box.currentText() if self.person1Box.currentIndex() > 0 else ''
+        p2 = self.person2Box.currentText() if self.person2Box.currentIndex() > 0 else ''
+        text = inject_person(text, p1)
+        text = inject_person(text, p2)
+
+        QApplication.clipboard().setText(text)
+        self.statusBar().showMessage("Prompt copied.", 1500)
 
         # Fill "" placeholders with selected persons and optional user inputs
         def replace_first_empty(s, repl):
@@ -753,26 +837,26 @@ class Main(QMainWindow):
 
         QApplication.clipboard().setText(text)
         self.statusBar().showMessage("Prompt copied to clipboard.", 3000)
-
     def add_prompt_dialog(self):
         text, ok = QInputDialog.getMultiLineText(self, "Add Prompt", "Prompt text:")
         if not ok or not text.strip():
             return
-        self.user_prompts.append(text.strip())
+        txt = text.strip()
+        # Title default: first line up to 60 chars
+        default_title = (txt.splitlines()[0][:60] if txt else "Untitled")
+        title, ok = QInputDialog.getText(self, "Add Prompt", "Title:", text=default_title)
+        if not ok: return
+        cat, ok = QInputDialog.getText(self, "Add Prompt", "Category:", text="User")
+        if not ok: return
+        tag_str, ok = QInputDialog.getText(self, "Add Prompt", "Tags (comma-separated):", text="")
+        if not ok: return
+        tags = [t.strip() for t in tag_str.split(",") if t.strip()]
+
+        new_obj = {"id": f"u{len(self.user_prompts):04d}", "title": title or default_title, "category": cat or "User", "tags": tags, "text": txt}
+        self.user_prompts.append(new_obj)
         save_user_prompts(self.user_prompts)
         self.refresh_prompts_list()
         self.statusBar().showMessage("Prompt added.", 3000)
-
-    def remove_selected_prompt(self):
-        item = self.promptList.currentItem()
-        if not item:
-            QMessageBox.information(self, "Remove Prompt", "Select a prompt first.")
-            return
-        txt = item.text()
-        self.user_prompts = [p for p in self.user_prompts if p != txt]
-        save_user_prompts(self.user_prompts)
-        self.refresh_prompts_list()
-        self.statusBar().showMessage("Prompt removed.", 3000)
 
     def restore_default_prompts(self):
         if QMessageBox.question(self, "Restore Default Prompts", "Replace your user prompts with the base defaults?") != QMessageBox.StandardButton.Yes:
@@ -907,6 +991,26 @@ class Main(QMainWindow):
         except Exception:
             pass
         super().closeEvent(e)
+
+    def remove_selected_prompt(self):
+        item = self.promptList.currentItem()
+        if not item:
+            QMessageBox.information(self, "Remove Prompt", "Select a prompt first.")
+            return
+        obj = item.data(Qt.ItemDataRole.UserRole)
+        def _same(p):
+            if isinstance(p, dict) and isinstance(obj, dict):
+                return p.get('id') == obj.get('id') or p.get('text') == obj.get('text')
+            elif isinstance(p, str) and isinstance(obj, dict):
+                return p == obj.get('text')
+            elif isinstance(p, dict) and isinstance(obj, str):
+                return p.get('text') == obj
+            else:
+                return p == obj
+        self.user_prompts = [p for p in self.user_prompts if not _same(p)]
+        save_user_prompts(self.user_prompts)
+        self.refresh_prompts_list()
+        self.statusBar().showMessage("Prompt removed.", 3000)
 
 def main():
     app = QApplication(sys.argv)
