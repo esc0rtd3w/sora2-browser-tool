@@ -31,7 +31,11 @@ import os, sys, re, json, tempfile, random, mimetypes, pathlib, webbrowser
 from urllib.parse import urlparse
 
 from PyQt6.QtCore import Qt, QUrl, QSize
-from PyQt6.QtWidgets import (QTextEdit, QApplication, QMainWindow, QSplitter, QWidget, QVBoxLayout, QHBoxLayout, QListWidget, QListWidgetItem, QPushButton, QLineEdit, QComboBox, QLabel, QMessageBox, QInputDialog, QTabWidget, QCheckBox, QCompleter)
+from PyQt6.QtWidgets import (QTextEdit,
+    QApplication, QMainWindow, QSplitter, QWidget, QVBoxLayout, QHBoxLayout,
+    QListWidget, QListWidgetItem, QPushButton, QLineEdit, QComboBox, QLabel,
+    QMessageBox, QInputDialog, QTabWidget, QCheckBox, QCompleter
+)
 from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineProfile
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 # --- Cloudflare/Turnstile compatibility flags (GPU + third-party cookies) ---
