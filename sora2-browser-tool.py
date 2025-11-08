@@ -1033,8 +1033,28 @@ class Main(QMainWindow):
         if not new_text:
             return
 
+        # Default title from first line
         new_title = (new_text.splitlines()[0][:60] if new_text else "Untitled")
         old_id = (obj.get("id") if isinstance(obj, dict) else None)
+
+        # If this prompt has title/tags metadata, offer edits for them too
+        new_tags = None
+        if isinstance(obj, dict):
+            cur_title = (obj.get("title") or new_title)
+            t_title, ok_title = QInputDialog.getText(self, "Edit Title", "Title:", text=cur_title)
+            if ok_title and (t_title or "").strip():
+                new_title = t_title.strip()
+
+            cur_tags = obj.get("tags")
+            if isinstance(cur_tags, (list, tuple)):
+                cur_tags_str = ", ".join(str(t) for t in cur_tags if str(t).strip())
+            elif isinstance(cur_tags, str):
+                cur_tags_str = cur_tags
+            else:
+                cur_tags_str = ""
+            t_tags, ok_tags = QInputDialog.getText(self, "Edit Tags", "Tags (comma-separated):", text=cur_tags_str)
+            if ok_tags and t_tags is not None:
+                new_tags = [t.strip() for t in t_tags.split(",") if t.strip()]
 
         # clear any cached placeholders for this prompt
         try:
@@ -1052,10 +1072,13 @@ class Main(QMainWindow):
                 if match:
                     p["text"] = new_text
                     p["title"] = new_title
+                    if new_tags is not None:
+                        p["tags"] = new_tags
                     updated = True
                     break
             else:
                 if p == base_text:
+                    # Keep string-type prompts as strings
                     self.user_prompts[i] = new_text
                     updated = True
                     break
