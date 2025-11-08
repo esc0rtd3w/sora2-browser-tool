@@ -510,6 +510,9 @@ class Main(QMainWindow):
 
         # Prompts list (single; filtered by Category)
         self.promptList = QListWidget()
+        self.promptList.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.promptList.customContextMenuRequested.connect(self._edit_prompt_on_right_click)
+
         self.promptList.setTextElideMode(Qt.TextElideMode.ElideNone)
         self.promptList.setWordWrap(True)
         self.promptList.itemClicked.connect(self.copy_selected_prompt)
@@ -1013,6 +1016,75 @@ class Main(QMainWindow):
             self.previewEdit.setPlainText(text or '')
         except Exception:
             pass
+    
+    def _edit_prompt_on_right_click(self, pos):
+        item = self.promptList.itemAt(pos)
+        if not item:
+            return
+        self._edit_prompt_item(item)
+
+    def _edit_prompt_item(self, item):
+        obj = item.data(Qt.ItemDataRole.UserRole)
+        base_text = (obj.get("text") if isinstance(obj, dict) else "") or ""
+        new_text, ok = QInputDialog.getMultiLineText(self, "Edit Prompt", "Prompt text:", base_text)
+        if not ok or new_text is None:
+            return
+        new_text = new_text.strip()
+        if not new_text:
+            return
+
+        new_title = (new_text.splitlines()[0][:60] if new_text else "Untitled")
+        old_id = (obj.get("id") if isinstance(obj, dict) else None)
+
+        # clear any cached placeholders for this prompt
+        try:
+            pid_old = self._get_prompt_pid(obj, base_text)
+            if hasattr(self, "_manual_placeholder_cache"):
+                self._manual_placeholder_cache.pop(pid_old, None)
+        except Exception:
+            pass
+
+        # write-through to backing list (string or dict)
+        updated = False
+        for i, p in enumerate(self.user_prompts):
+            if isinstance(p, dict):
+                match = (old_id and p.get("id") == old_id) or (p.get("text") == base_text)
+                if match:
+                    p["text"] = new_text
+                    p["title"] = new_title
+                    updated = True
+                    break
+            else:
+                if p == base_text:
+                    self.user_prompts[i] = new_text
+                    updated = True
+                    break
+
+        if not updated:
+            QMessageBox.information(self, "Edit Prompt", "Could not locate the prompt to update.")
+            return
+
+        save_user_prompts(self.user_prompts)
+        self.refresh_prompts_list()
+        self._reselect_prompt(old_id, new_text)
+        try:
+            self.update_prompt_preview()
+        except Exception:
+            pass
+        self.statusBar().showMessage("Prompt updated.", 3000)
+
+    def _reselect_prompt(self, pid, text):
+        # reselect edited prompt in the list
+        for i in range(self.promptList.count()):
+            it = self.promptList.item(i)
+            o = it.data(Qt.ItemDataRole.UserRole)
+            if isinstance(o, dict):
+                if pid and o.get("id") == pid:
+                    self.promptList.setCurrentItem(it)
+                    return
+                if text and o.get("text") == text:
+                    self.promptList.setCurrentItem(it)
+                    return
     def add_prompt_dialog(self):
         text, ok = QInputDialog.getMultiLineText(self, "Add Prompt", "Prompt text:")
         if not ok or not text.strip():
