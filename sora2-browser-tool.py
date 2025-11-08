@@ -31,11 +31,7 @@ import os, sys, re, json, tempfile, random, mimetypes, pathlib, webbrowser
 from urllib.parse import urlparse
 
 from PyQt6.QtCore import Qt, QUrl, QSize
-from PyQt6.QtWidgets import (QTextEdit, 
-    QApplication, QMainWindow, QSplitter, QWidget, QVBoxLayout, QHBoxLayout,
-    QListWidget, QListWidgetItem, QPushButton, QLineEdit, QComboBox, QLabel,
-    QMessageBox, QInputDialog, QTabWidget
-)
+from PyQt6.QtWidgets import (QTextEdit, QApplication, QMainWindow, QSplitter, QWidget, QVBoxLayout, QHBoxLayout, QListWidget, QListWidgetItem, QPushButton, QLineEdit, QComboBox, QLabel, QMessageBox, QInputDialog, QTabWidget, QCheckBox, QCompleter)
 from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineProfile
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 # --- Cloudflare/Turnstile compatibility flags (GPU + third-party cookies) ---
@@ -50,7 +46,9 @@ os.environ.setdefault(
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "sora2_config.json")
 USER_SITES_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_sites.json")
 USER_PROMPTS_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_prompts.json")
-USER_PERSONS_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_persons.json")
+USER_CHARACTERS_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_characters.json")
+DEFAULT_ANIMALS = ["Lion","Tiger","Bear","Eagle","Wolf","Hawk","Dolphin","Falcon","Panther","Leopard"]
+
 
 DEFAULT_CHROME_UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -86,7 +84,7 @@ def load_config():
 
 def save_config(cfg):
     try:
-        # Preserve existing base fields; only update window/ui. Never touch persons/sites/prompts here.
+        # Preserve existing; only update window/ui/version. Never touch characters/sites/prompts here.
         existing = {}
         if os.path.exists(CONFIG_PATH):
             try:
@@ -94,13 +92,11 @@ def save_config(cfg):
                     existing = json.load(f) or {}
             except Exception:
                 existing = {}
-        # Merge: keep version if present; update window and ui from current cfg
-        if "version" in cfg:
-            existing["version"] = cfg.get("version")
-        existing["window"] = cfg.get("window", existing.get("window", {}))
-        if isinstance(cfg.get("ui"), dict):
-            existing["ui"] = cfg.get("ui")
-        # Explicitly DO NOT alter base defaults for persons/sites/prompts
+
+        for k in ("version", "window", "ui"):
+            if k in cfg:
+                existing[k] = cfg[k]
+
         with open(CONFIG_PATH, "w", encoding="utf-8") as f:
             json.dump(existing, f, indent=2, ensure_ascii=False)
     except Exception as e:
@@ -192,38 +188,17 @@ def _extract_categories(objs):
 
 
 
-def sanitize_person_name(name: str) -> str:
+def sanitize_character_name(name: str) -> str:
     import re as _re
     s = _re.sub(r"[^A-Za-z0-9 '\-]", "", str(name))
     s = _re.sub(r"\s+", " ", s).strip()
     return s
 
-def load_or_init_user_persons(default_persons):
-    """Load user persons; if file missing or empty, seed with defaults and persist. Return the list."""
-    try:
-        if os.path.exists(USER_PERSONS_PATH):
-            with open(USER_PERSONS_PATH, "r", encoding="utf-8") as f:
-                data = json.load(f)
-            if isinstance(data, dict):
-                persons = data.get("persons", [])
-            elif isinstance(data, list):
-                persons = data
-            else:
-                persons = []
-        else:
-            persons = list(default_persons)
-        if not isinstance(persons, list) or len(persons) == 0:
-            persons = list(default_persons)
-        with open(USER_PERSONS_PATH, "w", encoding="utf-8") as f:
-            json.dump({"persons": persons}, f, indent=2, ensure_ascii=False)
-        return persons
-    except Exception:
-        return list(default_persons)
 
-def save_user_persons(persons):
+def save_user_characters(characters):
     try:
-        with open(USER_PERSONS_PATH, "w", encoding="utf-8") as f:
-            json.dump({"persons": persons}, f, indent=2, ensure_ascii=False)
+        with open(USER_CHARACTERS_PATH, "w", encoding="utf-8") as f:
+            json.dump({"characters": characters}, f, indent=2, ensure_ascii=False)
         return True
     except Exception:
         return False
@@ -240,7 +215,52 @@ class Browser(QWebEngineView):
         s.setAttribute(QWebEngineSettings.WebAttribute.JavascriptCanOpenWindows, True)
         s.setAttribute(QWebEngineSettings.WebAttribute.JavascriptCanAccessClipboard, True)
 
+def load_or_init_user_characters(default_characters):
+    """Load user characters from USER_CHARACTERS_PATH; if missing/empty, seed with defaults and persist."""
+    try:
+        if os.path.exists(USER_CHARACTERS_PATH):
+            with open(USER_CHARACTERS_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict):
+                characters = data.get("characters", [])
+            elif isinstance(data, list):
+                characters = data
+            else:
+                characters = []
+        else:
+            characters = list(default_characters)
+            with open(USER_CHARACTERS_PATH, "w", encoding="utf-8") as f:
+                json.dump({"characters": characters}, f, indent=2, ensure_ascii=False)
+        if not isinstance(characters, list):
+            characters = []
+        characters = [(" ".join(str(x).split())).strip() for x in characters if isinstance(x, str) and x.strip()]
+        characters = sorted(set(characters), key=lambda s: s.lower())
+        return characters
+    except Exception as e:
+        try:
+            QMessageBox.critical(None, "Characters", str(e))
+        except Exception:
+            pass
+        return list(default_characters)
+
 class Main(QMainWindow):
+    def add_animals_to_characters(self):
+        try:
+            merged = list(self.user_characters)
+            for a in DEFAULT_ANIMALS:
+                if a not in merged:
+                    merged.append(a)
+            merged = sorted(set(merged), key=lambda s: s.lower())
+            self.user_characters = merged
+            save_user_characters(merged)
+            # refresh combo boxes
+            self.character1Box.clear(); self.character1Box.addItem("— None —"); self.character1Box.addItems(self.user_characters)
+            self.character2Box.clear(); self.character2Box.addItem("— None —"); self.character2Box.addItems(self.user_characters)
+            QMessageBox.information(self, "Characters", "Animals added to your list.")
+        except Exception as e:
+            try: QMessageBox.critical(self, "Characters", str(e))
+            except Exception: pass
+
 
     def _get_prompt_pid(self, obj, text):
         """Return a stable id for the selected prompt, using explicit id
@@ -350,13 +370,12 @@ class Main(QMainWindow):
         a_p_clear = m_prompts.addAction("Clear User Prompts…"); a_p_clear.triggered.connect(self.clear_user_prompts)
         a_p_export = m_prompts.addAction("Export…"); a_p_export.triggered.connect(self.export_prompts_dialog)
         a_p_import = m_prompts.addAction("Import…"); a_p_import.triggered.connect(self.import_prompts_dialog)
-
-        m_persons = menubar.addMenu("Persons")
-        a_rp = m_persons.addAction("Restore Default Persons…"); a_rp.triggered.connect(self.restore_default_persons)
-        a_cp = m_persons.addAction("Clear User Persons…"); a_cp.triggered.connect(self.clear_user_persons)
-        m_persons.addSeparator()
-        a_ep = m_persons.addAction("Export…"); a_ep.triggered.connect(self.export_persons_dialog)
-        a_ip = m_persons.addAction("Import…"); a_ip.triggered.connect(self.import_persons_dialog)
+        m_characters = menubar.addMenu("Characters")
+        a_rp = m_characters.addAction("Restore Default Characters…"); a_rp.triggered.connect(self.restore_default_characters)
+        a_cp = m_characters.addAction("Clear User Characters…"); a_cp.triggered.connect(self.clear_user_characters)
+        m_characters.addSeparator()
+        a_ep = m_characters.addAction("Export…"); a_ep.triggered.connect(self.export_characters_dialog)
+        a_ip = m_characters.addAction("Import…"); a_ip.triggered.connect(self.import_characters_dialog)
 
 
 
@@ -451,29 +470,39 @@ class Main(QMainWindow):
 
 
         self._prompt_objs = _normalize_prompts_list(self.user_prompts)
-        self.user_persons = load_or_init_user_persons(self.cfg.get("persons", []))
+        self.user_characters = load_or_init_user_characters(self.cfg.get("characters", []))
 
-        # --- Category + Person selectors ---
-        personRow = QHBoxLayout()
-        personRow.addWidget(QLabel("Category:"))
+        # --- Category + Character selectors ---
+        characterRow = QHBoxLayout()
+        characterRow.addWidget(QLabel("Category:"))
         self.categoryBox = QComboBox(); self.categoryBox.addItem("Show All")
         self.categoryBox.currentIndexChanged.connect(self.refresh_prompts_list)
-        personRow.addWidget(self.categoryBox)
-        personRow.addSpacing(12)
-        lblP1 = QLabel("Person 1:"); lblP1.setStyleSheet("font-size: 11px;")
-        personRow.addWidget(lblP1)
-        self.person1Box = QComboBox()
-        self.person1Box.addItem("— None —")
-        self.person1Box.addItems(self.user_persons)
-        personRow.addWidget(self.person1Box)
-        personRow.addSpacing(8)
-        lblP2 = QLabel("Person 2:"); lblP2.setStyleSheet("font-size: 11px;")
-        personRow.addWidget(lblP2)
-        self.person2Box = QComboBox()
-        self.person2Box.addItem("— None —")
-        self.person2Box.addItems(self.user_persons)
-        personRow.addWidget(self.person2Box)
-        rp_v.addLayout(personRow)
+        characterRow.addWidget(self.categoryBox)
+        characterRow.addSpacing(12)
+        lblP1 = QLabel("Character 1:"); lblP1.setStyleSheet("font-size: 11px;")
+        characterRow.addWidget(lblP1)
+        self.character1Box = QComboBox()
+        self.character1Box.addItem("— None —")
+        self.character1Box.addItems(self.user_characters)
+        characterRow.addWidget(self.character1Box)
+        characterRow.addSpacing(8)
+        lblP2 = QLabel("Character 2:"); lblP2.setStyleSheet("font-size: 11px;")
+        characterRow.addWidget(lblP2)
+        self.character2Box = QComboBox()
+        self.character2Box.addItem("— None —")
+        self.character2Box.addItems(self.user_characters)
+        characterRow.addWidget(self.character2Box)
+        characterRow.addSpacing(8); self.keepNamesCheck = QCheckBox("Keep names"); self.keepNamesCheck.setChecked(True); characterRow.addWidget(self.keepNamesCheck)
+        rp_v.addLayout(characterRow)
+        try:
+            from PyQt6.QtCore import Qt as _Qt
+            self.character1Box.setEditable(True); self.character2Box.setEditable(True)
+            _c1 = QCompleter(self.user_characters, self.character1Box); _c1.setCaseSensitivity(_Qt.CaseSensitivity.CaseInsensitive)
+            _c2 = QCompleter(self.user_characters, self.character2Box); _c2.setCaseSensitivity(_Qt.CaseSensitivity.CaseInsensitive)
+            self.character1Box.setCompleter(_c1); self.character2Box.setCompleter(_c2)
+        except Exception:
+            pass
+    
 
         # Prompts list (single; filtered by Category)
         self.promptList = QListWidget()
@@ -498,8 +527,8 @@ class Main(QMainWindow):
         # Live preview updates
         try:
             self.promptList.currentItemChanged.connect(self.update_prompt_preview)
-            self.person1Box.currentIndexChanged.connect(lambda _: self.update_prompt_preview())
-            self.person2Box.currentIndexChanged.connect(lambda _: self.update_prompt_preview())
+            self.character1Box.currentIndexChanged.connect(lambda _: self.update_prompt_preview())
+            self.character2Box.currentIndexChanged.connect(lambda _: self.update_prompt_preview())
         except Exception:
             pass
         self.refresh_prompts_list()
@@ -882,8 +911,10 @@ class Main(QMainWindow):
         def replace_once(s, val):
             return re.sub(r'""', f'"{val}"', s, count=1) if val else s
 
-        p1 = self.person1Box.currentText() if hasattr(self, "person1Box") and self.person1Box.currentIndex() > 0 else ""
-        p2 = self.person2Box.currentText() if hasattr(self, "person2Box") and self.person2Box.currentIndex() > 0 else ""
+        p1 = self.character1Box.currentText() if hasattr(self, "character1Box") and self.character1Box.currentIndex() > 0 else ""
+        p2 = self.character2Box.currentText() if hasattr(self, "character2Box") and self.character2Box.currentIndex() > 0 else ""
+        if hasattr(self, "keepNamesCheck") and not self.keepNamesCheck.isChecked():
+            p1 = ""; p2 = ""
         txt = replace_once(base_text, p1)
         txt = replace_once(txt, p2)
 
@@ -951,13 +982,13 @@ class Main(QMainWindow):
         def replace_once(s, val):
             return re.sub(r'""', f'"{val}"', s, count=1) if (s and val) else s
 
-        # Apply Person 1 / Person 2 to first two slots
+        # Apply Character 1 / Character 2 to first two slots
         try:
-            p1 = self.person1Box.currentText() if hasattr(self, 'person1Box') and self.person1Box.currentIndex() > 0 else ''
+            p1 = self.character1Box.currentText() if hasattr(self, 'character1Box') and self.character1Box.currentIndex() > 0 else ''
         except Exception:
             p1 = ''
         try:
-            p2 = self.person2Box.currentText() if hasattr(self, 'person2Box') and self.person2Box.currentIndex() > 0 else ''
+            p2 = self.character2Box.currentText() if hasattr(self, 'character2Box') and self.character2Box.currentIndex() > 0 else ''
         except Exception:
             p2 = ''
         text = replace_once(text, p1)
@@ -1067,77 +1098,77 @@ class Main(QMainWindow):
         except Exception as e:
             QMessageBox.critical(self, "Import Error", str(e))
 
-    def restore_default_persons(self):
-        if QMessageBox.question(self, "Restore Default Persons", "Replace your person list with the defaults from base?", QMessageBox.StandardButton.Yes|QMessageBox.StandardButton.No) != QMessageBox.StandardButton.Yes:
+    def restore_default_characters(self):
+        if QMessageBox.question(self, "Restore Default Characters", "Replace your character list with the defaults from base?", QMessageBox.StandardButton.Yes|QMessageBox.StandardButton.No) != QMessageBox.StandardButton.Yes:
             return
-        defaults = self.cfg.get("persons", [])
-        persons = [sanitize_person_name(x) for x in defaults if sanitize_person_name(x)]
-        persons = list(dict.fromkeys(persons))
-        self.user_persons = persons
-        save_user_persons(self.user_persons)
-        self._reload_person_boxes()
-        self.statusBar().showMessage("Restored default persons.", 4000)
+        defaults = self.cfg.get("characters", [])
+        characters = [sanitize_character_name(x) for x in defaults if sanitize_character_name(x)]
+        characters = list(dict.fromkeys(characters))
+        self.user_characters = characters
+        save_user_characters(self.user_characters)
+        self._reload_character_boxes()
+        self.statusBar().showMessage("Restored default characters.", 4000)
 
-    def clear_user_persons(self):
-        if QMessageBox.question(self, "Clear User Persons", "Remove ALL user persons? This does not touch the base defaults. Continue?", QMessageBox.StandardButton.Yes|QMessageBox.StandardButton.No) != QMessageBox.StandardButton.Yes:
+    def clear_user_characters(self):
+        if QMessageBox.question(self, "Clear User Characters", "Remove ALL user characters? This does not touch the base defaults. Continue?", QMessageBox.StandardButton.Yes|QMessageBox.StandardButton.No) != QMessageBox.StandardButton.Yes:
             return
-        self.user_persons = []
-        if save_user_persons(self.user_persons):
-            self._reload_person_boxes()
-            self.statusBar().showMessage("Cleared user persons.", 4000)
+        self.user_characters = []
+        if save_user_characters(self.user_characters):
+            self._reload_character_boxes()
+            self.statusBar().showMessage("Cleared user characters.", 4000)
 
-    def export_persons_dialog(self):
+    def export_characters_dialog(self):
         try:
             from PyQt6.QtWidgets import QFileDialog
-            path, _ = QFileDialog.getSaveFileName(self, "Export Persons", "sora2_user_persons_export.json", "JSON Files (*.json)")
+            path, _ = QFileDialog.getSaveFileName(self, "Export Characters", "sora2_user_characters_export.json", "JSON Files (*.json)")
             if not path:
                 return
             with open(path, "w", encoding="utf-8") as f:
-                json.dump({"persons": self.user_persons}, f, indent=2, ensure_ascii=False)
-            self.statusBar().showMessage(f"Exported persons to {path}", 4000)
+                json.dump({"characters": self.user_characters}, f, indent=2, ensure_ascii=False)
+            self.statusBar().showMessage(f"Exported characters to {path}", 4000)
         except Exception as e:
             QMessageBox.critical(self, "Export Error", str(e))
 
-    def import_persons_dialog(self):
+    def import_characters_dialog(self):
         try:
             from PyQt6.QtWidgets import QFileDialog
-            path, _ = QFileDialog.getOpenFileName(self, "Import Persons", "", "JSON Files (*.json)")
+            path, _ = QFileDialog.getOpenFileName(self, "Import Characters", "", "JSON Files (*.json)")
             if not path:
                 return
             with open(path, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            persons = data.get("persons", data if isinstance(data, list) else [])
-            if not isinstance(persons, list):
-                QMessageBox.warning(self, "Import Persons", "Invalid format. Expecting an object with a 'persons' array or a flat array.")
+            characters = data.get("characters", data if isinstance(data, list) else [])
+            if not isinstance(characters, list):
+                QMessageBox.warning(self, "Import Characters", "Invalid format. Expecting an object with a 'characters' array or a flat array.")
                 return
-            persons = [sanitize_person_name(x) for x in persons]
-            persons = [x for x in persons if x]
-            persons = list(dict.fromkeys(persons))
-            self.user_persons = persons
-            save_user_persons(self.user_persons)
-            self._reload_person_boxes()
-            self.statusBar().showMessage(f"Imported {len(persons)} persons.", 4000)
+            characters = [sanitize_character_name(x) for x in characters]
+            characters = [x for x in characters if x]
+            characters = list(dict.fromkeys(characters))
+            self.user_characters = characters
+            save_user_characters(self.user_characters)
+            self._reload_character_boxes()
+            self.statusBar().showMessage(f"Imported {len(characters)} characters.", 4000)
         except Exception as e:
             QMessageBox.critical(self, "Import Error", str(e))
 
-    def _reload_person_boxes(self):
-        p1 = self.person1Box.currentText() if self.person1Box.currentIndex() > 0 else None
-        p2 = self.person2Box.currentText() if self.person2Box.currentIndex() > 0 else None
-        for box in (self.person1Box, self.person2Box):
+    def _reload_character_boxes(self):
+        p1 = self.character1Box.currentText() if self.character1Box.currentIndex() > 0 else None
+        p2 = self.character2Box.currentText() if self.character2Box.currentIndex() > 0 else None
+        for box in (self.character1Box, self.character2Box):
             box.blockSignals(True)
             box.clear()
             box.addItem("— None —")
-            for name in self.user_persons:
+            for name in self.user_characters:
                 box.addItem(name)
             box.blockSignals(False)
-        if p1 and p1 in self.user_persons:
-            self.person1Box.setCurrentText(p1)
+        if p1 and p1 in self.user_characters:
+            self.character1Box.setCurrentText(p1)
         else:
-            self.person1Box.setCurrentIndex(0)
-        if p2 and p2 in self.user_persons:
-            self.person2Box.setCurrentText(p2)
+            self.character1Box.setCurrentIndex(0)
+        if p2 and p2 in self.user_characters:
+            self.character2Box.setCurrentText(p2)
         else:
-            self.person2Box.setCurrentIndex(0)
+            self.character2Box.setCurrentIndex(0)
 
 
 
