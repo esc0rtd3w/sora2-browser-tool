@@ -51,7 +51,6 @@ CONFIG_PATH = os.path.join(os.path.dirname(__file__), "sora2_config.json")
 USER_SITES_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_sites.json")
 USER_PROMPTS_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_prompts.json")
 USER_CHARACTERS_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_characters.json")
-DEFAULT_ANIMALS = ["Lion","Tiger","Bear","Eagle","Wolf","Hawk","Dolphin","Falcon","Panther","Leopard"]
 
 
 DEFAULT_CHROME_UA = (
@@ -248,23 +247,6 @@ def load_or_init_user_characters(default_characters):
         return list(default_characters)
 
 class Main(QMainWindow):
-    def add_animals_to_characters(self):
-        try:
-            merged = list(self.user_characters)
-            for a in DEFAULT_ANIMALS:
-                if a not in merged:
-                    merged.append(a)
-            merged = sorted(set(merged), key=lambda s: s.lower())
-            self.user_characters = merged
-            save_user_characters(merged)
-            # refresh combo boxes
-            self.character1Box.clear(); self.character1Box.addItem("— None —"); self.character1Box.addItems(self.user_characters)
-            self.character2Box.clear(); self.character2Box.addItem("— None —"); self.character2Box.addItems(self.user_characters)
-            QMessageBox.information(self, "Characters", "Animals added to your list.")
-        except Exception as e:
-            try: QMessageBox.critical(self, "Characters", str(e))
-            except Exception: pass
-
 
     def _get_prompt_pid(self, obj, text):
         """Return a stable id for the selected prompt, using explicit id
