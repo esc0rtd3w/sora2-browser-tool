@@ -1039,11 +1039,19 @@ class Main(QMainWindow):
 
         # If this prompt has title/tags metadata, offer edits for them too
         new_tags = None
+        new_category = None
         if isinstance(obj, dict):
             cur_title = (obj.get("title") or new_title)
             t_title, ok_title = QInputDialog.getText(self, "Edit Title", "Title:", text=cur_title)
             if ok_title and (t_title or "").strip():
                 new_title = t_title.strip()
+            cur_category = (obj.get("category") or "User")
+            t_cat, ok_cat = QInputDialog.getText(self, "Edit Category", "Category:", text=cur_category)
+            if ok_cat and (t_cat or "").strip():
+                new_category = t_cat.strip()
+            else:
+                new_category = cur_category
+
 
             cur_tags = obj.get("tags")
             if isinstance(cur_tags, (list, tuple)):
@@ -1072,6 +1080,8 @@ class Main(QMainWindow):
                 if match:
                     p["text"] = new_text
                     p["title"] = new_title
+                    if new_category is not None:
+                        p["category"] = new_category
                     if new_tags is not None:
                         p["tags"] = new_tags
                     updated = True
