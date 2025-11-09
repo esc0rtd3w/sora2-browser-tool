@@ -917,448 +917,762 @@
       "id": "entrance",
       "title": "Entrance",
       "category": "Core",
-      "tags": ["arena", "duo", "finishers", "pyro"],
+      "tags": [
+        "arena",
+        "duo",
+        "finishers",
+        "pyro"
+      ],
       "text": "Write an over-the-top ring entrance package for \"\" & \"\".\nInclude titantron graphics, pyro beats, signature taunts, and a short mic burst from each.\nInvent 2–3 finisher names themed to their legacies.\nRUNTIME: \"\" . { \"\" } HARD RULES: historically respectful; no living people; avoid real brands/songs.\nEnd with a shoutable 4–8 word tag."
     },
     {
       "id": "fish",
       "title": "Fish",
       "category": "Core",
-      "tags": ["arena", "banter", "comedy", "fish-out-of-water"],
+      "tags": [
+        "arena",
+        "banter",
+        "comedy",
+        "fish-out-of-water"
+      ],
       "text": "Write a fish-out-of-water comedy vignette in an arena where \"\" and \"\" are in unlikely roles (merch booth, commentary desk, backstage cooking show).\nBeat order: establishing shot, A speaks (3–5 lines), B speaks (3–5 lines), sight-gag, one-liner closer.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "debate",
       "title": "Debate",
       "category": "Core",
-      "tags": ["crowd", "mic", "rebuttals", "showdown"],
+      "tags": [
+        "crowd",
+        "mic",
+        "rebuttals",
+        "showdown"
+      ],
       "text": "Write an epic arena debate showdown between \"\" and \"\" with pumped crowd (lights, chants, cameras).\nOpenings (5–6 punchy lines each), 4–5 rebuttal volleys, then comedic handshake or staredown.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "duet",
       "title": "Duet",
       "category": "Core",
-      "tags": ["crowd", "music", "performance", "theatrical"],
+      "tags": [
+        "crowd",
+        "music",
+        "performance",
+        "theatrical"
+      ],
       "text": "Write a battle-of-the-bands / performance clash where \"\" and \"\" trade musical/theatrical motifs as a wrestling angle.\nInclude stage directions, crowd reactions, and two invented move/performance names that riff on their legacies.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "docu",
       "title": "Docu",
       "category": "Core",
-      "tags": ["3-act", "documentary", "hype", "tag-team"],
+      "tags": [
+        "3-act",
+        "documentary",
+        "hype",
+        "tag-team"
+      ],
       "text": "Write a sports-documentary hype package about \"\" & \"\" becoming a tag team, with gravelly VO, archival-style flashes, and an accelerating score.\nInclude 3-act beats: origin spark, early clash, united mission.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "montage",
       "title": "Montage",
       "category": "Core",
-      "tags": ["lights", "sfx", "shots", "training"],
+      "tags": [
+        "lights",
+        "sfx",
+        "shots",
+        "training"
+      ],
       "text": "Write a shot-listed training/hype montage for \"\" & \"\" with escalating drills, crowd teases, and a final bell.\nUse single-line shots: [SHOT] description; sprinkle [SFX] and [LIGHTS].\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "commentary",
       "title": "Commentary",
       "category": "Core",
-      "tags": ["banter", "desk", "match", "plug"],
+      "tags": [
+        "banter",
+        "desk",
+        "match",
+        "plug"
+      ],
       "text": "Write a color commentary desk segment with \"\" & \"\" bantering while a chaotic match unfolds ringside.\nGive each 5–6 nimble quips, one misunderstanding gag, and a hot plug for the main event (generic, no brands).\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "bobross_guest_portrait",
       "title": "Bobross Guest Portrait",
       "category": "Bob Ross",
-      "tags": ["bob-ross", "portrait", "studio", "wholesome"],
+      "tags": [
+        "bob-ross",
+        "portrait",
+        "studio",
+        "wholesome"
+      ],
       "text": "CAST: Bob Ross — Soft-spoken TV painter; calm encouragement.; \"\" — \"\".\nSET: Cozy studio, easel at frame-left; guest sits on a chair at frame-right.\nFORMAT (enforce):\n- [WIDE] Palette tap; gentle intro from Bob Ross.\n- [TWO-SHOT] \"\": 1–2 lighthearted lines about posing.\n- [CUT-IN] Brush swish; Bob Ross offers soothing guidance and a happy accident joke.\n- [PING-PONG] Short back-and-forth banter (2–3 exchanges).\n- [FINALE] Reveal the portrait; mutual smiles; soft chuckle.\nDIALOGUE: Keep voices in-character; warm, kind humor; no brands or real songs.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "bobross_multiverse_duo",
       "title": "Bobross Multiverse Duo",
       "category": "Bob Ross",
-      "tags": ["banter", "bob-ross", "multiverse", "surreal"],
+      "tags": [
+        "banter",
+        "bob-ross",
+        "multiverse",
+        "surreal"
+      ],
       "text": "CAST: Bob Ross — Kind, serene mentor; happy little trees.; Bob Ross — A parallel Bob—slightly different cadence.\nSET: Studio folds into a multi-dimensional space; frames within frames.\nFORMAT (enforce):\n- [WIDE] Palette clink; painter greets guest Bob.\n- [SPLIT-FRAME] Tiny portals show rapid variations of their banter across universes.\n- [PING-PONG] 3–4 quick exchanges riffing on \"happy accidents\" and mirrored brushstrokes.\n- [CASCADE] Snapshots of alternate Bobs nodding in approval (no brands/songs).\n- [FINALE] Reveal a surreal portrait containing nested portraits of Bob Ross.\nDIALOGUE: Gentle, humorous, supportive; stay true to persona.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "bobross_crowd_multiverse",
       "title": "Bobross Crowd Multiverse",
       "category": "Bob Ross",
-      "tags": ["bob-ross", "crowd", "multiverse", "outdoors"],
+      "tags": [
+        "bob-ross",
+        "crowd",
+        "multiverse",
+        "outdoors"
+      ],
       "text": "CAST: Bob Ross (primary painter) and Bob Ross (guest), plus a crowd of hundreds of Bob Ross variants painting outdoors.\nSET: Open meadow; easels forming concentric rings; soft breeze; birds (generic).\nFORMAT (enforce):\n- [AERIAL] A sea of afros and easels; gentle murmur of approval.\n- [TWO-SHOT] Primary painter Bob chats with guest Bob (2–3 lines each).\n- [CUTAWAYS] Different Bob variants add tiny details in parallel universes.\n- [MONTAGE] Rapid micro-interactions (3–4 beats) with playful, wholesome humor.\n- [FINALE] Pan out to reveal a multi-dimensional portrait blooming across the field.\nDIALOGUE: Wholesome, encouraging; character-faithful; avoid brands/songs.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "podcast_scene",
       "title": "Podcast Scene",
       "category": "Broadcast/Civic",
-      "tags": ["banter", "dialogue", "podcast", "studio"],
+      "tags": [
+        "banter",
+        "dialogue",
+        "podcast",
+        "studio"
+      ],
       "text": "FORMAT (enforce):\n- TITLE: Catchy podcast episode title with a hint at the twist.\n- SETTING: Sound-treated studio; close mics; cozy lighting; cups of coffee.\n- HOST: \"\" — \"\"\n- GUEST: \"\" — \"\"\n- DIALOGUE: Naturalistic, quick but clear; occasional (overlapping), (laughs).\n- BEATS: cold open hook -> topic pivot -> surprising reveal -> callback -> sign-off.\n- SHOT LIST: Establishing wide -> alternating close-ups -> two-shot for punchlines -> waveform LED cutaway.\n- AUDIO: Subtle foley (chair creak, page flips) and room tone.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "newscast_scene",
       "title": "Newscast Scene",
       "category": "Broadcast/Civic",
-      "tags": ["anchor", "b-roll", "field", "news"],
+      "tags": [
+        "anchor",
+        "b-roll",
+        "field",
+        "news"
+      ],
       "text": "FORMAT (enforce):\n- PROGRAM: Evening news; neutral lower-thirds; no real logos.\n- ANCHOR (studio): \"\" — \"\"\n- REPORTER (field): \"\" — \"\"\n- FLOW: headline cold open -> anchor intro -> live toss -> on-site color -> quick vox pop -> back to desk.\n- VISUALS: OTS graphics; satellite delay micro-pauses; IFB taps.\n- TONE: Crisp, factual, non-partisan.\n- B-ROLL: 3 short illustrative cutaways; describe generically where brands would appear.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "presidential_speaking",
       "title": "Presidential Speaking",
       "category": "Broadcast/Civic",
-      "tags": ["civic", "podium", "press", "speech"],
+      "tags": [
+        "civic",
+        "podium",
+        "press",
+        "speech"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Formal podium; flags; press pool; teleprompter glass.\n- SPEAKER: \"\" — \"\" — inclusive, civic tone; no campaign language.\n- SUPPORT: \"\" — \"\" — acts as press secretary/ASL interpreter/aide.\n- STRUCTURE: acknowledgement -> main initiative -> brief human story -> call to unity -> measured close.\n- DEVICES: light anaphora, triads; avoid slogans.\n- CUTAWAYS: respectful audience reactions; note-taking reporters; flashes; no chants.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "panel_roundtable",
       "title": "Panel Roundtable",
       "category": "Broadcast/Civic",
-      "tags": ["crosstalk", "moderation", "panel", "tv"],
+      "tags": [
+        "crosstalk",
+        "moderation",
+        "panel",
+        "tv"
+      ],
       "text": "FORMAT (enforce):\n- SETUP: Semi-circular desk; 4 seats; neutral backdrop; descriptive name placards.\n- MODERATOR: \"\" — \"\"\n- FEATURED GUEST: \"\" — \"\"\n- ADDITIONAL GUESTS: 2 invented neutral personas for contrast.\n- FLOW: moderator intro -> turn-taking -> brief clash -> clarifying summary -> lightning-round takeaways.\n- SPEAK TAGS: Prefix lines with SPEAKER:. Cross-talk short and readable.\n- CAMERA: opening wide -> singles for hot takes -> overhead for crosstalk -> closing wide with sting.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "podcast_remote",
       "title": "Podcast Remote",
       "category": "Broadcast/Civic",
-      "tags": ["banter", "lag", "podcast", "remote"],
+      "tags": [
+        "banter",
+        "lag",
+        "podcast",
+        "remote"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Split-screen remote call; clean backdrops; both on cardioid mics; subtle room tone.\n- HOST: \"\" — \"\"\n- REMOTE GUEST: \"\" — \"\"\n- BEATS: witty hello -> quick lag joke -> topic deep-dive -> surprising reveal -> neat sign-off.\n- CAMERA: Picture-in-picture reactions; occasional waveform overlay.\n- TECH: Minor latency moments, echo cancellation, and a brief reconnect beat.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "town_hall_qa",
       "title": "Town Hall Qa",
       "category": "Broadcast/Civic",
-      "tags": ["audience", "civic", "moderator", "qa"],
+      "tags": [
+        "audience",
+        "civic",
+        "moderator",
+        "qa"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Civic auditorium; neutral signage; hand-held audience mic; respectful crowd.\n- MODERATOR: \"\" — \"\"\n- SPEAKER: \"\" — \"\" — answers with inclusive, neutral language.\n- Q&A: 2 audience questions; concise, respectful answers.\n- SHOTS: Wide -> medium -> close-up; quick cutaways to nodding listeners.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "press_briefing",
       "title": "Press Briefing",
       "category": "Broadcast/Civic",
-      "tags": ["factual", "lectern", "press", "q&a"],
+      "tags": [
+        "factual",
+        "lectern",
+        "press",
+        "q&a"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Press room lectern; backdrop; note cards; flashes; no logos.\n- SPOKESPERSON: \"\" — \"\"\n- KEY STATEMENT: One clear paragraph with 2 supporting points.\n- Q&A: \"\" — \"\" — asks 2 concise questions; answers stay measured and factual.\n- STAGE DIRECTIONS: [PAUSE], [GLANCE TO NOTES], [NEXT QUESTION].\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "awards_presenter",
       "title": "Awards Presenter",
       "category": "Broadcast/Civic",
-      "tags": ["awards", "banter", "envelope", "stage"],
+      "tags": [
+        "awards",
+        "banter",
+        "envelope",
+        "stage"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Awards stage; glossy lights; envelope; orchestra sting cues.\n- PRESENTER A: \"\" — \"\"\n- PRESENTER B: \"\" — \"\"\n- PATTER: playful banter -> quick joke -> heartfelt note -> read nominees (generic) -> announce winner (generic).\n- SHOTS: Wide reveal -> singles for banter -> envelope close-up -> winner walk-up hint (generic).\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "museum_docent_tour",
       "title": "Museum Docent Tour",
       "category": "Broadcast/Civic",
-      "tags": ["docent", "gallery", "museum", "tour"],
+      "tags": [
+        "docent",
+        "gallery",
+        "museum",
+        "tour"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Quiet gallery; echoes; soft spotlights; placards (no real titles).\n- DOCENT: \"\" — \"\" — gives vivid but concise descriptions.\n- VISITOR: \"\" — \"\" — asks curious questions.\n- STOPS: 3 exhibits described generically (materials, era, motif).\n- CAMERA: Glidecam moves; cut-ins on textures; over-shoulder plaque reading.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "classroom_mini_lecture",
       "title": "Classroom Mini Lecture",
       "category": "Broadcast/Civic",
-      "tags": ["board", "classroom", "lecture", "students"],
+      "tags": [
+        "board",
+        "classroom",
+        "lecture",
+        "students"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Classroom; chalk squeak; projector hum; attentive students.\n- INSTRUCTOR: \"\" — \"\" — explains a concept clearly with an example.\n- STUDENT: \"\" — \"\" — asks one clarifying question.\n- BOARD: 3 concise lines; stepwise; readable.\n- CLOSER: one-sentence takeaway + light class reaction.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "hot_air_balloon_debate",
       "title": "Hot-Air Balloon Debate",
       "category": "Broadcast/Civic",
-      "tags": ["debate", "balloon", "moderator", "wind"],
+      "tags": [
+        "debate",
+        "balloon",
+        "moderator",
+        "wind"
+      ],
       "text": "FORMAT (enforce):\n- PROGRAM: Civil debate held mid-flight; wicker basket creaks; burner whoosh.\n- MODERATOR: \"\" — \"\".\n- GUESTS: \"\" — \"\" and \"\" — \"\".\n- FLOW: opening positions -> two rebuttal passes -> closing statements timed between burner bursts.\n- CAMERA: Cutaways to drifting clouds; neutral lower-thirds; no logos.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "underwater_chess_commentary",
       "title": "Underwater Chess Commentary",
       "category": "Broadcast/Civic",
-      "tags": ["sports", "commentary", "underwater", "slow-motion"],
+      "tags": [
+        "sports",
+        "commentary",
+        "underwater",
+        "slow-motion"
+      ],
       "text": "FORMAT (enforce):\n- PROGRAM: Live commentary from a pool; snorkel mics; chessboard in a sealed case.\n- COMMENTATOR: \"\" — \"\".\n- ANALYST: \"\" — \"\".\n- FLOW: opening theory -> 3 submerged tactical beats -> replay with bubbly telestrator.\n- STAGE DIRECTIONS: (glub), [PAUSE], [NOD]. No brands/logos.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "podcast_remote_persona",
       "title": "Podcast Remote Persona",
       "category": "Persona Variants",
-      "tags": ["persona", "podcast", "remote"],
+      "tags": [
+        "persona",
+        "podcast",
+        "remote"
+      ],
       "text": "FORMAT (enforce):\n- Roles: Create a HOST persona and a REMOTE GUEST persona with contrasting yet complementary expertise (invent names).\n- Keep all brand references generic.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "town_hall_qa_persona",
       "title": "Town Hall Qa Persona",
       "category": "Persona Variants",
-      "tags": ["civic", "persona", "qa"],
+      "tags": [
+        "civic",
+        "persona",
+        "qa"
+      ],
       "text": "FORMAT (enforce):\n- Roles: Create a MODERATOR and a SPEAKER persona; audience personas ask neutral, concise questions (invent names).\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "press_briefing_persona",
       "title": "Press Briefing Persona",
       "category": "Persona Variants",
-      "tags": ["briefing", "persona", "press"],
+      "tags": [
+        "briefing",
+        "persona",
+        "press"
+      ],
       "text": "FORMAT (enforce):\n- Roles: Persona for spokesperson and reporter; neutral, factual tone; no brands/logos.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "awards_presenter_persona",
       "title": "Awards Presenter Persona",
       "category": "Persona Variants",
-      "tags": ["awards", "banter", "persona"],
+      "tags": [
+        "awards",
+        "banter",
+        "persona"
+      ],
       "text": "FORMAT (enforce):\n- Roles: Two presenter personas with playful chemistry; nominees and winner described generically.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "museum_docent_tour_persona",
       "title": "Museum Docent Tour Persona",
       "category": "Persona Variants",
-      "tags": ["museum", "persona", "tour"],
+      "tags": [
+        "museum",
+        "persona",
+        "tour"
+      ],
       "text": "FORMAT (enforce):\n- Roles: Create a DOCENT persona and a VISITOR persona; exhibits described generically, no real titles.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "classroom_mini_lecture_persona",
       "title": "Classroom Mini Lecture Persona",
       "category": "Persona Variants",
-      "tags": ["classroom", "lecture", "persona"],
+      "tags": [
+        "classroom",
+        "lecture",
+        "persona"
+      ],
       "text": "FORMAT (enforce):\n- Roles: Create an INSTRUCTOR persona and a STUDENT persona; clear board notes; one clarifying question.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "surreal_travelogue",
       "title": "Surreal Travelogue",
       "category": "Stylized/Genre",
-      "tags": ["duo", "impossible", "surreal", "travel"],
+      "tags": [
+        "duo",
+        "impossible",
+        "surreal",
+        "travel"
+      ],
       "text": "VOICE: \"\" — dreamy, hyperbolic travel host; \"\" — sardonic sidekick; ping-pong narration.\nFORMAT:\n- COLD OPEN: A location reveal that shouldn’t exist (e.g., a city built on the back of a moving whale).\n- STOPS: 3 impossible attractions; each with a one-line local legend.\n- CUTAWAYS: Ultra-brief sensory flashes in parentheses.\n- BUTTON: Souvenir gag that breaks the laws of physics.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "noir_detective_monologue",
       "title": "Noir Detective Monologue",
       "category": "Stylized/Genre",
-      "tags": ["metaphor", "monologue", "noir", "rain"],
+      "tags": [
+        "metaphor",
+        "monologue",
+        "noir",
+        "rain"
+      ],
       "text": "VOICE: Hard-boiled narrator; second-person addresses to a rainy city.\nFORMAT:\n- OPEN: Desk lamp halo; cigarette plume described non-glamorously.\n- CASE: 3 clue beats; one red herring; one gut-punch metaphor.\n- MEET: \"\" walks in; \"\" follows—shadow on shadow.\n- BUTTON: Last-line sting; neon flicker.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "retro_infomercial",
       "title": "Retro Infomercial",
       "category": "Stylized/Genre",
-      "tags": ["camp", "gadget", "infomercial", "retro"],
+      "tags": [
+        "camp",
+        "gadget",
+        "infomercial",
+        "retro"
+      ],
       "text": "SCENARIO: 1980s-style infomercial for a wildly unnecessary household gadget.\nFORMAT:\n- HOSTS: Over-caffeinated duo doing contrived demos.\n- PROBLEM MONTAGE: 4 black-and-white “before” vignettes.\n- MIRACLE FIX: Gadget solves them with campy transitions.\n- FINE PRINT: One long, comedic disclaimer line.\n- CTA: Euphoric but non-commercial phrasing (no pricing).\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "space_mission_control",
       "title": "Space Mission Control",
       "category": "Stylized/Genre",
-      "tags": ["checklist", "mission", "space", "tension"],
+      "tags": [
+        "checklist",
+        "mission",
+        "space",
+        "tension"
+      ],
       "text": "SCENARIO: Tense but successful mission control sequence; launch to critical event.\nFORMAT (enforce):\n- ROLES: Guidance, CAPCOM, Flight Director; crisp callouts.\n- CHECKS: Short go/no-go roll; cross-checks; telemetry spikes noted.\n- CUTS: Split screens; gloved hands; generic badges (no brands/gov logos).\n- BUTTON: Cheer that stays professional.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "food_ad",
       "title": "Food Ad",
       "category": "Stylized/Genre",
-      "tags": ["food", "macro", "product", "spot"],
+      "tags": [
+        "food",
+        "macro",
+        "product",
+        "spot"
+      ],
       "text": "SCENARIO: Stylish product spot featuring \"\".\nFORMAT:\n- HERO SHOTS: Slow motion pour/sizzle/tear; macro textures; abstract backdrops.\n- TASTE VO: \"\" delivers 2 vivid flavor lines; \"\" counters with 2 complementary lines.\n- DISCLAIMER: No endorsements; generic language only.\n- BUTTON: A playful non-slogan tag.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "taste_test",
       "title": "Taste Test",
       "category": "Stylized/Genre",
-      "tags": ["blind", "food", "host", "split-screen"],
+      "tags": [
+        "blind",
+        "food",
+        "host",
+        "split-screen"
+      ],
       "text": "SCENARIO: Split-screen blind taste test between two generic brands.\nFORMAT:\n1) [INTRO] Host frames it as friendly and non-definitive.\n2) [A FIRST SIP] \"\" : 2–3 precise sensory notes.\n3) [B FIRST SIP] \"\" : 2–3 complementary/contrasting notes.\n4) [BRAND PERSONA BEAT] silent/minimal nods; outfit colors & subtle logo-styled details emphasized.\n5) [DECISION] friendly wrap-up with subjective, non-definitive preference.\nRUNTIME: \"\" . { \"\" }\nUse short, cinematic lines; no endorsements/pricing."
     },
     {
       "id": "food_ad_persona",
       "title": "Food Ad Persona",
       "category": "Stylized/Genre",
-      "tags": ["food", "macro", "persona", "product"],
+      "tags": [
+        "food",
+        "macro",
+        "persona",
+        "product"
+      ],
       "text": "SCENARIO: Stylish product spot featuring a Fictional Brand Persona.\nBrand Persona — \"\" (wearing \"\", \"\"; vibe: \"\").\nFORMAT:\n- HERO SHOTS: Slow motion pour/sizzle/tear; macro textures; abstract backdrops.\n- TASTE VO: \"\" delivers 2 vivid flavor lines; \"\" counters with 2 complementary lines.\n- DISCLAIMER: No endorsements; generic language only.\n- BUTTON: A playful non-slogan tag.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "taste_test_persona",
       "title": "Taste Test Persona",
       "category": "Stylized/Genre",
-      "tags": ["blind", "food", "persona", "split-screen"],
+      "tags": [
+        "blind",
+        "food",
+        "persona",
+        "split-screen"
+      ],
       "text": "SCENARIO: Split-screen blind taste test between two generic brands.\nBrand Persona — \"\" (wearing \"\", \"\"; vibe: \"\").\nFORMAT:\n1) [INTRO] Host frames it as friendly and non-definitive.\n2) [A FIRST SIP] \"\" : 2–3 precise sensory notes.\n3) [B FIRST SIP] \"\" : 2–3 complementary/contrasting notes.\n4) [BRAND PERSONA BEAT] silent/minimal nods; outfit colors & subtle logo-styled details emphasized.\n5) [DECISION] friendly wrap-up with subjective, non-definitive preference.\nRUNTIME: \"\" . { \"\" }\nUse short, cinematic lines; no endorsements/pricing."
     },
     {
       "id": "antarctic_barbershop",
       "title": "Antarctic Barbershop",
       "category": "Stylized/Genre",
-      "tags": ["cold", "clippers", "station", "small-talk"],
+      "tags": [
+        "cold",
+        "clippers",
+        "station",
+        "small-talk"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Antarctic research station rec room; buzzing trimmer; foggy window; generic patches.\n- BARBER: \"\" — \"\".\n- CLIENT: \"\" — \"\".\n- FLOW: cape swish -> weather small talk -> 3 snip beats -> philosophical detour -> mirror reveal with beanie.\n- SAFETY: Gloves described; breath clouds.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "submarine_tea_ceremony",
       "title": "Submarine Tea Ceremony",
       "category": "Stylized/Genre",
-      "tags": ["tea", "submarine", "ritual", "sonar"],
+      "tags": [
+        "tea",
+        "submarine",
+        "ritual",
+        "sonar"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Submarine galley; low hum; gentle tilt; sonar ping.\n- HOST: \"\" — \"\".\n- GUEST: \"\" — \"\".\n- RITUAL: heat -> pour -> pause -> reflect; 4 minimal lines each; steam described poetically once.\n- BUTTON: Calm toast during a distant depth-charge that doesn’t rattle them.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "volcano_karaoke",
       "title": "Volcano Karaoke",
       "category": "Stylized/Genre",
-      "tags": ["karaoke", "science", "duet", "spectacle"],
+      "tags": [
+        "karaoke",
+        "science",
+        "duet",
+        "spectacle"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Safe overlook near an active volcano; rumble; ash-pink sky; protective gear.\n- HOST: \"\" — \"\".\n- GUEST: \"\" — \"\".\n- FLOW: safety briefing -> two verses -> call-and-response bridge timed to eruptions (generic backing track described).\n- BUTTON: Lava glow lights a perfect encore bow.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "astronaut_pharaoh_museum_sleepover",
       "title": "Astronaut & Pharaoh Museum Sleepover",
       "category": "Stylized/Genre",
-      "tags": ["night", "museum", "unlikely", "buddy"],
+      "tags": [
+        "night",
+        "museum",
+        "unlikely",
+        "buddy"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: After-hours museum; star projector; sarcophagus case; no real artifacts named.\n- CAST: \"\" — \"\"; \"\" — \"\".\n- BEATS: flashlight tour -> myth vs physics debate -> pact to protect the gift shop camel statue.\n- BUTTON: Security cam captures a dignified thumbs-up.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "train_station_speed_portraits",
       "title": "Train Station Speed Portraits",
       "category": "Stylized/Genre",
-      "tags": ["portrait", "station", "timer", "banter"],
+      "tags": [
+        "portrait",
+        "station",
+        "timer",
+        "banter"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Busy station bench; flip clock; PA chimes.\n- ARTIST: \"\" — \"\".\n- SITTER: \"\" — \"\".\n- BEATS: 60-second sketch -> 3 fast questions -> reveal timed with departing train whoosh.\n- BUTTON: The sketch looks like both of them.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "time_travel_lost_and_found",
       "title": "Time-Travel Lost & Found",
       "category": "Stylized/Genre",
-      "tags": ["time-travel", "counter", "tickets", "montage"],
+      "tags": [
+        "time-travel",
+        "counter",
+        "tickets",
+        "montage"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Lost-and-found counter that serves all centuries; ticket system; bell ding.\n- CLERK: \"\" — \"\".\n- CUSTOMERS: 4 micro-visits from wildly different eras (one line each).\n- GAGS: mismatched claim stubs; polite anachronisms; one heartwarming return.\n- BUTTON: The clerk pockets a note addressed from tomorrow.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "mall_cop_chase",
       "title": "Mall Cop Chase",
       "category": "Fun & Cool",
-      "tags": ["chase", "comedy", "mall", "security"],
+      "tags": [
+        "chase",
+        "comedy",
+        "mall",
+        "security"
+      ],
       "text": "SCENARIO: Overdramatic mall security chase through a food court.\nFORMAT:\n  - COLD OPEN: Security cam text overlay + dramatic slow‑mo fry spill.\n  - DIALOGUE: \"\" (rookie mall cop) vs \"\" (alleged pretzel bandit). Rapid exchanges, whistle blasts, absurd PA announcements.\n  - GAGS: 3 escalating sight gags (e.g., mobility scooter drift, pretzel‑tongs nunchucks, inflatable mascot tackle).\n  - BUTTON: Freeze‑frame citation written like a movie poster tagline.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "awkward_first_date_speedrun",
       "title": "Awkward First Date Speedrun",
       "category": "Fun & Cool",
-      "tags": ["comedy", "date", "hud", "speedrun"],
+      "tags": [
+        "comedy",
+        "date",
+        "hud",
+        "speedrun"
+      ],
       "text": "SCENARIO: A first date performed like a video‑game speedrun.\nFORMAT:\n  - HUD: Minimal on‑screen timers/checkpoints described in brackets.\n  - DIALOGUE: Staccato, polite chaos; glitch‑skip small talk; any % PB energy.\n  - SPLITS: 4 micro‑sections (Meet, Order, Vulnerable Overshare, Goodbye) with comedic time saves.\n  - FAILSTATE: 1 hilarious soft‑reset (spilled drink, wrong name, etc.).\n  - COMMENTARY: A deadpan announcer calls out ‘gold splits.’\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "time_travel_customer_support",
       "title": "Time Travel Customer Support",
       "category": "Fun & Cool",
-      "tags": ["calls", "comedy", "support", "time-travel"],
+      "tags": [
+        "calls",
+        "comedy",
+        "support",
+        "time-travel"
+      ],
       "text": "SCENARIO: A customer support line that takes calls from different centuries.\nFORMAT:\n  - CAST: \"\" (support rep) + \"\" (time‑displaced caller of the minute).\n  - QUEUE: 4 ultra‑short calls (medieval scribe, 1920s inventor, far‑future teen, Paleolithic hunter).\n  - ISSUE CARDS: Each call has a one‑line ‘ticket title’ and a quirky resolution.\n  - HOLD MUSIC: Describe it humorously once.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "heist_planning_groupchat",
       "title": "Heist Planning Groupchat",
       "category": "Fun & Cool",
-      "tags": ["groupchat", "heist", "low-stakes", "twist"],
+      "tags": [
+        "groupchat",
+        "heist",
+        "low-stakes",
+        "twist"
+      ],
       "text": "SCENARIO: A chaotic group chat planning an absurdly low‑stakes heist (e.g., rescuing a beloved office plant).\nFORMAT:\n  - UI: Messages labeled with usernames; occasional sticker/gif descriptions in brackets.\n  - THREADS: 3 sub‑threads (blueprints, disguises, alibi).\n  - TWIST: A helpful janitor quietly does the heist mid-chat.\n  - BUTTON: A triumphant ‘mission accomplished’ typo.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "cooking_show_chaos_mode",
       "title": "Cooking Show Chaos Mode",
       "category": "Fun & Cool",
-      "tags": ["assistant", "chaos", "cooking", "host"],
+      "tags": [
+        "assistant",
+        "chaos",
+        "cooking",
+        "host"
+      ],
       "text": "SCENARIO: A cooking show where every step goes off the rails but still works out.\nFORMAT:\n  - HOST: \"\" tries to keep it together; \"\" is the chaotic assistant.\n  - RECIPE: 5 micro-steps; one accidental ingredient that becomes the signature.\n  - GAGS: 3 sight gags with utensils/appliances.\n  - BUTTON: Perfect-looking dish with one insane garnish.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "office_printer_exorcism",
       "title": "Office Printer Exorcism",
       "category": "Fun & Cool",
-      "tags": ["exorcism", "it", "office", "printer"],
+      "tags": [
+        "exorcism",
+        "it",
+        "office",
+        "printer"
+      ],
       "text": "SCENARIO: An office exorcism for a haunted printer.\nFORMAT:\n  - CAST: \"\" (IT ‘priest’) + \"\" (panicked project manager) + one timid intern.\n  - RITUAL: 4 escalating steps (turn it off/on, sprinkle toner, chant driver versions, slap the tray).\n  - MANIFESTATION: The printer spits out an ominous but helpful flowchart.\n  - BUTTON: The ghost now handles weekly reports.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "pet_translator_infomercial",
       "title": "Pet Translator Infomercial",
       "category": "Fun & Cool",
-      "tags": ["gadget", "infomercial", "late-night", "pets"],
+      "tags": [
+        "gadget",
+        "infomercial",
+        "late-night",
+        "pets"
+      ],
       "text": "SCENARIO: Late‑night infomercial for a gadget that translates pet thoughts.\nFORMAT:\n  - HOSTS: Duo banter, rapid cuts, mock testimonials (dog, cat, turtle).\n  - FEATURES: 5 ridiculous bullet points; one honest limitation.\n  - DISCLAIMER: Comically long micro‑print line.\n  - CALL TO ACTION: Euphoric but non‑commercial phrasing (no pricing).\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "medieval_open_mic",
       "title": "Medieval Open Mic",
       "category": "Fun & Cool",
-      "tags": ["acts", "medieval", "open-mic", "tavern"],
+      "tags": [
+        "acts",
+        "medieval",
+        "open-mic",
+        "tavern"
+      ],
       "text": "SCENARIO: Open mic night at a medieval tavern.\nFORMAT:\n  - HOST: Bell‑ringing MC introduces acts.\n  - LINEUP: 4 micro‑acts (bard one‑liner, herbalist slam poem, squire prop comedy, monk beatbox).\n  - CROWD: Peasants heckle in adorable archaic burns.\n  - FINAL: Dragon shows up as supportive stagehand.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "haunted_house_listing",
       "title": "Haunted House Listing",
       "category": "Fun & Cool",
-      "tags": ["ghosts", "haunted", "listing", "real-estate"],
+      "tags": [
+        "ghosts",
+        "haunted",
+        "listing",
+        "real-estate"
+      ],
       "text": "SCENARIO: Real‑estate listing for a charmingly haunted house.\nFORMAT:\n  - HEADER: Listing title + square footage + century built.\n  - FEATURES: 6 bullets mixing cozy details with ghostly perks.\n  - DISCLOSURES: 3 playful ‘known phenomena’.\n  - TAGLINE: A punny closer an agent would love.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "tiny_superhero_job_interview",
       "title": "Tiny Superhero Job Interview",
       "category": "Fun & Cool",
-      "tags": ["interview", "superhero", "tests", "tiny"],
+      "tags": [
+        "interview",
+        "superhero",
+        "tests",
+        "tiny"
+      ],
       "text": "SCENARIO: A job interview where the candidate is a thumb‑sized superhero.\nFORMAT:\n  - PANEL: Interviewer (\"\") vs micro‑hero (\"\").\n  - TASKS: 3 absurd practical tests (lift a stapler, navigate coffee foam, rescue a crumb).\n  - ACCOMMODATIONS: Creative workplace adjustments.\n  - OFFER: A sincere, funny closing line.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "treehouse_summit",
       "title": "Treehouse Summit",
       "category": "Fun & Cool",
-      "tags": ["diplomacy", "treehouse", "odd-couple", "banter"],
+      "tags": [
+        "diplomacy",
+        "treehouse",
+        "odd-couple",
+        "banter"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Kid-sized treehouse with squeaky rope ladder; hand-drawn world map; no logos.\n- CAST: \"\" — \"\"; \"\" — \"\".\n- AGENDA: 3 hilariously serious items discussed using snack foods as props.\n- GAGS: 2 ladder creaks; 1 acorn interruption.\n- BUTTON: Both sign a peace accord on a juice box.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "roller_coaster_book_club",
       "title": "Roller-Coaster Book Club",
       "category": "Fun & Cool",
-      "tags": ["book-club", "coaster", "screams", "rapid-fire"],
+      "tags": [
+        "book-club",
+        "coaster",
+        "screams",
+        "rapid-fire"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Rolling coaster car; wind; safety bar clicks; generic amusement signs (no brands).\n- HOST: \"\" — \"\".\n- GUEST: \"\" — \"\".\n- BEATS: intro at climb -> 3 critique points during drops -> breathless thematic conclusion on the brake run.\n- ASIDES: Parenthetical (WHEE!) and (page flip lost) moments.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "crosswalk_dance_off",
       "title": "Crosswalk Dance-Off",
       "category": "Fun & Cool",
-      "tags": ["dance", "crosswalk", "whistle", "showdown"],
+      "tags": [
+        "dance",
+        "crosswalk",
+        "whistle",
+        "showdown"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Busy city crosswalk; countdown chirp; walk signal.\n- CAST: \"\" — \"\"; \"\" — \"\".\n- ROUNDS: 3 dance volleys lasting exactly a crosswalk timer each.\n- CUTAWAYS: Bystander reactions; stroller bob; confused pigeon.\n- BUTTON: Mutual bow before the light turns red.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "tandem_bicycle_therapy",
       "title": "Tandem Bicycle Therapy",
       "category": "Fun & Cool",
-      "tags": ["therapy", "bicycle", "outdoor", "dialogue"],
+      "tags": [
+        "therapy",
+        "bicycle",
+        "outdoor",
+        "dialogue"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Park path on a tandem bike; bell dings; gentle breeze.\n- THERAPIST (rear seat): \"\" — \"\".\n- CLIENT (front seat): \"\" — \"\".\n- STEPS: warm-up question -> childhood hill climb -> breakthrough at the fountain -> celebratory glide.\n- SAFETY: Helmets; no brands.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "library_whisper_cook_off",
       "title": "Library Whisper Cook-Off",
       "category": "Fun & Cool",
-      "tags": ["cooking", "library", "whisper", "competition"],
+      "tags": [
+        "cooking",
+        "library",
+        "whisper",
+        "competition"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Quiet library table turned test kitchen; hush signs; rolling cart oven.\n- CHEF A: \"\" — \"\".\n- CHEF B: \"\" — \"\".\n- RULES: All instructions whispered; 3 stealthy courses; one squeaky spatula jump-scare.\n- JUDGE: One librarian’s single raised eyebrow determines the winner.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "moonwalkers_at_the_dmv",
       "title": "Moonwalkers at the DMV",
       "category": "Fun & Cool",
-      "tags": ["dmv", "dance", "queue", "deadpan"],
+      "tags": [
+        "dmv",
+        "dance",
+        "queue",
+        "deadpan"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: DMV queue; neutral posters; overhead flicker.\n- APPLICANT: \"\" — \"\".\n- CLERK: \"\" — \"\".\n- BEATS: form confusion -> impromptu moonwalk demonstration -> 2 crowd chuckles -> stamped approval with flourish.\n- DISCLAIMER: Generic forms; no brands/logos.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "opera_at_the_car_wash",
       "title": "Opera at the Car Wash",
       "category": "Fun & Cool",
-      "tags": ["opera", "car-wash", "suds", "duet"],
+      "tags": [
+        "opera",
+        "car-wash",
+        "suds",
+        "duet"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Drive-through car wash; colored suds; rotating brushes; generic signage.\n- SINGER A: \"\" — \"\".\n- SINGER B: \"\" — \"\".\n- FLOW: aria in pre-soak -> counterpoint in rinse -> high note during dryer blast.\n- BUTTON: Fogged glass reveals a perfect smiley face.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "chess_on_a_trampoline",
       "title": "Chess on a Trampoline",
       "category": "Fun & Cool",
-      "tags": ["chess", "trampoline", "strategy", "comedy"],
+      "tags": [
+        "chess",
+        "trampoline",
+        "strategy",
+        "comedy"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Backyard trampoline; velcroed pieces; safety net; no brands.\n- PLAYER 1: \"\" — \"\".\n- PLAYER 2: \"\" — \"\".\n- ROUNDS: opening bounce -> midgame gambit -> endgame leap; 2 witty asides each mid-air.\n- BUTTON: Checkmate delivered upside-down.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "museum_audio_guide_mix_up",
       "title": "Museum Audio Guide Mix-up",
       "category": "Fun & Cool",
-      "tags": ["museum", "audio", "mixup", "banter"],
+      "tags": [
+        "museum",
+        "audio",
+        "mixup",
+        "banter"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Quiet gallery; two audio guides swapped; plaques generic.\n- VISITOR A: \"\" — \"\".\n- VISITOR B: \"\" — \"\".\n- GAGS: 3 mismatched descriptions that somehow fit; 1 shared aha moment.\n- BUTTON: They keep the wrong guides on purpose.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "courtroom_potluck",
       "title": "Courtroom Potluck",
       "category": "Fun & Cool",
-      "tags": ["courtroom", "potluck", "objection", "comedy"],
+      "tags": [
+        "courtroom",
+        "potluck",
+        "objection",
+        "comedy"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Courtroom at lunch; covered dishes on evidence table.\n- JUDGE: \"\" — \"\".\n- COUNSEL: \"\" — \"\".\n- BEATS: opening snackement -> exhibit A (casserole) -> objection sustained for raisins -> unanimous verdict: seconds.\n- BUTTON: Gavels replaced with serving spoons.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "cave_tour_powerpoint",
       "title": "Cave Tour PowerPoint",
       "category": "Fun & Cool",
-      "tags": ["cave", "projector", "tour", "deadpan"],
+      "tags": [
+        "cave",
+        "projector",
+        "tour",
+        "deadpan"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Underground cavern; portable projector on stalagmite; clicker beeps.\n- GUIDE: \"\" — \"\".\n- GUEST: \"\" — \"\".\n- SLIDES: 5 bullet slides with overly corporate phrasing about stalactites; one accidental bat cameo.\n- BUTTON: Applause echoes 3 beats too long.\nRUNTIME: \"\" . { \"\" }"
     },
     {
       "id": "rooftop_greenhouse_mediation",
       "title": "Rooftop Greenhouse Mediation",
       "category": "Fun & Cool",
-      "tags": ["mediation", "plants", "sprinklers", "calm"],
+      "tags": [
+        "mediation",
+        "plants",
+        "sprinklers",
+        "calm"
+      ],
       "text": "FORMAT (enforce):\n- SETTING: Rooftop greenhouse; mist; city hum; watering wand.\n- MEDIATOR: \"\" — \"\".\n- PARTY A: \"\" — \"\".\n- PARTY B: \"\" — \"\".\n- STEPS: rules -> 2 grievances each -> mutual potting of a tiny plant -> signed truce label.\n- BUTTON: Sprinklers kick on like confetti.\nRUNTIME: \"\" . { \"\" }"
     },
     {
