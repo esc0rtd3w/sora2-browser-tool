@@ -340,6 +340,10 @@ class Main(QMainWindow):
         self.act_aggr_spoof = m_tools_cap.addAction("Aggressive Spoof"); self.act_aggr_spoof.setCheckable(True)
         self.act_aggr_spoof.toggled.connect(self.toggle_aggressive_spoof)
 
+        m_tools.addSeparator()
+        a_update = m_tools.addAction("Check for Updates…")
+        a_update.triggered.connect(self.check_for_updates)
+
         m_sites = menubar.addMenu("Sites")
         a_sites_restore = m_sites.addAction("Restore Default 100…"); a_sites_restore.triggered.connect(self.restore_default_sites)
         a_sites_clear = m_sites.addAction("Clear User Sites…"); a_sites_clear.triggered.connect(self.clear_user_sites)
@@ -395,10 +399,13 @@ class Main(QMainWindow):
         self.btnToggle = QPushButton("Top/Bottom"); self.btnToggle.clicked.connect(self.switch_orientation)
         self.btnExternal = QPushButton("Open Externally"); self.btnExternal.clicked.connect(self.open_external)
         self.btnOpenMedia = QPushButton("Open Media"); self.btnOpenMedia.clicked.connect(self.open_media_externally)
+        self.btnUpdate = QPushButton("Update"); self.btnUpdate.clicked.connect(self.check_for_updates)
 
         row.addWidget(self.uaPreset); row.addWidget(self.uaCustom,1)
         for b in (self.btnApplyUA,self.btnRandomUA,self.btnResetUA,self.btnToggle,self.btnExternal,self.btnOpenMedia):
             row.addWidget(b)
+        row.addWidget(self.btnUpdate)
+
         la_v.addWidget(bar)
 
         # Quick open
@@ -1272,6 +1279,10 @@ class Main(QMainWindow):
             label = next((k for k,v in PRESET_UAS.items() if v==self.current_ua), "Custom")
             self.cfg["window"]["user_agent"] = label if label!="Custom" else self.current_ua
             save_config(self.cfg)
+            try:
+                self.save_splitter_sizes()
+            except Exception:
+                pass
         except Exception:
             pass
         super().closeEvent(e)
@@ -1296,17 +1307,97 @@ class Main(QMainWindow):
         self.refresh_prompts_list()
         self.statusBar().showMessage("Prompt removed.", 3000)
 
+    def check_for_updates(self):
+        """
+        Checks GitHub for a newer version via the master JSON.
+        If newer, asks for confirmation, downloads new .py and .json into
+        current script directory, backs up existing as .bak, and restarts.
+        """
+        import os, sys, json, re, tempfile
+        from PyQt6.QtWidgets import QMessageBox, QApplication
+        from PyQt6.QtCore import QProcess
+        import urllib.request
+
+        REMOTE_JSON = "https://raw.githubusercontent.com/esc0rtd3w/sora2-browser-tool/refs/heads/main/sora2_config.json"
+        REMOTE_PY   = "https://raw.githubusercontent.com/esc0rtd3w/sora2-browser-tool/refs/heads/main/sora2-browser-tool.py"
+
+        def _parse_ver(v):
+            nums = [int(x) for x in re.findall(r"\\d+", str(v))]
+            return nums or [0]
+
+        try:
+            # 1) Fetch remote config to read version
+            with urllib.request.urlopen(REMOTE_JSON, timeout=15) as r:
+                remote_cfg = json.loads(r.read().decode("utf-8", "ignore"))
+            remote_ver = remote_cfg.get("version", "0.0.0")
+            local_ver  = (self.cfg or {}).get("version", "0.0.0")
+
+            if _parse_ver(remote_ver) <= _parse_ver(local_ver):
+                QMessageBox.information(self, "Updates", f"You're up to date.\\nLocal: {local_ver}\\nRemote: {remote_ver}")
+                return
+
+            # 2) Confirm update
+            resp = QMessageBox.question(
+                self, "Update Available",
+                f"A new version is available.\\n\\nCurrent: {local_ver}\\nAvailable: {remote_ver}\\n\\nDownload, install, and restart now?",
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                QMessageBox.StandardButton.Yes
+            )
+            if resp != QMessageBox.StandardButton.Yes:
+                return
+
+            base_dir  = os.path.dirname(os.path.abspath(__file__))
+            py_path   = os.path.join(base_dir, os.path.basename(__file__))
+            json_path = CONFIG_PATH
+
+            # 3) Download new files to temp
+            tmp_py   = py_path + ".new"
+            tmp_json = json_path + ".new"
+
+            urllib.request.urlretrieve(REMOTE_PY, tmp_py)
+            with open(tmp_json, "w", encoding="utf-8") as f:
+                json.dump(remote_cfg, f, indent=2, ensure_ascii=False)
+
+            # 4) Backup and replace
+            backup_py   = py_path + ".bak"
+            backup_json = json_path + ".bak"
+            try:
+                if os.path.exists(py_path):
+                    os.replace(py_path, backup_py)
+            except Exception:
+                pass
+            try:
+                if os.path.exists(json_path):
+                    os.replace(json_path, backup_json)
+            except Exception:
+                pass
+
+            alt_py_path = None
+            try:
+                os.replace(tmp_py, py_path)
+            except Exception:
+                # fallback if replacing running file fails (Windows)
+                alt_py_path = os.path.join(base_dir, "sora2-browser-tool-updated.py")
+                os.replace(tmp_py, alt_py_path)
+
+            os.replace(tmp_json, json_path)
+
+            # 5) Restart
+            QMessageBox.information(self, "Update Installed", "Update installed. The app will now restart.")
+            exe = sys.executable
+            argv = sys.argv[:]
+            if alt_py_path:
+                argv[0] = alt_py_path
+            QProcess.startDetached(exe, argv)
+            QApplication.quit()
+
+        except Exception as e:
+            QMessageBox.critical(self, "Update Error", f"Failed to update:\\n{e}")
+
 def main():
     app = QApplication(sys.argv)
     w = Main(); w.show()
     sys.exit(app.exec())
-
-    def closeEvent(self, event):
-        try:
-            self.save_splitter_sizes()
-        except Exception:
-            pass
-        super().closeEvent(event)
 
 if __name__ == "__main__":
     main()
