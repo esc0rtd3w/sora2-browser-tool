@@ -1322,7 +1322,7 @@ class Main(QMainWindow):
         REMOTE_PY   = "https://raw.githubusercontent.com/esc0rtd3w/sora2-browser-tool/refs/heads/main/sora2-browser-tool.py"
 
         def _parse_ver(v):
-            nums = [int(x) for x in re.findall(r"\\d+", str(v))]
+            nums = [int(x) for x in re.findall(r"\d+", str(v))]
             return nums or [0]
 
         try:
@@ -1333,13 +1333,13 @@ class Main(QMainWindow):
             local_ver  = (self.cfg or {}).get("version", "0.0.0")
 
             if _parse_ver(remote_ver) <= _parse_ver(local_ver):
-                QMessageBox.information(self, "Updates", f"You're up to date.\\nLocal: {local_ver}\\nRemote: {remote_ver}")
+                QMessageBox.information(self, "Updates", f"You're up to date.\nLocal: {local_ver}\nRemote: {remote_ver}")
                 return
 
             # 2) Confirm update
             resp = QMessageBox.question(
                 self, "Update Available",
-                f"A new version is available.\\n\\nCurrent: {local_ver}\\nAvailable: {remote_ver}\\n\\nDownload, install, and restart now?",
+                f"A new version is available.\\n\\nCurrent: {local_ver}\nAvailable: {remote_ver}\n\nDownload, install, and restart now?",
                 QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
                 QMessageBox.StandardButton.Yes
             )
@@ -1392,7 +1392,7 @@ class Main(QMainWindow):
             QApplication.quit()
 
         except Exception as e:
-            QMessageBox.critical(self, "Update Error", f"Failed to update:\\n{e}")
+            QMessageBox.critical(self, "Update Error", f"Failed to update:\n{e}")
 
 def main():
     app = QApplication(sys.argv)
