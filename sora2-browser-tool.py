@@ -339,11 +339,6 @@ class Main(QMainWindow):
         a_fix_cf = m_tools_cap.addAction("Fix Captcha (Cloudflare)"); a_fix_cf.triggered.connect(self.fix_captcha_cloudflare)
         self.act_aggr_spoof = m_tools_cap.addAction("Aggressive Spoof"); self.act_aggr_spoof.setCheckable(True)
         self.act_aggr_spoof.toggled.connect(self.toggle_aggressive_spoof)
-
-        m_tools.addSeparator()
-        a_update = m_tools.addAction("Check for Updates…")
-        a_update.triggered.connect(self.check_for_updates)
-
         m_sites = menubar.addMenu("Sites")
         a_sites_restore = m_sites.addAction("Restore Default 100…"); a_sites_restore.triggered.connect(self.restore_default_sites)
         a_sites_clear = m_sites.addAction("Clear User Sites…"); a_sites_clear.triggered.connect(self.clear_user_sites)
@@ -366,6 +361,7 @@ class Main(QMainWindow):
         m_characters.addSeparator()
         a_ep = m_characters.addAction("Export…"); a_ep.triggered.connect(self.export_characters_dialog)
         a_ip = m_characters.addAction("Import…"); a_ip.triggered.connect(self.import_characters_dialog)
+        a_update = menubar.addAction("Check For Updates"); a_update.triggered.connect(self.check_for_updates)
 
 
 
@@ -399,14 +395,10 @@ class Main(QMainWindow):
         self.btnToggle = QPushButton("Top/Bottom"); self.btnToggle.clicked.connect(self.switch_orientation)
         self.btnExternal = QPushButton("Open Externally"); self.btnExternal.clicked.connect(self.open_external)
         self.btnOpenMedia = QPushButton("Open Media"); self.btnOpenMedia.clicked.connect(self.open_media_externally)
-        self.btnUpdate = QPushButton("Update"); self.btnUpdate.clicked.connect(self.check_for_updates)
-
         row.addWidget(self.uaPreset); row.addWidget(self.uaCustom,1)
         for b in (self.btnApplyUA,self.btnRandomUA,self.btnResetUA,self.btnToggle,self.btnExternal,self.btnOpenMedia):
             row.addWidget(b)
-        row.addWidget(self.btnUpdate)
-
-        la_v.addWidget(bar)
+            la_v.addWidget(bar)
 
         # Quick open
         quick = QWidget(); qrow = QHBoxLayout(quick); qrow.setContentsMargins(0,0,0,0); qrow.setSpacing(8)
