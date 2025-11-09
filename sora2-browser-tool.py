@@ -1305,7 +1305,7 @@ class Main(QMainWindow):
         If newer, asks for confirmation, downloads new .py and .json into
         current script directory, backs up existing as .bak, and restarts.
         """
-        import os, sys, json, re, tempfile
+        import os, sys, json, re, tempfile, shutil
         from PyQt6.QtWidgets import QMessageBox, QApplication
         from PyQt6.QtCore import QProcess
         import urllib.request
@@ -1331,7 +1331,7 @@ class Main(QMainWindow):
             # 2) Confirm update
             resp = QMessageBox.question(
                 self, "Update Available",
-                f"A new version is available.\\n\\nCurrent: {local_ver}\nAvailable: {remote_ver}\n\nDownload, install, and restart now?",
+                f"A new version is available.\n\nCurrent: {local_ver}\nAvailable: {remote_ver}\n\nDownload and install now? (You must restart manually afterward to use new version)",
                 QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
                 QMessageBox.StandardButton.Yes
             )
@@ -1350,38 +1350,34 @@ class Main(QMainWindow):
             with open(tmp_json, "w", encoding="utf-8") as f:
                 json.dump(remote_cfg, f, indent=2, ensure_ascii=False)
 
-            # 4) Backup and replace
-            backup_py   = py_path + ".bak"
-            backup_json = json_path + ".bak"
+            # 4) Backup (copy) into versioned directory and replace
+            # Make a folder with the current local version and copy existing files
+            backup_dir_base = os.path.join(base_dir, str(local_ver))
+            backup_dir = backup_dir_base
+            idx = 1
+            while os.path.exists(backup_dir):
+                backup_dir = f"{backup_dir_base}_{idx}"
+                idx += 1
             try:
-                if os.path.exists(py_path):
-                    os.replace(py_path, backup_py)
+                os.makedirs(backup_dir, exist_ok=True)
+                try:
+                    shutil.copy2(py_path, os.path.join(backup_dir, os.path.basename(py_path)))
+                except Exception:
+                    pass
+                try:
+                    shutil.copy2(json_path, os.path.join(backup_dir, os.path.basename(json_path)))
+                except Exception:
+                    pass
             except Exception:
                 pass
-            try:
-                if os.path.exists(json_path):
-                    os.replace(json_path, backup_json)
-            except Exception:
-                pass
-
-            alt_py_path = None
             try:
                 os.replace(tmp_py, py_path)
-            except Exception:
-                # fallback if replacing running file fails (Windows)
-                alt_py_path = os.path.join(base_dir, "sora2-browser-tool-updated.py")
-                os.replace(tmp_py, alt_py_path)
-
+            except Exception as e:
+                QMessageBox.warning(self, "Update Install", f"Could not replace the running file. Please close the app and run Check For Updates again. Error: {e}")
+                return
             os.replace(tmp_json, json_path)
 
-            # 5) Restart
-            QMessageBox.information(self, "Update Installed", "Update installed. The app will now restart.")
-            exe = sys.executable
-            argv = sys.argv[:]
-            if alt_py_path:
-                argv[0] = alt_py_path
-            QProcess.startDetached(exe, argv)
-            QApplication.quit()
+            QMessageBox.information(self, "Update Installed", "Update installed. Please close and relaunch the app to finish applying it.")
 
         except Exception as e:
             QMessageBox.critical(self, "Update Error", f"Failed to update:\n{e}")
