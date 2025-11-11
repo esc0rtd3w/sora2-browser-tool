@@ -1877,6 +1877,55 @@
       "category": "Custom",
       "tags": [],
       "text": "Create a infomercial scene with Billy Mays and the product he is selling is \"\". Make it funny wand entertaining. Make it like an authentic infomerical that was aired."
+    },
+    {
+      "id": "custom0030",
+      "title": "Selfie Montage: Funny 1st Person",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistic selfie montage scene with \"\". The camera angle should be from the perspective of the phone being used to record. Make it funny and entertaining. Choose the theme, but make it related to the character"
+    },
+    {
+      "id": "custom0031",
+      "title": "Selfie Montage: Funny",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistic selfie montage scene with \"\". Make it funny and entertaining. Choose the theme, but make it related to the character"
+    },
+    {
+      "id": "custom0032",
+      "title": "Thrift Store Browsing: Entertaining",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistic scene at the thrift store where\"\" is going through some items. Make it entertaining and the character should check things out that are related to their real life counterpart"
+    },
+    {
+      "id": "custom0033",
+      "title": "The Flintstones: Cartoon Scene Funny (1 Character)",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a cartoon styled scene in the art style and theme of \"The Flintstones\". The character in the scene is \"\". The scene should be randomly chosen and should be funny and entertaining. The character, world, environment, and feel should match the original as close as possible, while not infringing on content."
+    },
+    {
+      "id": "custom0034",
+      "title": "The Flintstones: Cartoon Scene Funny (2 Characters)",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a cartoon styled scene in the art style and theme of \"The Flintstones\". The characters in the scene are \"\" and \"\". The scene should be randomly chosen and should be funny and entertaining. The characters, world, environment, and feel should match the original as close as possible, while not infringing on content."
+    },
+    {
+      "id": "custom0035",
+      "title": "The Flintstones: Cartoon Scene Funny (3 Characters)",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a cartoon styled scene in the art style and theme of \"The Flintstones\". The characters in the scene are \"\", \"\", and \"\". The scene should be randomly chosen and should be funny and entertaining. The characters, world, environment, and feel should match the original as close as possible, while not infringing on content."
+    },
+    {
+      "id": "custom0036",
+      "title": "The Flintstones: Cartoon Scene Funny (4 Characters)",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a cartoon styled scene in the art style and theme of \"The Flintstones\". The characters in the scene are \"\", \"\", \"\", and \"\". The scene should be randomly chosen and should be funny and entertaining. The characters, world, environment, and feel should match the original as close as possible, while not infringing on content."
     }
   ],
   "characters": [
@@ -2246,6 +2295,7 @@
     "Heron",
     "Herring",
     "Hippopotamus",
+    "Hitler",
     "Homer",
     "Hornet",
     "Horse",
@@ -2462,6 +2512,7 @@
     "Opossum",
     "Orangutan",
     "Orson Welles",
+    "Osama Bin-Laden",
     "Oscar Wilde",
     "Ostrich",
     "Otter",
