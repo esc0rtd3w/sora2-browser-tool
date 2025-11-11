@@ -345,6 +345,7 @@ class Main(QMainWindow):
         a_fix_cf = m_tools_cap.addAction("Fix Captcha (Cloudflare)"); a_fix_cf.triggered.connect(self.fix_captcha_cloudflare)
         self.act_aggr_spoof = m_tools_cap.addAction("Aggressive Spoof"); self.act_aggr_spoof.setCheckable(True)
         self.act_aggr_spoof.toggled.connect(self.toggle_aggressive_spoof)
+        
         m_sites = menubar.addMenu("Sites")
         a_sites_restore = m_sites.addAction("Restore Default 100…"); a_sites_restore.triggered.connect(self.restore_default_sites)
         a_sites_clear = m_sites.addAction("Clear User Sites…"); a_sites_clear.triggered.connect(self.clear_user_sites)
@@ -361,12 +362,14 @@ class Main(QMainWindow):
         a_p_clear = m_prompts.addAction("Clear User Prompts…"); a_p_clear.triggered.connect(self.clear_user_prompts)
         a_p_export = m_prompts.addAction("Export…"); a_p_export.triggered.connect(self.export_prompts_dialog)
         a_p_import = m_prompts.addAction("Import…"); a_p_import.triggered.connect(self.import_prompts_dialog)
+        
         m_characters = menubar.addMenu("Characters")
         a_rp = m_characters.addAction("Restore Default Characters…"); a_rp.triggered.connect(self.restore_default_characters)
         a_cp = m_characters.addAction("Clear User Characters…"); a_cp.triggered.connect(self.clear_user_characters)
         m_characters.addSeparator()
         a_ep = m_characters.addAction("Export…"); a_ep.triggered.connect(self.export_characters_dialog)
         a_ip = m_characters.addAction("Import…"); a_ip.triggered.connect(self.import_characters_dialog)
+        a_clear_data = menubar.addAction("Clear Site Data"); a_clear_data.triggered.connect(self.clear_site_data)
         a_update = menubar.addAction("Check For Updates"); a_update.triggered.connect(self.check_for_updates)
 
 
@@ -641,6 +644,7 @@ class Main(QMainWindow):
         if br and br.url().isValid():
             br.reload()
         self.statusBar().showMessage("Cleared cookies; reloaded active tab.", 4000)
+        
     def on_download(self, item):
         downloads = pathlib.Path.home() / "Downloads"
         downloads.mkdir(parents=True, exist_ok=True)
@@ -749,6 +753,7 @@ class Main(QMainWindow):
         url = br.url().toString() if (br and br.url().isValid()) else self.addr.text().strip()
         if url:
             webbrowser.open(url)
+            
     def open_media_externally(self):
         js = r"(()=>{const v=document.querySelector('video');return v?(v.currentSrc||v.src||''):'';})()"
         def cb(u):
@@ -759,6 +764,7 @@ class Main(QMainWindow):
         br = self.current_browser()
         if br:
             br.page().runJavaScript(js, cb)
+            
     def load_quick(self):
         u = self.quick.text().strip()
         if u:
@@ -767,11 +773,13 @@ class Main(QMainWindow):
         site = item.data(Qt.ItemDataRole.UserRole); u = site.get("url","")
         if u:
             self.open_url_in_new_tab(u)
+            
     def load_left_addr(self):
         u = self.addr.text().strip()
         br = self.current_browser()
         if u and br:
             br.setUrl(QUrl(u))
+            
     def refresh_sites_list(self):
         self.listw.clear()
         for site in self.user_sites:
@@ -1105,6 +1113,7 @@ class Main(QMainWindow):
                 if text and o.get("text") == text:
                     self.promptList.setCurrentItem(it)
                     return
+                    
     def add_prompt_dialog(self):
         text, ok = QInputDialog.getMultiLineText(self, "Add Prompt", "Prompt text:")
         if not ok or not text.strip():
@@ -1125,6 +1134,7 @@ class Main(QMainWindow):
         save_user_prompts(self.user_prompts)
         self.refresh_prompts_list()
         self.statusBar().showMessage("Prompt added.", 3000)
+        
     def save_splitter_sizes(self):
         try:
             sizes = self.promptsSplitter.sizes()
@@ -1435,6 +1445,73 @@ class Main(QMainWindow):
                 os._exit(0)
             except Exception:
                 return
+
+    def clear_site_data(self):
+        """Clear all site data (cookies, cache, local/session storage, indexedDB) and reload views."""
+        from PyQt6.QtWidgets import QMessageBox
+        import os, shutil
+
+        confirm = QMessageBox.question(
+            self, "Clear Site Data",
+            "This will clear cookies, cache, local/session storage, and IndexedDB for all sites. Continue?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.Yes
+        )
+        if confirm != QMessageBox.StandardButton.Yes:
+            return
+
+        try:
+            store = self.profile.cookieStore()
+            if store is not None:
+                store.deleteAllCookies()
+        except Exception:
+            pass
+
+        try:
+            self.profile.clearHttpCache()
+        except Exception:
+            pass
+
+        try:
+            storage_dir = self.profile.persistentStoragePath()
+        except Exception:
+            storage_dir = None
+        try:
+            if storage_dir and os.path.isdir(storage_dir):
+                for root, dirs, files in os.walk(storage_dir, topdown=False):
+                    for f in files:
+                        try: os.remove(os.path.join(root, f))
+                        except Exception: pass
+                    for d in dirs:
+                        try: shutil.rmtree(os.path.join(root, d), ignore_errors=True)
+                        except Exception: pass
+        except Exception:
+            pass
+
+        js = "(async function(){try{localStorage.clear();sessionStorage.clear();if(window.indexedDB&&indexedDB.databases){let dbs=await indexedDB.databases();for(const db of dbs){if(db&&db.name){try{indexedDB.deleteDatabase(db.name);}catch(e){}}}}catch(e){}})();"
+        try:
+            from PyQt6.QtWebEngineWidgets import QWebEngineView
+            for view in self.findChildren(QWebEngineView):
+                try:
+                    view.page().runJavaScript(js)
+                except Exception:
+                    pass
+        except Exception:
+            pass
+
+        try:
+            QMessageBox.information(self, "Site Data Cleared", "Site data cleared. Reloading open pages.")
+        except Exception:
+            pass
+        try:
+            from PyQt6.QtWebEngineWidgets import QWebEngineView
+            for view in self.findChildren(QWebEngineView):
+                try:
+                    view.reload()
+                except Exception:
+                    pass
+        except Exception:
+            pass
                 
     def check_for_updates(self):
         """Compare local version to remote, download .tmp files, and optionally auto-close."""
