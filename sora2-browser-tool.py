@@ -391,8 +391,8 @@ class Main(QMainWindow):
         row.addWidget(QLabel("URL:")); row.addWidget(self.addr,1)
 
         row.addWidget(QLabel("UA:"))
-        self.uaPreset = QComboBox(); self.uaPreset.addItems(list(PRESET_UAS.keys()))
-        preset_label = next((k for k,v in PRESET_UAS.items() if v==self.current_ua), "Chrome (Windows)")
+        self.uaPreset = QComboBox(); self.uaPreset.addItem('Default (Engine)'); self.uaPreset.addItems(list(PRESET_UAS.keys()))
+        preset_label = 'Default (Engine)' if self.current_ua == 'Default (Engine)' else next((k for k,v in PRESET_UAS.items() if v==self.current_ua), "Chrome (Windows)")
         self.uaPreset.setCurrentText(preset_label)
         self.uaCustom = QLineEdit(); self.uaCustom.setPlaceholderText("Custom UA…")
 
