@@ -1425,26 +1425,6 @@ class Main(QMainWindow):
                 return
 
             # Helper fallback (Windows file locks etc.)
-            helper_code = f'''# -*- coding: utf-8 -*-
-    import os, sys, time
-    base_dir = r"{base_dir}"
-    pairs = [
-        (os.path.join(base_dir, "sora2-browser-tool.py.tmp"), os.path.join(base_dir, "sora2-browser-tool.py")),
-        (os.path.join(base_dir, "sora2_config.json.tmp"), os.path.join(base_dir, "sora2_config.json")),
-    ]
-    for _ in range(200):
-        done = True
-        for src, dst in pairs:
-            if os.path.exists(src):
-                try:
-                    try: os.remove(dst)
-                    except Exception: pass
-                    os.replace(src, dst)
-                except Exception:
-                    done = False
-        if done: break
-        time.sleep(0.1)
-    '''
             try:
                 from PyQt6.QtCore import QProcess
                 tmp_dir = tempfile.gettempdir()
@@ -1455,6 +1435,7 @@ class Main(QMainWindow):
                 os._exit(0)
             except Exception:
                 return
+                
     def check_for_updates(self):
         """Compare local version to remote, download .tmp files, and optionally auto-close."""
         from PyQt6.QtWidgets import QMessageBox, QApplication
