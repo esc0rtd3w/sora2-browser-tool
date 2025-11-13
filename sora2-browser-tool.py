@@ -402,7 +402,7 @@ class Main(QMainWindow):
         row.addWidget(self.uaPreset); row.addWidget(self.uaCustom,1)
         for b in (self.btnApplyUA,self.btnRandomUA,self.btnResetUA,self.btnToggle,self.btnExternal,self.btnOpenMedia):
             row.addWidget(b)
-            la_v.addWidget(bar)
+        la_v.addWidget(bar)
 
         # Quick open
         quick = QWidget(); qrow = QHBoxLayout(quick); qrow.setContentsMargins(0,0,0,0); qrow.setSpacing(8)
@@ -528,7 +528,7 @@ class Main(QMainWindow):
         # align actions split with content split via pane_ratio
         self.actionsSplit.setSizes([int(1000*self.cfg['window'].get('pane_ratio',0.5)), int(1000*(1.0-self.cfg['window'].get('pane_ratio',0.5)))])
 
-        self.actionsSplit.setSizes([1100, 700])  # initial ratio; user can drag
+        #self.actionsSplit.setSizes([1100, 700])  # initial ratio; user can drag
 
         # === CONTENT splitter LEFT/RIGHT ===
         self.contentSplit = QSplitter(Qt.Orientation.Horizontal)
