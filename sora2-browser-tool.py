@@ -128,9 +128,7 @@ def save_user_sites(sites):
         return True
     except Exception:
         return False
-        return True
-    except Exception:
-        return False
+
 
 def load_or_init_user_prompts(default_prompts):
     """Load user prompts; if file missing or empty, seed with defaults and persist. Return the list."""
@@ -161,9 +159,7 @@ def save_user_prompts(prompts):
         return True
     except Exception:
         return False
-        return True
-    except Exception:
-        return False
+
 
 # --- Prompt helpers ---
 def _p_to_obj(p, idx=0):
@@ -1413,39 +1409,6 @@ class Main(QMainWindow):
         except Exception:
             # Ignore if helper creation fails; user can retry update.
             return
-
-            def try_swap():
-                ok = True
-                for src, dst in pairs:
-                    if os.path.exists(src):
-                        try:
-                            try:
-                                os.remove(dst)
-                            except Exception:
-                                pass
-                            os.replace(src, dst)
-                        except Exception:
-                            ok = False
-                return ok
-
-            if not any(os.path.exists(src) for src, _ in pairs):
-                return
-
-            if try_swap():
-                return
-
-            # Helper fallback (Windows file locks etc.)
-            try:
-                from PyQt6.QtCore import QProcess
-                tmp_dir = tempfile.gettempdir()
-                helper_path = os.path.join(tmp_dir, "sora2_apply_update.py")
-                with open(helper_path, "w", encoding="utf-8") as f:
-                    f.write(helper_code)
-                QProcess.startDetached(sys.executable, [helper_path])
-                os._exit(0)
-            except Exception:
-                return
-
     def clear_site_data(self):
         """Clear all site data (cookies, cache, local/session storage, indexedDB) and reload views."""
         from PyQt6.QtWidgets import QMessageBox
@@ -1514,121 +1477,84 @@ class Main(QMainWindow):
             pass
                 
     def check_for_updates(self):
-        """Compare local version to remote, download .tmp files, and optionally auto-close."""
-        from PyQt6.QtWidgets import QMessageBox, QApplication
-
+        """Check GitHub JSON for a newer version; if present, download .tmp files into script dir."""
         REMOTE_JSON = "https://raw.githubusercontent.com/esc0rtd3w/sora2-browser-tool/refs/heads/main/sora2_config.json"
         REMOTE_PY   = "https://raw.githubusercontent.com/esc0rtd3w/sora2-browser-tool/refs/heads/main/sora2-browser-tool.py"
 
+        from PyQt6.QtWidgets import QMessageBox, QApplication
+
         def _ver_tuple(v):
             import re as _re
+            # extract all ints; fallback [0] if nothing
             return tuple(int(x) for x in _re.findall(r"\d+", str(v)) or [0])
 
         try:
-            # Read remote config to get remote version
+            # Fetch remote config + version
             with urllib.request.urlopen(REMOTE_JSON, timeout=15) as r:
                 remote_cfg = json.loads(r.read().decode("utf-8", "ignore"))
             remote_ver = remote_cfg.get("version", "0.0.0")
             local_ver  = (self.cfg or {}).get("version", "0.0.0")
 
+            # Already up to date
             if _ver_tuple(remote_ver) <= _ver_tuple(local_ver):
-                QMessageBox.information(self, "Updates", f"You're up to date.\nLocal: {local_ver}\nRemote: {remote_ver}")
+                QMessageBox.information(
+                    self,
+                    "Check For Updates",
+                    f"You're up to date.\n\nLocal: {local_ver}\nRemote: {remote_ver}",
+                )
                 return
 
             # Ask to download
             resp = QMessageBox.question(
-                self, "Update Available",
-                f"A new version is available.\n\nCurrent: {local_ver}\nAvailable: {remote_ver}\n\nDownload now?",
+                self,
+                "Update Available",
+                (
+                    f"A new version is available.\n\n"
+                    f"Current: {local_ver}\n"
+                    f"Available: {remote_ver}\n\n"
+                    f"Download now?"
+                ),
                 QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-                QMessageBox.StandardButton.Yes
+                QMessageBox.StandardButton.Yes,
             )
             if resp != QMessageBox.StandardButton.Yes:
                 return
 
-            # Ask whether to auto-close after download completes (default YES)
+            # Ask whether to auto-close after download
             auto_close = QMessageBox.question(
-                self, "Close After Download?",
+                self,
+                "Close After Download?",
                 "Automatically close the app after the update files finish downloading? (Recommended)",
                 QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-                QMessageBox.StandardButton.Yes
+                QMessageBox.StandardButton.Yes,
             ) == QMessageBox.StandardButton.Yes
 
-            import os
-            base_dir  = os.path.dirname(os.path.abspath(__file__))
-            py_tmp    = os.path.join(base_dir, "sora2-browser-tool.py.tmp")
-            json_tmp  = os.path.join(base_dir, "sora2_config.json.tmp")
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            py_tmp   = os.path.join(base_dir, "sora2-browser-tool.py.tmp")
+            json_tmp = os.path.join(base_dir, "sora2_config.json.tmp")
 
-            # Download new files to *.tmp in current directory
+            # Download new files as .tmp
             urllib.request.urlretrieve(REMOTE_PY, py_tmp)
             with open(json_tmp, "w", encoding="utf-8") as f:
                 json.dump(remote_cfg, f, indent=2, ensure_ascii=False)
 
             if auto_close:
-                QMessageBox.information(self, "Update Downloaded",
-                                        "Update files downloaded. The app will close now. Relaunch to finish applying the update.")
+                QMessageBox.information(
+                    self,
+                    "Update Downloaded",
+                    "Update files downloaded.\n\n"
+                    "The app will close now. Relaunch to finish applying the update.",
+                )
                 QApplication.instance().quit()
             else:
-                QMessageBox.information(self, "Update Downloaded",
-                                        "Update files downloaded. On next launch, the update will apply automatically.")
+                QMessageBox.information(
+                    self,
+                    "Update Downloaded",
+                    "Update files downloaded.\n\n"
+                    "On next launch, the update will apply automatically.",
+                )
         except Exception as e:
             QMessageBox.critical(self, "Update Error", f"Failed to update:\n{e}")
-
-        def _ver_tuple(v):
-            import re as _re
-            return tuple(int(x) for x in _re.findall(r"\d+", str(v)) or [0])
-
-        try:
-            # Read remote config to get remote version
-            with urllib.request.urlopen(REMOTE_JSON, timeout=15) as r:
-                remote_cfg = json.loads(r.read().decode("utf-8", "ignore"))
-            remote_ver = remote_cfg.get("version", "0.0.0")
-            local_ver  = (self.cfg or {}).get("version", "0.0.0")
-
-            if _ver_tuple(remote_ver) <= _ver_tuple(local_ver):
-                from PyQt6.QtWidgets import QMessageBox
-                QMessageBox.information(self, "Updates", f"You're up to date.\nLocal: {local_ver}\nRemote: {remote_ver}")
-                return
-
-            # Ask to download
-            from PyQt6.QtWidgets import QMessageBox, QApplication
-            resp = QMessageBox.question(
-                self, "Update Available",
-                f"A new version is available.\n\nCurrent: {local_ver}\nAvailable: {remote_ver}\n\nDownload now?",
-                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-                QMessageBox.StandardButton.Yes
-            )
-            if resp != QMessageBox.StandardButton.Yes:
-                return
-
-            # Ask whether to auto-close after download completes (default YES)
-            auto_close = QMessageBox.question(
-                self, "Close After Download?",
-                "Automatically close the app after the update files finish downloading? (Recommended)",
-                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-                QMessageBox.StandardButton.Yes
-            ) == QMessageBox.StandardButton.Yes
-
-            import os
-            base_dir  = os.path.dirname(os.path.abspath(__file__))
-            py_tmp    = os.path.join(base_dir, "sora2-browser-tool.py.tmp")
-            json_tmp  = os.path.join(base_dir, "sora2_config.json.tmp")
-
-            # Download new files to *.tmp in current directory
-            urllib.request.urlretrieve(REMOTE_PY, py_tmp)
-            with open(json_tmp, "w", encoding="utf-8") as f:
-                json.dump(remote_cfg, f, indent=2, ensure_ascii=False)
-
-            if auto_close:
-                QMessageBox.information(self, "Update Downloaded",
-                                        "Update files downloaded. The app will close now. Relaunch to finish applying the update.")
-                QApplication.instance().quit()
-            else:
-                QMessageBox.information(self, "Update Downloaded",
-                                        "Update files downloaded. On next launch, the update will apply automatically.")
-        except Exception as e:
-            from PyQt6.QtWidgets import QMessageBox
-            QMessageBox.critical(self, "Update Error", f"Failed to update:\n{e}")
-
 def main():
     app = QApplication(sys.argv)
     w = Main(); w.show()
