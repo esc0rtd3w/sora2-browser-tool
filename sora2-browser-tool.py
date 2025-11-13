@@ -187,6 +187,30 @@ def _extract_categories(objs):
     return cats
 
 
+def _normalize_characters_cfg_list(chars):
+    objs = []
+    for c in chars or []:
+        if isinstance(c, dict):
+            name = (" ".join(str(c.get("name", "")).split())).strip()
+            cat = (" ".join(str(c.get("category", "Base")).split())).strip() or "Base"
+        else:
+            name = (" ".join(str(c).split())).strip()
+            cat = "Base"
+        if not name:
+            continue
+        objs.append({"name": name, "category": cat})
+    # dedupe by lowercased name, keep first
+    seen = set()
+    result = []
+    for o in objs:
+        key = o["name"].lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append(o)
+    return result
+
+
 
 def sanitize_character_name(name: str) -> str:
     s = re.sub(r"[^A-Za-z0-9 '\-]", "", str(name))
@@ -453,7 +477,13 @@ class Main(QMainWindow):
 
 
         self._prompt_objs = _normalize_prompts_list(self.user_prompts)
-        self.user_characters = load_or_init_user_characters(self.cfg.get("characters", []))
+        # Characters (with categories from config)
+        cfg_chars_raw = self.cfg.get("characters", [])
+        self.character_defs = _normalize_characters_cfg_list(cfg_chars_raw)
+        default_char_names = [c.get("name", "") for c in self.character_defs]
+        self.user_characters = load_or_init_user_characters(default_char_names)
+        # Build merged character objects (user list + config categories)
+        self._rebuild_character_objects()
 
         # --- Category + Character selectors ---
         characterRow = QHBoxLayout()
@@ -461,6 +491,11 @@ class Main(QMainWindow):
         self.categoryBox = QComboBox(); self.categoryBox.addItem("Show All")
         self.categoryBox.currentIndexChanged.connect(self.refresh_prompts_list)
         characterRow.addWidget(self.categoryBox)
+        characterRow.addSpacing(8)
+        characterRow.addWidget(QLabel("Char Category:"))
+        self.characterCategoryBox = QComboBox(); self.characterCategoryBox.addItem("Show All")
+        self.characterCategoryBox.currentIndexChanged.connect(self._reload_character_boxes)
+        characterRow.addWidget(self.characterCategoryBox)
         characterRow.addSpacing(12)
         lblP1 = QLabel("Character 1:"); lblP1.setStyleSheet("font-size: 11px;")
         characterRow.addWidget(lblP1)
@@ -1240,24 +1275,85 @@ class Main(QMainWindow):
         except Exception as e:
             QMessageBox.critical(self, "Import Error", str(e))
 
+    def _rebuild_character_objects(self):
+        """Rebuild internal character objects (name + category) from config + user list."""
+        defs = getattr(self, "character_defs", []) or []
+        # Map config names (casefolded) to category
+        lut = {}
+        for o in defs:
+            name = (o.get("name") or "").strip()
+            if not name:
+                continue
+            key = name.casefold()
+            if key not in lut:
+                lut[key] = {"name": name, "category": (o.get("category") or "Base")}
+        objs = []
+        seen = set()
+        for raw in getattr(self, "user_characters", []) or []:
+            name = (" ".join(str(raw).split())).strip()
+            if not name:
+                continue
+            key = name.casefold()
+            if key in seen:
+                continue
+            seen.add(key)
+            base = lut.get(key)
+            if base:
+                objs.append({"name": base["name"], "category": base.get("category") or "Base"})
+            else:
+                objs.append({"name": name, "category": "Base"})
+        self._character_objs = objs
+
     def _reload_character_boxes(self):
         p1 = self.character1Box.currentText() if self.character1Box.currentIndex() > 0 else None
         p2 = self.character2Box.currentText() if self.character2Box.currentIndex() > 0 else None
+
+        # Ensure character objects are up to date
+        if not hasattr(self, "_character_objs"):
+            self._rebuild_character_objects()
+
+        objs = getattr(self, "_character_objs", []) or []
+
+        # Update character category combo
+        selected_cat = "Show All"
+        if hasattr(self, "characterCategoryBox"):
+            cur = self.characterCategoryBox.currentText() if self.characterCategoryBox.currentIndex() >= 0 else "Show All"
+            cats = _extract_categories(objs)
+            self.characterCategoryBox.blockSignals(True)
+            self.characterCategoryBox.clear()
+            self.characterCategoryBox.addItem("Show All")
+            for c in cats:
+                self.characterCategoryBox.addItem(c)
+            idx = self.characterCategoryBox.findText(cur)
+            self.characterCategoryBox.setCurrentIndex(idx if idx >= 0 else 0)
+            self.characterCategoryBox.blockSignals(False)
+            selected_cat = self.characterCategoryBox.currentText() or "Show All"
+
+        # Build visible names based on selected category
+        if selected_cat != "Show All":
+            names = [o.get("name", "") for o in objs if (o.get("category") or "Base") == selected_cat]
+        else:
+            names = [o.get("name", "") for o in objs]
+        names = [n for n in names if n]
+
+        # Repopulate combo boxes
         for box in (self.character1Box, self.character2Box):
             box.blockSignals(True)
             box.clear()
             box.addItem("— None —")
-            for name in self.user_characters:
+            for name in names:
                 box.addItem(name)
             box.blockSignals(False)
-        if p1 and p1 in self.user_characters:
+
+        if p1 and p1 in names:
             self.character1Box.setCurrentText(p1)
         else:
             self.character1Box.setCurrentIndex(0)
-        if p2 and p2 in self.user_characters:
+        if p2 and p2 in names:
             self.character2Box.setCurrentText(p2)
         else:
             self.character2Box.setCurrentIndex(0)
+
 
 
 
