@@ -512,6 +512,11 @@ class Main(QMainWindow):
         characterRow.addWidget(self.character2Box)
         characterRow.addSpacing(8); self.keepNamesCheck = QCheckBox("Keep names"); self.keepNamesCheck.setChecked(True); characterRow.addWidget(self.keepNamesCheck)
         rp_v.addLayout(characterRow)
+        # Populate character category dropdown and boxes initially
+        try:
+            self._reload_character_boxes()
+        except Exception:
+            pass
         try:
             self.character1Box.setEditable(True); self.character2Box.setEditable(True)
             _c1 = QCompleter(self.user_characters, self.character1Box); _c1.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
@@ -1309,8 +1314,10 @@ class Main(QMainWindow):
         p2 = self.character2Box.currentText() if self.character2Box.currentIndex() > 0 else None
 
         # Ensure character objects are up to date
-        if not hasattr(self, "_character_objs"):
+        try:
             self._rebuild_character_objects()
+        except Exception:
+            self._character_objs = []
 
         objs = getattr(self, "_character_objs", []) or []
 
