@@ -35,7 +35,7 @@ from PyQt6.QtCore import Qt, QUrl, QSize
 from PyQt6.QtWidgets import (QTextEdit,
     QApplication, QMainWindow, QSplitter, QWidget, QVBoxLayout, QHBoxLayout,
     QListWidget, QListWidgetItem, QPushButton, QLineEdit, QComboBox, QLabel,
-    QMessageBox, QInputDialog, QTabWidget, QCheckBox, QCompleter
+    QMessageBox, QInputDialog, QTabWidget, QCheckBox, QCompleter, QFileDialog
 )
 from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineProfile
 from PyQt6.QtWebEngineWidgets import QWebEngineView
@@ -485,10 +485,9 @@ class Main(QMainWindow):
         characterRow.addSpacing(8); self.keepNamesCheck = QCheckBox("Keep names"); self.keepNamesCheck.setChecked(True); characterRow.addWidget(self.keepNamesCheck)
         rp_v.addLayout(characterRow)
         try:
-            from PyQt6.QtCore import Qt as _Qt
             self.character1Box.setEditable(True); self.character2Box.setEditable(True)
-            _c1 = QCompleter(self.user_characters, self.character1Box); _c1.setCaseSensitivity(_Qt.CaseSensitivity.CaseInsensitive)
-            _c2 = QCompleter(self.user_characters, self.character2Box); _c2.setCaseSensitivity(_Qt.CaseSensitivity.CaseInsensitive)
+            _c1 = QCompleter(self.user_characters, self.character1Box); _c1.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
+            _c2 = QCompleter(self.user_characters, self.character2Box); _c2.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
             self.character1Box.setCompleter(_c1); self.character2Box.setCompleter(_c2)
         except Exception:
             pass
@@ -1172,7 +1171,6 @@ class Main(QMainWindow):
 
     def export_prompts_dialog(self):
         try:
-            from PyQt6.QtWidgets import QFileDialog
             path, _ = QFileDialog.getSaveFileName(self, "Export Prompts", "sora2_user_prompts_export.json", "JSON Files (*.json)")
             if not path:
                 return
@@ -1184,7 +1182,6 @@ class Main(QMainWindow):
 
     def import_prompts_dialog(self):
         try:
-            from PyQt6.QtWidgets import QFileDialog
             path, _ = QFileDialog.getOpenFileName(self, "Import Prompts", "", "JSON Files (*.json)")
             if not path:
                 return
@@ -1221,7 +1218,6 @@ class Main(QMainWindow):
 
     def export_characters_dialog(self):
         try:
-            from PyQt6.QtWidgets import QFileDialog
             path, _ = QFileDialog.getSaveFileName(self, "Export Characters", "sora2_user_characters_export.json", "JSON Files (*.json)")
             if not path:
                 return
@@ -1233,7 +1229,6 @@ class Main(QMainWindow):
 
     def import_characters_dialog(self):
         try:
-            from PyQt6.QtWidgets import QFileDialog
             path, _ = QFileDialog.getOpenFileName(self, "Import Characters", "", "JSON Files (*.json)")
             if not path:
                 return
@@ -1339,8 +1334,7 @@ class Main(QMainWindow):
             except Exception:
                 pass
             try:
-                from PyQt6.QtWidgets import QMessageBox
-                QMessageBox.warning(self, "Update Error",
+                        QMessageBox.warning(self, "Update Error",
                                     "An incomplete update was detected and has been discarded.\nPlease run 'Check For Updates' again.")
             except Exception:
                 pass
@@ -1411,7 +1405,6 @@ class Main(QMainWindow):
             return
     def clear_site_data(self):
         """Clear all site data (cookies, cache, local/session storage, indexedDB) and reload views."""
-        from PyQt6.QtWidgets import QMessageBox
         import os, shutil
 
         confirm = QMessageBox.question(
@@ -1453,7 +1446,6 @@ class Main(QMainWindow):
 
         js = "(async function(){try{localStorage.clear();sessionStorage.clear();if(window.indexedDB&&indexedDB.databases){let dbs=await indexedDB.databases();for(const db of dbs){if(db&&db.name){try{indexedDB.deleteDatabase(db.name);}catch(e){}}}}catch(e){}})();"
         try:
-            from PyQt6.QtWebEngineWidgets import QWebEngineView
             for view in self.findChildren(QWebEngineView):
                 try:
                     view.page().runJavaScript(js)
@@ -1467,7 +1459,6 @@ class Main(QMainWindow):
         except Exception:
             pass
         try:
-            from PyQt6.QtWebEngineWidgets import QWebEngineView
             for view in self.findChildren(QWebEngineView):
                 try:
                     view.reload()
