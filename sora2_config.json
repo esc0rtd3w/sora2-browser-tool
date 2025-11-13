@@ -1,5 +1,5 @@
 {
-  "version": "1.2.1",
+  "version": "1.2.2",
   "window": {
     "width": 1920,
     "height": 1080,
@@ -2027,843 +2027,3354 @@
     }
   ],
   "characters": [
-    "Aardvark",
-    "Abel Tasman",
-    "Abraham Lincoln",
-    "Ada Lovelace",
-    "Adah Isaacs Menken",
-    "Aeschylus",
-    "Agatha Christie",
-    "Akbar the Great",
-    "Al Jolson",
-    "Alan Rickman",
-    "Alan Thicke",
-    "Alan Turing",
-    "Albatross",
-    "Albert Einstein",
-    "Aldous Huxley",
-    "Alessandro Volta",
-    "Alexander Borodin",
-    "Alexander Graham Bell",
-    "Alexander Hamilton",
-    "Alexander Pushkin",
-    "Alexander Scriabin",
-    "Alexander the Great",
-    "Alfred Russel Wallace",
-    "Alligator",
-    "Alpaca",
-    "Alvar Nunez Cabeza de Vaca",
-    "Alvaro de Mendana",
-    "Amelia Earhart",
-    "Amerigo Vespucci",
-    "Amilcare Ponchielli",
-    "Amy Winehouse",
-    "Anaconda",
-    "Andrew Jackson",
-    "Andrew Johnson",
-    "Andrew Weatherall",
-    "AndrMarie Ampre",
-    "Andy Warhol",
-    "Angelfish",
-    "Anna Pavlova",
-    "Ant",
-    "Anteater",
-    "Antelope",
-    "Anthony Bourdain",
-    "Antoine Lavoisier",
-    "Anton Bruckner",
-    "Anton Chekhov",
-    "Anton Yelchin",
-    "Antonie van Leeuwenhoek",
-    "Antonin Dvorak",
-    "Antonio Vivaldi",
-    "Arcangelo Corelli",
-    "Archimedes",
-    "Aretha Franklin",
-    "Aristophanes",
-    "Aristotle",
-    "Armadillo",
-    "Arthur C. Clarke",
-    "Arthur Conan Doyle",
-    "Arthur Sullivan",
-    "Ashoka",
-    "Attila the Hun",
-    "Audrey Hepburn",
-    "Auguste Rodin",
-    "Augustine",
-    "Augustus",
-    "Ava Gardner",
-    "Avicii Tim Bergling",
-    "Ayrton Senna",
-    "B.B. King",
-    "Baboon",
-    "Badger",
-    "Barracuda",
-    "Baruch Spinoza",
-    "Bat",
-    "Bear",
-    "Beaver",
-    "Bedrich Smetana",
-    "Bee",
-    "Beetle",
-    "Bela Lugosi",
-    "Benjamin Franklin",
-    "Benjamin Harrison",
-    "Bernhard Riemann",
-    "Bert Williams",
-    "Berthe Morisot",
-    "Bette Davis",
-    "Billie Holiday",
-    "Bison",
-    "Blaise Pascal",
-    "Boar",
-    "Bob Barker",
-    "Bob Marley",
-    "Bob Ross",
-    "Bobcat",
-    "Booker T. Washington",
-    "Bram Stoker",
-    "Brandon Lee",
-    "Bruce Lee",
-    "Buddy Holly",
-    "Buffalo",
-    "Buffalo Bill William F. Cody",
-    "Burger King",
-    "Buster Keaton",
-    "Butterfly",
-    "C. S. Lewis",
-    "Camel",
-    "Camille Pissarro",
-    "Camille Saint-Saens",
-    "Canary",
-    "Capybara",
-    "Caravaggio",
-    "Caribou",
-    "Carl Friedrich Gauss",
-    "Carl Sagan",
-    "Carp",
-    "Carrie Fisher",
-    "Cat",
-    "Caterpillar",
-    "Catfish",
-    "Catherine the Great",
-    "Cesar Franck",
-    "Chadwick Boseman",
-    "Charlemagne",
-    "Charles Babbage",
-    "Charles Baudelaire",
-    "Charles Dickens",
-    "Charles Lyell",
-    "Charlie Chaplin",
-    "Charlie Murphy",
-    "Charlie Parker",
-    "Charlotte Bronte",
-    "Cheerios",
-    "Cheetah",
-    "Cheetos",
-    "Chester A. Arthur",
-    "Chester Bennington",
-    "Chicken",
-    "Chief Joseph",
-    "Chien-Shiung Wu",
-    "Chimpanzee",
-    "Chinchilla",
-    "Chipmunk",
-    "Chris Cornell",
-    "Christiaan Huygens",
-    "Christopher Columbus",
-    "Christopher Hitchens",
-    "Chuck Berry",
-    "Cicero",
-    "Clara Bow",
-    "Clara Schumann",
-    "Clark Gable",
-    "Claude Debussy",
-    "Claude Monet",
-    "Claudius Ptolemy",
-    "Cleopatra VII",
-    "Cobra",
-    "Coca-Cola",
-    "Cockatoo",
-    "Cockroach",
-    "Cocoa Puffs",
-    "Cod",
-    "Condor",
-    "Confucius",
-    "Corn Flakes",
-    "Cougar",
-    "Coyote",
-    "Crab",
-    "Crane",
-    "Crazy Horse",
-    "Crocodile",
-    "Crow",
-    "Cuttlefish",
-    "Dan Leno",
-    "Daniel Webster",
-    "Dante Alighieri",
-    "David Bowie",
-    "David Hume",
-    "David Livingstone",
-    "Dean Martin",
-    "Deer",
-    "DeForest Kelley",
-    "Diego Maradona",
-    "Diego Rivera",
-    "Diego Velazquez",
-    "DiGiorno",
-    "Dingo",
-    "Django Reinhardt",
-    "Dmitri Mendeleev",
-    "Dog",
-    "Dolores O'Riordan",
-    "Dolphin",
-    "Domino's",
-    "Donkey",
-    "Doritos",
-    "Douglas Fairbanks",
-    "Dove",
-    "Dr Pepper",
-    "Dragonfly",
-    "Duck",
-    "Dunkin",
-    "Dwight D. Eisenhower",
-    "Eagle",
-    "Earthworm",
-    "Echidna",
-    "Eddie Foy Sr.",
-    "Eddie Van Halen",
-    "Edgar Allan Poe",
-    "Edgar Degas",
-    "Edith Piaf",
-    "Edmond Halley",
-    "Edouard Manet",
-    "Edvard Grieg",
-    "Edward Elgar",
-    "Edwin Booth",
-    "Eel",
-    "Egret",
-    "El Greco",
-    "Eleanora Duse",
-    "Elephant",
-    "Elie Metchnikoff",
-    "Elizabeth Cady Stanton",
-    "Elk",
-    "Elvis Presley",
-    "Emile Zola",
-    "Emilie du Chatelet",
-    "Emily Bronte",
-    "Emily Dickinson",
-    "Emmy Noether",
-    "Emu",
-    "Enrico Caruso",
-    "Enrico Fermi",
-    "Enrique Granados",
-    "Erasmus",
-    "Ernest Hemingway",
-    "Ernest Shackleton",
-    "Errol Flynn",
-    "Ethel Barrymore",
-    "Euclid",
-    "Eugene Delacroix",
-    "Euripides",
-    "Evariste Galois",
-    "F. Scott Fitzgerald",
-    "Falcon",
-    "Fanny Brice",
-    "Fanny Kemble",
-    "Fanta",
-    "Fats Domino",
-    "Fatty Arbuckle",
-    "Fay Templeton",
-    "Fela Kuti",
-    "Felix Mendelssohn",
-    "Ferdinand Magellan",
-    "Ferret",
-    "Finch",
-    "Firefly",
-    "Flamingo",
-    "Flea",
-    "Florence Nightingale",
-    "Florenz Ziegfeld",
-    "Fly",
-    "Fox",
-    "Francisco de Orellana",
-    "Francisco Goya",
-    "Francisco Pizarro",
-    "Frank Herbert",
-    "Frank Zappa",
-    "Franklin Pierce",
-    "Franz Kafka",
-    "Franz Liszt",
-    "Franz Schubert",
-    "Freddie Mercury",
-    "Frederic Chopin",
-    "Frederick Douglass",
-    "Frederick the Great",
-    "French's Mustard",
-    "Frida Kahlo",
-    "Friedrich Nietzsche",
-    "Friedrich Schiller",
-    "Frog",
-    "Froot Loops",
-    "Frosted Flakes",
-    "Fyodor Dostoevsky",
-    "G. F. Handel",
-    "Gabriel Faure",
-    "Gabriel Garcia Marquez",
-    "Gaby Deslys",
-    "Galileo Galilei",
-    "Gazelle",
-    "Gecko",
-    "Gene Roddenberry",
-    "Genghis Khan",
-    "Geoffrey Chaucer",
-    "Georg Ohm",
-    "George Arliss",
-    "George Formby Sr.",
-    "George Gershwin",
-    "George M. Cohan",
-    "George Michael",
-    "George Orwell",
-    "George Patton",
-    "George Stephenson",
-    "George Washington",
-    "Georges Bizet",
-    "Georges Seurat",
-    "Gerbil",
-    "Geronimo",
-    "Giacomo Meyerbeer",
-    "Giacomo Puccini",
-    "Gila Monster",
-    "Gilbert and Sullivan",
-    "Giraffe",
-    "Giuseppe Verdi",
-    "Glenn Miller",
-    "Goat",
-    "Goldfish",
-    "Goose",
-    "Gopher",
-    "Gorilla",
-    "Gottfried Leibniz",
-    "Grace Kelly",
-    "Grasshopper",
-    "Gregg Allman",
-    "Gregor Mendel",
-    "Greta Garbo",
-    "Griffin",
-    "Grouse",
-    "Grover Cleveland",
-    "Guinea Pig",
-    "Gull",
-    "Gustav Klimt",
-    "Gustav Mahler",
-    "Gustave Courbet",
-    "Gustave Flaubert",
-    "H. D. Thoreau",
-    "H. G. Wells",
-    "H. M. Stanley",
-    "H. P. Lovecraft",
-    "Hammurabi",
-    "Hamster",
-    "Hank Williams",
-    "Hanno the Navigator",
-    "Hare",
-    "Harper Lee",
-    "Harriet Tubman",
-    "Harry Houdini",
-    "Hawk",
-    "Heath Ledger",
-    "Hector Berlioz",
-    "Hedgehog",
-    "Heinrich Barth",
-    "Heinrich Hertz",
-    "Heinz Ketchup",
-    "Hellmann's Mayonnaise",
-    "Henri de Toulouse-Lautrec",
-    "Henri Matisse",
-    "Henri Poincare",
-    "Henrik Ibsen",
-    "Henry Cavendish",
-    "Henry Clay",
-    "Henry Hudson",
-    "Herman Melville",
-    "Hernan Cortes",
-    "Herodotus",
-    "Heron",
-    "Herring",
-    "Hippopotamus",
-    "Hitler",
-    "Homer",
-    "Hornet",
-    "Horse",
-    "Hot Pockets",
-    "Hummingbird",
-    "Humphrey Bogart",
-    "Humphry Davy",
-    "Hyena",
-    "Hypatia",
-    "I. K. Brunel",
-    "Ian Fleming",
-    "Ibis",
-    "Ibn Battuta",
-    "Ibn Fadlan",
-    "Ibn Jubayr",
-    "Ibn Khaldun",
-    "Iguana",
-    "Immanuel Kant",
-    "Impala",
-    "Ingrid Bergman",
-    "Isaac Albeniz",
-    "Isaac Asimov",
-    "Isaac Newton",
-    "Isabella Bird",
-    "Isadora Duncan",
-    "Ivan the Terrible",
-    "Ivan Turgenev",
-    "J. M. W. Turner",
-    "J. R. R. Tolkien",
-    "J. S. Bach",
-    "Jackal",
-    "Jacques Cartier",
-    "Jacques Offenbach",
-    "Jacques-Yves Cousteau",
-    "Jaguar",
-    "James A. Garfield",
-    "James Buchanan",
-    "James Clerk Maxwell",
-    "James Cook",
-    "James Dean",
-    "James Joyce",
-    "James K. Polk",
-    "James Madison",
-    "James McNeill Whistler",
-    "James Monroe",
-    "James Watt",
-    "Jan van Riebeeck",
-    "Jane Austen",
-    "Jay",
-    "Jean Sibelius",
-    "Jean-Jacques Rousseau",
-    "Jean-Paul Sartre",
-    "Jeff Buckley",
-    "Jellyfish",
-    "Jesus Christ",
-    "Joan of Arc",
-    "Johan Cruyff",
-    "Johann Pachelbel",
-    "Johann Strauss II",
-    "Johann Wolfgang von Goethe",
-    "Johannes Brahms",
-    "Johannes Kepler",
-    "Johannes Vermeer",
-    "John Adams",
-    "John Barrymore",
-    "John C. Calhoun",
-    "John Cabot",
-    "John Constable",
-    "John Dalton",
-    "John F. Kennedy",
-    "John Hanning Speke",
-    "John Jay",
-    "John Lennon",
-    "John Locke",
-    "John Milton",
-    "John Nash",
-    "John Philip Sousa",
-    "John Quincy Adams",
-    "John Stuart Mill",
-    "John Tyler",
-    "John von Neumann",
-    "John Wayne",
-    "John Wesley Powell",
-    "Jose de San Martin",
-    "Joseph Banks",
-    "Joseph Barbera",
-    "Joseph Fourier",
-    "Joseph Haydn",
-    "Joseph Henry",
-    "Joseph Priestley",
-    "Joseph-Louis Lagrange",
-    "Juan Ponce de Len",
-    "Jules Verne",
-    "Julius Caesar",
-    "Kaiser Wilhelm I",
-    "Kangaroo",
-    "Katherine Johnson",
-    "Katsushika Hokusai",
-    "Keith Flint",
-    "KFC",
-    "Kingfisher",
-    "KitKat",
-    "Kiwi",
-    "Koala",
-    "Kobe Bryant",
-    "Komodo Dragon",
-    "Krill",
-    "Kurt Cobain",
-    "L. v. Beethoven",
-    "Ladybug",
-    "Lamprey",
-    "Lark",
-    "Lay's",
-    "Lean Cuisine",
-    "Leif Erikson",
-    "Lemur",
-    "Leo Tolstoy",
-    "Leonard Cohen",
-    "Leonard Nimoy",
-    "Leonardo da Vinci",
-    "Leonhard Euler",
-    "Leopard",
-    "Leopold Godowsky",
-    "Lillian Gish",
-    "Lillian Russell",
-    "Lion",
-    "Lise Meitner",
-    "Little Richard",
-    "Lizard",
-    "Llama",
-    "Lobster",
-    "Locust",
-    "Loie Fuller",
-    "Lola Montez",
-    "Lon Chaney Sr.",
-    "Lord Kelvin",
-    "Louis Pasteur",
-    "Lucille Ball",
-    "Lucky Charms",
-    "Luis Vaez de Torres",
-    "Lynx",
-    "M and M's",
-    "Mabel Normand",
-    "Macaw",
-    "Machiavelli",
-    "Macho Man Randy Savage",
-    "Mack Sennett",
-    "Magpie",
-    "Mahatma Gandhi",
-    "Mallard",
-    "Manatee",
-    "Mandrill",
-    "Mansa Musa",
-    "Manta Ray",
-    "Marco Polo",
-    "Marcus Aurelius",
-    "Marie Curie",
-    "Marie Lloyd",
-    "Mark E. Smith",
-    "Mark Hollis",
-    "Mark Twain",
-    "Martin Luther King Jr",
-    "Martin Van Buren",
-    "Mary Anning",
-    "Mary Kingsley",
-    "Mary Pickford",
-    "Mary Shelley",
-    "Maude Adams",
-    "Max Born",
-    "Max Planck",
-    "Maya Angelou",
-    "McDonald's",
-    "Meerkat",
-    "Mello Yello",
-    "Meriwether Lewis",
-    "MF DOOM",
-    "Michael Faraday",
-    "Michael Jackson",
-    "Michelangelo",
-    "Miguel de Cervantes",
-    "Miles Davis",
-    "Millard Fillmore",
-    "Mily Balakirev",
-    "Mink",
-    "Modest Mussorgsky",
-    "Mole",
-    "Molire",
-    "Mongoose",
-    "Monkey",
-    "Monster",
-    "Montaigne",
-    "Moose",
-    "Mosquito",
-    "Moth",
-    "Mountain Dew",
-    "Mouse",
-    "Muhammad",
-    "Mule",
-    "Mungo Park",
-    "Napoleon Bonaparte",
-    "Narwhal",
-    "Nathaniel Hawthorne",
-    "Naya Rivera",
-    "Nellie Bly",
-    "Newt",
-    "Niels Bohr",
-    "Nightingale",
-    "Nikola Tesla",
-    "Nikolai Gogol",
-    "Nikolai Rimsky-Korsakov",
-    "Octopus",
-    "Okapi",
-    "Oliver Hardy",
-    "Opossum",
-    "Orangutan",
-    "Orson Welles",
-    "Osama Bin-Laden",
-    "Oscar Wilde",
-    "Ostrich",
-    "Otter",
-    "Otto von Bismarck",
-    "Ovid",
-    "Owl",
-    "Ox",
-    "Oyster",
-    "P. T. Barnum",
-    "Pablo Neruda",
-    "Panda",
-    "Panther",
-    "Parrot",
-    "Partridge",
-    "Paul Allen",
-    "Paul Czanne",
-    "Paul Gauguin",
-    "Paul Klee",
-    "Paul Walker",
-    "Peacock",
-    "Pedro de Valdivia",
-    "Pelican",
-    "Penguin",
-    "Pepsi",
-    "Perch",
-    "Peter Paul Rubens",
-    "Peter the Great",
-    "Pheasant",
-    "Phife Dawg",
-    "Philip K. Dick",
-    "Philip Seymour Hoffman",
-    "Phoenix",
-    "Pierre-Auguste Renoir",
-    "Pierre-Simon Laplace",
-    "Piet Mondrian",
-    "Pietro Mascagni",
-    "Pig",
-    "Pigeon",
-    "Pike",
-    "Pizza Hut",
-    "Plato",
-    "Platypus",
-    "Polar Bear",
-    "Porcupine",
-    "Porpoise",
-    "Prairie Dog",
-    "Prawn",
-    "Prince",
-    "Prince Henry the Navigator",
-    "Princess Diana",
-    "Pringles",
-    "Pufferfish",
-    "Puma",
-    "Pyotr Ilyich Tchaikovsky",
-    "Quail",
-    "Queen Elizabeth I",
-    "Queen Elizabeth II",
-    "Queen Victoria",
-    "Quelea",
-    "Quetzal",
-    "Quokka",
-    "R. W. Emerson",
-    "Rabbit",
-    "Raccoon",
-    "Ram",
-    "Raphael",
-    "Rat",
-    "Rattlesnake",
-    "Raven",
-    "Red Bull",
-    "Red Cloud",
-    "Red Panda",
-    "Reese's",
-    "Reindeer",
-    "Rembrandt",
-    "Rene Caillie",
-    "Rhinoceros",
-    "Richard Feynman",
-    "Richard Francis Burton",
-    "Richard Wagner",
-    "Rick James",
-    "Rik Mayall",
-    "Ritchie Valens",
-    "River Phoenix",
-    "Roadrunner",
-    "Roald Amundsen",
-    "Roald Dahl",
-    "Robert Boyle",
-    "Robert F. Kennedy",
-    "Robert Falcon Scott",
-    "Robert Hooke",
-    "Robert Koch",
-    "Robert Schumann",
-    "Robin",
-    "Robin Williams",
-    "Rockstar",
-    "Rooster",
-    "Rosalind Franklin",
-    "Rudolph Valentino",
-    "Ruffles",
-    "Ruggiero Leoncavallo",
-    "Ruth St. Denis",
-    "Rutherford B. Hayes",
-    "Sacagawea",
-    "Sadi Carnot",
-    "Saladin",
-    "Salamander",
-    "Salmon",
-    "Salvador Dali",
-    "Sammy Davis Jr",
-    "Samuel Baker",
-    "Samuel de Champlain",
-    "Samuel Morse",
-    "Sandro Botticelli",
-    "Sappho",
-    "Sarah Bernhardt",
-    "Sarah Siddons",
-    "Sardine",
-    "Scorpion",
-    "Scott Joplin",
-    "Sea Star",
-    "Seahorse",
-    "Seal",
-    "Sean Connery",
-    "Selena",
-    "Selkie",
-    "Sergei Prokofiev",
-    "Sergei Rachmaninoff",
-    "Shark",
-    "Sheep",
-    "Shrimp",
-    "Siddhartha Gautama",
-    "Simon Bolivar",
-    "Simone de Beauvoir",
-    "Sir Edmund Hillary",
-    "Sitting Bull",
-    "Skittles",
-    "Skunk",
-    "Sloth",
-    "Slug",
-    "Snail",
-    "Snake",
-    "Snickers",
-    "Sojourner Truth",
-    "Sophie Germain",
-    "Sophocles",
-    "Sparrow",
-    "Special K",
-    "Spider",
-    "Sprite",
-    "Squid",
-    "Squirrel",
-    "Sren Kierkegaard",
-    "Srinivasa Ramanujan",
-    "Stan Lee",
-    "Stanley Kubrick",
-    "Starbucks",
-    "Stephen Hawking",
-    "Stephen Jay Gould",
-    "Steve Jobs",
-    "Stingray",
-    "Stork",
-    "Stouffer's",
-    "Subway",
-    "Suleiman the Magnificent",
-    "Susan B. Anthony",
-    "Swan",
-    "T. E. Lawrence",
-    "T. S. Eliot",
-    "Tabasco",
-    "Taco Bell",
-    "Tapir",
-    "Tarantula",
-    "Tecumseh",
-    "Termite",
-    "Terry Pratchett",
-    "The Notorious B.I.G",
-    "Theda Bara",
-    "Theodore Roosevelt",
-    "Thomas Aquinas",
-    "Thomas Edison",
-    "Thomas Hobbes",
-    "Thomas Jefferson",
-    "Thomas Paine",
-    "Tiger",
-    "Tim Hortons",
-    "Titian",
-    "Toad",
-    "Tokugawa Ieyasu",
-    "Tom Petty",
-    "Toni Morrison",
-    "Tostitos",
-    "Trout",
-    "Tupac Shakur",
-    "Turkey",
-    "Turtle",
-    "Twix",
-    "Tycho Brahe",
-    "Ulysses S. Grant",
-    "Urchin",
-    "Ursula K. Le Guin",
-    "Utagawa Hiroshige",
-    "Vasco da Gama",
-    "Vasco Nunez de Balboa",
-    "Vaslav Nijinsky",
-    "Vera Rubin",
-    "Vesta Tilley",
-    "Victor Hugo",
-    "Vincent van Gogh",
-    "Viper",
-    "Virgil",
-    "Virginia Woolf",
-    "Voltaire",
-    "Vulture",
-    "W. A. Mozart",
-    "W. C. Fields",
-    "W. E. B. Du Bois",
-    "Wallaby",
-    "Walrus",
-    "Walt Disney",
-    "Walt Whitman",
-    "Warren G. Harding",
-    "Warthog",
-    "Wasp",
-    "Wassily Kandinsky",
-    "Weasel",
-    "Wendy's",
-    "Whale",
-    "Whitney Houston",
-    "Wildcat",
-    "Wildebeest",
-    "Willem Barentsz",
-    "Willem Janszoon",
-    "William Clark",
-    "William Hanna",
-    "William Henry Harrison",
-    "William Herschel",
-    "William McKinley",
-    "William Shakespeare",
-    "Winslow Homer",
-    "Winston Churchill",
-    "Wolf",
-    "Wolverine",
-    "Wombat",
-    "Woodpecker",
-    "Woodrow Wilson",
-    "Xuanzang",
-    "Yak",
-    "Yogi Berra",
-    "Yvette Guilbert",
-    "Zachary Taylor",
-    "Zebra",
-    "Zheng He"
+    {
+      "name": "Aardvark",
+      "category": "Animals"
+    },
+    {
+      "name": "Abel Tasman",
+      "category": "Misc"
+    },
+    {
+      "name": "Abraham Lincoln",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Ada Lovelace",
+      "category": "Misc"
+    },
+    {
+      "name": "Adah Isaacs Menken",
+      "category": "Misc"
+    },
+    {
+      "name": "Aeschylus",
+      "category": "Misc"
+    },
+    {
+      "name": "Agatha Christie",
+      "category": "Misc"
+    },
+    {
+      "name": "Akbar the Great",
+      "category": "Misc"
+    },
+    {
+      "name": "Al Jolson",
+      "category": "Misc"
+    },
+    {
+      "name": "Alan Rickman",
+      "category": "Misc"
+    },
+    {
+      "name": "Alan Thicke",
+      "category": "Misc"
+    },
+    {
+      "name": "Alan Turing",
+      "category": "Misc"
+    },
+    {
+      "name": "Albatross",
+      "category": "Animals"
+    },
+    {
+      "name": "Albert Einstein",
+      "category": "Misc"
+    },
+    {
+      "name": "Aldous Huxley",
+      "category": "Misc"
+    },
+    {
+      "name": "Alessandro Volta",
+      "category": "Misc"
+    },
+    {
+      "name": "Alexander Borodin",
+      "category": "Misc"
+    },
+    {
+      "name": "Alexander Graham Bell",
+      "category": "Misc"
+    },
+    {
+      "name": "Alexander Hamilton",
+      "category": "Misc"
+    },
+    {
+      "name": "Alexander Pushkin",
+      "category": "Misc"
+    },
+    {
+      "name": "Alexander Scriabin",
+      "category": "Misc"
+    },
+    {
+      "name": "Alexander the Great",
+      "category": "Misc"
+    },
+    {
+      "name": "Alfred Russel Wallace",
+      "category": "Misc"
+    },
+    {
+      "name": "Alligator",
+      "category": "Animals"
+    },
+    {
+      "name": "Alpaca",
+      "category": "Misc"
+    },
+    {
+      "name": "Alvar Nunez Cabeza de Vaca",
+      "category": "Misc"
+    },
+    {
+      "name": "Alvaro de Mendana",
+      "category": "Misc"
+    },
+    {
+      "name": "Amelia Earhart",
+      "category": "Misc"
+    },
+    {
+      "name": "Amerigo Vespucci",
+      "category": "Misc"
+    },
+    {
+      "name": "Amilcare Ponchielli",
+      "category": "Misc"
+    },
+    {
+      "name": "Amy Winehouse",
+      "category": "Misc"
+    },
+    {
+      "name": "Anaconda",
+      "category": "Misc"
+    },
+    {
+      "name": "Andrew Jackson",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Andrew Johnson",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Andrew Weatherall",
+      "category": "Misc"
+    },
+    {
+      "name": "AndrMarie Ampre",
+      "category": "Misc"
+    },
+    {
+      "name": "Andy Warhol",
+      "category": "Misc"
+    },
+    {
+      "name": "Angelfish",
+      "category": "Misc"
+    },
+    {
+      "name": "Anna Pavlova",
+      "category": "Misc"
+    },
+    {
+      "name": "Ant",
+      "category": "Animals"
+    },
+    {
+      "name": "Anteater",
+      "category": "Animals"
+    },
+    {
+      "name": "Antelope",
+      "category": "Animals"
+    },
+    {
+      "name": "Anthony Bourdain",
+      "category": "Misc"
+    },
+    {
+      "name": "Antoine Lavoisier",
+      "category": "Misc"
+    },
+    {
+      "name": "Anton Bruckner",
+      "category": "Misc"
+    },
+    {
+      "name": "Anton Chekhov",
+      "category": "Misc"
+    },
+    {
+      "name": "Anton Yelchin",
+      "category": "Misc"
+    },
+    {
+      "name": "Antonie van Leeuwenhoek",
+      "category": "Misc"
+    },
+    {
+      "name": "Antonin Dvorak",
+      "category": "Misc"
+    },
+    {
+      "name": "Antonio Vivaldi",
+      "category": "Misc"
+    },
+    {
+      "name": "Arcangelo Corelli",
+      "category": "Misc"
+    },
+    {
+      "name": "Archimedes",
+      "category": "Misc"
+    },
+    {
+      "name": "Aretha Franklin",
+      "category": "Misc"
+    },
+    {
+      "name": "Aristophanes",
+      "category": "Misc"
+    },
+    {
+      "name": "Aristotle",
+      "category": "Misc"
+    },
+    {
+      "name": "Armadillo",
+      "category": "Animals"
+    },
+    {
+      "name": "Arthur C. Clarke",
+      "category": "Misc"
+    },
+    {
+      "name": "Arthur Conan Doyle",
+      "category": "Misc"
+    },
+    {
+      "name": "Arthur Sullivan",
+      "category": "Misc"
+    },
+    {
+      "name": "Ashoka",
+      "category": "Misc"
+    },
+    {
+      "name": "Attila the Hun",
+      "category": "Misc"
+    },
+    {
+      "name": "Audrey Hepburn",
+      "category": "Misc"
+    },
+    {
+      "name": "Auguste Rodin",
+      "category": "Misc"
+    },
+    {
+      "name": "Augustine",
+      "category": "Misc"
+    },
+    {
+      "name": "Augustus",
+      "category": "Misc"
+    },
+    {
+      "name": "Ava Gardner",
+      "category": "Misc"
+    },
+    {
+      "name": "Avicii Tim Bergling",
+      "category": "Misc"
+    },
+    {
+      "name": "Ayrton Senna",
+      "category": "Misc"
+    },
+    {
+      "name": "B.B. King",
+      "category": "Misc"
+    },
+    {
+      "name": "Baboon",
+      "category": "Animals"
+    },
+    {
+      "name": "Badger",
+      "category": "Animals"
+    },
+    {
+      "name": "Barracuda",
+      "category": "Misc"
+    },
+    {
+      "name": "Baruch Spinoza",
+      "category": "Misc"
+    },
+    {
+      "name": "Bat",
+      "category": "Animals"
+    },
+    {
+      "name": "Bear",
+      "category": "Animals"
+    },
+    {
+      "name": "Beaver",
+      "category": "Animals"
+    },
+    {
+      "name": "Bedrich Smetana",
+      "category": "Misc"
+    },
+    {
+      "name": "Bee",
+      "category": "Animals"
+    },
+    {
+      "name": "Beetle",
+      "category": "Misc"
+    },
+    {
+      "name": "Bela Lugosi",
+      "category": "Misc"
+    },
+    {
+      "name": "Benjamin Franklin",
+      "category": "Misc"
+    },
+    {
+      "name": "Benjamin Harrison",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Bernhard Riemann",
+      "category": "Misc"
+    },
+    {
+      "name": "Bert Williams",
+      "category": "Misc"
+    },
+    {
+      "name": "Berthe Morisot",
+      "category": "Misc"
+    },
+    {
+      "name": "Bette Davis",
+      "category": "Misc"
+    },
+    {
+      "name": "Billie Holiday",
+      "category": "Misc"
+    },
+    {
+      "name": "Bison",
+      "category": "Animals"
+    },
+    {
+      "name": "Blaise Pascal",
+      "category": "Misc"
+    },
+    {
+      "name": "Boar",
+      "category": "Animals"
+    },
+    {
+      "name": "Bob Barker",
+      "category": "Misc"
+    },
+    {
+      "name": "Bob Marley",
+      "category": "Misc"
+    },
+    {
+      "name": "Bob Ross",
+      "category": "Misc"
+    },
+    {
+      "name": "Bobcat",
+      "category": "Misc"
+    },
+    {
+      "name": "Booker T. Washington",
+      "category": "Misc"
+    },
+    {
+      "name": "Bram Stoker",
+      "category": "Misc"
+    },
+    {
+      "name": "Brandon Lee",
+      "category": "Misc"
+    },
+    {
+      "name": "Bruce Lee",
+      "category": "Misc"
+    },
+    {
+      "name": "Buddy Holly",
+      "category": "Misc"
+    },
+    {
+      "name": "Buffalo",
+      "category": "Animals"
+    },
+    {
+      "name": "Buffalo Bill William F. Cody",
+      "category": "Misc"
+    },
+    {
+      "name": "Burger King",
+      "category": "Misc"
+    },
+    {
+      "name": "Buster Keaton",
+      "category": "Misc"
+    },
+    {
+      "name": "Butterfly",
+      "category": "Animals"
+    },
+    {
+      "name": "C. S. Lewis",
+      "category": "Misc"
+    },
+    {
+      "name": "Camel",
+      "category": "Animals"
+    },
+    {
+      "name": "Camille Pissarro",
+      "category": "Misc"
+    },
+    {
+      "name": "Camille Saint-Saens",
+      "category": "Misc"
+    },
+    {
+      "name": "Canary",
+      "category": "Misc"
+    },
+    {
+      "name": "Capybara",
+      "category": "Misc"
+    },
+    {
+      "name": "Caravaggio",
+      "category": "Misc"
+    },
+    {
+      "name": "Caribou",
+      "category": "Animals"
+    },
+    {
+      "name": "Carl Friedrich Gauss",
+      "category": "Misc"
+    },
+    {
+      "name": "Carl Sagan",
+      "category": "Misc"
+    },
+    {
+      "name": "Carp",
+      "category": "Animals"
+    },
+    {
+      "name": "Carrie Fisher",
+      "category": "Misc"
+    },
+    {
+      "name": "Cat",
+      "category": "Animals"
+    },
+    {
+      "name": "Caterpillar",
+      "category": "Animals"
+    },
+    {
+      "name": "Catfish",
+      "category": "Misc"
+    },
+    {
+      "name": "Catherine the Great",
+      "category": "Misc"
+    },
+    {
+      "name": "Cesar Franck",
+      "category": "Misc"
+    },
+    {
+      "name": "Chadwick Boseman",
+      "category": "Misc"
+    },
+    {
+      "name": "Charlemagne",
+      "category": "Misc"
+    },
+    {
+      "name": "Charles Babbage",
+      "category": "Misc"
+    },
+    {
+      "name": "Charles Baudelaire",
+      "category": "Misc"
+    },
+    {
+      "name": "Charles Dickens",
+      "category": "Misc"
+    },
+    {
+      "name": "Charles Lyell",
+      "category": "Misc"
+    },
+    {
+      "name": "Charlie Chaplin",
+      "category": "Misc"
+    },
+    {
+      "name": "Charlie Murphy",
+      "category": "Misc"
+    },
+    {
+      "name": "Charlie Parker",
+      "category": "Misc"
+    },
+    {
+      "name": "Charlotte Bronte",
+      "category": "Misc"
+    },
+    {
+      "name": "Cheerios",
+      "category": "Misc"
+    },
+    {
+      "name": "Cheetah",
+      "category": "Animals"
+    },
+    {
+      "name": "Cheetos",
+      "category": "Misc"
+    },
+    {
+      "name": "Chester A. Arthur",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Chester Bennington",
+      "category": "Misc"
+    },
+    {
+      "name": "Chicken",
+      "category": "Animals"
+    },
+    {
+      "name": "Chief Joseph",
+      "category": "Misc"
+    },
+    {
+      "name": "Chien-Shiung Wu",
+      "category": "Misc"
+    },
+    {
+      "name": "Chimpanzee",
+      "category": "Animals"
+    },
+    {
+      "name": "Chinchilla",
+      "category": "Misc"
+    },
+    {
+      "name": "Chipmunk",
+      "category": "Misc"
+    },
+    {
+      "name": "Chris Cornell",
+      "category": "Misc"
+    },
+    {
+      "name": "Christiaan Huygens",
+      "category": "Misc"
+    },
+    {
+      "name": "Christopher Columbus",
+      "category": "Misc"
+    },
+    {
+      "name": "Christopher Hitchens",
+      "category": "Misc"
+    },
+    {
+      "name": "Chuck Berry",
+      "category": "Misc"
+    },
+    {
+      "name": "Cicero",
+      "category": "Misc"
+    },
+    {
+      "name": "Clara Bow",
+      "category": "Misc"
+    },
+    {
+      "name": "Clara Schumann",
+      "category": "Misc"
+    },
+    {
+      "name": "Clark Gable",
+      "category": "Misc"
+    },
+    {
+      "name": "Claude Debussy",
+      "category": "Misc"
+    },
+    {
+      "name": "Claude Monet",
+      "category": "Misc"
+    },
+    {
+      "name": "Claudius Ptolemy",
+      "category": "Misc"
+    },
+    {
+      "name": "Cleopatra VII",
+      "category": "Misc"
+    },
+    {
+      "name": "Cobra",
+      "category": "Animals"
+    },
+    {
+      "name": "Coca-Cola",
+      "category": "Misc"
+    },
+    {
+      "name": "Cockatoo",
+      "category": "Misc"
+    },
+    {
+      "name": "Cockroach",
+      "category": "Animals"
+    },
+    {
+      "name": "Cocoa Puffs",
+      "category": "Misc"
+    },
+    {
+      "name": "Cod",
+      "category": "Animals"
+    },
+    {
+      "name": "Condor",
+      "category": "Misc"
+    },
+    {
+      "name": "Confucius",
+      "category": "Misc"
+    },
+    {
+      "name": "Corn Flakes",
+      "category": "Misc"
+    },
+    {
+      "name": "Cougar",
+      "category": "Misc"
+    },
+    {
+      "name": "Coyote",
+      "category": "Animals"
+    },
+    {
+      "name": "Crab",
+      "category": "Animals"
+    },
+    {
+      "name": "Crane",
+      "category": "Animals"
+    },
+    {
+      "name": "Crazy Horse",
+      "category": "Misc"
+    },
+    {
+      "name": "Crocodile",
+      "category": "Misc"
+    },
+    {
+      "name": "Crow",
+      "category": "Animals"
+    },
+    {
+      "name": "Cuttlefish",
+      "category": "Misc"
+    },
+    {
+      "name": "Dan Leno",
+      "category": "Misc"
+    },
+    {
+      "name": "Daniel Webster",
+      "category": "Misc"
+    },
+    {
+      "name": "Dante Alighieri",
+      "category": "Misc"
+    },
+    {
+      "name": "David Bowie",
+      "category": "Misc"
+    },
+    {
+      "name": "David Hume",
+      "category": "Misc"
+    },
+    {
+      "name": "David Livingstone",
+      "category": "Misc"
+    },
+    {
+      "name": "Dean Martin",
+      "category": "Misc"
+    },
+    {
+      "name": "Deer",
+      "category": "Animals"
+    },
+    {
+      "name": "DeForest Kelley",
+      "category": "Misc"
+    },
+    {
+      "name": "Diego Maradona",
+      "category": "Misc"
+    },
+    {
+      "name": "Diego Rivera",
+      "category": "Misc"
+    },
+    {
+      "name": "Diego Velazquez",
+      "category": "Misc"
+    },
+    {
+      "name": "DiGiorno",
+      "category": "Misc"
+    },
+    {
+      "name": "Dingo",
+      "category": "Misc"
+    },
+    {
+      "name": "Django Reinhardt",
+      "category": "Misc"
+    },
+    {
+      "name": "Dmitri Mendeleev",
+      "category": "Misc"
+    },
+    {
+      "name": "Dog",
+      "category": "Animals"
+    },
+    {
+      "name": "Dolores O'Riordan",
+      "category": "Misc"
+    },
+    {
+      "name": "Dolphin",
+      "category": "Animals"
+    },
+    {
+      "name": "Domino's",
+      "category": "Misc"
+    },
+    {
+      "name": "Donkey",
+      "category": "Animals"
+    },
+    {
+      "name": "Doritos",
+      "category": "Misc"
+    },
+    {
+      "name": "Douglas Fairbanks",
+      "category": "Misc"
+    },
+    {
+      "name": "Dove",
+      "category": "Animals"
+    },
+    {
+      "name": "Dr Pepper",
+      "category": "Misc"
+    },
+    {
+      "name": "Dragonfly",
+      "category": "Animals"
+    },
+    {
+      "name": "Duck",
+      "category": "Animals"
+    },
+    {
+      "name": "Dunkin",
+      "category": "Misc"
+    },
+    {
+      "name": "Dwight D. Eisenhower",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Eagle",
+      "category": "Animals"
+    },
+    {
+      "name": "Earthworm",
+      "category": "Misc"
+    },
+    {
+      "name": "Echidna",
+      "category": "Misc"
+    },
+    {
+      "name": "Eddie Foy Sr.",
+      "category": "Misc"
+    },
+    {
+      "name": "Eddie Van Halen",
+      "category": "Misc"
+    },
+    {
+      "name": "Edgar Allan Poe",
+      "category": "Misc"
+    },
+    {
+      "name": "Edgar Degas",
+      "category": "Misc"
+    },
+    {
+      "name": "Edith Piaf",
+      "category": "Misc"
+    },
+    {
+      "name": "Edmond Halley",
+      "category": "Misc"
+    },
+    {
+      "name": "Edouard Manet",
+      "category": "Misc"
+    },
+    {
+      "name": "Edvard Grieg",
+      "category": "Misc"
+    },
+    {
+      "name": "Edward Elgar",
+      "category": "Misc"
+    },
+    {
+      "name": "Edwin Booth",
+      "category": "Misc"
+    },
+    {
+      "name": "Eel",
+      "category": "Animals"
+    },
+    {
+      "name": "Egret",
+      "category": "Misc"
+    },
+    {
+      "name": "El Greco",
+      "category": "Misc"
+    },
+    {
+      "name": "Eleanora Duse",
+      "category": "Misc"
+    },
+    {
+      "name": "Elephant",
+      "category": "Animals"
+    },
+    {
+      "name": "Elie Metchnikoff",
+      "category": "Misc"
+    },
+    {
+      "name": "Elizabeth Cady Stanton",
+      "category": "Misc"
+    },
+    {
+      "name": "Elk",
+      "category": "Animals"
+    },
+    {
+      "name": "Elvis Presley",
+      "category": "Misc"
+    },
+    {
+      "name": "Emile Zola",
+      "category": "Misc"
+    },
+    {
+      "name": "Emilie du Chatelet",
+      "category": "Misc"
+    },
+    {
+      "name": "Emily Bronte",
+      "category": "Misc"
+    },
+    {
+      "name": "Emily Dickinson",
+      "category": "Misc"
+    },
+    {
+      "name": "Emmy Noether",
+      "category": "Misc"
+    },
+    {
+      "name": "Emu",
+      "category": "Misc"
+    },
+    {
+      "name": "Enrico Caruso",
+      "category": "Misc"
+    },
+    {
+      "name": "Enrico Fermi",
+      "category": "Misc"
+    },
+    {
+      "name": "Enrique Granados",
+      "category": "Misc"
+    },
+    {
+      "name": "Erasmus",
+      "category": "Misc"
+    },
+    {
+      "name": "Ernest Hemingway",
+      "category": "Misc"
+    },
+    {
+      "name": "Ernest Shackleton",
+      "category": "Misc"
+    },
+    {
+      "name": "Errol Flynn",
+      "category": "Misc"
+    },
+    {
+      "name": "Ethel Barrymore",
+      "category": "Misc"
+    },
+    {
+      "name": "Euclid",
+      "category": "Misc"
+    },
+    {
+      "name": "Eugene Delacroix",
+      "category": "Misc"
+    },
+    {
+      "name": "Euripides",
+      "category": "Misc"
+    },
+    {
+      "name": "Evariste Galois",
+      "category": "Misc"
+    },
+    {
+      "name": "F. Scott Fitzgerald",
+      "category": "Misc"
+    },
+    {
+      "name": "Falcon",
+      "category": "Misc"
+    },
+    {
+      "name": "Fanny Brice",
+      "category": "Misc"
+    },
+    {
+      "name": "Fanny Kemble",
+      "category": "Misc"
+    },
+    {
+      "name": "Fanta",
+      "category": "Misc"
+    },
+    {
+      "name": "Fats Domino",
+      "category": "Misc"
+    },
+    {
+      "name": "Fatty Arbuckle",
+      "category": "Misc"
+    },
+    {
+      "name": "Fay Templeton",
+      "category": "Misc"
+    },
+    {
+      "name": "Fela Kuti",
+      "category": "Misc"
+    },
+    {
+      "name": "Felix Mendelssohn",
+      "category": "Misc"
+    },
+    {
+      "name": "Ferdinand Magellan",
+      "category": "Misc"
+    },
+    {
+      "name": "Ferret",
+      "category": "Animals"
+    },
+    {
+      "name": "Finch",
+      "category": "Animals"
+    },
+    {
+      "name": "Firefly",
+      "category": "Misc"
+    },
+    {
+      "name": "Flamingo",
+      "category": "Animals"
+    },
+    {
+      "name": "Flea",
+      "category": "Misc"
+    },
+    {
+      "name": "Florence Nightingale",
+      "category": "Misc"
+    },
+    {
+      "name": "Florenz Ziegfeld",
+      "category": "Misc"
+    },
+    {
+      "name": "Fly",
+      "category": "Misc"
+    },
+    {
+      "name": "Fox",
+      "category": "Animals"
+    },
+    {
+      "name": "Francisco de Orellana",
+      "category": "Misc"
+    },
+    {
+      "name": "Francisco Goya",
+      "category": "Misc"
+    },
+    {
+      "name": "Francisco Pizarro",
+      "category": "Misc"
+    },
+    {
+      "name": "Frank Herbert",
+      "category": "Misc"
+    },
+    {
+      "name": "Frank Zappa",
+      "category": "Misc"
+    },
+    {
+      "name": "Franklin Pierce",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Franz Kafka",
+      "category": "Misc"
+    },
+    {
+      "name": "Franz Liszt",
+      "category": "Misc"
+    },
+    {
+      "name": "Franz Schubert",
+      "category": "Misc"
+    },
+    {
+      "name": "Freddie Mercury",
+      "category": "Misc"
+    },
+    {
+      "name": "Frederic Chopin",
+      "category": "Misc"
+    },
+    {
+      "name": "Frederick Douglass",
+      "category": "Misc"
+    },
+    {
+      "name": "Frederick the Great",
+      "category": "Misc"
+    },
+    {
+      "name": "French's Mustard",
+      "category": "Misc"
+    },
+    {
+      "name": "Frida Kahlo",
+      "category": "Misc"
+    },
+    {
+      "name": "Friedrich Nietzsche",
+      "category": "Misc"
+    },
+    {
+      "name": "Friedrich Schiller",
+      "category": "Misc"
+    },
+    {
+      "name": "Frog",
+      "category": "Animals"
+    },
+    {
+      "name": "Froot Loops",
+      "category": "Misc"
+    },
+    {
+      "name": "Frosted Flakes",
+      "category": "Misc"
+    },
+    {
+      "name": "Fyodor Dostoevsky",
+      "category": "Misc"
+    },
+    {
+      "name": "G. F. Handel",
+      "category": "Misc"
+    },
+    {
+      "name": "Gabriel Faure",
+      "category": "Misc"
+    },
+    {
+      "name": "Gabriel Garcia Marquez",
+      "category": "Misc"
+    },
+    {
+      "name": "Gaby Deslys",
+      "category": "Misc"
+    },
+    {
+      "name": "Galileo Galilei",
+      "category": "Misc"
+    },
+    {
+      "name": "Gazelle",
+      "category": "Animals"
+    },
+    {
+      "name": "Gecko",
+      "category": "Misc"
+    },
+    {
+      "name": "Gene Roddenberry",
+      "category": "Misc"
+    },
+    {
+      "name": "Genghis Khan",
+      "category": "Misc"
+    },
+    {
+      "name": "Geoffrey Chaucer",
+      "category": "Misc"
+    },
+    {
+      "name": "Georg Ohm",
+      "category": "Misc"
+    },
+    {
+      "name": "George Arliss",
+      "category": "Misc"
+    },
+    {
+      "name": "George Formby Sr.",
+      "category": "Misc"
+    },
+    {
+      "name": "George Gershwin",
+      "category": "Misc"
+    },
+    {
+      "name": "George M. Cohan",
+      "category": "Misc"
+    },
+    {
+      "name": "George Michael",
+      "category": "Misc"
+    },
+    {
+      "name": "George Orwell",
+      "category": "Misc"
+    },
+    {
+      "name": "George Patton",
+      "category": "Misc"
+    },
+    {
+      "name": "George Stephenson",
+      "category": "Misc"
+    },
+    {
+      "name": "George Washington",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Georges Bizet",
+      "category": "Misc"
+    },
+    {
+      "name": "Georges Seurat",
+      "category": "Misc"
+    },
+    {
+      "name": "Gerbil",
+      "category": "Animals"
+    },
+    {
+      "name": "Geronimo",
+      "category": "Misc"
+    },
+    {
+      "name": "Giacomo Meyerbeer",
+      "category": "Misc"
+    },
+    {
+      "name": "Giacomo Puccini",
+      "category": "Misc"
+    },
+    {
+      "name": "Gila Monster",
+      "category": "Misc"
+    },
+    {
+      "name": "Gilbert and Sullivan",
+      "category": "Misc"
+    },
+    {
+      "name": "Giraffe",
+      "category": "Animals"
+    },
+    {
+      "name": "Giuseppe Verdi",
+      "category": "Misc"
+    },
+    {
+      "name": "Glenn Miller",
+      "category": "Misc"
+    },
+    {
+      "name": "Goat",
+      "category": "Animals"
+    },
+    {
+      "name": "Goldfish",
+      "category": "Animals"
+    },
+    {
+      "name": "Goose",
+      "category": "Animals"
+    },
+    {
+      "name": "Gopher",
+      "category": "Animals"
+    },
+    {
+      "name": "Gorilla",
+      "category": "Animals"
+    },
+    {
+      "name": "Gottfried Leibniz",
+      "category": "Misc"
+    },
+    {
+      "name": "Grace Kelly",
+      "category": "Misc"
+    },
+    {
+      "name": "Grasshopper",
+      "category": "Animals"
+    },
+    {
+      "name": "Gregg Allman",
+      "category": "Misc"
+    },
+    {
+      "name": "Gregor Mendel",
+      "category": "Misc"
+    },
+    {
+      "name": "Greta Garbo",
+      "category": "Misc"
+    },
+    {
+      "name": "Griffin",
+      "category": "Misc"
+    },
+    {
+      "name": "Grouse",
+      "category": "Misc"
+    },
+    {
+      "name": "Grover Cleveland",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Guinea Pig",
+      "category": "Animals"
+    },
+    {
+      "name": "Gull",
+      "category": "Animals"
+    },
+    {
+      "name": "Gustav Klimt",
+      "category": "Misc"
+    },
+    {
+      "name": "Gustav Mahler",
+      "category": "Misc"
+    },
+    {
+      "name": "Gustave Courbet",
+      "category": "Misc"
+    },
+    {
+      "name": "Gustave Flaubert",
+      "category": "Misc"
+    },
+    {
+      "name": "H. D. Thoreau",
+      "category": "Misc"
+    },
+    {
+      "name": "H. G. Wells",
+      "category": "Misc"
+    },
+    {
+      "name": "H. M. Stanley",
+      "category": "Misc"
+    },
+    {
+      "name": "H. P. Lovecraft",
+      "category": "Misc"
+    },
+    {
+      "name": "Hammurabi",
+      "category": "Misc"
+    },
+    {
+      "name": "Hamster",
+      "category": "Animals"
+    },
+    {
+      "name": "Hank Williams",
+      "category": "Misc"
+    },
+    {
+      "name": "Hanno the Navigator",
+      "category": "Misc"
+    },
+    {
+      "name": "Hare",
+      "category": "Animals"
+    },
+    {
+      "name": "Harper Lee",
+      "category": "Misc"
+    },
+    {
+      "name": "Harriet Tubman",
+      "category": "Misc"
+    },
+    {
+      "name": "Harry Houdini",
+      "category": "Misc"
+    },
+    {
+      "name": "Hawk",
+      "category": "Animals"
+    },
+    {
+      "name": "Heath Ledger",
+      "category": "Misc"
+    },
+    {
+      "name": "Hector Berlioz",
+      "category": "Misc"
+    },
+    {
+      "name": "Hedgehog",
+      "category": "Animals"
+    },
+    {
+      "name": "Heinrich Barth",
+      "category": "Misc"
+    },
+    {
+      "name": "Heinrich Hertz",
+      "category": "Misc"
+    },
+    {
+      "name": "Heinz Ketchup",
+      "category": "Misc"
+    },
+    {
+      "name": "Hellmann's Mayonnaise",
+      "category": "Misc"
+    },
+    {
+      "name": "Henri de Toulouse-Lautrec",
+      "category": "Misc"
+    },
+    {
+      "name": "Henri Matisse",
+      "category": "Misc"
+    },
+    {
+      "name": "Henri Poincare",
+      "category": "Misc"
+    },
+    {
+      "name": "Henrik Ibsen",
+      "category": "Misc"
+    },
+    {
+      "name": "Henry Cavendish",
+      "category": "Misc"
+    },
+    {
+      "name": "Henry Clay",
+      "category": "Misc"
+    },
+    {
+      "name": "Henry Hudson",
+      "category": "Misc"
+    },
+    {
+      "name": "Herman Melville",
+      "category": "Misc"
+    },
+    {
+      "name": "Hernan Cortes",
+      "category": "Misc"
+    },
+    {
+      "name": "Herodotus",
+      "category": "Misc"
+    },
+    {
+      "name": "Heron",
+      "category": "Animals"
+    },
+    {
+      "name": "Herring",
+      "category": "Misc"
+    },
+    {
+      "name": "Hippopotamus",
+      "category": "Animals"
+    },
+    {
+      "name": "Hitler",
+      "category": "Misc"
+    },
+    {
+      "name": "Homer",
+      "category": "Misc"
+    },
+    {
+      "name": "Hornet",
+      "category": "Misc"
+    },
+    {
+      "name": "Horse",
+      "category": "Animals"
+    },
+    {
+      "name": "Hot Pockets",
+      "category": "Misc"
+    },
+    {
+      "name": "Hummingbird",
+      "category": "Animals"
+    },
+    {
+      "name": "Humphrey Bogart",
+      "category": "Misc"
+    },
+    {
+      "name": "Humphry Davy",
+      "category": "Misc"
+    },
+    {
+      "name": "Hyena",
+      "category": "Animals"
+    },
+    {
+      "name": "Hypatia",
+      "category": "Misc"
+    },
+    {
+      "name": "I. K. Brunel",
+      "category": "Misc"
+    },
+    {
+      "name": "Ian Fleming",
+      "category": "Misc"
+    },
+    {
+      "name": "Ibis",
+      "category": "Misc"
+    },
+    {
+      "name": "Ibn Battuta",
+      "category": "Misc"
+    },
+    {
+      "name": "Ibn Fadlan",
+      "category": "Misc"
+    },
+    {
+      "name": "Ibn Jubayr",
+      "category": "Misc"
+    },
+    {
+      "name": "Ibn Khaldun",
+      "category": "Misc"
+    },
+    {
+      "name": "Iguana",
+      "category": "Animals"
+    },
+    {
+      "name": "Immanuel Kant",
+      "category": "Misc"
+    },
+    {
+      "name": "Impala",
+      "category": "Misc"
+    },
+    {
+      "name": "Ingrid Bergman",
+      "category": "Misc"
+    },
+    {
+      "name": "Isaac Albeniz",
+      "category": "Misc"
+    },
+    {
+      "name": "Isaac Asimov",
+      "category": "Misc"
+    },
+    {
+      "name": "Isaac Newton",
+      "category": "Misc"
+    },
+    {
+      "name": "Isabella Bird",
+      "category": "Misc"
+    },
+    {
+      "name": "Isadora Duncan",
+      "category": "Misc"
+    },
+    {
+      "name": "Ivan the Terrible",
+      "category": "Misc"
+    },
+    {
+      "name": "Ivan Turgenev",
+      "category": "Misc"
+    },
+    {
+      "name": "J. M. W. Turner",
+      "category": "Misc"
+    },
+    {
+      "name": "J. R. R. Tolkien",
+      "category": "Misc"
+    },
+    {
+      "name": "J. S. Bach",
+      "category": "Misc"
+    },
+    {
+      "name": "Jackal",
+      "category": "Animals"
+    },
+    {
+      "name": "Jacques Cartier",
+      "category": "Misc"
+    },
+    {
+      "name": "Jacques Offenbach",
+      "category": "Misc"
+    },
+    {
+      "name": "Jacques-Yves Cousteau",
+      "category": "Misc"
+    },
+    {
+      "name": "Jaguar",
+      "category": "Animals"
+    },
+    {
+      "name": "James A. Garfield",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "James Buchanan",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "James Clerk Maxwell",
+      "category": "Misc"
+    },
+    {
+      "name": "James Cook",
+      "category": "Misc"
+    },
+    {
+      "name": "James Dean",
+      "category": "Misc"
+    },
+    {
+      "name": "James Joyce",
+      "category": "Misc"
+    },
+    {
+      "name": "James K. Polk",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "James Madison",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "James McNeill Whistler",
+      "category": "Misc"
+    },
+    {
+      "name": "James Monroe",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "James Watt",
+      "category": "Misc"
+    },
+    {
+      "name": "Jan van Riebeeck",
+      "category": "Misc"
+    },
+    {
+      "name": "Jane Austen",
+      "category": "Misc"
+    },
+    {
+      "name": "Jay",
+      "category": "Misc"
+    },
+    {
+      "name": "Jean Sibelius",
+      "category": "Misc"
+    },
+    {
+      "name": "Jean-Jacques Rousseau",
+      "category": "Misc"
+    },
+    {
+      "name": "Jean-Paul Sartre",
+      "category": "Misc"
+    },
+    {
+      "name": "Jeff Buckley",
+      "category": "Misc"
+    },
+    {
+      "name": "Jellyfish",
+      "category": "Animals"
+    },
+    {
+      "name": "Jesus Christ",
+      "category": "Misc"
+    },
+    {
+      "name": "Joan of Arc",
+      "category": "Misc"
+    },
+    {
+      "name": "Johan Cruyff",
+      "category": "Misc"
+    },
+    {
+      "name": "Johann Pachelbel",
+      "category": "Misc"
+    },
+    {
+      "name": "Johann Strauss II",
+      "category": "Misc"
+    },
+    {
+      "name": "Johann Wolfgang von Goethe",
+      "category": "Misc"
+    },
+    {
+      "name": "Johannes Brahms",
+      "category": "Misc"
+    },
+    {
+      "name": "Johannes Kepler",
+      "category": "Misc"
+    },
+    {
+      "name": "Johannes Vermeer",
+      "category": "Misc"
+    },
+    {
+      "name": "John Adams",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "John Barrymore",
+      "category": "Misc"
+    },
+    {
+      "name": "John C. Calhoun",
+      "category": "Misc"
+    },
+    {
+      "name": "John Cabot",
+      "category": "Misc"
+    },
+    {
+      "name": "John Constable",
+      "category": "Misc"
+    },
+    {
+      "name": "John Dalton",
+      "category": "Misc"
+    },
+    {
+      "name": "John F. Kennedy",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "John Hanning Speke",
+      "category": "Misc"
+    },
+    {
+      "name": "John Jay",
+      "category": "Misc"
+    },
+    {
+      "name": "John Lennon",
+      "category": "Misc"
+    },
+    {
+      "name": "John Locke",
+      "category": "Misc"
+    },
+    {
+      "name": "John Milton",
+      "category": "Misc"
+    },
+    {
+      "name": "John Nash",
+      "category": "Misc"
+    },
+    {
+      "name": "John Philip Sousa",
+      "category": "Misc"
+    },
+    {
+      "name": "John Quincy Adams",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "John Stuart Mill",
+      "category": "Misc"
+    },
+    {
+      "name": "John Tyler",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "John von Neumann",
+      "category": "Misc"
+    },
+    {
+      "name": "John Wayne",
+      "category": "Misc"
+    },
+    {
+      "name": "John Wesley Powell",
+      "category": "Misc"
+    },
+    {
+      "name": "Jose de San Martin",
+      "category": "Misc"
+    },
+    {
+      "name": "Joseph Banks",
+      "category": "Misc"
+    },
+    {
+      "name": "Joseph Barbera",
+      "category": "Misc"
+    },
+    {
+      "name": "Joseph Fourier",
+      "category": "Misc"
+    },
+    {
+      "name": "Joseph Haydn",
+      "category": "Misc"
+    },
+    {
+      "name": "Joseph Henry",
+      "category": "Misc"
+    },
+    {
+      "name": "Joseph Priestley",
+      "category": "Misc"
+    },
+    {
+      "name": "Joseph-Louis Lagrange",
+      "category": "Misc"
+    },
+    {
+      "name": "Juan Ponce de Len",
+      "category": "Misc"
+    },
+    {
+      "name": "Jules Verne",
+      "category": "Misc"
+    },
+    {
+      "name": "Julius Caesar",
+      "category": "Misc"
+    },
+    {
+      "name": "Kaiser Wilhelm I",
+      "category": "Misc"
+    },
+    {
+      "name": "Kangaroo",
+      "category": "Animals"
+    },
+    {
+      "name": "Katherine Johnson",
+      "category": "Misc"
+    },
+    {
+      "name": "Katsushika Hokusai",
+      "category": "Misc"
+    },
+    {
+      "name": "Keith Flint",
+      "category": "Misc"
+    },
+    {
+      "name": "KFC",
+      "category": "Misc"
+    },
+    {
+      "name": "Kingfisher",
+      "category": "Animals"
+    },
+    {
+      "name": "KitKat",
+      "category": "Misc"
+    },
+    {
+      "name": "Kiwi",
+      "category": "Misc"
+    },
+    {
+      "name": "Koala",
+      "category": "Animals"
+    },
+    {
+      "name": "Kobe Bryant",
+      "category": "Misc"
+    },
+    {
+      "name": "Komodo Dragon",
+      "category": "Misc"
+    },
+    {
+      "name": "Krill",
+      "category": "Misc"
+    },
+    {
+      "name": "Kurt Cobain",
+      "category": "Misc"
+    },
+    {
+      "name": "L. v. Beethoven",
+      "category": "Misc"
+    },
+    {
+      "name": "Ladybug",
+      "category": "Animals"
+    },
+    {
+      "name": "Lamprey",
+      "category": "Misc"
+    },
+    {
+      "name": "Lark",
+      "category": "Animals"
+    },
+    {
+      "name": "Lay's",
+      "category": "Misc"
+    },
+    {
+      "name": "Lean Cuisine",
+      "category": "Misc"
+    },
+    {
+      "name": "Leif Erikson",
+      "category": "Misc"
+    },
+    {
+      "name": "Lemur",
+      "category": "Misc"
+    },
+    {
+      "name": "Leo Tolstoy",
+      "category": "Misc"
+    },
+    {
+      "name": "Leonard Cohen",
+      "category": "Misc"
+    },
+    {
+      "name": "Leonard Nimoy",
+      "category": "Misc"
+    },
+    {
+      "name": "Leonardo da Vinci",
+      "category": "Misc"
+    },
+    {
+      "name": "Leonhard Euler",
+      "category": "Misc"
+    },
+    {
+      "name": "Leopard",
+      "category": "Animals"
+    },
+    {
+      "name": "Leopold Godowsky",
+      "category": "Misc"
+    },
+    {
+      "name": "Lillian Gish",
+      "category": "Misc"
+    },
+    {
+      "name": "Lillian Russell",
+      "category": "Misc"
+    },
+    {
+      "name": "Lion",
+      "category": "Animals"
+    },
+    {
+      "name": "Lise Meitner",
+      "category": "Misc"
+    },
+    {
+      "name": "Little Richard",
+      "category": "Misc"
+    },
+    {
+      "name": "Lizard",
+      "category": "Misc"
+    },
+    {
+      "name": "Llama",
+      "category": "Animals"
+    },
+    {
+      "name": "Lobster",
+      "category": "Animals"
+    },
+    {
+      "name": "Locust",
+      "category": "Misc"
+    },
+    {
+      "name": "Loie Fuller",
+      "category": "Misc"
+    },
+    {
+      "name": "Lola Montez",
+      "category": "Misc"
+    },
+    {
+      "name": "Lon Chaney Sr.",
+      "category": "Misc"
+    },
+    {
+      "name": "Lord Kelvin",
+      "category": "Misc"
+    },
+    {
+      "name": "Louis Pasteur",
+      "category": "Misc"
+    },
+    {
+      "name": "Lucille Ball",
+      "category": "Misc"
+    },
+    {
+      "name": "Lucky Charms",
+      "category": "Misc"
+    },
+    {
+      "name": "Luis Vaez de Torres",
+      "category": "Misc"
+    },
+    {
+      "name": "Lynx",
+      "category": "Animals"
+    },
+    {
+      "name": "M and M's",
+      "category": "Misc"
+    },
+    {
+      "name": "Mabel Normand",
+      "category": "Misc"
+    },
+    {
+      "name": "Macaw",
+      "category": "Animals"
+    },
+    {
+      "name": "Machiavelli",
+      "category": "Misc"
+    },
+    {
+      "name": "Macho Man Randy Savage",
+      "category": "Misc"
+    },
+    {
+      "name": "Mack Sennett",
+      "category": "Misc"
+    },
+    {
+      "name": "Magpie",
+      "category": "Animals"
+    },
+    {
+      "name": "Mahatma Gandhi",
+      "category": "Misc"
+    },
+    {
+      "name": "Mallard",
+      "category": "Animals"
+    },
+    {
+      "name": "Manatee",
+      "category": "Animals"
+    },
+    {
+      "name": "Mandrill",
+      "category": "Misc"
+    },
+    {
+      "name": "Mansa Musa",
+      "category": "Misc"
+    },
+    {
+      "name": "Manta Ray",
+      "category": "Misc"
+    },
+    {
+      "name": "Marco Polo",
+      "category": "Misc"
+    },
+    {
+      "name": "Marcus Aurelius",
+      "category": "Misc"
+    },
+    {
+      "name": "Marie Curie",
+      "category": "Misc"
+    },
+    {
+      "name": "Marie Lloyd",
+      "category": "Misc"
+    },
+    {
+      "name": "Mark E. Smith",
+      "category": "Misc"
+    },
+    {
+      "name": "Mark Hollis",
+      "category": "Misc"
+    },
+    {
+      "name": "Mark Twain",
+      "category": "Misc"
+    },
+    {
+      "name": "Martin Luther King Jr",
+      "category": "Misc"
+    },
+    {
+      "name": "Martin Van Buren",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Mary Anning",
+      "category": "Misc"
+    },
+    {
+      "name": "Mary Kingsley",
+      "category": "Misc"
+    },
+    {
+      "name": "Mary Pickford",
+      "category": "Misc"
+    },
+    {
+      "name": "Mary Shelley",
+      "category": "Misc"
+    },
+    {
+      "name": "Maude Adams",
+      "category": "Misc"
+    },
+    {
+      "name": "Max Born",
+      "category": "Misc"
+    },
+    {
+      "name": "Max Planck",
+      "category": "Misc"
+    },
+    {
+      "name": "Maya Angelou",
+      "category": "Misc"
+    },
+    {
+      "name": "McDonald's",
+      "category": "Misc"
+    },
+    {
+      "name": "Meerkat",
+      "category": "Misc"
+    },
+    {
+      "name": "Mello Yello",
+      "category": "Misc"
+    },
+    {
+      "name": "Meriwether Lewis",
+      "category": "Misc"
+    },
+    {
+      "name": "MF DOOM",
+      "category": "Misc"
+    },
+    {
+      "name": "Michael Faraday",
+      "category": "Misc"
+    },
+    {
+      "name": "Michael Jackson",
+      "category": "Misc"
+    },
+    {
+      "name": "Michelangelo",
+      "category": "Misc"
+    },
+    {
+      "name": "Miguel de Cervantes",
+      "category": "Misc"
+    },
+    {
+      "name": "Miles Davis",
+      "category": "Misc"
+    },
+    {
+      "name": "Millard Fillmore",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Mily Balakirev",
+      "category": "Misc"
+    },
+    {
+      "name": "Mink",
+      "category": "Misc"
+    },
+    {
+      "name": "Modest Mussorgsky",
+      "category": "Misc"
+    },
+    {
+      "name": "Mole",
+      "category": "Animals"
+    },
+    {
+      "name": "Molire",
+      "category": "Misc"
+    },
+    {
+      "name": "Mongoose",
+      "category": "Misc"
+    },
+    {
+      "name": "Monkey",
+      "category": "Animals"
+    },
+    {
+      "name": "Monster",
+      "category": "Misc"
+    },
+    {
+      "name": "Montaigne",
+      "category": "Misc"
+    },
+    {
+      "name": "Moose",
+      "category": "Animals"
+    },
+    {
+      "name": "Mosquito",
+      "category": "Animals"
+    },
+    {
+      "name": "Moth",
+      "category": "Animals"
+    },
+    {
+      "name": "Mountain Dew",
+      "category": "Misc"
+    },
+    {
+      "name": "Mouse",
+      "category": "Animals"
+    },
+    {
+      "name": "Muhammad",
+      "category": "Misc"
+    },
+    {
+      "name": "Mule",
+      "category": "Animals"
+    },
+    {
+      "name": "Mungo Park",
+      "category": "Misc"
+    },
+    {
+      "name": "Napoleon Bonaparte",
+      "category": "Misc"
+    },
+    {
+      "name": "Narwhal",
+      "category": "Animals"
+    },
+    {
+      "name": "Nathaniel Hawthorne",
+      "category": "Misc"
+    },
+    {
+      "name": "Naya Rivera",
+      "category": "Misc"
+    },
+    {
+      "name": "Nellie Bly",
+      "category": "Misc"
+    },
+    {
+      "name": "Newt",
+      "category": "Animals"
+    },
+    {
+      "name": "Niels Bohr",
+      "category": "Misc"
+    },
+    {
+      "name": "Nightingale",
+      "category": "Misc"
+    },
+    {
+      "name": "Nikola Tesla",
+      "category": "Misc"
+    },
+    {
+      "name": "Nikolai Gogol",
+      "category": "Misc"
+    },
+    {
+      "name": "Nikolai Rimsky-Korsakov",
+      "category": "Misc"
+    },
+    {
+      "name": "Octopus",
+      "category": "Animals"
+    },
+    {
+      "name": "Okapi",
+      "category": "Misc"
+    },
+    {
+      "name": "Oliver Hardy",
+      "category": "Misc"
+    },
+    {
+      "name": "Opossum",
+      "category": "Animals"
+    },
+    {
+      "name": "Orangutan",
+      "category": "Animals"
+    },
+    {
+      "name": "Orson Welles",
+      "category": "Misc"
+    },
+    {
+      "name": "Osama Bin-Laden",
+      "category": "Misc"
+    },
+    {
+      "name": "Oscar Wilde",
+      "category": "Misc"
+    },
+    {
+      "name": "Ostrich",
+      "category": "Animals"
+    },
+    {
+      "name": "Otter",
+      "category": "Animals"
+    },
+    {
+      "name": "Otto von Bismarck",
+      "category": "Misc"
+    },
+    {
+      "name": "Ovid",
+      "category": "Misc"
+    },
+    {
+      "name": "Owl",
+      "category": "Animals"
+    },
+    {
+      "name": "Ox",
+      "category": "Animals"
+    },
+    {
+      "name": "Oyster",
+      "category": "Animals"
+    },
+    {
+      "name": "P. T. Barnum",
+      "category": "Misc"
+    },
+    {
+      "name": "Pablo Neruda",
+      "category": "Misc"
+    },
+    {
+      "name": "Panda",
+      "category": "Animals"
+    },
+    {
+      "name": "Panther",
+      "category": "Animals"
+    },
+    {
+      "name": "Parrot",
+      "category": "Animals"
+    },
+    {
+      "name": "Partridge",
+      "category": "Misc"
+    },
+    {
+      "name": "Paul Allen",
+      "category": "Misc"
+    },
+    {
+      "name": "Paul Czanne",
+      "category": "Misc"
+    },
+    {
+      "name": "Paul Gauguin",
+      "category": "Misc"
+    },
+    {
+      "name": "Paul Klee",
+      "category": "Misc"
+    },
+    {
+      "name": "Paul Walker",
+      "category": "Misc"
+    },
+    {
+      "name": "Peacock",
+      "category": "Animals"
+    },
+    {
+      "name": "Pedro de Valdivia",
+      "category": "Misc"
+    },
+    {
+      "name": "Pelican",
+      "category": "Animals"
+    },
+    {
+      "name": "Penguin",
+      "category": "Animals"
+    },
+    {
+      "name": "Pepsi",
+      "category": "Misc"
+    },
+    {
+      "name": "Perch",
+      "category": "Misc"
+    },
+    {
+      "name": "Peter Paul Rubens",
+      "category": "Misc"
+    },
+    {
+      "name": "Peter the Great",
+      "category": "Misc"
+    },
+    {
+      "name": "Pheasant",
+      "category": "Animals"
+    },
+    {
+      "name": "Phife Dawg",
+      "category": "Misc"
+    },
+    {
+      "name": "Philip K. Dick",
+      "category": "Misc"
+    },
+    {
+      "name": "Philip Seymour Hoffman",
+      "category": "Misc"
+    },
+    {
+      "name": "Phoenix",
+      "category": "Misc"
+    },
+    {
+      "name": "Pierre-Auguste Renoir",
+      "category": "Misc"
+    },
+    {
+      "name": "Pierre-Simon Laplace",
+      "category": "Misc"
+    },
+    {
+      "name": "Piet Mondrian",
+      "category": "Misc"
+    },
+    {
+      "name": "Pietro Mascagni",
+      "category": "Misc"
+    },
+    {
+      "name": "Pig",
+      "category": "Animals"
+    },
+    {
+      "name": "Pigeon",
+      "category": "Animals"
+    },
+    {
+      "name": "Pike",
+      "category": "Animals"
+    },
+    {
+      "name": "Pizza Hut",
+      "category": "Misc"
+    },
+    {
+      "name": "Plato",
+      "category": "Misc"
+    },
+    {
+      "name": "Platypus",
+      "category": "Animals"
+    },
+    {
+      "name": "Polar Bear",
+      "category": "Misc"
+    },
+    {
+      "name": "Porcupine",
+      "category": "Animals"
+    },
+    {
+      "name": "Porpoise",
+      "category": "Misc"
+    },
+    {
+      "name": "Prairie Dog",
+      "category": "Misc"
+    },
+    {
+      "name": "Prawn",
+      "category": "Animals"
+    },
+    {
+      "name": "Prince",
+      "category": "Misc"
+    },
+    {
+      "name": "Prince Henry the Navigator",
+      "category": "Misc"
+    },
+    {
+      "name": "Princess Diana",
+      "category": "Misc"
+    },
+    {
+      "name": "Pringles",
+      "category": "Misc"
+    },
+    {
+      "name": "Pufferfish",
+      "category": "Misc"
+    },
+    {
+      "name": "Puma",
+      "category": "Misc"
+    },
+    {
+      "name": "Pyotr Ilyich Tchaikovsky",
+      "category": "Misc"
+    },
+    {
+      "name": "Quail",
+      "category": "Animals"
+    },
+    {
+      "name": "Queen Elizabeth I",
+      "category": "Misc"
+    },
+    {
+      "name": "Queen Elizabeth II",
+      "category": "Misc"
+    },
+    {
+      "name": "Queen Victoria",
+      "category": "Misc"
+    },
+    {
+      "name": "Quelea",
+      "category": "Misc"
+    },
+    {
+      "name": "Quetzal",
+      "category": "Misc"
+    },
+    {
+      "name": "Quokka",
+      "category": "Misc"
+    },
+    {
+      "name": "R. W. Emerson",
+      "category": "Misc"
+    },
+    {
+      "name": "Rabbit",
+      "category": "Animals"
+    },
+    {
+      "name": "Raccoon",
+      "category": "Animals"
+    },
+    {
+      "name": "Ram",
+      "category": "Misc"
+    },
+    {
+      "name": "Raphael",
+      "category": "Misc"
+    },
+    {
+      "name": "Rat",
+      "category": "Animals"
+    },
+    {
+      "name": "Rattlesnake",
+      "category": "Misc"
+    },
+    {
+      "name": "Raven",
+      "category": "Animals"
+    },
+    {
+      "name": "Red Bull",
+      "category": "Misc"
+    },
+    {
+      "name": "Red Cloud",
+      "category": "Misc"
+    },
+    {
+      "name": "Red Panda",
+      "category": "Misc"
+    },
+    {
+      "name": "Reese's",
+      "category": "Misc"
+    },
+    {
+      "name": "Reindeer",
+      "category": "Animals"
+    },
+    {
+      "name": "Rembrandt",
+      "category": "Misc"
+    },
+    {
+      "name": "Rene Caillie",
+      "category": "Misc"
+    },
+    {
+      "name": "Rhinoceros",
+      "category": "Animals"
+    },
+    {
+      "name": "Richard Feynman",
+      "category": "Misc"
+    },
+    {
+      "name": "Richard Francis Burton",
+      "category": "Misc"
+    },
+    {
+      "name": "Richard Wagner",
+      "category": "Misc"
+    },
+    {
+      "name": "Rick James",
+      "category": "Misc"
+    },
+    {
+      "name": "Rik Mayall",
+      "category": "Misc"
+    },
+    {
+      "name": "Ritchie Valens",
+      "category": "Misc"
+    },
+    {
+      "name": "River Phoenix",
+      "category": "Misc"
+    },
+    {
+      "name": "Roadrunner",
+      "category": "Misc"
+    },
+    {
+      "name": "Roald Amundsen",
+      "category": "Misc"
+    },
+    {
+      "name": "Roald Dahl",
+      "category": "Misc"
+    },
+    {
+      "name": "Robert Boyle",
+      "category": "Misc"
+    },
+    {
+      "name": "Robert F. Kennedy",
+      "category": "Misc"
+    },
+    {
+      "name": "Robert Falcon Scott",
+      "category": "Misc"
+    },
+    {
+      "name": "Robert Hooke",
+      "category": "Misc"
+    },
+    {
+      "name": "Robert Koch",
+      "category": "Misc"
+    },
+    {
+      "name": "Robert Schumann",
+      "category": "Misc"
+    },
+    {
+      "name": "Robin",
+      "category": "Animals"
+    },
+    {
+      "name": "Robin Williams",
+      "category": "Misc"
+    },
+    {
+      "name": "Rockstar",
+      "category": "Misc"
+    },
+    {
+      "name": "Rooster",
+      "category": "Animals"
+    },
+    {
+      "name": "Rosalind Franklin",
+      "category": "Misc"
+    },
+    {
+      "name": "Rudolph Valentino",
+      "category": "Misc"
+    },
+    {
+      "name": "Ruffles",
+      "category": "Misc"
+    },
+    {
+      "name": "Ruggiero Leoncavallo",
+      "category": "Misc"
+    },
+    {
+      "name": "Ruth St. Denis",
+      "category": "Misc"
+    },
+    {
+      "name": "Rutherford B. Hayes",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Sacagawea",
+      "category": "Misc"
+    },
+    {
+      "name": "Sadi Carnot",
+      "category": "Misc"
+    },
+    {
+      "name": "Saladin",
+      "category": "Misc"
+    },
+    {
+      "name": "Salamander",
+      "category": "Animals"
+    },
+    {
+      "name": "Salmon",
+      "category": "Animals"
+    },
+    {
+      "name": "Salvador Dali",
+      "category": "Misc"
+    },
+    {
+      "name": "Sammy Davis Jr",
+      "category": "Misc"
+    },
+    {
+      "name": "Samuel Baker",
+      "category": "Misc"
+    },
+    {
+      "name": "Samuel de Champlain",
+      "category": "Misc"
+    },
+    {
+      "name": "Samuel Morse",
+      "category": "Misc"
+    },
+    {
+      "name": "Sandro Botticelli",
+      "category": "Misc"
+    },
+    {
+      "name": "Sappho",
+      "category": "Misc"
+    },
+    {
+      "name": "Sarah Bernhardt",
+      "category": "Misc"
+    },
+    {
+      "name": "Sarah Siddons",
+      "category": "Misc"
+    },
+    {
+      "name": "Sardine",
+      "category": "Animals"
+    },
+    {
+      "name": "Scorpion",
+      "category": "Animals"
+    },
+    {
+      "name": "Scott Joplin",
+      "category": "Misc"
+    },
+    {
+      "name": "Sea Star",
+      "category": "Misc"
+    },
+    {
+      "name": "Seahorse",
+      "category": "Animals"
+    },
+    {
+      "name": "Seal",
+      "category": "Animals"
+    },
+    {
+      "name": "Sean Connery",
+      "category": "Misc"
+    },
+    {
+      "name": "Selena",
+      "category": "Misc"
+    },
+    {
+      "name": "Selkie",
+      "category": "Misc"
+    },
+    {
+      "name": "Sergei Prokofiev",
+      "category": "Misc"
+    },
+    {
+      "name": "Sergei Rachmaninoff",
+      "category": "Misc"
+    },
+    {
+      "name": "Shark",
+      "category": "Animals"
+    },
+    {
+      "name": "Sheep",
+      "category": "Animals"
+    },
+    {
+      "name": "Shrimp",
+      "category": "Animals"
+    },
+    {
+      "name": "Siddhartha Gautama",
+      "category": "Misc"
+    },
+    {
+      "name": "Simon Bolivar",
+      "category": "Misc"
+    },
+    {
+      "name": "Simone de Beauvoir",
+      "category": "Misc"
+    },
+    {
+      "name": "Sir Edmund Hillary",
+      "category": "Misc"
+    },
+    {
+      "name": "Sitting Bull",
+      "category": "Misc"
+    },
+    {
+      "name": "Skittles",
+      "category": "Misc"
+    },
+    {
+      "name": "Skunk",
+      "category": "Animals"
+    },
+    {
+      "name": "Sloth",
+      "category": "Misc"
+    },
+    {
+      "name": "Slug",
+      "category": "Misc"
+    },
+    {
+      "name": "Snail",
+      "category": "Animals"
+    },
+    {
+      "name": "Snake",
+      "category": "Animals"
+    },
+    {
+      "name": "Snickers",
+      "category": "Misc"
+    },
+    {
+      "name": "Sojourner Truth",
+      "category": "Misc"
+    },
+    {
+      "name": "Sophie Germain",
+      "category": "Misc"
+    },
+    {
+      "name": "Sophocles",
+      "category": "Misc"
+    },
+    {
+      "name": "Sparrow",
+      "category": "Animals"
+    },
+    {
+      "name": "Special K",
+      "category": "Misc"
+    },
+    {
+      "name": "Spider",
+      "category": "Animals"
+    },
+    {
+      "name": "Sprite",
+      "category": "Misc"
+    },
+    {
+      "name": "Squid",
+      "category": "Animals"
+    },
+    {
+      "name": "Squirrel",
+      "category": "Animals"
+    },
+    {
+      "name": "Sren Kierkegaard",
+      "category": "Misc"
+    },
+    {
+      "name": "Srinivasa Ramanujan",
+      "category": "Misc"
+    },
+    {
+      "name": "Stan Lee",
+      "category": "Misc"
+    },
+    {
+      "name": "Stanley Kubrick",
+      "category": "Misc"
+    },
+    {
+      "name": "Starbucks",
+      "category": "Misc"
+    },
+    {
+      "name": "Stephen Hawking",
+      "category": "Misc"
+    },
+    {
+      "name": "Stephen Jay Gould",
+      "category": "Misc"
+    },
+    {
+      "name": "Steve Jobs",
+      "category": "Misc"
+    },
+    {
+      "name": "Stingray",
+      "category": "Animals"
+    },
+    {
+      "name": "Stork",
+      "category": "Animals"
+    },
+    {
+      "name": "Stouffer's",
+      "category": "Misc"
+    },
+    {
+      "name": "Subway",
+      "category": "Misc"
+    },
+    {
+      "name": "Suleiman the Magnificent",
+      "category": "Misc"
+    },
+    {
+      "name": "Susan B. Anthony",
+      "category": "Misc"
+    },
+    {
+      "name": "Swan",
+      "category": "Animals"
+    },
+    {
+      "name": "T. E. Lawrence",
+      "category": "Misc"
+    },
+    {
+      "name": "T. S. Eliot",
+      "category": "Misc"
+    },
+    {
+      "name": "Tabasco",
+      "category": "Misc"
+    },
+    {
+      "name": "Taco Bell",
+      "category": "Misc"
+    },
+    {
+      "name": "Tapir",
+      "category": "Animals"
+    },
+    {
+      "name": "Tarantula",
+      "category": "Misc"
+    },
+    {
+      "name": "Tecumseh",
+      "category": "Misc"
+    },
+    {
+      "name": "Termite",
+      "category": "Misc"
+    },
+    {
+      "name": "Terry Pratchett",
+      "category": "Misc"
+    },
+    {
+      "name": "The Notorious B.I.G",
+      "category": "Misc"
+    },
+    {
+      "name": "Theda Bara",
+      "category": "Misc"
+    },
+    {
+      "name": "Theodore Roosevelt",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Thomas Aquinas",
+      "category": "Misc"
+    },
+    {
+      "name": "Thomas Edison",
+      "category": "Misc"
+    },
+    {
+      "name": "Thomas Hobbes",
+      "category": "Misc"
+    },
+    {
+      "name": "Thomas Jefferson",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Thomas Paine",
+      "category": "Misc"
+    },
+    {
+      "name": "Tiger",
+      "category": "Animals"
+    },
+    {
+      "name": "Tim Hortons",
+      "category": "Misc"
+    },
+    {
+      "name": "Titian",
+      "category": "Misc"
+    },
+    {
+      "name": "Toad",
+      "category": "Animals"
+    },
+    {
+      "name": "Tokugawa Ieyasu",
+      "category": "Misc"
+    },
+    {
+      "name": "Tom Petty",
+      "category": "Misc"
+    },
+    {
+      "name": "Toni Morrison",
+      "category": "Misc"
+    },
+    {
+      "name": "Tostitos",
+      "category": "Misc"
+    },
+    {
+      "name": "Trout",
+      "category": "Animals"
+    },
+    {
+      "name": "Tupac Shakur",
+      "category": "Misc"
+    },
+    {
+      "name": "Turkey",
+      "category": "Animals"
+    },
+    {
+      "name": "Turtle",
+      "category": "Animals"
+    },
+    {
+      "name": "Twix",
+      "category": "Misc"
+    },
+    {
+      "name": "Tycho Brahe",
+      "category": "Misc"
+    },
+    {
+      "name": "Ulysses S. Grant",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Urchin",
+      "category": "Misc"
+    },
+    {
+      "name": "Ursula K. Le Guin",
+      "category": "Misc"
+    },
+    {
+      "name": "Utagawa Hiroshige",
+      "category": "Misc"
+    },
+    {
+      "name": "Vasco da Gama",
+      "category": "Misc"
+    },
+    {
+      "name": "Vasco Nunez de Balboa",
+      "category": "Misc"
+    },
+    {
+      "name": "Vaslav Nijinsky",
+      "category": "Misc"
+    },
+    {
+      "name": "Vera Rubin",
+      "category": "Misc"
+    },
+    {
+      "name": "Vesta Tilley",
+      "category": "Misc"
+    },
+    {
+      "name": "Victor Hugo",
+      "category": "Misc"
+    },
+    {
+      "name": "Vincent van Gogh",
+      "category": "Misc"
+    },
+    {
+      "name": "Viper",
+      "category": "Misc"
+    },
+    {
+      "name": "Virgil",
+      "category": "Misc"
+    },
+    {
+      "name": "Virginia Woolf",
+      "category": "Misc"
+    },
+    {
+      "name": "Voltaire",
+      "category": "Misc"
+    },
+    {
+      "name": "Vulture",
+      "category": "Animals"
+    },
+    {
+      "name": "W. A. Mozart",
+      "category": "Misc"
+    },
+    {
+      "name": "W. C. Fields",
+      "category": "Misc"
+    },
+    {
+      "name": "W. E. B. Du Bois",
+      "category": "Misc"
+    },
+    {
+      "name": "Wallaby",
+      "category": "Misc"
+    },
+    {
+      "name": "Walrus",
+      "category": "Animals"
+    },
+    {
+      "name": "Walt Disney",
+      "category": "Misc"
+    },
+    {
+      "name": "Walt Whitman",
+      "category": "Misc"
+    },
+    {
+      "name": "Warren G. Harding",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Warthog",
+      "category": "Misc"
+    },
+    {
+      "name": "Wasp",
+      "category": "Animals"
+    },
+    {
+      "name": "Wassily Kandinsky",
+      "category": "Misc"
+    },
+    {
+      "name": "Weasel",
+      "category": "Animals"
+    },
+    {
+      "name": "Wendy's",
+      "category": "Misc"
+    },
+    {
+      "name": "Whale",
+      "category": "Animals"
+    },
+    {
+      "name": "Whitney Houston",
+      "category": "Misc"
+    },
+    {
+      "name": "Wildcat",
+      "category": "Animals"
+    },
+    {
+      "name": "Wildebeest",
+      "category": "Misc"
+    },
+    {
+      "name": "Willem Barentsz",
+      "category": "Misc"
+    },
+    {
+      "name": "Willem Janszoon",
+      "category": "Misc"
+    },
+    {
+      "name": "William Clark",
+      "category": "Misc"
+    },
+    {
+      "name": "William Hanna",
+      "category": "Misc"
+    },
+    {
+      "name": "William Henry Harrison",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "William Herschel",
+      "category": "Misc"
+    },
+    {
+      "name": "William McKinley",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "William Shakespeare",
+      "category": "Misc"
+    },
+    {
+      "name": "Winslow Homer",
+      "category": "Misc"
+    },
+    {
+      "name": "Winston Churchill",
+      "category": "Misc"
+    },
+    {
+      "name": "Wolf",
+      "category": "Animals"
+    },
+    {
+      "name": "Wolverine",
+      "category": "Animals"
+    },
+    {
+      "name": "Wombat",
+      "category": "Animals"
+    },
+    {
+      "name": "Woodpecker",
+      "category": "Animals"
+    },
+    {
+      "name": "Woodrow Wilson",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Xuanzang",
+      "category": "Misc"
+    },
+    {
+      "name": "Yak",
+      "category": "Animals"
+    },
+    {
+      "name": "Yogi Berra",
+      "category": "Misc"
+    },
+    {
+      "name": "Yvette Guilbert",
+      "category": "Misc"
+    },
+    {
+      "name": "Zachary Taylor",
+      "category": "U.S. Presidents"
+    },
+    {
+      "name": "Zebra",
+      "category": "Animals"
+    },
+    {
+      "name": "Zheng He",
+      "category": "Misc"
+    }
   ],
   "ui": {
     "prompts_splitter_sizes": [
