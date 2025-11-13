@@ -31,7 +31,7 @@ import os, sys, re, json, tempfile, random, mimetypes, pathlib, webbrowser
 import urllib.request
 from urllib.parse import urlparse
 
-from PyQt6.QtCore import Qt, QUrl, QSize
+from PyQt6.QtCore import Qt, QUrl, QSize, QProcess
 from PyQt6.QtWidgets import (QTextEdit,
     QApplication, QMainWindow, QSplitter, QWidget, QVBoxLayout, QHBoxLayout,
     QListWidget, QListWidgetItem, QPushButton, QLineEdit, QComboBox, QLabel,
@@ -189,9 +189,8 @@ def _extract_categories(objs):
 
 
 def sanitize_character_name(name: str) -> str:
-    import re as _re
-    s = _re.sub(r"[^A-Za-z0-9 '\-]", "", str(name))
-    s = _re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"[^A-Za-z0-9 '\-]", "", str(name))
+    s = re.sub(r"\s+", " ", s).strip()
     return s
 
 
@@ -1379,7 +1378,6 @@ class Main(QMainWindow):
                 f.write(helper_code)
             # Launch helper detached; it will finish the swap when the app is closed
             try:
-                from PyQt6.QtCore import QProcess
                 QProcess.startDetached(sys.executable, [helper_path])
             except Exception:
                 import subprocess
@@ -1465,9 +1463,8 @@ class Main(QMainWindow):
         REMOTE_PY   = "https://raw.githubusercontent.com/esc0rtd3w/sora2-browser-tool/refs/heads/main/sora2-browser-tool.py"
 
         def _ver_tuple(v):
-            import re as _re
             # extract all ints; fallback [0] if nothing
-            return tuple(int(x) for x in _re.findall(r"\d+", str(v)) or [0])
+            return tuple(int(x) for x in re.findall(r"\d+", str(v)) or [0])
 
         try:
             # Fetch remote config + version
