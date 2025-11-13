@@ -415,13 +415,7 @@ class Main(QMainWindow):
         # Sites list (from user-sites JSON)
         self.user_sites = load_or_init_user_sites(self.cfg.get("sites", []))
         self.listw = QListWidget()
-        for site in self.user_sites:
-            txt = f'{site.get("id",0):02d}. {site.get("url","")}'
-            it = QListWidgetItem(txt)
-            it.setData(Qt.ItemDataRole.UserRole, site)
-            it.setToolTip(site.get("url",""))
-            it.setSizeHint(QSize(100,28))
-            self.listw.addItem(it)
+        self.refresh_sites_list()
         self.listw.itemClicked.connect(self.load_from_list)
         la_v.addWidget(self.listw,1)
 
@@ -782,6 +776,7 @@ class Main(QMainWindow):
             it = QListWidgetItem(txt)
             it.setData(Qt.ItemDataRole.UserRole, site)
             it.setToolTip(site.get("url",""))
+            it.setSizeHint(QSize(100,28))
             self.listw.addItem(it)
 
     def _base_of(self, url: str) -> str:
@@ -889,7 +884,6 @@ class Main(QMainWindow):
             self.promptList.addItem(it)
 
     def copy_selected_prompt(self):
-        import re
         item = self.promptList.currentItem()
         if not item:
             item = self.promptList.item(0)
@@ -946,7 +940,6 @@ class Main(QMainWindow):
             pass
 
     def update_prompt_preview(self, *_):
-        import re
         # Get selected item safely
         try:
             item = self.promptList.currentItem()
@@ -1307,7 +1300,6 @@ class Main(QMainWindow):
         self.statusBar().showMessage("Prompt removed.", 3000)
     def _apply_pending_tmp_updates(self):
         """At startup, apply updates only if BOTH .tmp files exist; otherwise discard and warn."""
-        import os, sys, tempfile
 
         base_dir = os.path.dirname(os.path.abspath(__file__))
         py_name  = "sora2-browser-tool.py"
@@ -1405,7 +1397,7 @@ class Main(QMainWindow):
             return
     def clear_site_data(self):
         """Clear all site data (cookies, cache, local/session storage, indexedDB) and reload views."""
-        import os, shutil
+        import shutil
 
         confirm = QMessageBox.question(
             self, "Clear Site Data",
@@ -1471,8 +1463,6 @@ class Main(QMainWindow):
         """Check GitHub JSON for a newer version; if present, download .tmp files into script dir."""
         REMOTE_JSON = "https://raw.githubusercontent.com/esc0rtd3w/sora2-browser-tool/refs/heads/main/sora2_config.json"
         REMOTE_PY   = "https://raw.githubusercontent.com/esc0rtd3w/sora2-browser-tool/refs/heads/main/sora2-browser-tool.py"
-
-        from PyQt6.QtWidgets import QMessageBox, QApplication
 
         def _ver_tuple(v):
             import re as _re
