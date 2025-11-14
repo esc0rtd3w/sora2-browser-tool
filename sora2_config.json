@@ -2024,6 +2024,20 @@
       "category": "Custom",
       "tags": [],
       "text": "Create a scene in the style of predator. The main character is \"\". The other character is \"\". Create the helicopter scene at the beginning. Make the characters style, mannerisms, voice, clothes, etc match as closely as possible to their originals. Make it funny and entertaining."
+    },
+    {
+      "id": "custom0051",
+      "title": "This Old House: With Guest",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene from \"This Old House\" TV show. The host is \"\". The guest is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible,"
+    },
+    {
+      "id": "custom0052",
+      "title": "This Old House: No Guest",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene from \"This Old House\" TV show. The host is \"\". There is no guest this episode. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible,"
     }
   ],
   "characters": [
@@ -2149,11 +2163,11 @@
     },
     {
       "name": "Amy Winehouse",
-      "category": "Misc"
+      "category": "Musicians"
     },
     {
       "name": "Anaconda",
-      "category": "Misc"
+      "category": "Animals"
     },
     {
       "name": "Andrew Jackson",
@@ -2313,7 +2327,11 @@
     },
     {
       "name": "Barracuda",
-      "category": "Misc"
+      "category": "Animals"
+    },
+    {
+      "name": "Bart Simpson",
+      "category": "Cartoon Characters"
     },
     {
       "name": "Baruch Spinoza",
@@ -2349,7 +2367,7 @@
     },
     {
       "name": "Benjamin Franklin",
-      "category": "Misc"
+      "category": "U.S. Presidents"
     },
     {
       "name": "Benjamin Harrison",
@@ -2389,15 +2407,19 @@
     },
     {
       "name": "Bob Barker",
-      "category": "Misc"
+      "category": "TV Host"
     },
     {
       "name": "Bob Marley",
-      "category": "Misc"
+      "category": "Musicians"
     },
     {
       "name": "Bob Ross",
-      "category": "Misc"
+      "category": "TV Host"
+    },
+    {
+      "name": "Bob Vila",
+      "category": "TV Host"
     },
     {
       "name": "Bobcat",
@@ -2433,7 +2455,7 @@
     },
     {
       "name": "Burger King",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Buster Keaton",
@@ -2489,7 +2511,7 @@
     },
     {
       "name": "Carrie Fisher",
-      "category": "Misc"
+      "category": "Actor/Actress"
     },
     {
       "name": "Cat",
@@ -2541,7 +2563,7 @@
     },
     {
       "name": "Charlie Murphy",
-      "category": "Misc"
+      "category": "Comedians"
     },
     {
       "name": "Charlie Parker",
@@ -2553,7 +2575,7 @@
     },
     {
       "name": "Cheerios",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Cheetah",
@@ -2653,7 +2675,7 @@
     },
     {
       "name": "Coca-Cola",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Cockatoo",
@@ -2665,7 +2687,7 @@
     },
     {
       "name": "Cocoa Puffs",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Cod",
@@ -2677,11 +2699,11 @@
     },
     {
       "name": "Confucius",
-      "category": "Misc"
+      "category": "Philosophers"
     },
     {
       "name": "Corn Flakes",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Cougar",
@@ -2701,7 +2723,7 @@
     },
     {
       "name": "Crazy Horse",
-      "category": "Misc"
+      "category": "Historical Figures"
     },
     {
       "name": "Crocodile",
@@ -2713,7 +2735,7 @@
     },
     {
       "name": "Cuttlefish",
-      "category": "Misc"
+      "category": "Animals"
     },
     {
       "name": "Dan Leno",
@@ -2729,7 +2751,7 @@
     },
     {
       "name": "David Bowie",
-      "category": "Misc"
+      "category": "Musicians"
     },
     {
       "name": "David Hume",
@@ -2741,7 +2763,7 @@
     },
     {
       "name": "Dean Martin",
-      "category": "Misc"
+      "category": "Actor/Actress"
     },
     {
       "name": "Deer",
@@ -2793,7 +2815,7 @@
     },
     {
       "name": "Domino's",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Donkey",
@@ -2801,7 +2823,7 @@
     },
     {
       "name": "Doritos",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Douglas Fairbanks",
@@ -2813,7 +2835,7 @@
     },
     {
       "name": "Dr Pepper",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Dragonfly",
@@ -2825,7 +2847,7 @@
     },
     {
       "name": "Dunkin",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Dwight D. Eisenhower",
@@ -2837,11 +2859,11 @@
     },
     {
       "name": "Earthworm",
-      "category": "Misc"
+      "category": "Animals"
     },
     {
       "name": "Echidna",
-      "category": "Misc"
+      "category": "Animals"
     },
     {
       "name": "Eddie Foy Sr.",
@@ -2917,7 +2939,7 @@
     },
     {
       "name": "Elvis Presley",
-      "category": "Misc"
+      "category": "Musicians"
     },
     {
       "name": "Emile Zola",
@@ -2961,7 +2983,7 @@
     },
     {
       "name": "Ernest Hemingway",
-      "category": "Misc"
+      "category": "Writers/Novelists"
     },
     {
       "name": "Ernest Shackleton",
@@ -3009,7 +3031,7 @@
     },
     {
       "name": "Fanta",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Fats Domino",
@@ -3021,7 +3043,7 @@
     },
     {
       "name": "Fay Templeton",
-      "category": "Misc"
+      "category": "Actor/Actress"
     },
     {
       "name": "Fela Kuti",
@@ -3057,7 +3079,7 @@
     },
     {
       "name": "Florence Nightingale",
-      "category": "Misc"
+      "category": "Historical Figures"
     },
     {
       "name": "Florenz Ziegfeld",
@@ -3065,7 +3087,7 @@
     },
     {
       "name": "Fly",
-      "category": "Misc"
+      "category": "Animals"
     },
     {
       "name": "Fox",
@@ -3089,7 +3111,7 @@
     },
     {
       "name": "Frank Zappa",
-      "category": "Misc"
+      "category": "Musician"
     },
     {
       "name": "Franklin Pierce",
@@ -3125,7 +3147,7 @@
     },
     {
       "name": "French's Mustard",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Frida Kahlo",
@@ -3181,7 +3203,7 @@
     },
     {
       "name": "Gecko",
-      "category": "Misc"
+      "category": "Animals"
     },
     {
       "name": "Gene Roddenberry",
@@ -3217,15 +3239,15 @@
     },
     {
       "name": "George Michael",
-      "category": "Misc"
+      "category": "Musician"
     },
     {
       "name": "George Orwell",
-      "category": "Misc"
+      "category": "Writers/Novelists"
     },
     {
       "name": "George Patton",
-      "category": "Misc"
+      "category": "Historical Figures"
     },
     {
       "name": "George Stephenson",
@@ -3433,7 +3455,7 @@
     },
     {
       "name": "Heinz Ketchup",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Hellmann's Mayonnaise",
@@ -3493,11 +3515,15 @@
     },
     {
       "name": "Hitler",
-      "category": "Misc"
+      "category": "Historical Figures"
     },
     {
       "name": "Homer",
-      "category": "Misc"
+      "category": "Philosophers"
+    },
+    {
+      "name": "Homer Simpson",
+      "category": "Cartoon Characters"
     },
     {
       "name": "Hornet",
@@ -3893,7 +3919,7 @@
     },
     {
       "name": "KFC",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Kingfisher",
@@ -3901,11 +3927,11 @@
     },
     {
       "name": "KitKat",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Kiwi",
-      "category": "Misc"
+      "category": "Food"
     },
     {
       "name": "Koala",
@@ -3913,11 +3939,11 @@
     },
     {
       "name": "Kobe Bryant",
-      "category": "Misc"
+      "category": "Sports Athletes"
     },
     {
       "name": "Komodo Dragon",
-      "category": "Misc"
+      "category": "Animals"
     },
     {
       "name": "Krill",
@@ -3925,11 +3951,11 @@
     },
     {
       "name": "Kurt Cobain",
-      "category": "Misc"
+      "category": "Musicians"
     },
     {
       "name": "L. v. Beethoven",
-      "category": "Misc"
+      "category": "Musicians Classical"
     },
     {
       "name": "Ladybug",
@@ -3998,6 +4024,10 @@
     {
       "name": "Lion",
       "category": "Animals"
+    },
+    {
+      "name": "Lisa Simpson",
+      "category": "Cartoon Characters"
     },
     {
       "name": "Lise Meitner",
@@ -4084,6 +4114,10 @@
       "category": "Misc"
     },
     {
+      "name": "Maggie Simpson",
+      "category": "Cartoon Characters"
+    },
+    {
       "name": "Magpie",
       "category": "Animals"
     },
@@ -4120,6 +4154,10 @@
       "category": "Misc"
     },
     {
+      "name": "Marge Simpson",
+      "category": "Cartoon Characters"
+    },
+    {
       "name": "Marie Curie",
       "category": "Misc"
     },
@@ -4137,11 +4175,11 @@
     },
     {
       "name": "Mark Twain",
-      "category": "Misc"
+      "category": "Writers/Novelists"
     },
     {
       "name": "Martin Luther King Jr",
-      "category": "Misc"
+      "category": "Historical Figures"
     },
     {
       "name": "Martin Van Buren",
