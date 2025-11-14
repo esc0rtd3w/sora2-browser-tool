@@ -2038,6 +2038,83 @@
       "category": "Custom",
       "tags": [],
       "text": "Create a scene from \"This Old House\" TV show. The host is \"\". There is no guest this episode. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible,"
+    },
+    {
+      "id": "custom0053",
+      "title": "Newsroom Scene: Artist Sketch of Suspect",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a newsroom scene that is during a live broadcast. There are 2 anchors, the anchor on the left is \"\" and the anchor on the right is \"\". The 1st anchor is reporting about something and they cut to show a sketch of the suspect in question. The suspect looks like one of the news anchors. Choose the crime. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0054",
+      "title": "Santa Clause Crash #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene where \"\" is driving and Santa Clause comes crashing down from the sky in front of them. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0055",
+      "title": "Fishing Scene: Reel in custom thing",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a fishing scene where \"\" is fishing and they are struggling to pull something out of the water with their casted fishing line. They finally get it pulled up and its a \"\" on the hook. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0056",
+      "title": "AI Robot: Argument",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene of an argument between \"\" and a \"clanker ai humanoid robot\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0057",
+      "title": "AI Robot: Many People Scenario",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene with a lot of people and a \"clanker ai humanoid robot\". One of the people is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0058",
+      "title": "Documentary Style Sit Down: Multiple People Talking",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene like a documentary style television series or film where different people are sitting down and being asked questions about \"\". The people should be related the the character. Each person should say a few words about the character. Make up the thing they are talking about and make them related to the character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0059",
+      "title": "Documentary Style Sit Down: One Person Talking",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene like a documentary style television series or film where different people are sitting down and being asked questions about \"\". The people should be related the the character. Only one person says about 13 seconds of dialog about the character. Make up the thing they are talking about and make them related to the character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0060",
+      "title": "Opposite Day: 2 Characters",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene where its \"Opposite Day\". The 2 characters are \"\" and \"\". Make up the thing they are talking about and make them related to the character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0061",
+      "title": "Water Into Wine: 2 Characters Funny",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene where Jesus turns water into wine. The other people there are \"\" and \"\". Make up the thing they are talking about and make them related to the character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0062",
+      "title": "Women Olympic Event: Highlight Reel Random",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in an olympic styled theme where women from different nations are competing at some \"typical woman only\" task, mainly home tasks. For example, washing dishes, vaccuuming, taking care of the kids, etc. Choose something like that and make a highlights reel of the event. Make it funny and entertaining.."
+    },
+    {
+      "id": "custom0063",
+      "title": "Women Olympic Event: End of Event Random",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in an olympic styled theme where women from different nations are competing at some \"typical woman only\" task, mainly home tasks. For example, washing dishes, vaccuuming, taking care of the kids, etc. Choose something like that and make the event at the end where we see the final winner and smal celebration. Make it funny and entertaining.."
     }
   ],
   "characters": [
