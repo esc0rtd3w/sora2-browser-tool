@@ -461,14 +461,19 @@ class Main(QMainWindow):
 
         rp_header = QWidget(); rp_row = QHBoxLayout(rp_header); rp_row.setContentsMargins(0,0,0,0); rp_row.setSpacing(8)
         rp_row.addWidget(QLabel("Prompts"), 0)
+        # Category filter next to Prompts
+        rp_row.addSpacing(8)
+        rp_row.addWidget(QLabel("Category:"))
+        self.categoryBox = QComboBox(); self.categoryBox.addItem("Show All")
+        self.categoryBox.currentIndexChanged.connect(self.refresh_prompts_list)
+        rp_row.addWidget(self.categoryBox)
         self.btnPromptCopy = QPushButton("Copy"); self.btnPromptCopy.clicked.connect(self.copy_selected_prompt)
         self.btnPromptAdd = QPushButton("Add"); self.btnPromptAdd.clicked.connect(self.add_prompt_dialog)
         self.btnPromptRemove = QPushButton("Remove"); self.btnPromptRemove.clicked.connect(self.remove_selected_prompt)
         self.btnPromptRestore = QPushButton("Restore Default Prompts"); self.btnPromptRestore.clicked.connect(self.restore_default_prompts)
-        self.btnPromptClear = QPushButton("Clear User Prompts"); self.btnPromptClear.clicked.connect(self.clear_user_prompts)
         self.btnPromptExport = QPushButton("Export"); self.btnPromptExport.clicked.connect(self.export_prompts_dialog)
         self.btnPromptImport = QPushButton("Import"); self.btnPromptImport.clicked.connect(self.import_prompts_dialog)
-        for b in (self.btnPromptCopy,self.btnPromptAdd,self.btnPromptRemove,self.btnPromptRestore,self.btnPromptClear,self.btnPromptExport,self.btnPromptImport):
+        for b in (self.btnPromptCopy,self.btnPromptAdd,self.btnPromptRemove,self.btnPromptRestore,self.btnPromptExport,self.btnPromptImport):
             rp_row.addWidget(b, 0)
         rp_v.addWidget(rp_header, 0)
 
@@ -487,16 +492,12 @@ class Main(QMainWindow):
 
         # --- Category + Character selectors ---
         characterRow = QHBoxLayout()
-        characterRow.addWidget(QLabel("Category:"))
-        self.categoryBox = QComboBox(); self.categoryBox.addItem("Show All")
-        self.categoryBox.currentIndexChanged.connect(self.refresh_prompts_list)
-        characterRow.addWidget(self.categoryBox)
-        characterRow.addSpacing(8)
         characterRow.addWidget(QLabel("Char Category:"))
         self.characterCategoryBox = QComboBox(); self.characterCategoryBox.addItem("Show All")
         self.characterCategoryBox.currentIndexChanged.connect(self._reload_character_boxes)
         characterRow.addWidget(self.characterCategoryBox)
         characterRow.addSpacing(12)
+
         lblP1 = QLabel("Character 1:"); lblP1.setStyleSheet("font-size: 11px;")
         characterRow.addWidget(lblP1)
         self.character1Box = QComboBox()
@@ -510,8 +511,25 @@ class Main(QMainWindow):
         self.character2Box.addItem("— None —")
         self.character2Box.addItems(self.user_characters)
         characterRow.addWidget(self.character2Box)
-        characterRow.addSpacing(8); self.keepNamesCheck = QCheckBox("Keep names"); self.keepNamesCheck.setChecked(True); characterRow.addWidget(self.keepNamesCheck)
+        characterRow.addSpacing(8)
+        lblP3 = QLabel("Character 3:"); lblP3.setStyleSheet("font-size: 11px;")
+        characterRow.addWidget(lblP3)
+        self.character3Box = QComboBox()
+        self.character3Box.addItem("— None —")
+        self.character3Box.addItems(self.user_characters)
+        characterRow.addWidget(self.character3Box)
+        characterRow.addSpacing(8)
+        lblP4 = QLabel("Character 4:"); lblP4.setStyleSheet("font-size: 11px;")
+        characterRow.addWidget(lblP4)
+        self.character4Box = QComboBox()
+        self.character4Box.addItem("— None —")
+        self.character4Box.addItems(self.user_characters)
+        characterRow.addWidget(self.character4Box)
+        characterRow.addSpacing(8)
+        self.keepNamesCheck = QCheckBox("Keep names"); self.keepNamesCheck.setChecked(True)
+        characterRow.addWidget(self.keepNamesCheck)
         rp_v.addLayout(characterRow)
+
         # Populate character category dropdown and boxes initially
         try:
             self._reload_character_boxes()
@@ -519,11 +537,16 @@ class Main(QMainWindow):
             pass
         try:
             self.character1Box.setEditable(True); self.character2Box.setEditable(True)
+            self.character3Box.setEditable(True); self.character4Box.setEditable(True)
             _c1 = QCompleter(self.user_characters, self.character1Box); _c1.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
             _c2 = QCompleter(self.user_characters, self.character2Box); _c2.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
+            _c3 = QCompleter(self.user_characters, self.character3Box); _c3.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
+            _c4 = QCompleter(self.user_characters, self.character4Box); _c4.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
             self.character1Box.setCompleter(_c1); self.character2Box.setCompleter(_c2)
+            self.character3Box.setCompleter(_c3); self.character4Box.setCompleter(_c4)
         except Exception:
             pass
+
     
 
         # Prompts list (single; filtered by Category)
@@ -554,6 +577,9 @@ class Main(QMainWindow):
             self.promptList.currentItemChanged.connect(self.update_prompt_preview)
             self.character1Box.currentIndexChanged.connect(lambda _: self.update_prompt_preview())
             self.character2Box.currentIndexChanged.connect(lambda _: self.update_prompt_preview())
+            self.character3Box.currentIndexChanged.connect(lambda _: self.update_prompt_preview())
+            self.character4Box.currentIndexChanged.connect(lambda _: self.update_prompt_preview())
+
         except Exception:
             pass
         self.refresh_prompts_list()
@@ -943,10 +969,14 @@ class Main(QMainWindow):
 
         p1 = self.character1Box.currentText() if hasattr(self, "character1Box") and self.character1Box.currentIndex() > 0 else ""
         p2 = self.character2Box.currentText() if hasattr(self, "character2Box") and self.character2Box.currentIndex() > 0 else ""
+        p3 = self.character3Box.currentText() if hasattr(self, "character3Box") and self.character3Box.currentIndex() > 0 else ""
+        p4 = self.character4Box.currentText() if hasattr(self, "character4Box") and self.character4Box.currentIndex() > 0 else ""
         if hasattr(self, "keepNamesCheck") and not self.keepNamesCheck.isChecked():
-            p1 = ""; p2 = ""
+            p1 = ""; p2 = ""; p3 = ""; p4 = ""
         txt = replace_once(base_text, p1)
         txt = replace_once(txt, p2)
+        txt = replace_once(txt, p3)
+        txt = replace_once(txt, p4)
 
         for v in cached_vals:
             if v:
@@ -1011,17 +1041,25 @@ class Main(QMainWindow):
         def replace_once(s, val):
             return re.sub(r'""', f'"{val}"', s, count=1) if (s and val) else s
 
-        # Apply Character 1 / Character 2 to first two slots
+        # Apply Character 1–4 to the first slots
         try:
-            p1 = self.character1Box.currentText() if hasattr(self, 'character1Box') and self.character1Box.currentIndex() > 0 else ''
+            p1 = self.character1Box.currentText() if hasattr(self, "character1Box") and self.character1Box.currentIndex() > 0 else ''
         except Exception:
             p1 = ''
         try:
-            p2 = self.character2Box.currentText() if hasattr(self, 'character2Box') and self.character2Box.currentIndex() > 0 else ''
+            p2 = self.character2Box.currentText() if hasattr(self, "character2Box") and self.character2Box.currentIndex() > 0 else ''
         except Exception:
             p2 = ''
-        text = replace_once(text, p1)
-        text = replace_once(text, p2)
+        try:
+            p3 = self.character3Box.currentText() if hasattr(self, "character3Box") and self.character3Box.currentIndex() > 0 else ''
+        except Exception:
+            p3 = ''
+        try:
+            p4 = self.character4Box.currentText() if hasattr(self, "character4Box") and self.character4Box.currentIndex() > 0 else ''
+        except Exception:
+            p4 = ''
+        for _val in (p1, p2, p3, p4):
+            text = replace_once(text, _val)
 
         # Apply cached manual entries (left-to-right)
         try:
@@ -1312,6 +1350,8 @@ class Main(QMainWindow):
     def _reload_character_boxes(self):
         p1 = self.character1Box.currentText() if self.character1Box.currentIndex() > 0 else None
         p2 = self.character2Box.currentText() if self.character2Box.currentIndex() > 0 else None
+        p3 = self.character3Box.currentText() if self.character3Box.currentIndex() > 0 else None
+        p4 = self.character4Box.currentText() if self.character4Box.currentIndex() > 0 else None
 
         # Ensure character objects are up to date
         try:
@@ -1344,7 +1384,7 @@ class Main(QMainWindow):
         names = [n for n in names if n]
 
         # Repopulate combo boxes
-        for box in (self.character1Box, self.character2Box):
+        for box in (self.character1Box, self.character2Box, self.character3Box, self.character4Box):
             box.blockSignals(True)
             box.clear()
             box.addItem("— None —")
@@ -1360,9 +1400,14 @@ class Main(QMainWindow):
             self.character2Box.setCurrentText(p2)
         else:
             self.character2Box.setCurrentIndex(0)
-
-
-
+        if p3 and p3 in names:
+            self.character3Box.setCurrentText(p3)
+        else:
+            self.character3Box.setCurrentIndex(0)
+        if p4 and p4 in names:
+            self.character4Box.setCurrentText(p4)
+        else:
+            self.character4Box.setCurrentIndex(0)
 
     # --- Persist window + orientation + UA on close ---
     def closeEvent(self, e):
