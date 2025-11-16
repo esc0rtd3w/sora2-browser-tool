@@ -70,26 +70,7 @@ PRESET_UAS = {
     "Safari (iPhone)": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
 }
 
-MAIL_SITE_DEFAULTS = [
-    "https://temp-mail.io/en",
-    "https://maildrop.cc/",
-    "https://temporarymail.com/",
-    "https://temp-mail.org/",
-    "https://www.emailondeck.com/",
-    "https://temp-mail.now/",
-    "https://temporary-email.net/",
-    "https://awamail.com/",
-    "https://boomail.org/",
-    "https://tempmailcentral.com/",
-    "https://tempmailer.net/",
-    "https://tmailor.com/",
-    "https://www.disposablemail.com/",
-    "https://yopmail.com/",
-    "https://maildim.com/",
-    "https://temp.ly/",
-]
-
-# Prompts come exclusively from sora2_config.json
+MAIL_SITE_DEFAULTS = []
 PROMPT_DEFAULTS = []
 def load_config():
     if not os.path.exists(CONFIG_PATH):
@@ -98,13 +79,15 @@ def load_config():
             "version": "0.0.0",
             "window": {"width": 1920,"height": 1080,"orientation":"horizontal","user_agent":"Chrome (Windows)","mail_url":"https://www.guerrillamail.com/inbox","window_title":"Sora 2 Browser Tool"},
             "sites": [],
-            "prompts": []
+            "prompts": [],
+            "mail_sites": [],
         }
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         cfg = json.load(f)
-    # allow config to override prompt defaults; if missing, keep built-in
     if "prompts" not in cfg:
         cfg["prompts"] = PROMPT_DEFAULTS
+    if "mail_sites" not in cfg:
+        cfg["mail_sites"] = MAIL_SITE_DEFAULTS
     return cfg
 
 def save_config(cfg):
