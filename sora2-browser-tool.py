@@ -328,7 +328,7 @@ class Main(QMainWindow):
         except Exception:
             pass
         self.cfg = load_config()
-        self.user_mail_sites = load_or_init_user_mail_sites(MAIL_SITE_DEFAULTS)
+        self.user_mail_sites = load_or_init_user_mail_sites(self.cfg.get("mail_sites", MAIL_SITE_DEFAULTS))
         self.setWindowTitle(self.cfg.get("window",{}).get("window_title", "Sora 2 Browser Tool"))
 
         # Shared profile
@@ -1070,7 +1070,8 @@ class Main(QMainWindow):
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
         ) != QMessageBox.StandardButton.Yes:
             return
-        self.user_mail_sites = list(MAIL_SITE_DEFAULTS)
+        defaults = self.cfg.get("mail_sites", MAIL_SITE_DEFAULTS)
+        self.user_mail_sites = list(defaults)
         if save_user_mail_sites(self.user_mail_sites):
             try:
                 if hasattr(self, "m_mail_sites") and self.m_mail_sites is not None:
