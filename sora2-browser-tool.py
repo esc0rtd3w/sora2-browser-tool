@@ -1011,7 +1011,7 @@ class Main(QMainWindow):
         wa.setDefaultWidget(edit)
         menu.addAction(wa)
         default_url = self.cfg.get("window", {}).get("mail_url", "https://www.guerrillamail.com/inbox")
-        a_default = menu.addAction("Default (guerillamail current)")
+        a_default = menu.addAction("Default (current)")
         a_default.triggered.connect(lambda _, u=default_url: self.open_mail_site(u))
         for url in self.user_mail_sites:
             if not url:
