@@ -8,7 +8,7 @@
     "mail_url": "https://www.guerrillamail.com/inbox",
     "window_title": "Sora 2 Browser Tool",
     "fullscreen": false,
-    "pane_ratio": 0.6139832594780896
+    "pane_ratio": 0.5987198424421467
   },
   "sites": [
     {
@@ -5563,16 +5563,16 @@
   ],
   "ui": {
     "prompts_splitter_sizes": [
-      510,
-      260
+      520,
+      280
     ],
     "actions_splitter_sizes": [
-      1240,
-      780
+      1220,
+      820
     ],
     "content_splitter_sizes": [
-      1250,
-      780
+      1220,
+      820
     ]
   }
 }
