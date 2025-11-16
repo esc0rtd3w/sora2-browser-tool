@@ -11,5 +11,7 @@ Features
 - Can change user agent if needed (most times breaks captchas)
 - Added preview window and autofill for characters or manual entry in prompts
 - Edit prompts using right-click menu
+- 4 customizable characters
+- Custom and saved window pane values on exit
 
-<img src="https://i.imgur.com/8GaIfzc.png" alt="Sora2 Browser Tool">
+<img src="https://i.imgur.com/tmBb8iQ.png" alt="Sora2 Browser Tool">
