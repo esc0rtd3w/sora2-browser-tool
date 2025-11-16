@@ -10,6 +10,24 @@
     "fullscreen": false,
     "pane_ratio": 0.5987198424421467
   },
+  "mail_sites": [
+    "https://temp-mail.io/en",
+    "https://maildrop.cc/",
+    "https://temporarymail.com/",
+    "https://temp-mail.org/",
+    "https://www.emailondeck.com/",
+    "https://temp-mail.now/",
+    "https://temporary-email.net/",
+    "https://awamail.com/",
+    "https://boomail.org/",
+    "https://tempmailcentral.com/",
+    "https://tempmailer.net/",
+    "https://tmailor.com/",
+    "https://www.disposablemail.com/",
+    "https://yopmail.com/",
+    "https://maildim.com/",
+    "https://temp.ly/"
+  ],
   "sites": [
     {
       "id": 1,
