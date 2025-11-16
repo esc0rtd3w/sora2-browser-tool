@@ -1,5 +1,5 @@
 {
-  "version": "1.2.2",
+  "version": "1.2.3",
   "window": {
     "width": 1920,
     "height": 1080,
@@ -8,7 +8,7 @@
     "mail_url": "https://www.guerrillamail.com/inbox",
     "window_title": "Sora 2 Browser Tool",
     "fullscreen": false,
-    "pane_ratio": 0.6
+    "pane_ratio": 0.6139832594780896
   },
   "sites": [
     {
@@ -5563,8 +5563,16 @@
   ],
   "ui": {
     "prompts_splitter_sizes": [
-      680,
-      520
+      510,
+      260
+    ],
+    "actions_splitter_sizes": [
+      1240,
+      780
+    ],
+    "content_splitter_sizes": [
+      1250,
+      780
     ]
   }
 }

@@ -596,10 +596,31 @@ class Main(QMainWindow):
             pass
 
         # add left/right panes to the actions splitter
+        leftActions.setMinimumWidth(150)
+        rightPrompts.setMinimumWidth(150)
         self.actionsSplit.addWidget(leftActions)
         self.actionsSplit.addWidget(rightPrompts)
-        # align actions split with content split via pane_ratio
-        self.actionsSplit.setSizes([int(1000*self.cfg['window'].get('pane_ratio',0.5)), int(1000*(1.0-self.cfg['window'].get('pane_ratio',0.5)))])
+
+        # determine shared split sizes from config (ui.actions_splitter_sizes/content_splitter_sizes or window.pane_ratio)
+        ui_cfg = (self.cfg.get("ui") or {})
+        split_sizes = ui_cfg.get("actions_splitter_sizes") or ui_cfg.get("content_splitter_sizes")
+        if isinstance(split_sizes, (list, tuple)) and len(split_sizes) >= 2:
+            try:
+                split_sizes = [int(split_sizes[0]), int(split_sizes[1])]
+            except Exception:
+                split_sizes = None
+        else:
+            try:
+                ratio = float(self.cfg.get("window", {}).get("pane_ratio", 0.5))
+            except Exception:
+                ratio = 0.5
+            split_sizes = [int(1000 * ratio), int(1000 * (1.0 - ratio))]
+
+        # apply initial split sizes to the actions pane
+        try:
+            self.actionsSplit.setSizes(split_sizes)
+        except Exception:
+            pass
 
         #self.actionsSplit.setSizes([1100, 700])  # initial ratio; user can drag
 
@@ -620,7 +641,10 @@ class Main(QMainWindow):
 
         self.contentSplit.addWidget(self.leftTabs); self.contentSplit.addWidget(self.right)
         self.contentSplit.setStretchFactor(0,1); self.contentSplit.setStretchFactor(1,1)
-        self.contentSplit.setSizes([int(1000*self.cfg['window'].get('pane_ratio',0.5)),int(1000*(1.0-self.cfg['window'].get('pane_ratio',0.5)))])
+        try:
+            self.contentSplit.setSizes(split_sizes)
+        except Exception:
+            pass
 
         # add to root
         self.rootSplit.addWidget(actions); self.rootSplit.addWidget(self.contentSplit)
@@ -1207,28 +1231,73 @@ class Main(QMainWindow):
         self.refresh_prompts_list()
         self.statusBar().showMessage("Prompt added.", 3000)
         
+
     def save_splitter_sizes(self):
+        # Prompts splitter
         try:
-            sizes = self.promptsSplitter.sizes()
+            p_sizes = self.promptsSplitter.sizes()
         except Exception:
-            sizes = None
-        if not sizes:
-            return
-        if not isinstance(self.cfg.get("ui"), dict):
-            self.cfg["ui"] = {}
-        self.cfg["ui"]["prompts_splitter_sizes"] = [int(s) for s in sizes]
+            p_sizes = None
+
+        # Horizontal actions/content splitters (kept in sync while running)
+        try:
+            a_sizes = self.actionsSplit.sizes()
+        except Exception:
+            a_sizes = None
+        try:
+            c_sizes = self.contentSplit.sizes()
+        except Exception:
+            c_sizes = None
+
+        # Update in-memory cfg.ui
+        ui = self.cfg.get("ui")
+        if not isinstance(ui, dict):
+            ui = {}
+            self.cfg["ui"] = ui
+        if p_sizes:
+            ui["prompts_splitter_sizes"] = [int(s) for s in p_sizes]
+        if a_sizes:
+            ui["actions_splitter_sizes"] = [int(s) for s in a_sizes]
+        if c_sizes:
+            ui["content_splitter_sizes"] = [int(s) for s in c_sizes]
+
+        # Also update legacy pane_ratio for backwards compatibility
+        try:
+            if a_sizes and len(a_sizes) >= 2:
+                total = float(a_sizes[0] + a_sizes[1])
+                if total > 0:
+                    self.cfg.setdefault("window", {})
+                    self.cfg["window"]["pane_ratio"] = float(a_sizes[0]) / total
+        except Exception:
+            pass
+
+        # Merge back into JSON on disk
         try:
             with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-                data = json.load(f)
+                data = json.load(f) or {}
         except Exception:
             data = {}
         if not isinstance(data.get("ui"), dict):
             data["ui"] = {}
-        data["ui"]["prompts_splitter_sizes"] = [int(s) for s in sizes]
+        if p_sizes:
+            data["ui"]["prompts_splitter_sizes"] = [int(s) for s in p_sizes]
+        if a_sizes:
+            data["ui"]["actions_splitter_sizes"] = [int(s) for s in a_sizes]
+        if c_sizes:
+            data["ui"]["content_splitter_sizes"] = [int(s) for s in c_sizes]
+
+        # keep window.pane_ratio in sync if present
+        try:
+            if "window" not in data or not isinstance(data["window"], dict):
+                data["window"] = self.cfg.get("window", {})
+            else:
+                if "pane_ratio" in self.cfg.get("window", {}):
+                    data["window"]["pane_ratio"] = self.cfg["window"]["pane_ratio"]
+        except Exception:
+            pass
+
         with open(CONFIG_PATH, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
-
-
     def restore_default_prompts(self):
         if QMessageBox.question(self, "Restore Default Prompts", "Replace your user prompts with the base defaults?") != QMessageBox.StandardButton.Yes:
             return
