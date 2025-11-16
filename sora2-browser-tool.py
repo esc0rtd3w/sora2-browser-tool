@@ -35,7 +35,8 @@ from PyQt6.QtCore import Qt, QUrl, QSize, QProcess
 from PyQt6.QtWidgets import (QTextEdit,
     QApplication, QMainWindow, QSplitter, QWidget, QVBoxLayout, QHBoxLayout,
     QListWidget, QListWidgetItem, QPushButton, QLineEdit, QComboBox, QLabel,
-    QMessageBox, QInputDialog, QTabWidget, QCheckBox, QCompleter, QFileDialog
+    QMessageBox, QInputDialog, QTabWidget, QCheckBox, QCompleter, QFileDialog,
+    QSizePolicy
 )
 from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineProfile
 from PyQt6.QtWebEngineWidgets import QWebEngineView
@@ -459,14 +460,20 @@ class Main(QMainWindow):
         rightPrompts = QWidget(); rp_v = QVBoxLayout(rightPrompts)
         rp_v.setContentsMargins(8,0,0,0); rp_v.setSpacing(6)
 
-        rp_header = QWidget(); rp_row = QHBoxLayout(rp_header); rp_row.setContentsMargins(0,0,0,0); rp_row.setSpacing(8)
-        rp_row.addWidget(QLabel("Prompts"), 0)
-        # Category filter next to Prompts
-        rp_row.addSpacing(8)
-        rp_row.addWidget(QLabel("Category:"))
+        rp_header = QWidget()
+        rp_row = QHBoxLayout(rp_header)
+        rp_row.setContentsMargins(0, 0, 0, 0)
+        rp_row.setSpacing(4)
+
+        self.categoriesLabel = QLabel("Prompts:")
+        self.categoriesLabel.setSizePolicy(QSizePolicy.Policy.Fixed,
+                                           QSizePolicy.Policy.Preferred)
+        rp_row.addWidget(self.categoriesLabel)
+
         self.categoryBox = QComboBox(); self.categoryBox.addItem("Show All")
         self.categoryBox.currentIndexChanged.connect(self.refresh_prompts_list)
         rp_row.addWidget(self.categoryBox)
+
         self.btnPromptCopy = QPushButton("Copy"); self.btnPromptCopy.clicked.connect(self.copy_selected_prompt)
         self.btnPromptAdd = QPushButton("Add"); self.btnPromptAdd.clicked.connect(self.add_prompt_dialog)
         self.btnPromptRemove = QPushButton("Remove"); self.btnPromptRemove.clicked.connect(self.remove_selected_prompt)
@@ -492,7 +499,7 @@ class Main(QMainWindow):
 
         # --- Category + Character selectors ---
         characterRow = QHBoxLayout()
-        characterRow.addWidget(QLabel("Char Category:"))
+        characterRow.addWidget(QLabel("Characters:"))
         self.characterCategoryBox = QComboBox(); self.characterCategoryBox.addItem("Show All")
         self.characterCategoryBox.currentIndexChanged.connect(self._reload_character_boxes)
         characterRow.addWidget(self.characterCategoryBox)
