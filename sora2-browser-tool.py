@@ -603,6 +603,11 @@ class Main(QMainWindow):
 
         # determine shared split sizes from config (ui.actions_splitter_sizes/content_splitter_sizes or window.pane_ratio)
         ui_cfg = (self.cfg.get("ui") or {})
+        if not isinstance(ui_cfg, dict):
+            ui_cfg = {}
+        self.cfg["ui"] = ui_cfg
+        # link_splitters: True = keep actions/content splitters in sync (default); False = decouple
+        self.link_splitters = bool(ui_cfg.get("link_splitters", True))
         split_sizes = ui_cfg.get("actions_splitter_sizes") or ui_cfg.get("content_splitter_sizes")
         if isinstance(split_sizes, (list, tuple)) and len(split_sizes) >= 2:
             try:
@@ -751,6 +756,9 @@ class Main(QMainWindow):
     
     # --- Splitter sync ---
     def _apply_split_sizes(self, sizes):
+        # If link_splitters is False, do not propagate sizes between top/bottom splitters
+        if not getattr(self, "link_splitters", True):
+            return
         try:
             self._syncing_splitters = True
             self.actionsSplit.setSizes(sizes)
@@ -1254,6 +1262,8 @@ class Main(QMainWindow):
         if not isinstance(ui, dict):
             ui = {}
             self.cfg["ui"] = ui
+        # persist link_splitters flag into in-memory ui config
+        ui["link_splitters"] = bool(getattr(self, "link_splitters", True))
         if p_sizes:
             ui["prompts_splitter_sizes"] = [int(s) for s in p_sizes]
         if a_sizes:
@@ -1279,6 +1289,8 @@ class Main(QMainWindow):
             data = {}
         if not isinstance(data.get("ui"), dict):
             data["ui"] = {}
+        # persist link_splitters flag into JSON ui section
+        data["ui"]["link_splitters"] = bool(getattr(self, "link_splitters", True))
         if p_sizes:
             data["ui"]["prompts_splitter_sizes"] = [int(s) for s in p_sizes]
         if a_sizes:
