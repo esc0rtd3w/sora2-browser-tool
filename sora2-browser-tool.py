@@ -36,7 +36,7 @@ from PyQt6.QtWidgets import (QTextEdit,
     QApplication, QMainWindow, QSplitter, QWidget, QVBoxLayout, QHBoxLayout,
     QListWidget, QListWidgetItem, QPushButton, QLineEdit, QComboBox, QLabel,
     QMessageBox, QInputDialog, QTabWidget, QCheckBox, QCompleter, QFileDialog,
-    QSizePolicy
+    QSizePolicy, QWidgetAction
 )
 from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineProfile
 from PyQt6.QtWebEngineWidgets import QWebEngineView
@@ -53,6 +53,7 @@ CONFIG_PATH = os.path.join(os.path.dirname(__file__), "sora2_config.json")
 USER_SITES_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_sites.json")
 USER_PROMPTS_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_prompts.json")
 USER_CHARACTERS_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_characters.json")
+USER_MAIL_SITES_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_mail_sites.json")
 
 
 DEFAULT_CHROME_UA = (
@@ -68,6 +69,25 @@ PRESET_UAS = {
     "Chrome (Android)": "Mozilla/5.0 (Linux; Android 14; Pixel 8 Pro) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Mobile Safari/537.36",
     "Safari (iPhone)": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
 }
+
+MAIL_SITE_DEFAULTS = [
+    "https://temp-mail.io/en",
+    "https://maildrop.cc/",
+    "https://temporarymail.com/",
+    "https://temp-mail.org/",
+    "https://www.emailondeck.com/",
+    "https://temp-mail.now/",
+    "https://temporary-email.net/",
+    "https://awamail.com/",
+    "https://boomail.org/",
+    "https://tempmailcentral.com/",
+    "https://tempmailer.net/",
+    "https://tmailor.com/",
+    "https://www.disposablemail.com/",
+    "https://yopmail.com/",
+    "https://maildim.com/",
+    "https://temp.ly/",
+]
 
 # Prompts come exclusively from sora2_config.json
 PROMPT_DEFAULTS = []
@@ -126,6 +146,36 @@ def save_user_sites(sites):
     try:
         with open(USER_SITES_PATH, "w", encoding="utf-8") as f:
             json.dump({"sites": sites}, f, indent=2, ensure_ascii=False)
+        return True
+    except Exception:
+        return False
+
+def load_or_init_user_mail_sites(default_mail_sites):
+    """Load user mail sites from USER_MAIL_SITES_PATH; if missing, seed with defaults and write file."""
+    try:
+        if os.path.exists(USER_MAIL_SITES_PATH):
+            with open(USER_MAIL_SITES_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict):
+                sites = data.get("mail_sites", [])
+            elif isinstance(data, list):
+                sites = data
+            else:
+                sites = []
+        else:
+            sites = list(default_mail_sites)
+            with open(USER_MAIL_SITES_PATH, "w", encoding="utf-8") as f:
+                json.dump({"mail_sites": sites}, f, indent=2, ensure_ascii=False)
+        if not isinstance(sites, list):
+            sites = list(default_mail_sites)
+        return sites
+    except Exception:
+        return list(default_mail_sites)
+
+def save_user_mail_sites(sites):
+    try:
+        with open(USER_MAIL_SITES_PATH, "w", encoding="utf-8") as f:
+            json.dump({"mail_sites": sites}, f, indent=2, ensure_ascii=False)
         return True
     except Exception:
         return False
@@ -295,6 +345,7 @@ class Main(QMainWindow):
         except Exception:
             pass
         self.cfg = load_config()
+        self.user_mail_sites = load_or_init_user_mail_sites(MAIL_SITE_DEFAULTS)
         self.setWindowTitle(self.cfg.get("window",{}).get("window_title", "Sora 2 Browser Tool"))
 
         # Shared profile
@@ -390,6 +441,8 @@ class Main(QMainWindow):
         a_ep = m_characters.addAction("Export…"); a_ep.triggered.connect(self.export_characters_dialog)
         a_ip = m_characters.addAction("Import…"); a_ip.triggered.connect(self.import_characters_dialog)
         a_clear_data = menubar.addAction("Clear Site Data"); a_clear_data.triggered.connect(self.clear_site_data)
+        self.m_mail_sites = menubar.addMenu("Switch Email Site")
+        self._build_mail_sites_menu(self.m_mail_sites)
         a_update = menubar.addAction("Check For Updates"); a_update.triggered.connect(self.check_for_updates)
 
 
@@ -957,6 +1010,167 @@ class Main(QMainWindow):
         if save_user_sites(self.user_sites):
             self.refresh_sites_list()
             self.statusBar().showMessage("Cleared user sites.", 4000)
+
+    # --- Mail sites helpers ---
+    def _build_mail_sites_menu(self, menu):
+        try:
+            menu.clear()
+        except Exception:
+            return
+        a_restore = menu.addAction("Restore Default Mail Sites")
+        a_restore.triggered.connect(self.restore_default_mail_sites)
+        a_clear = menu.addAction("Clear User Mail Sites")
+        a_clear.triggered.connect(self.clear_user_mail_sites)
+        wa = QWidgetAction(menu)
+        edit = QLineEdit(menu)
+        edit.setPlaceholderText("https://… (custom mail site)")
+        edit.returnPressed.connect(lambda e=edit: self._custom_mail_site_entered(e))
+        wa.setDefaultWidget(edit)
+        menu.addAction(wa)
+        default_url = self.cfg.get("window", {}).get("mail_url", "https://www.guerrillamail.com/inbox")
+        a_default = menu.addAction("Default (guerillamail current)")
+        a_default.triggered.connect(lambda _, u=default_url: self.open_mail_site(u))
+        for url in self.user_mail_sites:
+            if not url:
+                continue
+            act = menu.addAction(str(url))
+            act.triggered.connect(lambda _, u=url: self.open_mail_site(u))
+        menu.addSeparator()
+        a_export = menu.addAction("Export...")
+        a_export.triggered.connect(self.export_mail_sites_dialog)
+        a_import = menu.addAction("Import...")
+        a_import.triggered.connect(self.import_mail_sites_dialog)
+
+    def open_mail_site(self, url):
+        url = (url or "").strip()
+        if not url:
+            return
+        if not re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*://', url):
+            url = "https://" + url
+        try:
+            self.right.setUrl(QUrl(url))
+        except Exception:
+            return
+        try:
+            self.cfg.setdefault("window", {})["mail_url"] = url
+        except Exception:
+            pass
+
+    def _custom_mail_site_entered(self, edit):
+        try:
+            url = (edit.text() or "").strip()
+        except Exception:
+            url = ""
+        if not url:
+            return
+        if not re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*://', url):
+            url = "https://" + url
+        if url not in self.user_mail_sites:
+            self.user_mail_sites.append(url)
+            save_user_mail_sites(self.user_mail_sites)
+        try:
+            edit.clear()
+        except Exception:
+            pass
+        try:
+            if hasattr(self, "m_mail_sites") and self.m_mail_sites is not None:
+                self._build_mail_sites_menu(self.m_mail_sites)
+        except Exception:
+            pass
+        self.open_mail_site(url)
+
+    def restore_default_mail_sites(self):
+        if QMessageBox.question(
+            self,
+            "Restore Default Mail Sites",
+            "Replace your mail sites with the built-in defaults?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        ) != QMessageBox.StandardButton.Yes:
+            return
+        self.user_mail_sites = list(MAIL_SITE_DEFAULTS)
+        if save_user_mail_sites(self.user_mail_sites):
+            try:
+                if hasattr(self, "m_mail_sites") and self.m_mail_sites is not None:
+                    self._build_mail_sites_menu(self.m_mail_sites)
+            except Exception:
+                pass
+            self.statusBar().showMessage("Restored default mail sites.", 4000)
+
+    def clear_user_mail_sites(self):
+        if QMessageBox.question(
+            self,
+            "Clear User Mail Sites",
+            "Remove ALL user mail sites? This does not touch the built-in default entry. Continue?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+        ) != QMessageBox.StandardButton.Yes:
+            return
+        self.user_mail_sites = []
+        if save_user_mail_sites(self.user_mail_sites):
+            try:
+                if hasattr(self, "m_mail_sites") and self.m_mail_sites is not None:
+                    self._build_mail_sites_menu(self.m_mail_sites)
+            except Exception:
+                pass
+            self.statusBar().showMessage("Cleared user mail sites.", 4000)
+
+    def export_mail_sites_dialog(self):
+        try:
+            path, _ = QFileDialog.getSaveFileName(
+                self,
+                "Export Mail Sites",
+                "sora2_user_mail_sites_export.json",
+                "JSON Files (*.json)",
+            )
+            if not path:
+                return
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump({"mail_sites": self.user_mail_sites}, f, indent=2)
+            self.statusBar().showMessage(f"Exported mail sites to {path}", 4000)
+        except Exception as e:
+            QMessageBox.critical(self, "Export Error", str(e))
+
+    def import_mail_sites_dialog(self):
+        try:
+            path, _ = QFileDialog.getOpenFileName(
+                self,
+                "Import Mail Sites",
+                "",
+                "JSON Files (*.json)",
+            )
+            if not path:
+                return
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            if isinstance(data, dict):
+                sites = data.get("mail_sites", [])
+            elif isinstance(data, list):
+                sites = data
+            else:
+                sites = []
+            if not isinstance(sites, list):
+                QMessageBox.warning(self, "Import Mail Sites", "Invalid format. Expecting an object with a 'mail_sites' array.")
+                return
+            cleaned = []
+            for u in sites:
+                if not isinstance(u, str):
+                    continue
+                u = u.strip()
+                if not u:
+                    continue
+                if not re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*://', u):
+                    u = "https://" + u
+                if u not in cleaned:
+                    cleaned.append(u)
+            self.user_mail_sites = cleaned
+            save_user_mail_sites(self.user_mail_sites)
+            try:
+                if hasattr(self, "m_mail_sites") and self.m_mail_sites is not None:
+                    self._build_mail_sites_menu(self.m_mail_sites)
+            except Exception:
+                pass
+            self.statusBar().showMessage(f"Imported mail sites from {path}", 4000)
+        except Exception as e:
+            QMessageBox.critical(self, "Import Error", str(e))
 
     # --- Prompts helpers ---
     def refresh_prompts_list(self):
