@@ -5617,7 +5617,13 @@
     "link_splitters": true,
     "hotkeys": {
       "fullscreen_left": "F1",
-      "fullscreen_right": "F2"
+      "fullscreen_right": "F2",
+      "zoom_left_in": "F3",
+      "zoom_left_out": "F4",
+      "zoom_left_reset": "F5",
+      "zoom_right_in": "F6",
+      "zoom_right_out": "F7",
+      "zoom_right_reset": "F8"
     },
     "pane_zoom": {
       "left": 1.0,
