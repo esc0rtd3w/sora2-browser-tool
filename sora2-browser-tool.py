@@ -163,7 +163,6 @@ def save_user_mail_sites(sites):
     except Exception:
         return False
 
-
 def load_or_init_user_prompts(default_prompts):
     """Load user prompts; if file missing or empty, seed with defaults and persist. Return the list."""
     try:
@@ -220,7 +219,6 @@ def _extract_categories(objs):
             seen.add(c); cats.append(c)
     return cats
 
-
 def _normalize_characters_cfg_list(chars):
     objs = []
     for c in chars or []:
@@ -244,13 +242,10 @@ def _normalize_characters_cfg_list(chars):
         result.append(o)
     return result
 
-
-
 def sanitize_character_name(name: str) -> str:
     s = re.sub(r"[^A-Za-z0-9 '\-]", "", str(name))
     s = re.sub(r"\s+", " ", s).strip()
     return s
-
 
 def save_user_characters(characters):
     try:
@@ -317,8 +312,6 @@ class Main(QMainWindow):
         if not pid:
             pid = hashlib.sha1((title + "|" + (base_text or "")).encode("utf-8")).hexdigest()
         return pid
-
-
 
     def __init__(self):
         super().__init__()
@@ -403,6 +396,12 @@ class Main(QMainWindow):
         self.act_zoom_right_reset = m_view.addAction("Reset Zoom (Mail Pane)")
         self.act_zoom_right_reset.triggered.connect(lambda: self.set_right_zoom(1.0))
 
+        m_view.addSeparator()
+        a_view_export = m_view.addAction("Export…")
+        a_view_export.triggered.connect(self.export_view_toolbar_dialog)
+        a_view_import = m_view.addAction("Import…")
+        a_view_import.triggered.connect(self.import_view_toolbar_dialog)
+
         m_tools = menubar.addMenu("Tools")
         m_tools_ua = m_tools.addMenu("User Agent")
         # mirror the preset list in a submenu
@@ -449,8 +448,6 @@ class Main(QMainWindow):
         self.m_mail_sites = menubar.addMenu("Switch Email Site")
         self._build_mail_sites_menu(self.m_mail_sites)
         a_update = menubar.addAction("Check For Updates"); a_update.triggered.connect(self.check_for_updates)
-
-
 
         # === ACTIONS (split left actions | right prompts) ===
         actions = QWidget(); act_v = QVBoxLayout(actions)
@@ -510,8 +507,8 @@ class Main(QMainWindow):
         row_sites_h.addWidget(info,1)
         for b in (btnAddSite, btnRemoveSite):
             row_sites_h.addWidget(b,0)
+            
         # keep Restore/Clear accessible via the Sites menu
-
         la_v.addWidget(row_sites)
 
         # ----- RIGHT PROMPTS PANEL -----
@@ -544,14 +541,14 @@ class Main(QMainWindow):
 
         self.user_prompts = load_or_init_user_prompts(self.cfg.get("prompts", []))
         self._manual_placeholder_cache = {}  # remembers manual "" values per prompt
-
-
         self._prompt_objs = _normalize_prompts_list(self.user_prompts)
+        
         # Characters (with categories from config)
         cfg_chars_raw = self.cfg.get("characters", [])
         self.character_defs = _normalize_characters_cfg_list(cfg_chars_raw)
         default_char_names = [c.get("name", "") for c in self.character_defs]
         self.user_characters = load_or_init_user_characters(default_char_names)
+        
         # Build merged character objects (user list + config categories)
         self._rebuild_character_objects()
 
@@ -570,6 +567,7 @@ class Main(QMainWindow):
         self.character1Box.addItems(self.user_characters)
         characterRow.addWidget(self.character1Box)
         characterRow.addSpacing(8)
+
         #lblP2 = QLabel("Character 2:"); lblP2.setStyleSheet("font-size: 11px;")
         #characterRow.addWidget(lblP2)
         self.character2Box = QComboBox()
@@ -577,6 +575,7 @@ class Main(QMainWindow):
         self.character2Box.addItems(self.user_characters)
         characterRow.addWidget(self.character2Box)
         characterRow.addSpacing(8)
+
         #lblP3 = QLabel("Character 3:"); lblP3.setStyleSheet("font-size: 11px;")
         #characterRow.addWidget(lblP3)
         self.character3Box = QComboBox()
@@ -584,6 +583,7 @@ class Main(QMainWindow):
         self.character3Box.addItems(self.user_characters)
         characterRow.addWidget(self.character3Box)
         characterRow.addSpacing(8)
+
         #lblP4 = QLabel("Character 4:"); lblP4.setStyleSheet("font-size: 11px;")
         #characterRow.addWidget(lblP4)
         self.character4Box = QComboBox()
@@ -611,8 +611,6 @@ class Main(QMainWindow):
             self.character3Box.setCompleter(_c3); self.character4Box.setCompleter(_c4)
         except Exception:
             pass
-
-    
 
         # Prompts list (single; filtered by Category)
         self.promptList = QListWidget()
@@ -665,7 +663,7 @@ class Main(QMainWindow):
             ui_cfg = {}
         self.cfg["ui"] = ui_cfg
 
-        # Hotkeys: fullscreen toggles (stored in config, with defaults)
+        # Hotkeys: fullscreen + zoom (stored in config, with defaults)
         hotkeys = ui_cfg.get("hotkeys")
         if not isinstance(hotkeys, dict):
             hotkeys = {}
@@ -673,6 +671,18 @@ class Main(QMainWindow):
             hotkeys["fullscreen_left"] = "F1"
         if "fullscreen_right" not in hotkeys:
             hotkeys["fullscreen_right"] = "F2"
+        if "zoom_left_in" not in hotkeys:
+            hotkeys["zoom_left_in"] = "F3"
+        if "zoom_left_out" not in hotkeys:
+            hotkeys["zoom_left_out"] = "F4"
+        if "zoom_left_reset" not in hotkeys:
+            hotkeys["zoom_left_reset"] = "F5"
+        if "zoom_right_in" not in hotkeys:
+            hotkeys["zoom_right_in"] = "F6"
+        if "zoom_right_out" not in hotkeys:
+            hotkeys["zoom_right_out"] = "F7"
+        if "zoom_right_reset" not in hotkeys:
+            hotkeys["zoom_right_reset"] = "F8"
         ui_cfg["hotkeys"] = hotkeys
 
         # Pane zoom defaults (per pane)
@@ -704,10 +714,16 @@ class Main(QMainWindow):
         # link_splitters: True = keep actions/content splitters in sync (default); False = decouple
         self.link_splitters = bool(ui_cfg.get("link_splitters", True))
 
-        # apply configured hotkeys to fullscreen actions
+        # apply configured hotkeys to fullscreen and zoom actions
         try:
             self.act_toggle_left_fs.setShortcut(hotkeys.get("fullscreen_left", "F1"))
             self.act_toggle_right_fs.setShortcut(hotkeys.get("fullscreen_right", "F2"))
+            self.act_zoom_left_in.setShortcut(hotkeys.get("zoom_left_in", "F3"))
+            self.act_zoom_left_out.setShortcut(hotkeys.get("zoom_left_out", "F4"))
+            self.act_zoom_left_reset.setShortcut(hotkeys.get("zoom_left_reset", "F5"))
+            self.act_zoom_right_in.setShortcut(hotkeys.get("zoom_right_in", "F6"))
+            self.act_zoom_right_out.setShortcut(hotkeys.get("zoom_right_out", "F7"))
+            self.act_zoom_right_reset.setShortcut(hotkeys.get("zoom_right_reset", "F8"))
         except Exception:
             pass
 
@@ -730,8 +746,6 @@ class Main(QMainWindow):
         except Exception:
             pass
 
-        #self.actionsSplit.setSizes([1100, 700])  # initial ratio; user can drag
-
         # === CONTENT splitter LEFT/RIGHT ===
         self.contentSplit = QSplitter(Qt.Orientation.Horizontal)
         # Left tabs
@@ -739,6 +753,7 @@ class Main(QMainWindow):
         self.leftTabs.tabBar().setUsesScrollButtons(True)
         self.leftTabs.tabCloseRequested.connect(self.close_left_tab)
         self.leftTabs.currentChanged.connect(self.on_left_tab_changed)
+        
         # initial tab
         _b0 = Browser()
         self._connect_left_browser(_b0)
@@ -756,6 +771,7 @@ class Main(QMainWindow):
 
         # add to root
         self.rootSplit.addWidget(actions); self.rootSplit.addWidget(self.contentSplit)
+        
         # Keep ACTIONS and CONTENT splitters aligned
         self._syncing_splitters = False
         self.actionsSplit.splitterMoved.connect(self._on_actions_split_moved)
@@ -870,7 +886,6 @@ class Main(QMainWindow):
         item.accept()
         self.statusBar().showMessage(f"Downloading to {downloads/fname}", 4000)
 
-    
     # --- Splitter sync ---
     def _apply_split_sizes(self, sizes):
         # If link_splitters is False, do not propagate sizes between top/bottom splitters
@@ -1566,7 +1581,6 @@ class Main(QMainWindow):
             else:
                 new_category = cur_category
 
-
             cur_tags = obj.get("tags")
             if isinstance(cur_tags, (list, tuple)):
                 cur_tags_str = ", ".join(str(t) for t in cur_tags if str(t).strip())
@@ -1654,7 +1668,6 @@ class Main(QMainWindow):
         self.refresh_prompts_list()
         self.statusBar().showMessage("Prompt added.", 3000)
         
-
     def save_splitter_sizes(self):
         # Prompts splitter
         try:
@@ -1725,6 +1738,83 @@ class Main(QMainWindow):
 
         with open(CONFIG_PATH, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
+
+    def export_view_toolbar_dialog(self):
+        try:
+            path, _ = QFileDialog.getSaveFileName(
+                self,
+                "Export View Toolbar Settings",
+                "sora2_view_toolbar_export.json",
+                "JSON Files (*.json)",
+            )
+            if not path:
+                return
+            ui_cfg = self.cfg.get("ui") or {}
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump({"ui": ui_cfg}, f, indent=2, ensure_ascii=False)
+            self.statusBar().showMessage(f"Exported view toolbar settings to {path}", 4000)
+        except Exception as e:
+            QMessageBox.critical(self, "Export Error", str(e))
+
+    def import_view_toolbar_dialog(self):
+        try:
+            path, _ = QFileDialog.getOpenFileName(
+                self,
+                "Import View Toolbar Settings",
+                "",
+                "JSON Files (*.json)",
+            )
+            if not path:
+                return
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            ui_cfg = data.get("ui")
+            if not isinstance(ui_cfg, dict):
+                QMessageBox.warning(self, "Import Error", "Invalid format. Expecting an object with a 'ui' object.")
+                return
+            self.cfg["ui"] = ui_cfg
+
+            # Re-apply pane zoom
+            pane_zoom = ui_cfg.get("pane_zoom") or {}
+            if isinstance(pane_zoom, dict):
+                try:
+                    self.set_left_zoom(float(pane_zoom.get("left", getattr(self, "left_zoom", 1.0))))
+                except Exception:
+                    pass
+                try:
+                    self.set_right_zoom(float(pane_zoom.get("right", getattr(self, "right_zoom", 1.0))))
+                except Exception:
+                    pass
+
+            # Re-apply pane fullscreen
+            pane_fs = ui_cfg.get("pane_fullscreen") or {}
+            if isinstance(pane_fs, dict):
+                self.left_pane_fullscreen = bool(pane_fs.get("left", False))
+                self.right_pane_fullscreen = bool(pane_fs.get("right", False))
+                try:
+                    self._apply_pane_fullscreen_state()
+                except Exception:
+                    pass
+
+            # Re-apply hotkeys
+            hotkeys = ui_cfg.get("hotkeys") or {}
+            if isinstance(hotkeys, dict):
+                try:
+                    self.act_toggle_left_fs.setShortcut(hotkeys.get("fullscreen_left", "F1"))
+                    self.act_toggle_right_fs.setShortcut(hotkeys.get("fullscreen_right", "F2"))
+                    self.act_zoom_left_in.setShortcut(hotkeys.get("zoom_left_in", "F3"))
+                    self.act_zoom_left_out.setShortcut(hotkeys.get("zoom_left_out", "F4"))
+                    self.act_zoom_left_reset.setShortcut(hotkeys.get("zoom_left_reset", "F5"))
+                    self.act_zoom_right_in.setShortcut(hotkeys.get("zoom_right_in", "F6"))
+                    self.act_zoom_right_out.setShortcut(hotkeys.get("zoom_right_out", "F7"))
+                    self.act_zoom_right_reset.setShortcut(hotkeys.get("zoom_right_reset", "F8"))
+                except Exception:
+                    pass
+
+            self.statusBar().showMessage(f"Imported view toolbar settings from {path}", 4000)
+        except Exception as e:
+            QMessageBox.critical(self, "Import Error", str(e))
+
     def restore_default_prompts(self):
         if QMessageBox.question(self, "Restore Default Prompts", "Replace your user prompts with the base defaults?") != QMessageBox.StandardButton.Yes:
             return
@@ -1948,6 +2038,7 @@ class Main(QMainWindow):
         save_user_prompts(self.user_prompts)
         self.refresh_prompts_list()
         self.statusBar().showMessage("Prompt removed.", 3000)
+
     def _apply_pending_tmp_updates(self):
         """At startup, apply updates only if BOTH .tmp files exist; otherwise discard and warn."""
 
@@ -1976,7 +2067,7 @@ class Main(QMainWindow):
             except Exception:
                 pass
             try:
-                        QMessageBox.warning(self, "Update Error",
+                QMessageBox.warning(self, "Update Error",
                                     "An incomplete update was detected and has been discarded.\nPlease run 'Check For Updates' again.")
             except Exception:
                 pass
@@ -2044,6 +2135,7 @@ class Main(QMainWindow):
         except Exception:
             # Ignore if helper creation fails; user can retry update.
             return
+
     def clear_site_data(self):
         """Clear all site data (cookies, cache, local/session storage, indexedDB) and reload views."""
         import shutil
@@ -2184,6 +2276,7 @@ class Main(QMainWindow):
                 )
         except Exception as e:
             QMessageBox.critical(self, "Update Error", f"Failed to update:\n{e}")
+
 def main():
     app = QApplication(sys.argv)
     w = Main(); w.show()
