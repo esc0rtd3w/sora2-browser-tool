@@ -4,7 +4,7 @@ A split‑screen desktop browser UI for exploring free Sora 2 AI prompt sites on
 
 Everything is driven by simple JSON files so you can customize and back up your own sites, characters, and prompts, and more.
 
-<img src="https://i.imgur.com/tmBb8iQ.png" alt="Sora2 Browser Tool">
+<img src="https://i.imgur.com/VaVwKli.png" alt="Sora2 Browser Tool">
 
 ---
 
