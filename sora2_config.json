@@ -5614,6 +5614,18 @@
       1220,
       820
     ],
-    "link_splitters": true
+    "link_splitters": true,
+    "hotkeys": {
+      "fullscreen_left": "F1",
+      "fullscreen_right": "F2"
+    },
+    "pane_zoom": {
+      "left": 1.0,
+      "right": 1.0
+    },
+    "pane_fullscreen": {
+      "left": false,
+      "right": false
+    }
   }
 }

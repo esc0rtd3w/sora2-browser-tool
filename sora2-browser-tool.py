@@ -381,6 +381,28 @@ class Main(QMainWindow):
         act_swap_lr = m_view.addAction("Swap Left/Right")
         act_swap_lr.triggered.connect(self.swap_left_right)
 
+        m_view.addSeparator()
+        self.act_toggle_left_fs = m_view.addAction("Toggle Sites Pane Fullscreen")
+        self.act_toggle_left_fs.triggered.connect(self.toggle_left_pane_fullscreen)
+        self.act_toggle_right_fs = m_view.addAction("Toggle Mail Pane Fullscreen")
+        self.act_toggle_right_fs.triggered.connect(self.toggle_right_pane_fullscreen)
+
+        m_view.addSeparator()
+        self.act_zoom_left_in = m_view.addAction("Zoom In (Sites Pane)")
+        self.act_zoom_left_in.triggered.connect(lambda: self.change_left_zoom(0.1))
+        self.act_zoom_left_out = m_view.addAction("Zoom Out (Sites Pane)")
+        self.act_zoom_left_out.triggered.connect(lambda: self.change_left_zoom(-0.1))
+        self.act_zoom_left_reset = m_view.addAction("Reset Zoom (Sites Pane)")
+        self.act_zoom_left_reset.triggered.connect(lambda: self.set_left_zoom(1.0))
+
+        m_view.addSeparator()
+        self.act_zoom_right_in = m_view.addAction("Zoom In (Mail Pane)")
+        self.act_zoom_right_in.triggered.connect(lambda: self.change_right_zoom(0.1))
+        self.act_zoom_right_out = m_view.addAction("Zoom Out (Mail Pane)")
+        self.act_zoom_right_out.triggered.connect(lambda: self.change_right_zoom(-0.1))
+        self.act_zoom_right_reset = m_view.addAction("Reset Zoom (Mail Pane)")
+        self.act_zoom_right_reset.triggered.connect(lambda: self.set_right_zoom(1.0))
+
         m_tools = menubar.addMenu("Tools")
         m_tools_ua = m_tools.addMenu("User Agent")
         # mirror the preset list in a submenu
@@ -642,8 +664,53 @@ class Main(QMainWindow):
         if not isinstance(ui_cfg, dict):
             ui_cfg = {}
         self.cfg["ui"] = ui_cfg
+
+        # Hotkeys: fullscreen toggles (stored in config, with defaults)
+        hotkeys = ui_cfg.get("hotkeys")
+        if not isinstance(hotkeys, dict):
+            hotkeys = {}
+        if "fullscreen_left" not in hotkeys:
+            hotkeys["fullscreen_left"] = "F1"
+        if "fullscreen_right" not in hotkeys:
+            hotkeys["fullscreen_right"] = "F2"
+        ui_cfg["hotkeys"] = hotkeys
+
+        # Pane zoom defaults (per pane)
+        pane_zoom = ui_cfg.get("pane_zoom")
+        if not isinstance(pane_zoom, dict):
+            pane_zoom = {}
+        try:
+            self.left_zoom = float(pane_zoom.get("left", 1.0))
+        except Exception:
+            self.left_zoom = 1.0
+        try:
+            self.right_zoom = float(pane_zoom.get("right", 1.0))
+        except Exception:
+            self.right_zoom = 1.0
+        pane_zoom["left"] = float(self.left_zoom)
+        pane_zoom["right"] = float(self.right_zoom)
+        ui_cfg["pane_zoom"] = pane_zoom
+
+        # Pane fullscreen defaults (per pane)
+        pane_fs = ui_cfg.get("pane_fullscreen")
+        if not isinstance(pane_fs, dict):
+            pane_fs = {}
+        self.left_pane_fullscreen = bool(pane_fs.get("left", False))
+        self.right_pane_fullscreen = bool(pane_fs.get("right", False))
+        pane_fs["left"] = bool(self.left_pane_fullscreen)
+        pane_fs["right"] = bool(self.right_pane_fullscreen)
+        ui_cfg["pane_fullscreen"] = pane_fs
+
         # link_splitters: True = keep actions/content splitters in sync (default); False = decouple
         self.link_splitters = bool(ui_cfg.get("link_splitters", True))
+
+        # apply configured hotkeys to fullscreen actions
+        try:
+            self.act_toggle_left_fs.setShortcut(hotkeys.get("fullscreen_left", "F1"))
+            self.act_toggle_right_fs.setShortcut(hotkeys.get("fullscreen_right", "F2"))
+        except Exception:
+            pass
+
         split_sizes = ui_cfg.get("actions_splitter_sizes") or ui_cfg.get("content_splitter_sizes")
         if isinstance(split_sizes, (list, tuple)) and len(split_sizes) >= 2:
             try:
@@ -700,6 +767,20 @@ class Main(QMainWindow):
         if self.cfg["window"].get("orientation","horizontal") == "vertical":
             self.contentSplit.setOrientation(Qt.Orientation.Vertical)
         self.update_toggle_label()
+
+        # Apply initial zoom + pane fullscreen state
+        try:
+            self.set_left_zoom(getattr(self, "left_zoom", 1.0))
+        except Exception:
+            pass
+        try:
+            self.set_right_zoom(getattr(self, "right_zoom", 1.0))
+        except Exception:
+            pass
+        try:
+            self._apply_pane_fullscreen_state()
+        except Exception:
+            pass
 
         self.statusBar().showMessage("Ready")
 
@@ -823,6 +904,138 @@ class Main(QMainWindow):
         self.contentSplit.setSizes([int(1000*self.cfg['window'].get('pane_ratio',0.5)),int(1000*(1.0-self.cfg['window'].get('pane_ratio',0.5)))])
         self.update_toggle_label()
 
+    # --- Pane zoom helpers ---
+    def set_left_zoom(self, value: float):
+        try:
+            z = float(value)
+        except Exception:
+            z = 1.0
+        z = max(0.25, min(5.0, z))
+        self.left_zoom = z
+        try:
+            for i in range(self.leftTabs.count()):
+                w = self.leftTabs.widget(i)
+                if isinstance(w, QWebEngineView):
+                    w.setZoomFactor(z)
+        except Exception:
+            pass
+        try:
+            ui = self.cfg.setdefault("ui", {})
+            pane_zoom = ui.get("pane_zoom")
+            if not isinstance(pane_zoom, dict):
+                pane_zoom = {}
+            pane_zoom["left"] = float(z)
+            ui["pane_zoom"] = pane_zoom
+        except Exception:
+            pass
+
+    def change_left_zoom(self, delta: float):
+        self.set_left_zoom(getattr(self, "left_zoom", 1.0) + float(delta))
+
+    def set_right_zoom(self, value: float):
+        try:
+            z = float(value)
+        except Exception:
+            z = 1.0
+        z = max(0.25, min(5.0, z))
+        self.right_zoom = z
+        try:
+            if hasattr(self, "right") and isinstance(self.right, QWebEngineView):
+                self.right.setZoomFactor(z)
+        except Exception:
+            pass
+        try:
+            ui = self.cfg.setdefault("ui", {})
+            pane_zoom = ui.get("pane_zoom")
+            if not isinstance(pane_zoom, dict):
+                pane_zoom = {}
+            pane_zoom["right"] = float(z)
+            ui["pane_zoom"] = pane_zoom
+        except Exception:
+            pass
+
+    def change_right_zoom(self, delta: float):
+        self.set_right_zoom(getattr(self, "right_zoom", 1.0) + float(delta))
+
+    # --- Pane fullscreen helpers ---
+    def _apply_pane_fullscreen_state(self):
+        try:
+            left_fs = bool(getattr(self, "left_pane_fullscreen", False))
+            right_fs = bool(getattr(self, "right_pane_fullscreen", False))
+        except Exception:
+            left_fs = right_fs = False
+
+        # If both are True, normalize to both off
+        if left_fs and right_fs:
+            left_fs = right_fs = False
+            try:
+                ui = self.cfg.setdefault("ui", {})
+                pane_fs = ui.get("pane_fullscreen")
+                if not isinstance(pane_fs, dict):
+                    pane_fs = {}
+                pane_fs["left"] = False
+                pane_fs["right"] = False
+                ui["pane_fullscreen"] = pane_fs
+            except Exception:
+                pass
+            self.left_pane_fullscreen = False
+            self.right_pane_fullscreen = False
+
+        try:
+            if left_fs and not right_fs:
+                if hasattr(self, "leftTabs"):
+                    self.leftTabs.show()
+                if hasattr(self, "right"):
+                    self.right.hide()
+            elif right_fs and not left_fs:
+                if hasattr(self, "leftTabs"):
+                    self.leftTabs.hide()
+                if hasattr(self, "right"):
+                    self.right.show()
+            else:
+                if hasattr(self, "leftTabs"):
+                    self.leftTabs.show()
+                if hasattr(self, "right"):
+                    self.right.show()
+        except Exception:
+            pass
+
+    def _update_pane_fullscreen_cfg(self):
+        try:
+            ui = self.cfg.setdefault("ui", {})
+            pane_fs = ui.get("pane_fullscreen")
+            if not isinstance(pane_fs, dict):
+                pane_fs = {}
+            pane_fs["left"] = bool(getattr(self, "left_pane_fullscreen", False))
+            pane_fs["right"] = bool(getattr(self, "right_pane_fullscreen", False))
+            ui["pane_fullscreen"] = pane_fs
+        except Exception:
+            pass
+
+    def toggle_left_pane_fullscreen(self):
+        left_fs = bool(getattr(self, "left_pane_fullscreen", False))
+        right_fs = bool(getattr(self, "right_pane_fullscreen", False))
+        if left_fs:
+            # turn off -> normal
+            self.left_pane_fullscreen = False
+        else:
+            # enable left, disable right
+            self.left_pane_fullscreen = True
+            self.right_pane_fullscreen = False
+        self._update_pane_fullscreen_cfg()
+        self._apply_pane_fullscreen_state()
+
+    def toggle_right_pane_fullscreen(self):
+        left_fs = bool(getattr(self, "left_pane_fullscreen", False))
+        right_fs = bool(getattr(self, "right_pane_fullscreen", False))
+        if right_fs:
+            self.right_pane_fullscreen = False
+        else:
+            self.right_pane_fullscreen = True
+            self.left_pane_fullscreen = False
+        self._update_pane_fullscreen_cfg()
+        self._apply_pane_fullscreen_state()
+
     # --- Left tabs helpers ---
     def current_browser(self) -> QWebEngineView:
         try:
@@ -871,6 +1084,10 @@ class Main(QMainWindow):
             return
         br = Browser()
         self._connect_left_browser(br)
+        try:
+            br.setZoomFactor(getattr(self, "left_zoom", 1.0))
+        except Exception:
+            pass
         idx = self.leftTabs.addTab(br, "…")
         self.leftTabs.setCurrentIndex(idx)
         br.setUrl(QUrl(url))
@@ -1409,10 +1626,10 @@ class Main(QMainWindow):
             it = self.promptList.item(i)
             o = it.data(Qt.ItemDataRole.UserRole)
             if isinstance(o, dict):
-                if pid and o.get("id") == pid:
+                if pid and o.get('id') == pid:
                     self.promptList.setCurrentItem(it)
                     return
-                if text and o.get("text") == text:
+                if text and o.get('text') == text:
                     self.promptList.setCurrentItem(it)
                     return
                     
@@ -1738,7 +1955,7 @@ class Main(QMainWindow):
         py_name  = "sora2-browser-tool.py"
         py_dst   = os.path.join(base_dir, py_name)
         json_dst = os.path.join(base_dir, "sora2_config.json")
-        py_tmp   = os.path.join(base_dir, py_name + ".tmp")
+        py_tmp   = os.path.join(base_dir, py_name + '.tmp')
         json_tmp = os.path.join(base_dir, "sora2_config.json.tmp")
 
         has_py_tmp   = os.path.exists(py_tmp)
