@@ -1,7 +1,8 @@
 # Sora 2 Browser Tool
 
 A split‑screen desktop browser UI for exploring free Sora 2 AI prompt sites on the left while using a disposable email inbox on the right.  
-Everything is driven by simple JSON files so you can customize and back up your own sites, characters, and prompts.
+
+Everything is driven by simple JSON files so you can customize and back up your own sites, characters, and prompts, and more.
 
 <img src="https://i.imgur.com/tmBb8iQ.png" alt="Sora2 Browser Tool">
 
@@ -55,7 +56,7 @@ Everything is driven by simple JSON files so you can customize and back up your 
 
 All core data lives in simple JSON files so you can:
 - **Customize**: Add your own Sora 2 sites, email sites, characters, and prompts.
-- **Backup / sync**: Copy the JSON file between machines or commit it to git.
+- **Backup**: Copy the JSON file between machines.
 - **Recover**: Menubar options let you restore default data separately for:
   - Sites
   - Mail sites
@@ -172,12 +173,13 @@ The tool keeps almost everything in a single config JSON:
     - Prompts
     - Characters
 
-The Python script auto‑creates user‑data files and keeps them separate from core defaults so you can restore only what you want (sites, prompts, characters, etc.) without blowing away everything.
+The Python script auto‑creates user‑data files and keeps them separate from core defaults so you can restore only what you want (sites, prompts, characters, etc.) without destroying any default data.
 
 ---
 
 ## Requirements & running
 
+- **Windows, Linux, or OSX**.
 - **Python 3.x** (3.10+ recommended).
 - **PyQt6** and **PyQt6‑WebEngine**.  
   The script includes a small bootstrap that will attempt to install these with `pip` on first run if they are missing.
