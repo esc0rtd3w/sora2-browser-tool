@@ -3,7 +3,7 @@
 
 # Sora 2 Browser Tool
 
-# --- Dependency bootstrap ---
+# Dependency bootstrap
 def _check_dependencies():
     import importlib, subprocess, sys, traceback
     missing = []
@@ -40,14 +40,14 @@ from PyQt6.QtWidgets import (QTextEdit,
 )
 from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineProfile
 from PyQt6.QtWebEngineWidgets import QWebEngineView
-# --- Cloudflare/Turnstile compatibility flags (GPU + third-party cookies) ---
+
+# Cloudflare/Turnstile compatibility flags (GPU + third-party cookies)
 # Must be set before QtWebEngine starts
 os.environ.setdefault(
     "QTWEBENGINE_CHROMIUM_FLAGS",
     "--enable-gpu --ignore-gpu-blocklist --enable-webgl --enable-accelerated-video-decode "
     "--disable-features=BlockThirdPartyCookies,ThirdPartyStoragePartitioning"
 )
-
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "sora2_config.json")
 USER_SITES_PATH = os.path.join(os.path.dirname(__file__), "sora2_user_sites.json")
@@ -92,7 +92,7 @@ def load_config():
 
 def save_config(cfg):
     try:
-        # Preserve existing; only update window/ui/version. Never touch characters/sites/prompts here.
+        # Preserve existing and only update window/ui/version
         existing = {}
         if os.path.exists(CONFIG_PATH):
             try:
@@ -111,7 +111,7 @@ def save_config(cfg):
         QMessageBox.critical(None, "Config Save Error", str(e))
 
 def load_or_init_user_sites(default_sites):
-    """Load user sites from USER_SITES_PATH; if missing, seed with defaults and write file."""
+    # Load user sites from USER_SITES_PATH; if missing, seed with defaults and write file.
     try:
         if os.path.exists(USER_SITES_PATH):
             with open(USER_SITES_PATH, "r", encoding="utf-8") as f:
@@ -134,7 +134,7 @@ def save_user_sites(sites):
         return False
 
 def load_or_init_user_mail_sites(default_mail_sites):
-    """Load user mail sites from USER_MAIL_SITES_PATH; if missing, seed with defaults and write file."""
+    # Load user mail sites from USER_MAIL_SITES_PATH; if missing, seed with defaults and write file.
     try:
         if os.path.exists(USER_MAIL_SITES_PATH):
             with open(USER_MAIL_SITES_PATH, "r", encoding="utf-8") as f:
@@ -164,7 +164,7 @@ def save_user_mail_sites(sites):
         return False
 
 def load_or_init_user_prompts(default_prompts):
-    """Load user prompts; if file missing or empty, seed with defaults and persist. Return the list."""
+    # Load user prompts; if file missing or empty, seed with defaults and persist. Return the list.
     try:
         if os.path.exists(USER_PROMPTS_PATH):
             with open(USER_PROMPTS_PATH, "r", encoding="utf-8") as f:
@@ -194,7 +194,7 @@ def save_user_prompts(prompts):
         return False
 
 
-# --- Prompt helpers ---
+# Prompt helpers
 def _p_to_obj(p, idx=0):
     if isinstance(p, dict):
         text = str(p.get("text") or p.get("prompt") or "").strip()
@@ -268,7 +268,7 @@ class Browser(QWebEngineView):
         s.setAttribute(QWebEngineSettings.WebAttribute.JavascriptCanAccessClipboard, True)
 
 def load_or_init_user_characters(default_characters):
-    """Load user characters from USER_CHARACTERS_PATH; if missing/empty, seed with defaults and persist."""
+    # Load user characters from USER_CHARACTERS_PATH; if missing/empty, seed with defaults and persist.
     try:
         if os.path.exists(USER_CHARACTERS_PATH):
             with open(USER_CHARACTERS_PATH, "r", encoding="utf-8") as f:
@@ -298,8 +298,8 @@ def load_or_init_user_characters(default_characters):
 class Main(QMainWindow):
 
     def _get_prompt_pid(self, obj, text):
-        """Return a stable id for the selected prompt, using explicit id
-        or hashing "title|text" when no explicit id is present."""
+        # Return a stable id for the selected prompt, using explicit id
+        # or hashing "title|text" when no explicit id is present.
         import hashlib
         if isinstance(obj, dict):
             pid = obj.get("id")
@@ -332,6 +332,7 @@ class Main(QMainWindow):
         self.profile.setCachePath(os.path.join(data_dir, "cache"))
         self.profile.setPersistentCookiesPolicy(QWebEngineProfile.PersistentCookiesPolicy.ForcePersistentCookies)
         self.profile.setHttpAcceptLanguage("en-US,en;q=0.9")
+        
         # Allow third-party cookies if supported (helps CF Turnstile)
         try:
             self.profile.setThirdPartyCookiePolicy(QWebEngineProfile.ThirdPartyCookiePolicy.AllowAll)
@@ -359,7 +360,7 @@ class Main(QMainWindow):
         self.rootSplit = QSplitter(Qt.Orientation.Vertical)
         self.setCentralWidget(self.rootSplit)
 
-        # === MENUBAR ===
+        # MENUBAR
         menubar = self.menuBar()
 
         m_file = menubar.addMenu("File")
@@ -404,11 +405,13 @@ class Main(QMainWindow):
 
         m_tools = menubar.addMenu("Tools")
         m_tools_ua = m_tools.addMenu("User Agent")
+        
         # mirror the preset list in a submenu
         m_tools_ua.addAction('Default (Engine)').triggered.connect(lambda _, lab='Default (Engine)': self.set_user_agent(None, preset_label=lab))
         for label in PRESET_UAS.keys():
             a = m_tools_ua.addAction(label)
             a.triggered.connect(lambda _, lab=label: self.set_user_agent(PRESET_UAS[lab], preset_label=lab))
+            
         m_tools_ua.addSeparator()
         a_apply = m_tools_ua.addAction("Apply UA (from fields)"); a_apply.triggered.connect(self.apply_ua_clicked)
         a_random = m_tools_ua.addAction("Random UA"); a_random.triggered.connect(self.random_ua_clicked)
@@ -449,14 +452,14 @@ class Main(QMainWindow):
         self._build_mail_sites_menu(self.m_mail_sites)
         a_update = menubar.addAction("Check For Updates"); a_update.triggered.connect(self.check_for_updates)
 
-        # === ACTIONS (split left actions | right prompts) ===
+        # ACTIONS (split left actions | right prompts)
         actions = QWidget(); act_v = QVBoxLayout(actions)
         act_v.setContentsMargins(6,6,6,6); act_v.setSpacing(8)
 
         self.actionsSplit = QSplitter(Qt.Orientation.Horizontal)
         act_v.addWidget(self.actionsSplit, 1)
 
-        # ----- LEFT ACTIONS (existing UI) -----
+        # LEFT ACTIONS (existing UI)
         leftActions = QWidget(); la_v = QVBoxLayout(leftActions)
         la_v.setContentsMargins(0,0,0,0); la_v.setSpacing(8)
 
@@ -510,10 +513,10 @@ class Main(QMainWindow):
         for b in (btnAddSite, btnRemoveSite):
             row_sites_h.addWidget(b,0)
             
-        # keep Restore/Clear accessible via the Sites menu
+        # Keep Restore/Clear accessible via the Sites menu
         la_v.addWidget(row_sites)
 
-        # ----- RIGHT PROMPTS PANEL -----
+        # RIGHT PROMPTS PANEL
         rightPrompts = QWidget(); rp_v = QVBoxLayout(rightPrompts)
         rp_v.setContentsMargins(8,0,0,0); rp_v.setSpacing(6)
 
@@ -554,7 +557,7 @@ class Main(QMainWindow):
         # Build merged character objects (user list + config categories)
         self._rebuild_character_objects()
 
-        # --- Category + Character selectors ---
+        # Category + Character selectors
         characterRow = QHBoxLayout()
         characterRow.addWidget(QLabel("Characters:"))
         self.characterCategoryBox = QComboBox(); self.characterCategoryBox.addItem("Show All")
@@ -637,6 +640,7 @@ class Main(QMainWindow):
         except Exception:
             pass
         rp_v.addWidget(self.promptsSplitter, 1)
+        
         # Live preview updates
         try:
             self.promptList.currentItemChanged.connect(self.update_prompt_preview)
@@ -653,13 +657,13 @@ class Main(QMainWindow):
         except Exception:
             pass
 
-        # add left/right panes to the actions splitter
+        # Add left/right panes to the actions splitter
         leftActions.setMinimumWidth(150)
         rightPrompts.setMinimumWidth(150)
         self.actionsSplit.addWidget(leftActions)
         self.actionsSplit.addWidget(rightPrompts)
 
-        # determine shared split sizes from config (ui.actions_splitter_sizes/content_splitter_sizes or window.pane_ratio)
+        # Determine shared split sizes from config (ui.actions_splitter_sizes/content_splitter_sizes or window.pane_ratio)
         ui_cfg = (self.cfg.get("ui") or {})
         if not isinstance(ui_cfg, dict):
             ui_cfg = {}
@@ -727,7 +731,7 @@ class Main(QMainWindow):
         # link_splitters: True = keep actions/content splitters in sync (default); False = decouple
         self.link_splitters = bool(ui_cfg.get("link_splitters", True))
 
-        # apply configured hotkeys to fullscreen and zoom actions
+        # Apply configured hotkeys to fullscreen and zoom actions
         try:
             self.act_toggle_left_fs.setShortcut(hotkeys.get("fullscreen_left", "F1"))
             self.act_toggle_right_fs.setShortcut(hotkeys.get("fullscreen_right", "F2"))
@@ -753,21 +757,22 @@ class Main(QMainWindow):
                 ratio = 0.5
             split_sizes = [int(1000 * ratio), int(1000 * (1.0 - ratio))]
 
-        # apply initial split sizes to the actions pane
+        # Apply initial split sizes to the actions pane
         try:
             self.actionsSplit.setSizes(split_sizes)
         except Exception:
             pass
 
-        # === CONTENT splitter LEFT/RIGHT ===
+        # CONTENT splitter LEFT/RIGHT
         self.contentSplit = QSplitter(Qt.Orientation.Horizontal)
+        
         # Left tabs
         self.leftTabs = QTabWidget(); self.leftTabs.setTabsClosable(True); self.leftTabs.setMovable(True)
         self.leftTabs.tabBar().setUsesScrollButtons(True)
         self.leftTabs.tabCloseRequested.connect(self.close_left_tab)
         self.leftTabs.currentChanged.connect(self.on_left_tab_changed)
         
-        # initial tab
+        # Initial tab
         _b0 = Browser()
         self._connect_left_browser(_b0)
         self.leftTabs.addTab(_b0, "New Tab")
@@ -782,7 +787,7 @@ class Main(QMainWindow):
         except Exception:
             pass
 
-        # add to root
+        # Add to root
         self.rootSplit.addWidget(actions); self.rootSplit.addWidget(self.contentSplit)
         
         # Keep ACTIONS and CONTENT splitters aligned
@@ -813,13 +818,13 @@ class Main(QMainWindow):
 
         self.statusBar().showMessage("Ready")
 
-    # --- UA logic ---
+    # UA logic
     def set_user_agent(self, ua: str, preset_label=None):
         self.current_ua = ua
         self.profile.setHttpUserAgent(ua)
         if preset_label:
             self.uaPreset.setCurrentText(preset_label)
-        # reload all left tabs
+        # Reload all left tabs
         try:
             for i in range(self.leftTabs.count()):
                 b = self.leftTabs.widget(i)
@@ -854,7 +859,7 @@ class Main(QMainWindow):
             QMessageBox.information(self, "Fix Captcha", "Attempted reload.")
 
     def toggle_aggressive_spoof(self, checked):
-        # Store a flag; advanced spoofing would adjust deeper settings. Keep minimal to avoid breaking base.
+        # Store a flag
         self.aggressive_spoof = bool(checked)
         QMessageBox.information(self, "Aggressive Spoof", "Enabled" if checked else "Disabled")
 
@@ -873,7 +878,7 @@ class Main(QMainWindow):
     def use_mobile_ua(self):
         self.set_user_agent(PRESET_UAS["Chrome (Android)"], "Chrome (Android)")
 
-    # --- Cookies ---
+    # Cookies
     def clear_recaptcha_cookies(self):
         self.profile.cookieStore().deleteAllCookies()
         br = self.current_browser()
@@ -935,7 +940,7 @@ class Main(QMainWindow):
         item.accept()
         self.statusBar().showMessage(f"Downloading to {downloads/fname}", 4000)
 
-    # --- Splitter sync ---
+    # Splitter sync
     def _apply_split_sizes(self, sizes):
         # If link_splitters is False, do not propagate sizes between top/bottom splitters
         if not getattr(self, "link_splitters", True):
@@ -957,7 +962,7 @@ class Main(QMainWindow):
             return
         self._apply_split_sizes(self.contentSplit.sizes())
         
-    # --- Layout toggle ---
+    # Layout toggle
     def update_toggle_label(self):
         self.btnToggle.setText("Top/Bottom" if self.contentSplit.orientation()==Qt.Orientation.Horizontal else "Left/Right")
 
@@ -968,7 +973,7 @@ class Main(QMainWindow):
         self.contentSplit.setSizes([int(1000*self.cfg['window'].get('pane_ratio',0.5)),int(1000*(1.0-self.cfg['window'].get('pane_ratio',0.5)))])
         self.update_toggle_label()
 
-    # --- Pane zoom helpers ---
+    # Pane zoom helpers
     def set_left_zoom(self, value: float):
         try:
             z = float(value)
@@ -1021,7 +1026,7 @@ class Main(QMainWindow):
     def change_right_zoom(self, delta: float):
         self.set_right_zoom(getattr(self, "right_zoom", 1.0) + float(delta))
 
-    # --- Pane fullscreen helpers ---
+    # Pane fullscreen helpers
     def _apply_pane_fullscreen_state(self):
         try:
             left_fs = bool(getattr(self, "left_pane_fullscreen", False))
@@ -1100,7 +1105,7 @@ class Main(QMainWindow):
         self._update_pane_fullscreen_cfg()
         self._apply_pane_fullscreen_state()
 
-    # --- Left tabs helpers ---
+    # Left tabs helpers
     def current_browser(self) -> QWebEngineView:
         try:
             return self.leftTabs.currentWidget()
@@ -1131,7 +1136,7 @@ class Main(QMainWindow):
 
     def close_left_tab(self, index: int):
         if self.leftTabs.count() <= 1:
-            # keep at least one tab
+            # Keep at least one tab
             w = self.leftTabs.widget(index)
             if w:
                 w.setUrl(QUrl("about:blank"))
@@ -1157,7 +1162,7 @@ class Main(QMainWindow):
         br.setUrl(QUrl(url))
         self.addr.setText(url)
 
-    # --- Navigation helpers ---
+    # Navigation helpers
     def open_external(self):
         br = self.current_browser()
         url = br.url().toString() if (br and br.url().isValid()) else self.addr.text().strip()
@@ -1275,7 +1280,7 @@ class Main(QMainWindow):
             self.refresh_sites_list()
             self.statusBar().showMessage("Cleared user sites.", 4000)
 
-    # --- Mail sites helpers ---
+    # Mail sites helpers
     def _build_mail_sites_menu(self, menu):
         try:
             menu.clear()
@@ -1437,12 +1442,14 @@ class Main(QMainWindow):
         except Exception as e:
             QMessageBox.critical(self, "Import Error", str(e))
 
-    # --- Prompts helpers ---
+    # Prompts helpers
     def refresh_prompts_list(self):
         self.promptList.clear()
-        # normalize merged prompts list (supports string or object items)
+        
+        # Normalize merged prompts list (supports string or object items)
         self._prompt_objs = _normalize_prompts_list(self.user_prompts)
-        # rebuild categories (keep selection)
+        
+        # Rebuild categories (keep selection)
         if hasattr(self, 'categoryBox'):
             cur = self.categoryBox.currentText() if self.categoryBox.currentIndex() >= 0 else 'Show All'
             cats = _extract_categories(self._prompt_objs)
@@ -1641,7 +1648,7 @@ class Main(QMainWindow):
             if ok_tags and t_tags is not None:
                 new_tags = [t.strip() for t in t_tags.split(",") if t.strip()]
 
-        # clear any cached placeholders for this prompt
+        # Clear any cached placeholders for this prompt
         try:
             pid_old = self._get_prompt_pid(obj, base_text)
             if hasattr(self, "_manual_placeholder_cache"):
@@ -1684,7 +1691,7 @@ class Main(QMainWindow):
         self.statusBar().showMessage("Prompt updated.", 3000)
 
     def _reselect_prompt(self, pid, text):
-        # reselect edited prompt in the list
+        # Reselect edited prompt in the list
         for i in range(self.promptList.count()):
             it = self.promptList.item(i)
             o = it.data(Qt.ItemDataRole.UserRole)
@@ -1701,6 +1708,7 @@ class Main(QMainWindow):
         if not ok or not text.strip():
             return
         txt = text.strip()
+        
         # Title default: first line up to 60 chars
         default_title = (txt.splitlines()[0][:60] if txt else "Untitled")
         title, ok = QInputDialog.getText(self, "Add Prompt", "Title:", text=default_title)
@@ -1775,7 +1783,7 @@ class Main(QMainWindow):
         if c_sizes:
             data["ui"]["content_splitter_sizes"] = [int(s) for s in c_sizes]
 
-        # keep window.pane_ratio in sync if present
+        # Keep window.pane_ratio in sync if present
         try:
             if "window" not in data or not isinstance(data["window"], dict):
                 data["window"] = self.cfg.get("window", {})
@@ -2051,7 +2059,7 @@ class Main(QMainWindow):
         else:
             self.character4Box.setCurrentIndex(0)
 
-    # --- Persist window + orientation + UA on close ---
+    # Persist window + orientation + UA on close
     def closeEvent(self, e):
         try:
             self.cfg["window"]["width"] = self.width()
@@ -2089,7 +2097,7 @@ class Main(QMainWindow):
         self.statusBar().showMessage("Prompt removed.", 3000)
 
     def _apply_pending_tmp_updates(self):
-        """At startup, apply updates only if BOTH .tmp files exist; otherwise discard and warn."""
+        # At startup, apply updates only if BOTH .tmp files exist; otherwise discard and warn.
 
         base_dir = os.path.dirname(os.path.abspath(__file__))
         py_name  = "sora2-browser-tool.py"
@@ -2138,7 +2146,7 @@ class Main(QMainWindow):
         if try_swap():
             return
 
-        # If replacing PY fails (likely on Windows), write a helper that will finish after app exits
+        # If replacing PY fails, write a helper that will finish after app exits
         helper_code = (
             "# -*- coding: utf-8 -*-\n"
             "import os, sys, time\n"
@@ -2167,6 +2175,7 @@ class Main(QMainWindow):
             helper_path = os.path.join(tmp_dir, "sora2_apply_update.py")
             with open(helper_path, "w", encoding="utf-8") as f:
                 f.write(helper_code)
+                
             # Launch helper detached; it will finish the swap when the app is closed
             try:
                 QProcess.startDetached(sys.executable, [helper_path])
@@ -2186,7 +2195,7 @@ class Main(QMainWindow):
             return
 
     def clear_site_data(self):
-        """Clear all site data (cookies, cache, local/session storage, indexedDB) and reload views."""
+        # Clear all site data (cookies, cache, local/session storage, indexedDB) and reload views.
         import shutil
 
         confirm = QMessageBox.question(
@@ -2250,7 +2259,7 @@ class Main(QMainWindow):
             pass
                 
     def check_for_updates(self):
-        """Check GitHub JSON for a newer version; if present, download .tmp files into script dir."""
+        # Check GitHub JSON for a newer version; if present, download .tmp files into script dir.
         REMOTE_JSON = "https://raw.githubusercontent.com/esc0rtd3w/sora2-browser-tool/refs/heads/main/sora2_config.json"
         REMOTE_PY   = "https://raw.githubusercontent.com/esc0rtd3w/sora2-browser-tool/refs/heads/main/sora2-browser-tool.py"
 
