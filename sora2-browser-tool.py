@@ -70,6 +70,26 @@ PRESET_UAS = {
     "Safari (iPhone)": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
 }
 
+DEFAULT_HELP_HTML = """<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sora 2 Browser Tool - Help</title>
+  <style>
+    body{font-family:sans-serif;margin:1.5em;line-height:1.4;}
+    h1{font-size:1.6em;margin-bottom:0.3em;}
+    p{margin:0.4em 0;}
+    code{background:#eee;padding:2px 4px;border-radius:3px;font-size:90%;}
+  </style>
+</head>
+<body>
+  <h1>Sora 2 Browser Tool</h1>
+  <p>This is the built-in help tab. Paste a Sora 2 site URL into the <code>URL</code> box above or pick one from the list.</p>
+  <p>You can replace this page by editing the <code>help_html</code> field in <code>sora2_config.json</code>.</p>
+</body>
+</html>
+"""
+
 MAIL_SITE_DEFAULTS = []
 PROMPT_DEFAULTS = []
 def load_config():
@@ -321,6 +341,10 @@ class Main(QMainWindow):
         except Exception:
             pass
         self.cfg = load_config()
+        raw_help = self.cfg.get("help_html", "")
+        if not isinstance(raw_help, str):
+            raw_help = ""
+        self.startup_html = (raw_help.strip() or DEFAULT_HELP_HTML)
         self.user_mail_sites = load_or_init_user_mail_sites(self.cfg.get("mail_sites", MAIL_SITE_DEFAULTS))
         self.setWindowTitle(self.cfg.get("window",{}).get("window_title", "Sora 2 Browser Tool"))
 
@@ -775,6 +799,10 @@ class Main(QMainWindow):
         # Initial tab
         _b0 = Browser()
         self._connect_left_browser(_b0)
+        try:
+            _b0.setHtml(self.startup_html)
+        except Exception:
+            pass
         self.leftTabs.addTab(_b0, "New Tab")
         self.right = Browser()
         self.right.settings().setAttribute(QWebEngineSettings.WebAttribute.AllowRunningInsecureContent, True)
