@@ -472,15 +472,17 @@ class Main(QMainWindow):
         self.uaCustom = QLineEdit(); self.uaCustom.setPlaceholderText("Custom UA…")
 
         self.btnApplyUA = QPushButton("Apply UA"); self.btnApplyUA.clicked.connect(self.apply_ua_clicked)
-        self.btnRandomUA = QPushButton("Random UA"); self.btnRandomUA.clicked.connect(self.random_ua_clicked)
-        self.btnResetUA = QPushButton("Reset"); self.btnResetUA.clicked.connect(self.reset_ua_clicked)
+        # self.btnRandomUA = QPushButton("Random UA"); self.btnRandomUA.clicked.connect(self.random_ua_clicked)
+        # self.btnResetUA = QPushButton("Reset"); self.btnResetUA.clicked.connect(self.reset_ua_clicked)
         self.btnMobileUA = QPushButton("Try Mobile WebM"); self.btnMobileUA.clicked.connect(self.use_mobile_ua)
         self.btnClear = QPushButton("Clear reCAPTCHA Cookies"); self.btnClear.clicked.connect(self.clear_recaptcha_cookies)
         self.btnToggle = QPushButton("Top/Bottom"); self.btnToggle.clicked.connect(self.switch_orientation)
         self.btnExternal = QPushButton("Open Externally"); self.btnExternal.clicked.connect(self.open_external)
         self.btnOpenMedia = QPushButton("Open Media"); self.btnOpenMedia.clicked.connect(self.open_media_externally)
+        self.btnOpenDownloads = QPushButton("Open Downloads"); self.btnOpenDownloads.clicked.connect(self.open_download_dir)
+        self.btnSetDownloadDir = QPushButton("Set Download Dir"); self.btnSetDownloadDir.clicked.connect(self.change_download_dir)
         row.addWidget(self.uaPreset); row.addWidget(self.uaCustom,1)
-        for b in (self.btnApplyUA,self.btnRandomUA,self.btnResetUA,self.btnToggle,self.btnExternal,self.btnOpenMedia):
+        for b in (self.btnApplyUA, self.btnToggle, self.btnExternal, self.btnOpenMedia, self.btnOpenDownloads, self.btnSetDownloadDir):
             row.addWidget(b)
         la_v.addWidget(bar)
 
@@ -711,6 +713,17 @@ class Main(QMainWindow):
         pane_fs["right"] = bool(self.right_pane_fullscreen)
         ui_cfg["pane_fullscreen"] = pane_fs
 
+        # Download path (ui.download_path; default to ~/Downloads)
+        download_path = ui_cfg.get("download_path")
+        if not isinstance(download_path, str) or not download_path.strip():
+            try:
+                default_dl = pathlib.Path.home() / "Downloads"
+            except Exception:
+                default_dl = pathlib.Path.cwd()
+            download_path = str(default_dl)
+        self.download_path = download_path
+        ui_cfg["download_path"] = self.download_path
+
         # link_splitters: True = keep actions/content splitters in sync (default); False = decouple
         self.link_splitters = bool(ui_cfg.get("link_splitters", True))
 
@@ -868,9 +881,45 @@ class Main(QMainWindow):
             br.reload()
         self.statusBar().showMessage("Cleared cookies; reloaded active tab.", 4000)
         
+
+    def open_download_dir(self):
+        path = pathlib.Path(getattr(self, "download_path", "") or (pathlib.Path.home() / "Downloads"))
+        try:
+            path.mkdir(parents=True, exist_ok=True)
+        except Exception:
+            pass
+        try:
+            QDesktopServices.openUrl(QUrl.fromLocalFile(str(path)))
+        except Exception:
+            try:
+                webbrowser.open(path.as_uri())
+            except Exception:
+                QMessageBox.warning(self, "Open Downloads", f"Download folder:\n{path}")
+
+    def change_download_dir(self):
+        start_dir = getattr(self, "download_path", "") or str(pathlib.Path.home() / "Downloads")
+        dir_ = QFileDialog.getExistingDirectory(self, "Select Download Directory", start_dir)
+        if not dir_:
+            return
+        self.download_path = dir_
+        ui_cfg = self.cfg.get("ui") or {}
+        if not isinstance(ui_cfg, dict):
+            ui_cfg = {}
+        self.cfg["ui"] = ui_cfg
+        ui_cfg["download_path"] = self.download_path
+        try:
+            save_config(self.cfg)
+            self.statusBar().showMessage(f"Download directory set to: {self.download_path}", 4000)
+        except Exception:
+            pass
+
     def on_download(self, item):
-        downloads = pathlib.Path.home() / "Downloads"
-        downloads.mkdir(parents=True, exist_ok=True)
+        base = getattr(self, "download_path", "") or str(pathlib.Path.home() / "Downloads")
+        downloads = pathlib.Path(base)
+        try:
+            downloads.mkdir(parents=True, exist_ok=True)
+        except Exception:
+            pass
         fname = item.suggestedFileName() or "download"
         root, ext = os.path.splitext(fname)
         mt = getattr(item, "mimeType", lambda:"")()

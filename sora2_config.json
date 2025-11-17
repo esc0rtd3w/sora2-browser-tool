@@ -5632,6 +5632,7 @@
     "pane_fullscreen": {
       "left": false,
       "right": false
-    }
+    },
+    "download_path": ""
   }
 }
