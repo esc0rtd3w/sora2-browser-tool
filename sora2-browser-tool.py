@@ -143,7 +143,7 @@ DEFAULT_HELP_HTML = """
   </style>
 </head>
 <body>
-  <h1>Sora 2 Browser Tool</h1>
+  <h1>Sora 2 Browser Tool Help</h1>
   <p class="tagline">
     <span class="pill">Quick Start</span>
     &nbsp;Use the bottom left side for AI site, the bottom right for email, top left to change site, and the top right for prompts.
@@ -202,7 +202,7 @@ def load_config():
     if not os.path.exists(CONFIG_PATH):
         QMessageBox.warning(None, "Config", f"Config not found at {CONFIG_PATH}. Using defaults.")
         return {
-            "version": "1.2.6",
+            "version": "1.2.7",
             "window": {"width": 1920,"height": 1080,"orientation":"horizontal","user_agent":"Default (Engine)","mail_url":"https://www.guerrillamail.com/inbox","window_title":"Sora 2 Browser Tool"},
             "sites": [],
             "prompts": [],
@@ -613,7 +613,7 @@ class Main(QMainWindow):
         self.btnExternal = QPushButton("Open Externally"); self.btnExternal.clicked.connect(self.open_external)
         self.btnOpenMedia = QPushButton("Open Media"); self.btnOpenMedia.clicked.connect(self.open_media_externally)
         self.btnOpenDownloads = QPushButton("Open Downloads"); self.btnOpenDownloads.clicked.connect(self.open_download_dir)
-        self.btnSetDownloadDir = QPushButton("Set Download Dir"); self.btnSetDownloadDir.clicked.connect(self.change_download_dir)
+        self.btnSetDownloadDir = QPushButton("Set Download Directory"); self.btnSetDownloadDir.clicked.connect(self.change_download_dir)
         row.addWidget(self.uaPreset); row.addWidget(self.uaCustom,1)
         for b in (self.btnApplyUA, self.btnToggle, self.btnExternal, self.btnOpenMedia, self.btnOpenDownloads, self.btnSetDownloadDir):
             row.addWidget(b)
@@ -633,14 +633,14 @@ class Main(QMainWindow):
         self.listw.itemClicked.connect(self.load_from_list)
         la_v.addWidget(self.listw,1)
 
-        info = QLabel("Source: User list (editable) • Defaults preserved")
+        #info = QLabel("Source: User list")
         row_sites = QWidget(); row_sites_h = QHBoxLayout(row_sites); row_sites_h.setContentsMargins(0,0,0,0); row_sites_h.setSpacing(8)
-        btnRestore = QPushButton("Restore Default 100"); btnRestore.clicked.connect(self.restore_default_sites)
+        btnRestore = QPushButton("Restore Default Sites"); btnRestore.clicked.connect(self.restore_default_sites)
         btnClearSites = QPushButton("Clear User Sites"); btnClearSites.clicked.connect(self.clear_user_sites)
         btnAddSite = QPushButton("Add Current Page"); btnAddSite.clicked.connect(self.add_site_from_current)
         btnRemoveSite = QPushButton("Remove Selected"); btnRemoveSite.clicked.connect(self.remove_selected_site)
-        row_sites_h.addWidget(info,1)
-        for b in (btnAddSite, btnRemoveSite):
+        #row_sites_h.addWidget(info,1)
+        for b in (btnRestore, btnAddSite, btnRemoveSite):
             row_sites_h.addWidget(b,0)
             
         # Keep Restore/Clear accessible via the Sites menu
