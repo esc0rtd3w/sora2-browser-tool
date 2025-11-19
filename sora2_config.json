@@ -1,5 +1,5 @@
 {
-  "version": "1.2.6",
+  "version": "1.2.7",
   "window": {
     "width": 1920,
     "height": 1080,
@@ -2267,6 +2267,41 @@
       "category": "Custom",
       "tags": [],
       "text": "Create a \"shark tank\" style scene where \"\" and \"\" are pitching a product to the sharks. The product is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0078",
+      "title": "Dating Show: 2 Characters Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene of a dating show with \"\" and \"\" as 2 of the main characters. They are both competing for others on the show. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible. Make it pg-13 to nc17"
+    },
+    {
+      "id": "custom0079",
+      "title": "Ski Jump: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a \"ski jump\" style competition scene with \"\" as the main character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0080",
+      "title": "Speeding Ticket: 2 Characters Funny#1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene of a car being pulled over for speeding. The driver is \"\" and the cop is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0081",
+      "title": "Cat Race: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene with cats on roombas racing. Make it in the style of a go kart race. The environment is \"\".  Make it fun and entertaining. The cats should always make \"meow noises\" when communicating"
+    },
+    {
+      "id": "custom0082",
+      "title": "Dont Record Me",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in the view of someone holding their phone as another person is yelling at them to not record them. Make up the circumstances. Make it entertaining."
     }
   ],
   "characters": [
