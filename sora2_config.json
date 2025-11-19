@@ -4151,6 +4151,10 @@
       "category": "Food"
     },
     {
+      "name": "Kimbo Slice",
+      "category": "Sports Athletes"
+    },
+    {
       "name": "Kingfisher",
       "category": "Animals"
     },
@@ -4549,6 +4553,10 @@
     {
       "name": "Muhammad",
       "category": "Religious Figures"
+    },
+    {
+      "name": "Muhammad Ali",
+      "category": "Sports Athletes"
     },
     {
       "name": "Mule",
