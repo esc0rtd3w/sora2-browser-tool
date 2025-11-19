@@ -70,22 +70,128 @@ PRESET_UAS = {
     "Safari (iPhone)": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1",
 }
 
-DEFAULT_HELP_HTML = """<!DOCTYPE html>
+DEFAULT_HELP_HTML = """
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Sora 2 Browser Tool - Help</title>
+  <title>About -> Help</title>
   <style>
-    body{font-family:sans-serif;margin:1.5em;line-height:1.4;}
-    h1{font-size:1.6em;margin-bottom:0.3em;}
-    p{margin:0.4em 0;}
-    code{background:#eee;padding:2px 4px;border-radius:3px;font-size:90%;}
+    :root {
+      color-scheme: dark light;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 1.5rem;
+      line-height: 1.5;
+      max-width: 960px;
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+    }
+    h2 {
+      font-size: 1.1rem;
+      margin: 1.2rem 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      opacity: 0.85;
+    }
+    p {
+      margin: 0.3rem 0 0.5rem;
+    }
+    ol {
+      padding-left: 1.4rem;
+      margin: 0.4rem 0 0.6rem;
+    }
+    li {
+      margin: 0.2rem 0 0.4rem;
+    }
+    .step-title {
+      font-weight: 600;
+    }
+    .tagline {
+      opacity: 0.8;
+      margin-bottom: 0.9rem;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.9em;
+      padding: 0.05rem 0.3rem;
+      border-radius: 0.25rem;
+      background: rgba(0,0,0,0.06);
+    }
+    ul {
+      margin: 0.3rem 0 0.3rem;
+      padding-left: 1.2rem;
+    }
+    .hint {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+    .pill {
+      display: inline-block;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.85;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
   <h1>Sora 2 Browser Tool</h1>
-  <p>This is the built-in help tab. Paste a Sora 2 site URL into the <code>URL</code> box above or pick one from the list.</p>
-  <p>You can replace this page by editing the <code>help_html</code> field in <code>sora2_config.json</code>.</p>
+  <p class="tagline">
+    <span class="pill">Quick Start</span>
+    &nbsp;Use the bottom left side for AI site, the bottom right for email, top left to change site, and the top right for prompts.
+  </p>
+
+  <h2>Basic workflow</h2>
+  <ol>
+    <li>
+      <span class="step-title">Load a site from above</span><br>
+      Use the URL box or the <code>Sites</code> list above to open your Sora/AI site in a new tab, on the left side.
+    </li>
+    <li>
+      <span class="step-title">Sign up or log in</span><br>
+      Start the sign-up or login on the left, using an email provider from the <code>Mail Sites</code> list.
+    </li>
+    <li>
+      <span class="step-title">Check email on the right</span><br>
+      Use default or pick a mail site from the <code>Mail Sites</code> list to load it in the right browser, then copy email address and use on left browser, then wait for confirmation links or one-time codes.
+    </li>
+    <li>
+      <span class="step-title">Confirm your account</span><br>
+      On the right side, click the confirmation link or copy the code, then switch back to the left side to finish sign-up.
+    </li>
+    <li>
+      <span class="step-title">Build a prompt</span><br>
+      Use:
+      <ul>
+        <li><code>Prompts</code> list to pick a base prompt, or use the <code>Add</code> button to create a new prompt.</li>
+        <li><code>Characters</code> drop down boxes and manual entry to inject style/character details.</li>
+      </ul>
+    </li>
+    <li>
+      <span class="step-title">Copy the prompt into the site</span><br>
+      Copy the prompt using <code>Copy</code> button, and paste into the text box on the left page (your AI/video tool).
+    </li>
+    <li>
+      <span class="step-title">Generate your video</span><br>
+      Use the site’s own <code>Generate</code> / <code>Submit</code> button on the left to start the render.
+    </li>
+    <li>
+      <span class="step-title">Download and open results</span><br>
+      When the site finishes, download the video in the left browser. Files are saved to your configured download folder (see toolbar <code>Downloads…</code> option) — open that folder in your file manager to play the video.
+    </li>
+  </ol>
+
+  <p class="hint">
+    You can customize this help page by editing <code>help_html</code> in <code>sora2_config.json</code>.
+  </p>
 </body>
 </html>
 """
@@ -97,7 +203,7 @@ def load_config():
         QMessageBox.warning(None, "Config", f"Config not found at {CONFIG_PATH}. Using defaults.")
         return {
             "version": "1.2.6",
-            "window": {"width": 1920,"height": 1080,"orientation":"horizontal","user_agent":"Chrome (Windows)","mail_url":"https://www.guerrillamail.com/inbox","window_title":"Sora 2 Browser Tool"},
+            "window": {"width": 1920,"height": 1080,"orientation":"horizontal","user_agent":"Default (Engine)","mail_url":"https://www.guerrillamail.com/inbox","window_title":"Sora 2 Browser Tool"},
             "sites": [],
             "prompts": [],
             "mail_sites": [],
