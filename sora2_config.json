@@ -67,9 +67,9 @@
   "sites": [
     {
       "id": 1,
-      "name": "Media",
-      "url": "https://www.media.io/ai/text-to-video/sora-2",
-      "base": "media.io",
+      "name": "Mindvideo",
+      "url": "https://www.mindvideo.ai/sora-2/",
+      "base": "mindvideo.ai",
       "category": "generator",
       "free_tier": true,
       "notes": ""
@@ -112,9 +112,9 @@
     },
     {
       "id": 6,
-      "name": "Mindvideo",
-      "url": "https://www.mindvideo.ai/sora-2/",
-      "base": "mindvideo.ai",
+      "name": "Media",
+      "url": "https://www.media.io/ai/text-to-video/sora-2",
+      "base": "media.io",
       "category": "generator",
       "free_tier": true,
       "notes": ""
