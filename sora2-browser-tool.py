@@ -2334,13 +2334,14 @@ class Main(QMainWindow):
 
         confirm = QMessageBox.question(
             self, "Clear Site Data",
-            "This will clear cookies, cache, local/session storage, and IndexedDB for all sites. Continue?",
+            "This will clear cookies, cache, local/session storage, IndexedDB, service workers, and auth cache for all sites. Continue?",
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
             QMessageBox.StandardButton.Yes
         )
         if confirm != QMessageBox.StandardButton.Yes:
             return
 
+        # --- COOKIES ---
         try:
             store = self.profile.cookieStore()
             if store is not None:
@@ -2348,11 +2349,25 @@ class Main(QMainWindow):
         except Exception:
             pass
 
+        # --- HTTP CACHE ---
         try:
             self.profile.clearHttpCache()
         except Exception:
             pass
 
+        # --- HTTP AUTH CACHE (LOGIN SESSIONS!) ---
+        try:
+            self.profile.clearHttpAuthenticationCache()
+        except Exception:
+            pass
+
+        # --- SERVICE WORKERS ---
+        try:
+            self.profile.clearAllServiceWorkers()
+        except Exception:
+            pass
+
+        # --- PERSISTENT STORAGE (LocalStorage, IndexedDB files, etc) ---
         try:
             storage_dir = self.profile.persistentStoragePath()
         except Exception:
@@ -2369,7 +2384,24 @@ class Main(QMainWindow):
         except Exception:
             pass
 
-        js = "(async function(){try{localStorage.clear();sessionStorage.clear();if(window.indexedDB&&indexedDB.databases){let dbs=await indexedDB.databases();for(const db of dbs){if(db&&db.name){try{indexedDB.deleteDatabase(db.name);}catch(e){}}}}catch(e){}})();"
+        # --- JS CLEAR (session/local storage + IndexedDB deleteDatabase()) ---
+        js = """
+        (async function(){
+            try {
+                localStorage.clear();
+                sessionStorage.clear();
+                if (window.indexedDB && indexedDB.databases) {
+                    let dbs = await indexedDB.databases();
+                    for (const db of dbs) {
+                        if (db && db.name) {
+                            try { indexedDB.deleteDatabase(db.name); } catch(e){}
+                        }
+                    }
+                }
+            } catch(e){}
+        })();
+        """
+
         try:
             for view in self.findChildren(QWebEngineView):
                 try:
@@ -2379,10 +2411,12 @@ class Main(QMainWindow):
         except Exception:
             pass
 
+        # --- DONE ---
         try:
             QMessageBox.information(self, "Site Data Cleared", "Site data cleared. Reloading open pages.")
         except Exception:
             pass
+
         try:
             for view in self.findChildren(QWebEngineView):
                 try:
