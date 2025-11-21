@@ -40,6 +40,7 @@ from PyQt6.QtWidgets import (QTextEdit,
 )
 from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineProfile
 from PyQt6.QtWebEngineWidgets import QWebEngineView
+from PyQt6.QtGui import QDesktopServices
 
 # Cloudflare/Turnstile compatibility flags (GPU + third-party cookies)
 # Must be set before QtWebEngine starts
@@ -468,17 +469,20 @@ class Main(QMainWindow):
             self.profile.setThirdPartyCookiePolicy(QWebEngineProfile.ThirdPartyCookiePolicy.AllowAll)
         except Exception:
             pass
-
-
-        ua_label = self.cfg["window"].get("user_agent","Default (Engine)")
-        if ua_label.startswith('Default'):
-            self.current_ua = 'Default (Engine)'
+            
+        window_cfg = self.cfg.get("window") or {}
+        ua_label = window_cfg.get("user_agent", "Default (Engine)")
+        if not isinstance(ua_label, str):
+            ua_label = "Default (Engine)"
+        if ua_label.startswith("Default"):
+            self.current_ua = "Default (Engine)"
         else:
             self.current_ua = PRESET_UAS.get(ua_label, ua_label)
             try:
                 self.profile.setHttpUserAgent(self.current_ua)
             except Exception:
                 pass
+                
         self.profile.downloadRequested.connect(self.on_download)
 
         if self.cfg['window'].get('fullscreen', False):
@@ -542,11 +546,11 @@ class Main(QMainWindow):
             a = m_tools_ua.addAction(label)
             a.triggered.connect(lambda _, lab=label: self.set_user_agent(PRESET_UAS[lab], preset_label=lab))
             
-        m_tools_ua.addSeparator()
-        a_apply = m_tools_ua.addAction("Apply UA (from fields)"); a_apply.triggered.connect(self.apply_ua_clicked)
-        a_random = m_tools_ua.addAction("Random UA"); a_random.triggered.connect(self.random_ua_clicked)
-        a_reset = m_tools_ua.addAction("Reset UA"); a_reset.triggered.connect(self.reset_ua_clicked)
-        a_mobile = m_tools_ua.addAction("Try Mobile WebM"); a_mobile.triggered.connect(self.use_mobile_ua)
+        #m_tools_ua.addSeparator()
+        #a_apply = m_tools_ua.addAction("Apply UA (from fields)"); a_apply.triggered.connect(self.apply_ua_clicked)
+        #a_random = m_tools_ua.addAction("Random UA"); a_random.triggered.connect(self.random_ua_clicked)
+        #a_reset = m_tools_ua.addAction("Reset UA"); a_reset.triggered.connect(self.reset_ua_clicked)
+        #a_mobile = m_tools_ua.addAction("Try Mobile WebM"); a_mobile.triggered.connect(self.use_mobile_ua)
 
         m_tools_cap = m_tools.addMenu("Captcha")
         a_clear_recaptcha = m_tools_cap.addAction("Clear reCAPTCHA Cookies"); a_clear_recaptcha.triggered.connect(self.clear_recaptcha_cookies)
@@ -598,24 +602,24 @@ class Main(QMainWindow):
         self.addr.returnPressed.connect(self.load_left_addr)
         row.addWidget(QLabel("URL:")); row.addWidget(self.addr,1)
 
-        row.addWidget(QLabel("UA:"))
+        #row.addWidget(QLabel("UA:"))
         self.uaPreset = QComboBox(); self.uaPreset.addItem('Default (Engine)'); self.uaPreset.addItems(list(PRESET_UAS.keys()))
         preset_label = 'Default (Engine)' if self.current_ua == 'Default (Engine)' else next((k for k,v in PRESET_UAS.items() if v==self.current_ua), "Chrome (Windows)")
         self.uaPreset.setCurrentText(preset_label)
-        self.uaCustom = QLineEdit(); self.uaCustom.setPlaceholderText("Custom UA…")
+        #self.uaCustom = QLineEdit(); self.uaCustom.setPlaceholderText("Custom UA…")
 
-        self.btnApplyUA = QPushButton("Apply UA"); self.btnApplyUA.clicked.connect(self.apply_ua_clicked)
+        #self.btnApplyUA = QPushButton("Apply UA"); self.btnApplyUA.clicked.connect(self.apply_ua_clicked)
         # self.btnRandomUA = QPushButton("Random UA"); self.btnRandomUA.clicked.connect(self.random_ua_clicked)
         # self.btnResetUA = QPushButton("Reset"); self.btnResetUA.clicked.connect(self.reset_ua_clicked)
-        self.btnMobileUA = QPushButton("Try Mobile WebM"); self.btnMobileUA.clicked.connect(self.use_mobile_ua)
+        #self.btnMobileUA = QPushButton("Try Mobile WebM"); self.btnMobileUA.clicked.connect(self.use_mobile_ua)
         self.btnClear = QPushButton("Clear reCAPTCHA Cookies"); self.btnClear.clicked.connect(self.clear_recaptcha_cookies)
         self.btnToggle = QPushButton("Top/Bottom"); self.btnToggle.clicked.connect(self.switch_orientation)
         self.btnExternal = QPushButton("Open Externally"); self.btnExternal.clicked.connect(self.open_external)
         self.btnOpenMedia = QPushButton("Open Media"); self.btnOpenMedia.clicked.connect(self.open_media_externally)
         self.btnOpenDownloads = QPushButton("Open Downloads"); self.btnOpenDownloads.clicked.connect(self.open_download_dir)
         self.btnSetDownloadDir = QPushButton("Set Download Directory"); self.btnSetDownloadDir.clicked.connect(self.change_download_dir)
-        row.addWidget(self.uaPreset); row.addWidget(self.uaCustom,1)
-        for b in (self.btnApplyUA, self.btnToggle, self.btnExternal, self.btnOpenMedia, self.btnOpenDownloads, self.btnSetDownloadDir):
+        #row.addWidget(self.uaPreset); row.addWidget(self.uaCustom,1)
+        for b in (self.btnToggle, self.btnExternal, self.btnOpenMedia, self.btnOpenDownloads, self.btnSetDownloadDir):
             row.addWidget(b)
         la_v.addWidget(bar)
 
@@ -636,7 +640,7 @@ class Main(QMainWindow):
         #info = QLabel("Source: User list")
         row_sites = QWidget(); row_sites_h = QHBoxLayout(row_sites); row_sites_h.setContentsMargins(0,0,0,0); row_sites_h.setSpacing(8)
         btnRestore = QPushButton("Restore Default Sites"); btnRestore.clicked.connect(self.restore_default_sites)
-        btnClearSites = QPushButton("Clear User Sites"); btnClearSites.clicked.connect(self.clear_user_sites)
+        #btnClearSites = QPushButton("Clear User Sites"); btnClearSites.clicked.connect(self.clear_user_sites)
         btnAddSite = QPushButton("Add Current Page"); btnAddSite.clicked.connect(self.add_site_from_current)
         btnRemoveSite = QPushButton("Remove Selected"); btnRemoveSite.clicked.connect(self.remove_selected_site)
         #row_sites_h.addWidget(info,1)
@@ -953,11 +957,19 @@ class Main(QMainWindow):
         self.statusBar().showMessage("Ready")
 
     # UA logic
-    def set_user_agent(self, ua: str, preset_label=None):
-        self.current_ua = ua
-        self.profile.setHttpUserAgent(ua)
+    def set_user_agent(self, ua, preset_label=None):
+        if ua is None or (isinstance(ua, str) and ua.startswith("Default")):
+            self.current_ua = "Default (Engine)"
+        else:
+            self.current_ua = ua
+            try:
+                self.profile.setHttpUserAgent(ua)
+            except Exception:
+                pass
+
         if preset_label:
             self.uaPreset.setCurrentText(preset_label)
+
         # Reload all left tabs
         try:
             for i in range(self.leftTabs.count()):
