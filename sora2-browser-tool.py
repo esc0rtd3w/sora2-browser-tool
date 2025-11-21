@@ -1032,7 +1032,8 @@ class Main(QMainWindow):
         # Store a flag
         self.aggressive_spoof = bool(checked)
         QMessageBox.information(self, "Aggressive Spoof", "Enabled" if checked else "Disabled")
-
+    
+    '''
     def apply_ua_clicked(self):
         text = self.uaCustom.text().strip() or PRESET_UAS.get(self.uaPreset.currentText(), DEFAULT_CHROME_UA)
         self.set_user_agent(text)
@@ -1047,7 +1048,8 @@ class Main(QMainWindow):
 
     def use_mobile_ua(self):
         self.set_user_agent(PRESET_UAS["Chrome (Android)"], "Chrome (Android)")
-
+    '''
+    
     # Cookies
     def clear_recaptcha_cookies(self):
         self.profile.cookieStore().deleteAllCookies()
