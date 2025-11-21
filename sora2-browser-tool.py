@@ -501,7 +501,7 @@ class Main(QMainWindow):
         if self.cfg['window'].get('fullscreen', False):
             self.showFullScreen()
         else:
-            self.resize(self.cfg['window'].get('width',1440), self.cfg['window'].get('height',900))
+            self.resize(self.cfg['window'].get('width',1920), self.cfg['window'].get('height',1080))
 
         # Root: ACTIONS / CONTENT
         self.rootSplit = QSplitter(Qt.Orientation.Vertical)
