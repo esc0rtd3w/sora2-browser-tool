@@ -447,13 +447,26 @@ class Main(QMainWindow):
             self._apply_pending_tmp_updates()
         except Exception:
             pass
+
         self.cfg = load_config()
+        window_cfg = self.cfg.get("window")
+        if not isinstance(window_cfg, dict):
+            window_cfg = {
+                "width": 1920,
+                "height": 1080,
+                "orientation": "horizontal",
+                "user_agent": "Default (Engine)",
+                "mail_url": "https://www.guerrillamail.com/inbox",
+                "window_title": "Sora 2 Browser Tool",
+            }
+        self.cfg["window"] = window_cfg
+
         raw_help = self.cfg.get("help_html", "")
         if not isinstance(raw_help, str):
             raw_help = ""
         self.startup_html = (raw_help.strip() or DEFAULT_HELP_HTML)
         self.user_mail_sites = load_or_init_user_mail_sites(self.cfg.get("mail_sites", MAIL_SITE_DEFAULTS))
-        self.setWindowTitle(self.cfg.get("window",{}).get("window_title", "Sora 2 Browser Tool"))
+        self.setWindowTitle(window_cfg.get("window_title", "Sora 2 Browser Tool"))
 
         # Shared profile
         self.profile = QWebEngineProfile.defaultProfile()
@@ -960,6 +973,11 @@ class Main(QMainWindow):
     def set_user_agent(self, ua, preset_label=None):
         if ua is None or (isinstance(ua, str) and ua.startswith("Default")):
             self.current_ua = "Default (Engine)"
+            try:
+                # Empty string tells QtWebEngine to use its built-in default UA
+                self.profile.setHttpUserAgent("")
+            except Exception:
+                pass
         else:
             self.current_ua = ua
             try:
@@ -968,9 +986,12 @@ class Main(QMainWindow):
                 pass
 
         if preset_label:
-            self.uaPreset.setCurrentText(preset_label)
+            try:
+                self.uaPreset.setCurrentText(preset_label)
+            except Exception:
+                pass
 
-        # Reload all left tabs
+        # Reload all left tabs and the right pane
         try:
             for i in range(self.leftTabs.count()):
                 b = self.leftTabs.widget(i)
@@ -978,8 +999,11 @@ class Main(QMainWindow):
                     b.reload()
         except Exception:
             pass
-        if self.right.url().isValid():
-            self.right.reload()
+        try:
+            if self.right.url().isValid():
+                self.right.reload()
+        except Exception:
+            pass
     
     def swap_left_right(self):
         try:
