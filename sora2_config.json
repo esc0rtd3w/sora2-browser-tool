@@ -2302,6 +2302,83 @@
       "category": "Custom",
       "tags": [],
       "text": "Create a scene in the view of someone holding their phone as another person is yelling at them to not record them. Make up the circumstances. Make it entertaining."
+    },
+    {
+      "id": "custom0083",
+      "title": "Soap Opera: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene of a typical soap opera scene. The characters are \"\", \"\", \"\", and \"\". Choose the theme. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0084",
+      "title": "Water Activated Growing Sponge: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene of \"\" putting a water activated growing sponge that turns into \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0085",
+      "title": "Crocodile Hunter Scene: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a crocodile hunter scene where \"\" plays as the host Steve Irwin, and the guest is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0086",
+      "title": "Toy Commercial 50s: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a toy commerical scene from the 1950s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0087",
+      "title": "Toy Commercial 60s: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a toy commerical scene from the 1960s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0088",
+      "title": "Toy Commercial 70s: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a toy commerical scene from the 1970s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0089",
+      "title": "Toy Commercial 80s: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a toy commerical scene from the 1980s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0090",
+      "title": "Toy Commercial 90s: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a toy commerical scene from the 1990s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0091",
+      "title": "Toy Commercial 2000s: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a toy commerical scene from the 2000s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0092",
+      "title": "Toy Commercial Post 2000s: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a toy commerical scene from the post 2000s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0093",
+      "title": "Milwaukee Tool Commercial: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a Milwaukee tool style commercial selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     }
   ],
   "characters": [
@@ -5316,6 +5393,10 @@
     {
       "name": "Stephen Jay Gould",
       "category": "Historical Figures"
+    },
+    {
+      "name": "Steve Irwin",
+      "category": "Entertainers & Celebrities"
     },
     {
       "name": "Steve Jobs",
