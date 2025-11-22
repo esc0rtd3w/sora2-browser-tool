@@ -2320,6 +2320,29 @@ class Main(QMainWindow):
 
         if try_swap():
             return
+        # Force helper to finish update on exit
+        try:
+            tmp_dir = tempfile.gettempdir()
+            helper_path = os.path.join(tmp_dir, "sora2_apply_update.py")
+            with open(helper_path, "w", encoding="utf-8") as f:
+                f.write(helper_code)
+            try:
+                QProcess.startDetached(sys.executable, [helper_path])
+            except Exception:
+                import subprocess
+                try:
+                    subprocess.Popen([sys.executable, helper_path],
+                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL)
+                except Exception:
+                    pass
+        except Exception:
+            pass
+        # Exit so helper can apply update
+        try:
+            sys.exit(0)
+        except Exception:
+            pass
+
 
         # If replacing PY fails, write a helper that will finish after app exits
         helper_code = (
