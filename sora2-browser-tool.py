@@ -891,22 +891,25 @@ class Main(QMainWindow):
         except Exception:
             pass
 
-        split_sizes = ui_cfg.get("actions_splitter_sizes") or ui_cfg.get("content_splitter_sizes")
-        if isinstance(split_sizes, (list, tuple)) and len(split_sizes) >= 2:
-            try:
-                split_sizes = [int(split_sizes[0]), int(split_sizes[1])]
-            except Exception:
-                split_sizes = None
-        else:
-            try:
-                ratio = float(self.cfg.get("window", {}).get("pane_ratio", 0.5))
-            except Exception:
-                ratio = 0.5
-            split_sizes = [int(1000 * ratio), int(1000 * (1.0 - ratio))]
+        # Initialize independent splitter sizes
+        ui_cfg = (self.cfg.get("ui") or {})
+        def _coerce_sizes(v, ratio_fallback=0.5):
+            if isinstance(v, (list, tuple)) and len(v) >= 2:
+                try:
+                    return [int(v[0]), int(v[1])]
+                except Exception:
+                    pass
+            r = float(self.cfg.get("window", {}).get("pane_ratio", ratio_fallback))
+            return [int(1000*r), int(1000*(1.0-r))]
 
-        # Apply initial split sizes to the actions pane
+        actions_sizes = _coerce_sizes(ui_cfg.get("actions_splitter_sizes"), 0.5)
+        content_sizes = _coerce_sizes(ui_cfg.get("content_splitter_sizes"),
+                                      actions_sizes[0]/1000.0)
+
         try:
-            self.actionsSplit.setSizes(split_sizes)
+            self.actionsSplit.setSizes(actions_sizes)
+        except Exception:
+            pass
         except Exception:
             pass
 
@@ -934,7 +937,7 @@ class Main(QMainWindow):
         self.contentSplit.addWidget(self.leftTabs); self.contentSplit.addWidget(self.right)
         self.contentSplit.setStretchFactor(0,1); self.contentSplit.setStretchFactor(1,1)
         try:
-            self.contentSplit.setSizes(split_sizes)
+            self.contentSplit.setSizes(content_sizes)
         except Exception:
             pass
 
