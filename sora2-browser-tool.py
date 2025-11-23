@@ -503,11 +503,11 @@ class Main(QMainWindow):
         else:
             self.resize(self.cfg['window'].get('width',1920), self.cfg['window'].get('height',1080))
 
-        # Root: ACTIONS / CONTENT
+        # Root: Actions / Content
         self.rootSplit = QSplitter(Qt.Orientation.Vertical)
         self.setCentralWidget(self.rootSplit)
 
-        # MENUBAR
+        # Menubar
         menubar = self.menuBar()
 
         m_file = menubar.addMenu("File")
@@ -599,7 +599,7 @@ class Main(QMainWindow):
         self._build_mail_sites_menu(self.m_mail_sites)
         a_update = menubar.addAction("Check For Updates"); a_update.triggered.connect(self.check_for_updates)
 
-        # ACTIONS (split left actions | right prompts)
+        # Actions (split left actions | right prompts)
         actions = QWidget(); act_v = QVBoxLayout(actions)
         act_v.setContentsMargins(6,6,6,6); act_v.setSpacing(8)
 
@@ -663,7 +663,7 @@ class Main(QMainWindow):
         # Keep Restore/Clear accessible via the Sites menu
         la_v.addWidget(row_sites)
 
-        # RIGHT PROMPTS PANEL
+        # Right Prompts Panel
         rightPrompts = QWidget(); rp_v = QVBoxLayout(rightPrompts)
         rp_v.setContentsMargins(8,0,0,0); rp_v.setSpacing(6)
 
@@ -701,7 +701,7 @@ class Main(QMainWindow):
         default_char_names = [c.get("name", "") for c in self.character_defs]
         self.user_characters = load_or_init_user_characters(default_char_names)
         
-        # Build merged character objects (user list + config categories)
+        # Build merged character objects
         self._rebuild_character_objects()
 
         # Category + Character selectors
@@ -810,13 +810,13 @@ class Main(QMainWindow):
         self.actionsSplit.addWidget(leftActions)
         self.actionsSplit.addWidget(rightPrompts)
 
-        # Determine shared split sizes from config (ui.actions_splitter_sizes/content_splitter_sizes or window.pane_ratio)
+        # Determine shared split sizes from config
         ui_cfg = (self.cfg.get("ui") or {})
         if not isinstance(ui_cfg, dict):
             ui_cfg = {}
         self.cfg["ui"] = ui_cfg
 
-        # Hotkeys: fullscreen + zoom (stored in config, with defaults)
+        # Hotkeys: fullscreen + zoom
         hotkeys = ui_cfg.get("hotkeys")
         if not isinstance(hotkeys, dict):
             hotkeys = {}
@@ -1019,7 +1019,7 @@ class Main(QMainWindow):
             pass
 
     def fix_captcha_cloudflare(self):
-        # Minimal, non-destructive helper: reload all tabs and right pane; relies on current UA/cookies
+        # Reload all tabs and right pane; relies on current UA/cookies
         try:
             for i in range(self.leftTabs.count()):
                 b = self.leftTabs.widget(i)
@@ -1911,7 +1911,7 @@ class Main(QMainWindow):
         except Exception:
             p_sizes = None
 
-        # Horizontal actions/content splitters (kept in sync while running)
+        # Horizontal actions/content splitters
         try:
             a_sizes = self.actionsSplit.sizes()
         except Exception:
@@ -1935,7 +1935,7 @@ class Main(QMainWindow):
         if c_sizes:
             ui["content_splitter_sizes"] = [int(s) for s in c_sizes]
 
-        # Also update legacy pane_ratio for backwards compatibility
+        # Update pane_ratio
         try:
             if a_sizes and len(a_sizes) >= 2:
                 total = float(a_sizes[0] + a_sizes[1])
@@ -2324,6 +2324,7 @@ class Main(QMainWindow):
 
         if try_swap():
             return
+            
         # Force helper to finish update on exit
         try:
             tmp_dir = tempfile.gettempdir()
@@ -2341,6 +2342,7 @@ class Main(QMainWindow):
                     pass
         except Exception:
             pass
+            
         # Exit so helper can apply update
         try:
             sys.exit(0)
@@ -2409,7 +2411,7 @@ class Main(QMainWindow):
         if confirm != QMessageBox.StandardButton.Yes:
             return
 
-        # --- COOKIES ---
+        # Cookies
         try:
             store = self.profile.cookieStore()
             if store is not None:
@@ -2417,25 +2419,25 @@ class Main(QMainWindow):
         except Exception:
             pass
 
-        # --- HTTP CACHE ---
+        # HTTP Cache
         try:
             self.profile.clearHttpCache()
         except Exception:
             pass
 
-        # --- HTTP AUTH CACHE (LOGIN SESSIONS!) ---
+        # HTTP AUTH Cache/Login Sessions
         try:
             self.profile.clearHttpAuthenticationCache()
         except Exception:
             pass
 
-        # --- SERVICE WORKERS ---
+        # Service Workers
         try:
             self.profile.clearAllServiceWorkers()
         except Exception:
             pass
 
-        # --- PERSISTENT STORAGE (LocalStorage, IndexedDB files, etc) ---
+        # Persistent Storage (LocalStorage, IndexedDB files, etc)
         try:
             storage_dir = self.profile.persistentStoragePath()
         except Exception:
@@ -2452,7 +2454,7 @@ class Main(QMainWindow):
         except Exception:
             pass
 
-        # --- JS CLEAR (session/local storage + IndexedDB deleteDatabase()) ---
+        # JS Clear (session/local storage + IndexedDB deleteDatabase())
         js = """
         (async function(){
             try {
@@ -2479,7 +2481,7 @@ class Main(QMainWindow):
         except Exception:
             pass
 
-        # --- DONE ---
+        # Done
         try:
             QMessageBox.information(self, "Site Data Cleared", "Site data cleared. Reloading open pages.")
         except Exception:
