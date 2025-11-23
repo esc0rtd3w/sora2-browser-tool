@@ -1434,7 +1434,11 @@ class Main(QMainWindow):
         site = item.data(Qt.ItemDataRole.UserRole)
         base = self._base_of(site.get("url",""))
         self.user_sites = [s for s in self.user_sites if self._base_of(s.get("url","")) != base]
+        
+        # Reindex IDs
+        for i, s in enumerate(self.user_sites, start=1): s["id"] = i
         save_user_sites(self.user_sites)
+        
         self.refresh_sites_list()
         self.statusBar().showMessage(f"Removed site: {base}", 4000)
 
