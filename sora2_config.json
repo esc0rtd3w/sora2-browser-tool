@@ -2379,6 +2379,69 @@
       "category": "Custom",
       "tags": [],
       "text": "Create a Milwaukee tool style commercial selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0094",
+      "title": "Fractal Loop #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a looping fractal design with the theme being \"\". It should seamlessly loop frrom last few frames to the first few frames."
+    },
+    {
+      "id": "custom0095",
+      "title": "Fractal Loop #2: Infinite Zoom",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a looping fractal design with the theme being \"marijuana\". It should infinitely zoom in. It should seamlessly loop frrom last few frames to the first few frames so you cannot see where the end and beginning overlap."
+    },
+    {
+      "id": "custom0096",
+      "title": "Cat Roomba X Games First Person View",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene of a cat first person view go pro style angle of doing x games style stunts on a roomba"
+    },
+    {
+      "id": "custom0097",
+      "title": "Rick and Morty #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in the style of rick and morty cartoon. The characters are \"\" and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0098",
+      "title": "Rick and Morty #2",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in the style of rick and morty cartoon. The characters are \"\" and \"\". The theme should be \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0099",
+      "title": "Downhill Riding 2 Characters",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene where a \"\" is riding down a hill on a \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0100",
+      "title": "Who Wants To Be A Millionaire: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in the style of the game show who wants to be a millionaire. The host is \"\" and the guest is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0101",
+      "title": "Kool-Aid Man Commercial: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in the style of kool-aid man commercial. The 2 main characters are \"\" and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0102",
+      "title": "LEGO: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in the style of interlocking plastic blocks. The 2 characters are \"\" and \"\". The characters, world, environment, and feel should match the original as close as possible."
     }
   ],
   "characters": [
@@ -4669,6 +4732,10 @@
     {
       "name": "Mouse",
       "category": "Animals"
+    },
+    {
+      "name": "Mr Rogers",
+      "category": "TV Host"
     },
     {
       "name": "Muhammad",
