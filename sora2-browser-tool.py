@@ -203,7 +203,7 @@ def load_config():
     if not os.path.exists(CONFIG_PATH):
         QMessageBox.warning(None, "Config", f"Config not found at {CONFIG_PATH}. Using defaults.")
         return {
-            "version": "1.2.7",
+            "version": "1.2.8",
             "window": {"width": 1920,"height": 1080,"orientation":"horizontal","user_agent":"Default (Engine)","mail_url":"https://www.guerrillamail.com/inbox","window_title":"Sora 2 Browser Tool"},
             "sites": [],
             "prompts": [],
