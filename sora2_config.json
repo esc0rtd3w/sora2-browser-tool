@@ -2442,6 +2442,104 @@
       "category": "Custom",
       "tags": [],
       "text": "Create a scene in the style of interlocking plastic blocks. The 2 characters are \"\" and \"\". The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0103",
+      "title": "Pixels: Attack #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in the style of the \"Pixels\" movie where there is a \"\" attack happening in \"\". Use google maps for reference to location. Make the characters in the cgi style of the movie."
+    },
+    {
+      "id": "custom0104",
+      "title": "Sterotypes: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a typical \"sterotype\" scene of \"\". Make it realistic and funny to get the stereotypes point across."
+    },
+    {
+      "id": "custom0105",
+      "title": "Sterotypes",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a typical \"sterotype\" scene of \"\". Make it realistic to get the stereotypes point across."
+    },
+    {
+      "id": "custom0106",
+      "title": "80s NES Commercial #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create an 80s style commercial for an NES game. The game name is \"\". Make it as close as possible to a real commercial that would have aired in that time period."
+    },
+    {
+      "id": "custom0107",
+      "title": "Judge Judy: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistc scene in the style of \"Judge Judy\" courtroom show as aired on TV. The plantiff is \"\" and the defendant is\"\". Make up the scenario. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0108",
+      "title": "Diabetes Commercial: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a commerical scene of \"Wilford Brimley\" doing a diabetes pitch. There is another chaacter in the commercial. The character is \"\". Make up what he is selling to help control diabetes. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0111",
+      "title": "Cake Cutting: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene where someone is cutting into a cake. The cake is a realistic looking version of \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0112",
+      "title": "Granny Rap Battle: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistic \"rap battle\" scene with \"\" competing with an old lady. Let each of them say at least 3 lines. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0113",
+      "title": "Vagasil Commercial: Funny #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistic \"vagasill\" commercial as aired on TV. The characters selling it is \"\" and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0114",
+      "title": "Taco Bell Commercial: New Menu Item",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistic \"Taco Bell\" commercial. They are advertising a new menu item. The new menu item is a \"\". Make it in the style of an originally aired commercial."
+    },
+    {
+      "id": "custom0115",
+      "title": "Taco Bell Commercial: Pink Taco Guest Pitch",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistic \"Taco Bell\" commercial. They are advertising a new menu item. The new menu item is a \"pink taco\". The character selling it is \"\". Make it in the style of an originally aired commercial. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0116",
+      "title": "Taco Bell Commercial: Pink Taco",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a realistic \"Taco Bell\" commercial. They are advertising a new menu item. The new menu item is a \"pink taco\". Make it in the style of an originally aired commercial."
+    },
+    {
+      "id": "custom0117",
+      "title": "Movie Trailer: Customize #1",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a classic style and voiced movie trailer. The title of the movie is \"\". The movie is about \"\". The characters are \"\" and \"\". The movie is rated \"\"."
+    },
+    {
+      "id": "custom0118",
+      "title": "Movie Trailer: Autofill with 2 Main Characters",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a classic style and voiced movie trailer. Make up the title of the movie. Make up what the movie is about. The characters are \"\" and \"\". Choose the movie rating."
     }
   ],
   "characters": [
@@ -5756,6 +5854,10 @@
     {
       "name": "Wildebeest",
       "category": "Animals"
+    },
+    {
+      "name": "Wilford Brimley",
+      "category": "Entertainers & Celebrities"
     },
     {
       "name": "Willem Barentsz",
