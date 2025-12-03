@@ -680,6 +680,12 @@ class Main(QMainWindow):
         self.categoryBox = QComboBox(); self.categoryBox.addItem("Show All")
         self.categoryBox.currentIndexChanged.connect(self.refresh_prompts_list)
         rp_row.addWidget(self.categoryBox)
+        
+        # Prompt sort toggle
+        self.prompt_sort_mode = "original"
+        self.btnPromptSort = QPushButton("Sort By Category")
+        self.btnPromptSort.clicked.connect(self.toggle_prompt_sort)
+        rp_row.addWidget(self.btnPromptSort)
 
         self.btnPromptCopy = QPushButton("Copy"); self.btnPromptCopy.clicked.connect(self.copy_selected_prompt)
         self.btnPromptAdd = QPushButton("Add"); self.btnPromptAdd.clicked.connect(self.add_prompt_dialog)
@@ -1622,12 +1628,58 @@ class Main(QMainWindow):
             QMessageBox.critical(self, "Import Error", str(e))
 
     # Prompts helpers
+    def toggle_prompt_sort(self):
+        # Toggle between sorting prompts by category or by name
+        mode = getattr(self, "prompt_sort_mode", "original")
+
+        if mode in ("original", "name"):
+            # Next: sort by category
+            self.prompt_sort_mode = "category"
+            try:
+                self.btnPromptSort.setText("Sort By Name")
+            except Exception:
+                pass
+        else:
+            # Currently category -> next: sort by name
+            self.prompt_sort_mode = "name"
+            try:
+                self.btnPromptSort.setText("Sort By Category")
+            except Exception:
+                pass
+
+        # Rebuild list with new sort
+        self.refresh_prompts_list()
+        
     def refresh_prompts_list(self):
         self.promptList.clear()
         
         # Normalize merged prompts list (supports string or object items)
         self._prompt_objs = _normalize_prompts_list(self.user_prompts)
-        
+
+        # Apply current sort mode
+        mode = getattr(self, "prompt_sort_mode", "original")
+        objs = list(self._prompt_objs)
+
+        if mode == "category":
+            # Group by category, then by title
+            objs.sort(
+                key=lambda o: (
+                    (o.get("category") or "Base").casefold(),
+                    (o.get("title") or "").casefold(),
+                )
+            )
+        elif mode == "name":
+            # Sort primarily by title, then category
+            objs.sort(
+                key=lambda o: (
+                    (o.get("title") or "").casefold(),
+                    (o.get("category") or "Base").casefold(),
+                )
+            )
+        # else: "original" -> keep JSON order as loaded (no sort)
+
+        self._prompt_objs = objs
+
         # Rebuild categories (keep selection)
         if hasattr(self, 'categoryBox'):
             cur = self.categoryBox.currentText() if self.categoryBox.currentIndex() >= 0 else 'Show All'
@@ -1642,6 +1694,7 @@ class Main(QMainWindow):
             selected = self.categoryBox.currentText()
         else:
             selected = 'Show All'
+
         for obj in self._prompt_objs:
             cat = obj.get('category') or 'Base'
             if selected != 'Show All' and cat != selected:
