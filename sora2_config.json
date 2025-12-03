@@ -2476,7 +2476,7 @@
       "title": "Judge Judy: Funny #1",
       "category": "Custom",
       "tags": [],
-      "text": "Create a realistc scene in the style of \"Judge Judy\" courtroom show as aired on TV. The plantiff is \"\" and the defendant is\"\". Make up the scenario. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+      "text": "Create a realistc scene in the style of \"Judge Judy\" courtroom show as aired on TV. The plantiff is \"\" and the defendant is \"\". Make up the scenario. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
       "id": "custom0108",
@@ -2645,6 +2645,20 @@
       "category": "Custom",
       "tags": [],
       "text": "Create a scene in the style of The Matrix red pill blue pill scene. The character offering them is \"\". Make it in the perspective of the character standing in front with both hands out and the body and face are hard to see, like a sillouette or shadow. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0134",
+      "title": "Bros of Simi Valley: Intro 4 Bros",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in the style of \"Bros of Simi Valley\" on Youtube. Make a 15 second intro scene with 4 of the bros. The bros are \"\", \"\", \"\", and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
+    },
+    {
+      "id": "custom0135",
+      "title": "Bros of Simi Valley: Intro 2 Bros 2 Girls",
+      "category": "Custom",
+      "tags": [],
+      "text": "Create a scene in the style of \"Bros of Simi Valley\" on Youtube. Make a 15 second intro scene with 2 of the bros. and 2 of the girls. The bros are \"\", and \"\" The girls are \"\", and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     }
   ],
   "characters": [
@@ -3023,6 +3037,10 @@
     {
       "name": "Bob Ross",
       "category": "TV Host"
+    },
+    {
+      "name": "Bob Sagat",
+      "category": "Comedians"
     },
     {
       "name": "Bob Vila",
