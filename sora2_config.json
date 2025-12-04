@@ -968,9 +968,9 @@
   ],
   "prompts": [
     {
-      "id": "entrance",
+      "id": "wrestling0001",
       "title": "Entrance",
-      "category": "Core",
+      "category": "Wrestling",
       "tags": [
         "arena",
         "duo",
@@ -980,9 +980,9 @@
       "text": "Write an over-the-top ring entrance package for \"\" & \"\".\nInclude titantron graphics, pyro beats, signature taunts, and a short mic burst from each.\nInvent 2–3 finisher names themed to their legacies.\nRUNTIME: \"\" . { \"\" } HARD RULES: historically respectful; no living people; avoid real brands/songs.\nEnd with a shoutable 4–8 word tag."
     },
     {
-      "id": "fish",
+      "id": "wrestling0002",
       "title": "Fish",
-      "category": "Core",
+      "category": "Wrestling",
       "tags": [
         "arena",
         "banter",
@@ -992,9 +992,9 @@
       "text": "Write a fish-out-of-water comedy vignette in an arena where \"\" and \"\" are in unlikely roles (merch booth, commentary desk, backstage cooking show).\nBeat order: establishing shot, A speaks (3–5 lines), B speaks (3–5 lines), sight-gag, one-liner closer.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "debate",
+      "id": "wrestling0003",
       "title": "Debate",
-      "category": "Core",
+      "category": "Wrestling",
       "tags": [
         "crowd",
         "mic",
@@ -1004,9 +1004,9 @@
       "text": "Write an epic arena debate showdown between \"\" and \"\" with pumped crowd (lights, chants, cameras).\nOpenings (5–6 punchy lines each), 4–5 rebuttal volleys, then comedic handshake or staredown.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "duet",
+      "id": "wrestling0004",
       "title": "Duet",
-      "category": "Core",
+      "category": "Wrestling",
       "tags": [
         "crowd",
         "music",
@@ -1016,9 +1016,9 @@
       "text": "Write a battle-of-the-bands / performance clash where \"\" and \"\" trade musical/theatrical motifs as a wrestling angle.\nInclude stage directions, crowd reactions, and two invented move/performance names that riff on their legacies.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "docu",
+      "id": "wrestling0005",
       "title": "Docu",
-      "category": "Core",
+      "category": "Wrestling",
       "tags": [
         "3-act",
         "documentary",
@@ -1028,9 +1028,9 @@
       "text": "Write a sports-documentary hype package about \"\" & \"\" becoming a tag team, with gravelly VO, archival-style flashes, and an accelerating score.\nInclude 3-act beats: origin spark, early clash, united mission.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "montage",
+      "id": "wrestling0006",
       "title": "Montage",
-      "category": "Core",
+      "category": "Wrestling",
       "tags": [
         "lights",
         "sfx",
@@ -1040,9 +1040,9 @@
       "text": "Write a shot-listed training/hype montage for \"\" & \"\" with escalating drills, crowd teases, and a final bell.\nUse single-line shots: [SHOT] description; sprinkle [SFX] and [LIGHTS].\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "commentary",
+      "id": "wrestling0007",
       "title": "Commentary",
-      "category": "Core",
+      "category": "Wrestling",
       "tags": [
         "banter",
         "desk",
@@ -1052,9 +1052,16 @@
       "text": "Write a color commentary desk segment with \"\" & \"\" bantering while a chaotic match unfolds ringside.\nGive each 5–6 nimble quips, one misunderstanding gag, and a hot plug for the main event (generic, no brands).\nRUNTIME: \"\" . { \"\" }"
     },
     {
+      "id": "wrestling0008",
+      "title": "WWF 90s Era Tag Team Promo",
+      "category": "Wrestling",
+      "tags": [],
+      "text": "Create a realistic wwe tag team promo with \"\" and \"\", and allow both of them to say a few words. Make it funny, and entertaining like a real wwe promo. Create it in the 90s era style wwf. The characters should be as close to their originals as possible."
+    },
+    {
       "id": "bobross_guest_portrait",
       "title": "Bobross Guest Portrait",
-      "category": "Bob Ross",
+      "category": "TV Shows",
       "tags": [
         "bob-ross",
         "portrait",
@@ -1066,7 +1073,7 @@
     {
       "id": "bobross_multiverse_duo",
       "title": "Bobross Multiverse Duo",
-      "category": "Bob Ross",
+      "category": "TV Shows",
       "tags": [
         "banter",
         "bob-ross",
@@ -1078,7 +1085,7 @@
     {
       "id": "bobross_crowd_multiverse",
       "title": "Bobross Crowd Multiverse",
-      "category": "Bob Ross",
+      "category": "TV Shows",
       "tags": [
         "bob-ross",
         "crowd",
@@ -1728,13 +1735,6 @@
         "calm"
       ],
       "text": "FORMAT (enforce):\n- SETTING: Rooftop greenhouse; mist; city hum; watering wand.\n- MEDIATOR: \"\" — \"\".\n- PARTY A: \"\" — \"\".\n- PARTY B: \"\" — \"\".\n- STEPS: rules -> 2 grievances each -> mutual potting of a tiny plant -> signed truce label.\n- BUTTON: Sprinklers kick on like confetti.\nRUNTIME: \"\" . { \"\" }"
-    },
-    {
-      "id": "wrestling0001",
-      "title": "WWF 90s Era Tag Team Promo",
-      "category": "Wrestling",
-      "tags": [],
-      "text": "Create a realistic wwe tag team promo with \"\" and \"\", and allow both of them to say a few words. Make it funny, and entertaining like a real wwe promo. Create it in the 90s era style wwf. The characters should be as close to their originals as possible."
     },
     {
       "id": "painting0001",
