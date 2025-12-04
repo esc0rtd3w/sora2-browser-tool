@@ -2735,11 +2735,25 @@
       "title": "Dr Seuss Style",
       "category": "Books",
       "tags": [],
-      "text": "Create a scene in the style for a \"Dr Seuss\" book. The book is titled \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
+      "text": "Create a scene in the style for a \"Dr Seuss\" book. The book is about \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
     },
     {
       "id": "custom0147",
+      "title": "Dr Seuss Style With Custom Title",
+      "category": "Books",
+      "tags": [],
+      "text": "Create a scene in the style for a \"Dr Seuss\" book. The book is titled \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
+    },
+    {
+      "id": "custom0148",
       "title": "Franklin Style",
+      "category": "Books",
+      "tags": [],
+      "text": "Create a scene in the style of \"Franklin the Turtle\" for a book. The book is about \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
+    },
+    {
+      "id": "custom0149",
+      "title": "Franklin Style With Custom Title",
       "category": "Books",
       "tags": [],
       "text": "Create a scene in the style of \"Franklin the Turtle\" for a book. The book is titled \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
