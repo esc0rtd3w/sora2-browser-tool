@@ -683,7 +683,7 @@ class Main(QMainWindow):
         
         # Prompt sort toggle
         self.prompt_sort_mode = "original"
-        self.btnPromptSort = QPushButton("Sort By Category")
+        self.btnPromptSort = QPushButton("Sort By Name")
         self.btnPromptSort.clicked.connect(self.toggle_prompt_sort)
         rp_row.addWidget(self.btnPromptSort)
 
@@ -1629,27 +1629,34 @@ class Main(QMainWindow):
 
     # Prompts helpers
     def toggle_prompt_sort(self):
-        # Toggle between sorting prompts by category or by name
+        # Cycle prompt sort mode: original -> name -> category -> original
         mode = getattr(self, "prompt_sort_mode", "original")
 
-        if mode in ("original", "name"):
-            # Next: sort by category
-            self.prompt_sort_mode = "category"
-            try:
-                self.btnPromptSort.setText("Sort By Name")
-            except Exception:
-                pass
-        else:
-            # Currently category -> next: sort by name
+        if mode == "original":
+            # Next: sort by name
             self.prompt_sort_mode = "name"
             try:
                 self.btnPromptSort.setText("Sort By Category")
             except Exception:
                 pass
+        elif mode == "name":
+            # Next: sort by category
+            self.prompt_sort_mode = "category"
+            try:
+                self.btnPromptSort.setText("Sort By Original")
+            except Exception:
+                pass
+        else:
+            # Currently category -> next: back to original JSON order
+            self.prompt_sort_mode = "original"
+            try:
+                self.btnPromptSort.setText("Sort By Name")
+            except Exception:
+                pass
 
         # Rebuild list with new sort
         self.refresh_prompts_list()
-        
+
     def refresh_prompts_list(self):
         self.promptList.clear()
         
@@ -1700,7 +1707,12 @@ class Main(QMainWindow):
             if selected != 'Show All' and cat != selected:
                 continue
             title = obj.get('title') or 'Untitled'
-            it = QListWidgetItem(f"{cat} · {title}")
+            # When sorting by name, hide category in the list label
+            if mode == "name":
+                display_text = title
+            else:
+                display_text = f"{cat} · {title}"
+            it = QListWidgetItem(display_text)
             it.setData(Qt.ItemDataRole.UserRole, obj)
             it.setToolTip(obj.get('text',''))
             self.promptList.addItem(it)
