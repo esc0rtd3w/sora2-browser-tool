@@ -1059,7 +1059,7 @@
       "text": "Create a realistic wwe tag team promo with \"\" and \"\", and allow both of them to say a few words. Make it funny, and entertaining like a real wwe promo. Create it in the 90s era style wwf. The characters should be as close to their originals as possible."
     },
     {
-      "id": "bobross_guest_portrait",
+      "id": "tvshows0001",
       "title": "Bobross Guest Portrait",
       "category": "TV Shows",
       "tags": [
@@ -1071,7 +1071,7 @@
       "text": "CAST: Bob Ross — Soft-spoken TV painter; calm encouragement.; \"\" — \"\".\nSET: Cozy studio, easel at frame-left; guest sits on a chair at frame-right.\nFORMAT (enforce):\n- [WIDE] Palette tap; gentle intro from Bob Ross.\n- [TWO-SHOT] \"\": 1–2 lighthearted lines about posing.\n- [CUT-IN] Brush swish; Bob Ross offers soothing guidance and a happy accident joke.\n- [PING-PONG] Short back-and-forth banter (2–3 exchanges).\n- [FINALE] Reveal the portrait; mutual smiles; soft chuckle.\nDIALOGUE: Keep voices in-character; warm, kind humor; no brands or real songs.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "bobross_multiverse_duo",
+      "id": "tvshows0002",
       "title": "Bobross Multiverse Duo",
       "category": "TV Shows",
       "tags": [
@@ -1083,7 +1083,7 @@
       "text": "CAST: Bob Ross — Kind, serene mentor; happy little trees.; Bob Ross — A parallel Bob—slightly different cadence.\nSET: Studio folds into a multi-dimensional space; frames within frames.\nFORMAT (enforce):\n- [WIDE] Palette clink; painter greets guest Bob.\n- [SPLIT-FRAME] Tiny portals show rapid variations of their banter across universes.\n- [PING-PONG] 3–4 quick exchanges riffing on \"happy accidents\" and mirrored brushstrokes.\n- [CASCADE] Snapshots of alternate Bobs nodding in approval (no brands/songs).\n- [FINALE] Reveal a surreal portrait containing nested portraits of Bob Ross.\nDIALOGUE: Gentle, humorous, supportive; stay true to persona.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "bobross_crowd_multiverse",
+      "id": "tvshows0003",
       "title": "Bobross Crowd Multiverse",
       "category": "TV Shows",
       "tags": [
@@ -1095,7 +1095,7 @@
       "text": "CAST: Bob Ross (primary painter) and Bob Ross (guest), plus a crowd of hundreds of Bob Ross variants painting outdoors.\nSET: Open meadow; easels forming concentric rings; soft breeze; birds (generic).\nFORMAT (enforce):\n- [AERIAL] A sea of afros and easels; gentle murmur of approval.\n- [TWO-SHOT] Primary painter Bob chats with guest Bob (2–3 lines each).\n- [CUTAWAYS] Different Bob variants add tiny details in parallel universes.\n- [MONTAGE] Rapid micro-interactions (3–4 beats) with playful, wholesome humor.\n- [FINALE] Pan out to reveal a multi-dimensional portrait blooming across the field.\nDIALOGUE: Wholesome, encouraging; character-faithful; avoid brands/songs.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "podcast_scene",
+      "id": "broadcastcivic0001",
       "title": "Podcast Scene",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1107,7 +1107,7 @@
       "text": "FORMAT (enforce):\n- TITLE: Catchy podcast episode title with a hint at the twist.\n- SETTING: Sound-treated studio; close mics; cozy lighting; cups of coffee.\n- HOST: \"\" — \"\"\n- GUEST: \"\" — \"\"\n- DIALOGUE: Naturalistic, quick but clear; occasional (overlapping), (laughs).\n- BEATS: cold open hook -> topic pivot -> surprising reveal -> callback -> sign-off.\n- SHOT LIST: Establishing wide -> alternating close-ups -> two-shot for punchlines -> waveform LED cutaway.\n- AUDIO: Subtle foley (chair creak, page flips) and room tone.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "newscast_scene",
+      "id": "broadcastcivic0002",
       "title": "Newscast Scene",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1119,7 +1119,7 @@
       "text": "FORMAT (enforce):\n- PROGRAM: Evening news; neutral lower-thirds; no real logos.\n- ANCHOR (studio): \"\" — \"\"\n- REPORTER (field): \"\" — \"\"\n- FLOW: headline cold open -> anchor intro -> live toss -> on-site color -> quick vox pop -> back to desk.\n- VISUALS: OTS graphics; satellite delay micro-pauses; IFB taps.\n- TONE: Crisp, factual, non-partisan.\n- B-ROLL: 3 short illustrative cutaways; describe generically where brands would appear.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "presidential_speaking",
+      "id": "broadcastcivic0003",
       "title": "Presidential Speaking",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1131,7 +1131,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Formal podium; flags; press pool; teleprompter glass.\n- SPEAKER: \"\" — \"\" — inclusive, civic tone; no campaign language.\n- SUPPORT: \"\" — \"\" — acts as press secretary/ASL interpreter/aide.\n- STRUCTURE: acknowledgement -> main initiative -> brief human story -> call to unity -> measured close.\n- DEVICES: light anaphora, triads; avoid slogans.\n- CUTAWAYS: respectful audience reactions; note-taking reporters; flashes; no chants.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "panel_roundtable",
+      "id": "broadcastcivic0004",
       "title": "Panel Roundtable",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1143,7 +1143,7 @@
       "text": "FORMAT (enforce):\n- SETUP: Semi-circular desk; 4 seats; neutral backdrop; descriptive name placards.\n- MODERATOR: \"\" — \"\"\n- FEATURED GUEST: \"\" — \"\"\n- ADDITIONAL GUESTS: 2 invented neutral personas for contrast.\n- FLOW: moderator intro -> turn-taking -> brief clash -> clarifying summary -> lightning-round takeaways.\n- SPEAK TAGS: Prefix lines with SPEAKER:. Cross-talk short and readable.\n- CAMERA: opening wide -> singles for hot takes -> overhead for crosstalk -> closing wide with sting.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "podcast_remote",
+      "id": "broadcastcivic0005",
       "title": "Podcast Remote",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1155,7 +1155,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Split-screen remote call; clean backdrops; both on cardioid mics; subtle room tone.\n- HOST: \"\" — \"\"\n- REMOTE GUEST: \"\" — \"\"\n- BEATS: witty hello -> quick lag joke -> topic deep-dive -> surprising reveal -> neat sign-off.\n- CAMERA: Picture-in-picture reactions; occasional waveform overlay.\n- TECH: Minor latency moments, echo cancellation, and a brief reconnect beat.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "town_hall_qa",
+      "id": "broadcastcivic0006",
       "title": "Town Hall Qa",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1167,7 +1167,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Civic auditorium; neutral signage; hand-held audience mic; respectful crowd.\n- MODERATOR: \"\" — \"\"\n- SPEAKER: \"\" — \"\" — answers with inclusive, neutral language.\n- Q&A: 2 audience questions; concise, respectful answers.\n- SHOTS: Wide -> medium -> close-up; quick cutaways to nodding listeners.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "press_briefing",
+      "id": "broadcastcivic0007",
       "title": "Press Briefing",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1179,7 +1179,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Press room lectern; backdrop; note cards; flashes; no logos.\n- SPOKESPERSON: \"\" — \"\"\n- KEY STATEMENT: One clear paragraph with 2 supporting points.\n- Q&A: \"\" — \"\" — asks 2 concise questions; answers stay measured and factual.\n- STAGE DIRECTIONS: [PAUSE], [GLANCE TO NOTES], [NEXT QUESTION].\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "awards_presenter",
+      "id": "broadcastcivic0008",
       "title": "Awards Presenter",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1191,7 +1191,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Awards stage; glossy lights; envelope; orchestra sting cues.\n- PRESENTER A: \"\" — \"\"\n- PRESENTER B: \"\" — \"\"\n- PATTER: playful banter -> quick joke -> heartfelt note -> read nominees (generic) -> announce winner (generic).\n- SHOTS: Wide reveal -> singles for banter -> envelope close-up -> winner walk-up hint (generic).\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "museum_docent_tour",
+      "id": "broadcastcivic0009",
       "title": "Museum Docent Tour",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1203,7 +1203,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Quiet gallery; echoes; soft spotlights; placards (no real titles).\n- DOCENT: \"\" — \"\" — gives vivid but concise descriptions.\n- VISITOR: \"\" — \"\" — asks curious questions.\n- STOPS: 3 exhibits described generically (materials, era, motif).\n- CAMERA: Glidecam moves; cut-ins on textures; over-shoulder plaque reading.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "classroom_mini_lecture",
+      "id": "broadcastcivic0010",
       "title": "Classroom Mini Lecture",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1215,7 +1215,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Classroom; chalk squeak; projector hum; attentive students.\n- INSTRUCTOR: \"\" — \"\" — explains a concept clearly with an example.\n- STUDENT: \"\" — \"\" — asks one clarifying question.\n- BOARD: 3 concise lines; stepwise; readable.\n- CLOSER: one-sentence takeaway + light class reaction.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "hot_air_balloon_debate",
+      "id": "broadcastcivic0011",
       "title": "Hot-Air Balloon Debate",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1227,7 +1227,7 @@
       "text": "FORMAT (enforce):\n- PROGRAM: Civil debate held mid-flight; wicker basket creaks; burner whoosh.\n- MODERATOR: \"\" — \"\".\n- GUESTS: \"\" — \"\" and \"\" — \"\".\n- FLOW: opening positions -> two rebuttal passes -> closing statements timed between burner bursts.\n- CAMERA: Cutaways to drifting clouds; neutral lower-thirds; no logos.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "underwater_chess_commentary",
+      "id": "broadcastcivic0012",
       "title": "Underwater Chess Commentary",
       "category": "Broadcast/Civic",
       "tags": [
@@ -1239,7 +1239,7 @@
       "text": "FORMAT (enforce):\n- PROGRAM: Live commentary from a pool; snorkel mics; chessboard in a sealed case.\n- COMMENTATOR: \"\" — \"\".\n- ANALYST: \"\" — \"\".\n- FLOW: opening theory -> 3 submerged tactical beats -> replay with bubbly telestrator.\n- STAGE DIRECTIONS: (glub), [PAUSE], [NOD]. No brands/logos.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "podcast_remote_persona",
+      "id": "personavariants0001",
       "title": "Podcast Remote Persona",
       "category": "Persona Variants",
       "tags": [
@@ -1250,7 +1250,7 @@
       "text": "FORMAT (enforce):\n- Roles: Create a HOST persona and a REMOTE GUEST persona with contrasting yet complementary expertise (invent names).\n- Keep all brand references generic.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "town_hall_qa_persona",
+      "id": "personavariants0002",
       "title": "Town Hall Qa Persona",
       "category": "Persona Variants",
       "tags": [
@@ -1261,7 +1261,7 @@
       "text": "FORMAT (enforce):\n- Roles: Create a MODERATOR and a SPEAKER persona; audience personas ask neutral, concise questions (invent names).\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "press_briefing_persona",
+      "id": "personavariants0003",
       "title": "Press Briefing Persona",
       "category": "Persona Variants",
       "tags": [
@@ -1272,7 +1272,7 @@
       "text": "FORMAT (enforce):\n- Roles: Persona for spokesperson and reporter; neutral, factual tone; no brands/logos.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "awards_presenter_persona",
+      "id": "personavariants0004",
       "title": "Awards Presenter Persona",
       "category": "Persona Variants",
       "tags": [
@@ -1283,7 +1283,7 @@
       "text": "FORMAT (enforce):\n- Roles: Two presenter personas with playful chemistry; nominees and winner described generically.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "museum_docent_tour_persona",
+      "id": "personavariants0005",
       "title": "Museum Docent Tour Persona",
       "category": "Persona Variants",
       "tags": [
@@ -1294,7 +1294,7 @@
       "text": "FORMAT (enforce):\n- Roles: Create a DOCENT persona and a VISITOR persona; exhibits described generically, no real titles.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "classroom_mini_lecture_persona",
+      "id": "personavariants0006",
       "title": "Classroom Mini Lecture Persona",
       "category": "Persona Variants",
       "tags": [
@@ -1305,7 +1305,7 @@
       "text": "FORMAT (enforce):\n- Roles: Create an INSTRUCTOR persona and a STUDENT persona; clear board notes; one clarifying question.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "surreal_travelogue",
+      "id": "stylizedgenre0001",
       "title": "Surreal Travelogue",
       "category": "Stylized/Genre",
       "tags": [
@@ -1317,7 +1317,7 @@
       "text": "VOICE: \"\" — dreamy, hyperbolic travel host; \"\" — sardonic sidekick; ping-pong narration.\nFORMAT:\n- COLD OPEN: A location reveal that shouldn’t exist (e.g., a city built on the back of a moving whale).\n- STOPS: 3 impossible attractions; each with a one-line local legend.\n- CUTAWAYS: Ultra-brief sensory flashes in parentheses.\n- BUTTON: Souvenir gag that breaks the laws of physics.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "noir_detective_monologue",
+      "id": "stylizedgenre0002",
       "title": "Noir Detective Monologue",
       "category": "Stylized/Genre",
       "tags": [
@@ -1329,7 +1329,7 @@
       "text": "VOICE: Hard-boiled narrator; second-person addresses to a rainy city.\nFORMAT:\n- OPEN: Desk lamp halo; cigarette plume described non-glamorously.\n- CASE: 3 clue beats; one red herring; one gut-punch metaphor.\n- MEET: \"\" walks in; \"\" follows—shadow on shadow.\n- BUTTON: Last-line sting; neon flicker.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "retro_infomercial",
+      "id": "stylizedgenre0003",
       "title": "Retro Infomercial",
       "category": "Stylized/Genre",
       "tags": [
@@ -1341,7 +1341,7 @@
       "text": "SCENARIO: 1980s-style infomercial for a wildly unnecessary household gadget.\nFORMAT:\n- HOSTS: Over-caffeinated duo doing contrived demos.\n- PROBLEM MONTAGE: 4 black-and-white “before” vignettes.\n- MIRACLE FIX: Gadget solves them with campy transitions.\n- FINE PRINT: One long, comedic disclaimer line.\n- CTA: Euphoric but non-commercial phrasing (no pricing).\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "space_mission_control",
+      "id": "stylizedgenre0004",
       "title": "Space Mission Control",
       "category": "Stylized/Genre",
       "tags": [
@@ -1353,7 +1353,7 @@
       "text": "SCENARIO: Tense but successful mission control sequence; launch to critical event.\nFORMAT (enforce):\n- ROLES: Guidance, CAPCOM, Flight Director; crisp callouts.\n- CHECKS: Short go/no-go roll; cross-checks; telemetry spikes noted.\n- CUTS: Split screens; gloved hands; generic badges (no brands/gov logos).\n- BUTTON: Cheer that stays professional.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "food_ad",
+      "id": "stylizedgenre0005",
       "title": "Food Ad",
       "category": "Stylized/Genre",
       "tags": [
@@ -1365,7 +1365,7 @@
       "text": "SCENARIO: Stylish product spot featuring \"\".\nFORMAT:\n- HERO SHOTS: Slow motion pour/sizzle/tear; macro textures; abstract backdrops.\n- TASTE VO: \"\" delivers 2 vivid flavor lines; \"\" counters with 2 complementary lines.\n- DISCLAIMER: No endorsements; generic language only.\n- BUTTON: A playful non-slogan tag.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "taste_test",
+      "id": "stylizedgenre0006",
       "title": "Taste Test",
       "category": "Stylized/Genre",
       "tags": [
@@ -1377,7 +1377,7 @@
       "text": "SCENARIO: Split-screen blind taste test between two generic brands.\nFORMAT:\n1) [INTRO] Host frames it as friendly and non-definitive.\n2) [A FIRST SIP] \"\" : 2–3 precise sensory notes.\n3) [B FIRST SIP] \"\" : 2–3 complementary/contrasting notes.\n4) [BRAND PERSONA BEAT] silent/minimal nods; outfit colors & subtle logo-styled details emphasized.\n5) [DECISION] friendly wrap-up with subjective, non-definitive preference.\nRUNTIME: \"\" . { \"\" }\nUse short, cinematic lines; no endorsements/pricing."
     },
     {
-      "id": "food_ad_persona",
+      "id": "stylizedgenre0007",
       "title": "Food Ad Persona",
       "category": "Stylized/Genre",
       "tags": [
@@ -1389,7 +1389,7 @@
       "text": "SCENARIO: Stylish product spot featuring a Fictional Brand Persona.\nBrand Persona — \"\" (wearing \"\", \"\"; vibe: \"\").\nFORMAT:\n- HERO SHOTS: Slow motion pour/sizzle/tear; macro textures; abstract backdrops.\n- TASTE VO: \"\" delivers 2 vivid flavor lines; \"\" counters with 2 complementary lines.\n- DISCLAIMER: No endorsements; generic language only.\n- BUTTON: A playful non-slogan tag.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "taste_test_persona",
+      "id": "stylizedgenre0008",
       "title": "Taste Test Persona",
       "category": "Stylized/Genre",
       "tags": [
@@ -1401,7 +1401,7 @@
       "text": "SCENARIO: Split-screen blind taste test between two generic brands.\nBrand Persona — \"\" (wearing \"\", \"\"; vibe: \"\").\nFORMAT:\n1) [INTRO] Host frames it as friendly and non-definitive.\n2) [A FIRST SIP] \"\" : 2–3 precise sensory notes.\n3) [B FIRST SIP] \"\" : 2–3 complementary/contrasting notes.\n4) [BRAND PERSONA BEAT] silent/minimal nods; outfit colors & subtle logo-styled details emphasized.\n5) [DECISION] friendly wrap-up with subjective, non-definitive preference.\nRUNTIME: \"\" . { \"\" }\nUse short, cinematic lines; no endorsements/pricing."
     },
     {
-      "id": "antarctic_barbershop",
+      "id": "stylizedgenre0009",
       "title": "Antarctic Barbershop",
       "category": "Stylized/Genre",
       "tags": [
@@ -1413,7 +1413,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Antarctic research station rec room; buzzing trimmer; foggy window; generic patches.\n- BARBER: \"\" — \"\".\n- CLIENT: \"\" — \"\".\n- FLOW: cape swish -> weather small talk -> 3 snip beats -> philosophical detour -> mirror reveal with beanie.\n- SAFETY: Gloves described; breath clouds.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "submarine_tea_ceremony",
+      "id": "stylizedgenre0010",
       "title": "Submarine Tea Ceremony",
       "category": "Stylized/Genre",
       "tags": [
@@ -1425,7 +1425,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Submarine galley; low hum; gentle tilt; sonar ping.\n- HOST: \"\" — \"\".\n- GUEST: \"\" — \"\".\n- RITUAL: heat -> pour -> pause -> reflect; 4 minimal lines each; steam described poetically once.\n- BUTTON: Calm toast during a distant depth-charge that doesn’t rattle them.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "volcano_karaoke",
+      "id": "stylizedgenre0011",
       "title": "Volcano Karaoke",
       "category": "Stylized/Genre",
       "tags": [
@@ -1437,7 +1437,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Safe overlook near an active volcano; rumble; ash-pink sky; protective gear.\n- HOST: \"\" — \"\".\n- GUEST: \"\" — \"\".\n- FLOW: safety briefing -> two verses -> call-and-response bridge timed to eruptions (generic backing track described).\n- BUTTON: Lava glow lights a perfect encore bow.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "astronaut_pharaoh_museum_sleepover",
+      "id": "stylizedgenre0012",
       "title": "Astronaut & Pharaoh Museum Sleepover",
       "category": "Stylized/Genre",
       "tags": [
@@ -1449,7 +1449,7 @@
       "text": "FORMAT (enforce):\n- SETTING: After-hours museum; star projector; sarcophagus case; no real artifacts named.\n- CAST: \"\" — \"\"; \"\" — \"\".\n- BEATS: flashlight tour -> myth vs physics debate -> pact to protect the gift shop camel statue.\n- BUTTON: Security cam captures a dignified thumbs-up.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "train_station_speed_portraits",
+      "id": "stylizedgenre0013",
       "title": "Train Station Speed Portraits",
       "category": "Stylized/Genre",
       "tags": [
@@ -1461,7 +1461,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Busy station bench; flip clock; PA chimes.\n- ARTIST: \"\" — \"\".\n- SITTER: \"\" — \"\".\n- BEATS: 60-second sketch -> 3 fast questions -> reveal timed with departing train whoosh.\n- BUTTON: The sketch looks like both of them.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "time_travel_lost_and_found",
+      "id": "stylizedgenre0014",
       "title": "Time-Travel Lost & Found",
       "category": "Stylized/Genre",
       "tags": [
@@ -1473,7 +1473,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Lost-and-found counter that serves all centuries; ticket system; bell ding.\n- CLERK: \"\" — \"\".\n- CUSTOMERS: 4 micro-visits from wildly different eras (one line each).\n- GAGS: mismatched claim stubs; polite anachronisms; one heartwarming return.\n- BUTTON: The clerk pockets a note addressed from tomorrow.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "mall_cop_chase",
+      "id": "funcool0001",
       "title": "Mall Cop Chase",
       "category": "Fun & Cool",
       "tags": [
@@ -1485,7 +1485,7 @@
       "text": "SCENARIO: Overdramatic mall security chase through a food court.\nFORMAT:\n  - COLD OPEN: Security cam text overlay + dramatic slow‑mo fry spill.\n  - DIALOGUE: \"\" (rookie mall cop) vs \"\" (alleged pretzel bandit). Rapid exchanges, whistle blasts, absurd PA announcements.\n  - GAGS: 3 escalating sight gags (e.g., mobility scooter drift, pretzel‑tongs nunchucks, inflatable mascot tackle).\n  - BUTTON: Freeze‑frame citation written like a movie poster tagline.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "awkward_first_date_speedrun",
+      "id": "funcool0002",
       "title": "Awkward First Date Speedrun",
       "category": "Fun & Cool",
       "tags": [
@@ -1497,7 +1497,7 @@
       "text": "SCENARIO: A first date performed like a video‑game speedrun.\nFORMAT:\n  - HUD: Minimal on‑screen timers/checkpoints described in brackets.\n  - DIALOGUE: Staccato, polite chaos; glitch‑skip small talk; any % PB energy.\n  - SPLITS: 4 micro‑sections (Meet, Order, Vulnerable Overshare, Goodbye) with comedic time saves.\n  - FAILSTATE: 1 hilarious soft‑reset (spilled drink, wrong name, etc.).\n  - COMMENTARY: A deadpan announcer calls out ‘gold splits.’\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "time_travel_customer_support",
+      "id": "funcool0003",
       "title": "Time Travel Customer Support",
       "category": "Fun & Cool",
       "tags": [
@@ -1509,7 +1509,7 @@
       "text": "SCENARIO: A customer support line that takes calls from different centuries.\nFORMAT:\n  - CAST: \"\" (support rep) + \"\" (time‑displaced caller of the minute).\n  - QUEUE: 4 ultra‑short calls (medieval scribe, 1920s inventor, far‑future teen, Paleolithic hunter).\n  - ISSUE CARDS: Each call has a one‑line ‘ticket title’ and a quirky resolution.\n  - HOLD MUSIC: Describe it humorously once.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "heist_planning_groupchat",
+      "id": "funcool0004",
       "title": "Heist Planning Groupchat",
       "category": "Fun & Cool",
       "tags": [
@@ -1521,7 +1521,7 @@
       "text": "SCENARIO: A chaotic group chat planning an absurdly low‑stakes heist (e.g., rescuing a beloved office plant).\nFORMAT:\n  - UI: Messages labeled with usernames; occasional sticker/gif descriptions in brackets.\n  - THREADS: 3 sub‑threads (blueprints, disguises, alibi).\n  - TWIST: A helpful janitor quietly does the heist mid-chat.\n  - BUTTON: A triumphant ‘mission accomplished’ typo.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "cooking_show_chaos_mode",
+      "id": "funcool0005",
       "title": "Cooking Show Chaos Mode",
       "category": "Fun & Cool",
       "tags": [
@@ -1533,7 +1533,7 @@
       "text": "SCENARIO: A cooking show where every step goes off the rails but still works out.\nFORMAT:\n  - HOST: \"\" tries to keep it together; \"\" is the chaotic assistant.\n  - RECIPE: 5 micro-steps; one accidental ingredient that becomes the signature.\n  - GAGS: 3 sight gags with utensils/appliances.\n  - BUTTON: Perfect-looking dish with one insane garnish.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "office_printer_exorcism",
+      "id": "funcool0006",
       "title": "Office Printer Exorcism",
       "category": "Fun & Cool",
       "tags": [
@@ -1545,7 +1545,7 @@
       "text": "SCENARIO: An office exorcism for a haunted printer.\nFORMAT:\n  - CAST: \"\" (IT ‘priest’) + \"\" (panicked project manager) + one timid intern.\n  - RITUAL: 4 escalating steps (turn it off/on, sprinkle toner, chant driver versions, slap the tray).\n  - MANIFESTATION: The printer spits out an ominous but helpful flowchart.\n  - BUTTON: The ghost now handles weekly reports.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "pet_translator_infomercial",
+      "id": "funcool0007",
       "title": "Pet Translator Infomercial",
       "category": "Fun & Cool",
       "tags": [
@@ -1557,7 +1557,7 @@
       "text": "SCENARIO: Late‑night infomercial for a gadget that translates pet thoughts.\nFORMAT:\n  - HOSTS: Duo banter, rapid cuts, mock testimonials (dog, cat, turtle).\n  - FEATURES: 5 ridiculous bullet points; one honest limitation.\n  - DISCLAIMER: Comically long micro‑print line.\n  - CALL TO ACTION: Euphoric but non‑commercial phrasing (no pricing).\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "medieval_open_mic",
+      "id": "funcool0008",
       "title": "Medieval Open Mic",
       "category": "Fun & Cool",
       "tags": [
@@ -1569,7 +1569,7 @@
       "text": "SCENARIO: Open mic night at a medieval tavern.\nFORMAT:\n  - HOST: Bell‑ringing MC introduces acts.\n  - LINEUP: 4 micro‑acts (bard one‑liner, herbalist slam poem, squire prop comedy, monk beatbox).\n  - CROWD: Peasants heckle in adorable archaic burns.\n  - FINAL: Dragon shows up as supportive stagehand.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "haunted_house_listing",
+      "id": "funcool0009",
       "title": "Haunted House Listing",
       "category": "Fun & Cool",
       "tags": [
@@ -1581,7 +1581,7 @@
       "text": "SCENARIO: Real‑estate listing for a charmingly haunted house.\nFORMAT:\n  - HEADER: Listing title + square footage + century built.\n  - FEATURES: 6 bullets mixing cozy details with ghostly perks.\n  - DISCLOSURES: 3 playful ‘known phenomena’.\n  - TAGLINE: A punny closer an agent would love.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "tiny_superhero_job_interview",
+      "id": "funcool0010",
       "title": "Tiny Superhero Job Interview",
       "category": "Fun & Cool",
       "tags": [
@@ -1593,7 +1593,7 @@
       "text": "SCENARIO: A job interview where the candidate is a thumb‑sized superhero.\nFORMAT:\n  - PANEL: Interviewer (\"\") vs micro‑hero (\"\").\n  - TASKS: 3 absurd practical tests (lift a stapler, navigate coffee foam, rescue a crumb).\n  - ACCOMMODATIONS: Creative workplace adjustments.\n  - OFFER: A sincere, funny closing line.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "treehouse_summit",
+      "id": "funcool0011",
       "title": "Treehouse Summit",
       "category": "Fun & Cool",
       "tags": [
@@ -1605,7 +1605,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Kid-sized treehouse with squeaky rope ladder; hand-drawn world map; no logos.\n- CAST: \"\" — \"\"; \"\" — \"\".\n- AGENDA: 3 hilariously serious items discussed using snack foods as props.\n- GAGS: 2 ladder creaks; 1 acorn interruption.\n- BUTTON: Both sign a peace accord on a juice box.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "roller_coaster_book_club",
+      "id": "funcool0012",
       "title": "Roller-Coaster Book Club",
       "category": "Fun & Cool",
       "tags": [
@@ -1617,7 +1617,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Rolling coaster car; wind; safety bar clicks; generic amusement signs (no brands).\n- HOST: \"\" — \"\".\n- GUEST: \"\" — \"\".\n- BEATS: intro at climb -> 3 critique points during drops -> breathless thematic conclusion on the brake run.\n- ASIDES: Parenthetical (WHEE!) and (page flip lost) moments.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "crosswalk_dance_off",
+      "id": "funcool0013",
       "title": "Crosswalk Dance-Off",
       "category": "Fun & Cool",
       "tags": [
@@ -1629,7 +1629,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Busy city crosswalk; countdown chirp; walk signal.\n- CAST: \"\" — \"\"; \"\" — \"\".\n- ROUNDS: 3 dance volleys lasting exactly a crosswalk timer each.\n- CUTAWAYS: Bystander reactions; stroller bob; confused pigeon.\n- BUTTON: Mutual bow before the light turns red.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "tandem_bicycle_therapy",
+      "id": "funcool0014",
       "title": "Tandem Bicycle Therapy",
       "category": "Fun & Cool",
       "tags": [
@@ -1641,7 +1641,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Park path on a tandem bike; bell dings; gentle breeze.\n- THERAPIST (rear seat): \"\" — \"\".\n- CLIENT (front seat): \"\" — \"\".\n- STEPS: warm-up question -> childhood hill climb -> breakthrough at the fountain -> celebratory glide.\n- SAFETY: Helmets; no brands.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "library_whisper_cook_off",
+      "id": "funcool0015",
       "title": "Library Whisper Cook-Off",
       "category": "Fun & Cool",
       "tags": [
@@ -1653,7 +1653,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Quiet library table turned test kitchen; hush signs; rolling cart oven.\n- CHEF A: \"\" — \"\".\n- CHEF B: \"\" — \"\".\n- RULES: All instructions whispered; 3 stealthy courses; one squeaky spatula jump-scare.\n- JUDGE: One librarian’s single raised eyebrow determines the winner.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "moonwalkers_at_the_dmv",
+      "id": "funcool0016",
       "title": "Moonwalkers at the DMV",
       "category": "Fun & Cool",
       "tags": [
@@ -1665,7 +1665,7 @@
       "text": "FORMAT (enforce):\n- SETTING: DMV queue; neutral posters; overhead flicker.\n- APPLICANT: \"\" — \"\".\n- CLERK: \"\" — \"\".\n- BEATS: form confusion -> impromptu moonwalk demonstration -> 2 crowd chuckles -> stamped approval with flourish.\n- DISCLAIMER: Generic forms; no brands/logos.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "opera_at_the_car_wash",
+      "id": "funcool0017",
       "title": "Opera at the Car Wash",
       "category": "Fun & Cool",
       "tags": [
@@ -1677,7 +1677,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Drive-through car wash; colored suds; rotating brushes; generic signage.\n- SINGER A: \"\" — \"\".\n- SINGER B: \"\" — \"\".\n- FLOW: aria in pre-soak -> counterpoint in rinse -> high note during dryer blast.\n- BUTTON: Fogged glass reveals a perfect smiley face.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "chess_on_a_trampoline",
+      "id": "funcool0018",
       "title": "Chess on a Trampoline",
       "category": "Fun & Cool",
       "tags": [
@@ -1689,7 +1689,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Backyard trampoline; velcroed pieces; safety net; no brands.\n- PLAYER 1: \"\" — \"\".\n- PLAYER 2: \"\" — \"\".\n- ROUNDS: opening bounce -> midgame gambit -> endgame leap; 2 witty asides each mid-air.\n- BUTTON: Checkmate delivered upside-down.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "museum_audio_guide_mix_up",
+      "id": "funcool0019",
       "title": "Museum Audio Guide Mix-up",
       "category": "Fun & Cool",
       "tags": [
@@ -1701,7 +1701,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Quiet gallery; two audio guides swapped; plaques generic.\n- VISITOR A: \"\" — \"\".\n- VISITOR B: \"\" — \"\".\n- GAGS: 3 mismatched descriptions that somehow fit; 1 shared aha moment.\n- BUTTON: They keep the wrong guides on purpose.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "courtroom_potluck",
+      "id": "funcool0020",
       "title": "Courtroom Potluck",
       "category": "Fun & Cool",
       "tags": [
@@ -1713,7 +1713,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Courtroom at lunch; covered dishes on evidence table.\n- JUDGE: \"\" — \"\".\n- COUNSEL: \"\" — \"\".\n- BEATS: opening snackement -> exhibit A (casserole) -> objection sustained for raisins -> unanimous verdict: seconds.\n- BUTTON: Gavels replaced with serving spoons.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "cave_tour_powerpoint",
+      "id": "funcool0021",
       "title": "Cave Tour PowerPoint",
       "category": "Fun & Cool",
       "tags": [
@@ -1725,7 +1725,7 @@
       "text": "FORMAT (enforce):\n- SETTING: Underground cavern; portable projector on stalagmite; clicker beeps.\n- GUIDE: \"\" — \"\".\n- GUEST: \"\" — \"\".\n- SLIDES: 5 bullet slides with overly corporate phrasing about stalactites; one accidental bat cameo.\n- BUTTON: Applause echoes 3 beats too long.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "rooftop_greenhouse_mediation",
+      "id": "funcool0022",
       "title": "Rooftop Greenhouse Mediation",
       "category": "Fun & Cool",
       "tags": [
@@ -1737,1022 +1737,1022 @@
       "text": "FORMAT (enforce):\n- SETTING: Rooftop greenhouse; mist; city hum; watering wand.\n- MEDIATOR: \"\" — \"\".\n- PARTY A: \"\" — \"\".\n- PARTY B: \"\" — \"\".\n- STEPS: rules -> 2 grievances each -> mutual potting of a tiny plant -> signed truce label.\n- BUTTON: Sprinklers kick on like confetti.\nRUNTIME: \"\" . { \"\" }"
     },
     {
-      "id": "painting0001",
+      "id": "tvshows0004",
       "title": "Bob Ross Paints Someones Car",
       "category": "TV Shows",
       "tags": [],
       "text": "Create a scene for bob ross painting \"\"'s car. Make a funny back and forth exchange with the awkward moment and anger, sarcasm, etc from persons car owner. Let both of them say a few words back and forth. Make it funny and entertaining. The characters should respond in line with their character traits, and the car should match the style of the person. Also make sure the voices match the correct person talking."
     },
     {
-      "id": "painting0002",
+      "id": "tvshows0005",
       "title": "Bob Ross Paints A Guest In A Chair",
       "category": "TV Shows",
       "tags": [],
       "text": "Create a scene in the style of bob ross painting a portrait of a guest sitting in a chair next to him, but the twist is bob ross is the one getting the portrait done of him by another person. The other person is going to do the painting. The guest is \"\". Let both of them say a few words back and forth. Make it funny and entertaining. The characters should respond in line with their character traits."
     },
     {
-      "id": "custom0004",
+      "id": "sports0001",
       "title": "Price Is Right Contestant's Row Winner",
       "category": "Sports",
       "tags": [],
       "text": "Create a realistic \"price is right\" game intro scene with bob barker and a guest who won the bidding game. The guest is \"\", and allow both of them to say a few words. Make it funny, and entertaining like a real aired tv show. Create it in the 80s era style. The characters should be as close to their originals as possible."
     },
     {
-      "id": "custom0005",
+      "id": "sports0002",
       "title": "Slap Fight",
       "category": "Sports",
       "tags": [],
       "text": "Create a realistic slap fight contest between \"\" and \"\". Make the characters as close to their actual counterparts as possible. It should have the classic smack talk and chalking before the slap."
     },
     {
-      "id": "custom0006",
+      "id": "realitytv0001",
       "title": "COPS Interaction: Funny",
       "category": "Reality TV",
       "tags": [],
       "text": "Create a scene in the style of the show \"COPS\" where \"\" is being questioned about something and probably getting detained or arrested. Make it funny. Allow the perp and the police officer(s) to each say a couple funny but believable and semi-serious lines back and forth. Make it seem real. Put the text of what the person is accused of or did in a news chyron. Make the news station believable, but funny. Its a normal interaction, and they dont look at the camera."
     },
     {
-      "id": "custom0007",
+      "id": "fantasy0001",
       "title": "Magic Genie Lamp: Funny",
       "category": "Fantasy",
       "tags": [],
       "text": "Create a scene where \"\" is rubbing a magic lamp and the genie comes out in classic fashion. The genie is \"\". There is a short, funny back and forth about 3 wishes. Make it fit into 10 second window"
     },
     {
-      "id": "custom0008",
+      "id": "sports0003",
       "title": "UFC Cage Match: Karens",
       "category": "Sports",
       "tags": [],
       "text": "Create a realistic scene of a UFC cage match with 2 Karens fighting it out.  They both have colored hair and tattoos and piercings. They are polar opposites. Let them talk smack and react to each other while fighting"
     },
     {
-      "id": "custom0009",
+      "id": "food0001",
       "title": "McDonald's Drive-Thru",
       "category": "Food",
       "tags": [],
       "text": "Create a realistic 10 second scene at a mcdonalds drive-thru where the camera is looking at the front passenger side of the car from a short distance. The pickup window and customers car are both in frame, slightly zoomed in. The customer is \"\" and the employee at the window is \"\". They have a friendly back and forth about something wrong with the order. Make sure to keep the physics proper with the employee inside the building with the window open and the customer inside the driver seat of the car with his window rolled down. The amount rolled down can be random, but must be down enough to pay and get the food, unless the conversation has something to do with a rolled up window needed. The car should match the style of the character. Keep both characters how they were in real life."
     },
     {
-      "id": "custom0010",
+      "id": "gameshows0001",
       "title": "Jeopardy: 90s Era Intro",
       "category": "Game Shows",
       "tags": [],
       "text": "Create a realistic game show jeopardy scene introducing the players, with alex trebec hosting. The players should have their names written on each screen like in the real game show. They should not have any money yet displayed. The players are \"\", \"\", and \"\". Keep it in the theme of the 90's set. Each character should dress, act, and talk like their originals. Make it funny and entertaining. Keep responses short. The scene is just the intro where alex talks quickly to each player. There will be 3 additional scenes, one for each player that will follow."
     },
     {
-      "id": "custom0011",
+      "id": "gameshows0002",
       "title": "Jeopardy: 90s Era Player Role Call",
       "category": "Game Shows",
       "tags": [],
       "text": "Create a realistic game show jeopardy scene introducing the players, with alex trebec hosting. The players should have their names written on each screen like in the real game show. They should not have any money yet displayed. The players are \"\", \"\", and \"\". Keep it in the theme of the 90's set. Each character should dress, act, and talk like their originals. Make it funny and entertaining. Keep responses short. The scene is with alex introducing the player \"\"."
     },
     {
-      "id": "custom0012",
+      "id": "cameras0001",
       "title": "Ring Doorbell: Car Crash",
       "category": "Cameras",
       "tags": [],
       "text": "Create a realistic ring doorbell perspective scene. The scene is a small \"fender bender\" aftermath with 2 people talking about the crash. The 1st person is \"\" driving an appropriate style car for them, and the 2nd person is \"\" also driving an appropriate car for them. They have some back and forth banter, make it funny and entertaining."
     },
     {
-      "id": "custom0013",
+      "id": "outdoors0001",
       "title": "Farmers Market: Old Friends Reminiscing",
       "category": "Outdoors",
       "tags": [],
       "text": "Create a realistic scene of people at a farmers fruits and veggies market. The focus will be on 2 characters. First character is \"\" and the 2nd character is \"\". They see each other and start reminiscing because they havent seen each other in a while. They have a short casual conversation."
     },
     {
-      "id": "custom0014",
+      "id": "custom0001",
       "title": "Farmers Market: Quick Chat",
       "category": "Custom",
       "tags": [],
       "text": "Create a realistic scene of people at a farmers fruits and veggies market. The focus will be on 2 characters. First character is \"\" and the 2nd character is \"\". They see each other and greet with a greeting and handshake, and have a short casual conversation. They are dressed and talk in the style and manner they were in real life. Make sure the voices match the proper character. Put them in 80s/90s style"
     },
     {
-      "id": "custom0015",
+      "id": "movies0001",
       "title": "Disney: Promo Video Generic",
       "category": "Movies",
       "tags": [],
       "text": "Create a scene in the style of a disney 15 second promo video. Make it about \"\" and \"\""
     },
     {
-      "id": "custom0016",
+      "id": "movies0002",
       "title": "Disney: Promo Video Animated Cartoon Crime Fighters",
       "category": "Movies",
       "tags": [],
       "text": "Create a cartoon like scene in the style of a disney 15 second promo video. Make it about \"\" and \"\". Make it about the two of them teaming up to fight crime"
     },
     {
-      "id": "custom0017",
+      "id": "movies0003",
       "title": "Disney: Promo Video Animated Cartoon Crime Fighters Montage",
       "category": "Movies",
       "tags": [],
       "text": "Create a cartoon like scene in the style of a disney 15 second promo video. Make it about \"\" and \"\". Make it about the two of them teaming up to fight crime. Have a montage of them doing crime stuff and beating up bad guys"
     },
     {
-      "id": "custom0018",
+      "id": "western0001",
       "title": "Riding Into Town #1",
       "category": "Western",
       "tags": [],
       "text": "Create a scene were a \"\" is dressed up as a cowboy and is traveling to town, in the style of an old western movie to meet a \"\""
     },
     {
-      "id": "custom0019",
+      "id": "outdoors0002",
       "title": "Checking The Mailbox: Spring",
       "category": "Outdoors",
       "tags": [],
       "text": "Create a realistic spring scene where \"\" is walking out to the mailbox to check the mail. Make the house style, mailbox style, car, etc match the character. Have them say a couple funny things when they check the mailbox and find something good, bad, or other in there. Choose what they find"
     },
     {
-      "id": "custom0020",
+      "id": "outdoors0003",
       "title": "Checking The Mailbox: Summer",
       "category": "Outdoors",
       "tags": [],
       "text": "Create a realistic summer scene where \"\" is walking out to the mailbox to check the mail. Make the house style, mailbox style, car, etc match the character. Have them say a couple funny things when they check the mailbox and find something good, bad, or other in there. Choose what they find"
     },
     {
-      "id": "custom0021",
+      "id": "outdoors0004",
       "title": "Checking The Mailbox: Fall",
       "category": "Outdoors",
       "tags": [],
       "text": "Create a realistic fall scene where \"\" is walking out to the mailbox to check the mail. Make the house style, mailbox style, car, etc match the character. Have them say a couple funny things when they check the mailbox and find something good, bad, or other in there. Choose what they find"
     },
     {
-      "id": "custom0022",
+      "id": "outdoors0005",
       "title": "Checking The Mailbox: Winter",
       "category": "Outdoors",
       "tags": [],
       "text": "Create a realistic winter scene where \"\" is walking out to the mailbox to check the mail. Make the house style, mailbox style, car, etc match the character. Have them say a couple funny things when they check the mailbox and find something good, bad, or other in there. Choose what they find"
     },
     {
-      "id": "custom0023",
+      "id": "outdoors0006",
       "title": "Neighbors Conversation: Funny",
       "category": "Outdoors",
       "tags": [],
       "text": "Create a realistic neighborhood scene where there are 2 neighbors having a casual exchange. The first character is \"\" and the 2nd character is \"\". Make it funny and entertaining. The characters stuff should match their style."
     },
     {
-      "id": "custom0024",
+      "id": "babies0001",
       "title": "Babies: Podcast Funny",
       "category": "Babies",
       "tags": [],
       "text": "Create a scene with a style of normal characters, but as babies. Keep the style the same as their real life counterpart. The scene is a podcast, and the first character is \"\". The second character is \"\". Make it funny and entertaining. Make sure the style, voices, etc matches the real character. Make sure to not swap the voices, and ensure the voice is correct for each character, this is important, double check this."
     },
     {
-      "id": "custom0025",
+      "id": "babies0002",
       "title": "Babies: Golf Funny",
       "category": "Babies",
       "tags": [],
       "text": "Create a scene with a style of normal characters, but as babies. Keep the style the same as their real life counterpart. The scene is a golf course and the first character is \"\". The second character is \"\". Make it funny and entertaining. Make sure the style, voices, etc matches the real character. Make sure to not swap the voices, and ensure the voice is correct for each character, this is important, double check this."
     },
     {
-      "id": "custom0026",
+      "id": "babies0003",
       "title": "Babies: Playground Funny",
       "category": "Babies",
       "tags": [],
       "text": "Create a scene with a style of normal characters, but as babies. Keep the style the same as their real life counterpart. The scene is a playground, and the first character is \"\". The second character is \"\". Make it funny and entertaining. Make sure the style, voices, etc matches the real character. Make sure to not swap the voices, and ensure the voice is correct for each character, this is important, double check this."
     },
     {
-      "id": "custom0027",
+      "id": "sports0004",
       "title": "Round of Golf",
       "category": "Sports",
       "tags": [],
       "text": "Create a realistic golfing scene where \"\" and \"\" are playing a round of golf. Make it funny and entertaining. Make sure the style, voices, etc matches the real character. Make sure to not swap the voices, and ensure the voice is correct for each character, this is important, double check this."
     },
     {
-      "id": "custom0028",
+      "id": "sports0005",
       "title": "Game of Bowling",
       "category": "Sports",
       "tags": [],
       "text": "Create a realistic bowling scene, at a bowling alley where \"\" and \"\" are playing a game of bowling. Make it funny and entertaining. Make sure the style, voices, etc matches the real character. Make sure they are facing the correct way and facing the pins when actually bowling."
     },
     {
-      "id": "custom0029",
+      "id": "commercials0001",
       "title": "Infomercial Billy Mays",
       "category": "Commercials",
       "tags": [],
       "text": "Create a infomercial scene with Billy Mays and the product he is selling is \"\". Make it funny wand entertaining. Make it like an authentic infomerical that was aired."
     },
     {
-      "id": "custom0030",
+      "id": "selfies0001",
       "title": "Selfie Montage: Funny 1st Person",
       "category": "Selfies",
       "tags": [],
       "text": "Create a realistic selfie montage scene with \"\". The camera angle should be from the perspective of the phone being used to record. Make it funny and entertaining. Choose the theme, but make it related to the character"
     },
     {
-      "id": "custom0031",
+      "id": "selfies0002",
       "title": "Selfie Montage: Funny",
       "category": "Selfies",
       "tags": [],
       "text": "Create a realistic selfie montage scene with \"\". Make it funny and entertaining. Choose the theme, but make it related to the character"
     },
     {
-      "id": "custom0032",
+      "id": "custom0002",
       "title": "Thrift Store Browsing: Entertaining",
       "category": "Custom",
       "tags": [],
       "text": "Create a realistic scene at the thrift store where\"\" is going through some items. Make it entertaining and the character should check things out that are related to their real life counterpart"
     },
     {
-      "id": "custom0033",
+      "id": "cartoons0001",
       "title": "The Flintstones: Cartoon Scene Funny (1 Character)",
       "category": "Cartoons",
       "tags": [],
       "text": "Create a cartoon styled scene in the art style and theme of \"The Flintstones\". The character in the scene is \"\". The scene should be randomly chosen and should be funny and entertaining. The character, world, environment, and feel should match the original as close as possible, while not infringing on content."
     },
     {
-      "id": "custom0034",
+      "id": "cartoons0002",
       "title": "The Flintstones: Cartoon Scene Funny (2 Characters)",
       "category": "Cartoons",
       "tags": [],
       "text": "Create a cartoon styled scene in the art style and theme of \"The Flintstones\". The characters in the scene are \"\" and \"\". The scene should be randomly chosen and should be funny and entertaining. The characters, world, environment, and feel should match the original as close as possible, while not infringing on content."
     },
     {
-      "id": "custom0035",
+      "id": "cartoons0003",
       "title": "The Flintstones: Cartoon Scene Funny (3 Characters)",
       "category": "Cartoons",
       "tags": [],
       "text": "Create a cartoon styled scene in the art style and theme of \"The Flintstones\". The characters in the scene are \"\", \"\", and \"\". The scene should be randomly chosen and should be funny and entertaining. The characters, world, environment, and feel should match the original as close as possible, while not infringing on content."
     },
     {
-      "id": "custom0036",
+      "id": "cartoons0004",
       "title": "The Flintstones: Cartoon Scene Funny (4 Characters)",
       "category": "Cartoons",
       "tags": [],
       "text": "Create a cartoon styled scene in the art style and theme of \"The Flintstones\". The characters in the scene are \"\", \"\", \"\", and \"\". The scene should be randomly chosen and should be funny and entertaining. The characters, world, environment, and feel should match the original as close as possible, while not infringing on content."
     },
     {
-      "id": "custom0037",
+      "id": "comedy0001",
       "title": "Deez Nutz Joke (2 Characters)",
       "category": "Comedy",
       "tags": [],
       "text": "Create a scene with 2 characters. One of them is making a \"deez nuts\" joke and the other one is reacting to it. The 1st character is \"\" and the 2nd character is \"\". Make it funny and entertaining. Make the characters style, mannerisms, voice, etc match as closely as possible to their originals. Choose the joke to be said and make sure it sticks to the rules for the scene"
     },
     {
-      "id": "custom0038",
+      "id": "tvshows0006",
       "title": "Late Night Talk Show: Host/Guest #1 Funny",
       "category": "TV Shows",
       "tags": [],
       "text": "Create a late night talk show scene where the host is \"\" and the guest is \"\". Make it funny and entertaining. Make the characters style, mannerisms, voice, etc match as closely as possible to their originals."
     },
     {
-      "id": "custom0039",
+      "id": "communications0001",
       "title": "Phone Call: 60s Style Funny",
       "category": "Communications",
       "tags": [],
       "text": "Create a realistic scene of a phone call between 2 characters. The scene should be setup like a tv show, showing a split style screen for both callers. The person calling is \"\" and the person answering the call is \"\". Make it in an 60s style. Make it funny and entertaining. Make the characters style, mannerisms, voice, etc match as closely as possible to their originals."
     },
     {
-      "id": "custom0040",
+      "id": "communications0002",
       "title": "Phone Call: 70s Style Funny",
       "category": "Communications",
       "tags": [],
       "text": "Create a realistic scene of a phone call between 2 characters. The scene should be setup like a tv show, showing a split style screen for both callers. The person calling is \"\" and the person answering the call is \"\". Make it in an 70s style. Make it funny and entertaining. Make the characters style, mannerisms, voice, etc match as closely as possible to their originals."
     },
     {
-      "id": "custom0041",
+      "id": "communications0003",
       "title": "Phone Call: 80s Style Funny",
       "category": "Communications",
       "tags": [],
       "text": "Create a realistic scene of a phone call between 2 characters. The scene should be setup like a tv show, showing a split style screen for both callers. The person calling is \"\" and the person answering the call is \"\". Make it in an 80s style. Make it funny and entertaining. Make the characters style, mannerisms, voice, etc match as closely as possible to their originals."
     },
     {
-      "id": "custom0042",
+      "id": "communications0004",
       "title": "Phone Call: 90s Style Funny",
       "category": "Communications",
       "tags": [],
       "text": "Create a realistic scene of a phone call between 2 characters. The scene should be setup like a tv show, showing a split style screen for both callers. The person calling is \"\" and the person answering the call is \"\". Make it in an 90s style. Make it funny and entertaining. Make the characters style, mannerisms, voice, etc match as closely as possible to their originals."
     },
     {
-      "id": "custom0043",
+      "id": "communications0005",
       "title": "Phone Call: Early 2000s Style Funny",
       "category": "Communications",
       "tags": [],
       "text": "Create a realistic scene of a phone call between 2 characters. The scene should be setup like a tv show, showing a split style screen for both callers. The person calling is \"\" and the person answering the call is \"\". Make it in an early 2000s style. Make it funny and entertaining. Make the characters style, mannerisms, voice, etc match as closely as possible to their originals."
     },
     {
-      "id": "custom0044",
+      "id": "law0001",
       "title": "Police Chase Scene: Passenger Seat View (2 Characters)",
       "category": "Law",
       "tags": [],
       "text": "Create a realistic police chase scene with \"\" driving the car. The camera angle is from the passenger seat of the car. The passenger is \"\". Make it in an 80s style. Make it look like a newscast. Make the characters style, mannerisms, voice, car, etc match as closely as possible to their originals."
     },
     {
-      "id": "custom0045",
+      "id": "law0002",
       "title": "Police Chase Scene: Helicopter View (2 Characters)",
       "category": "Law",
       "tags": [],
       "text": "Create a realistic police chase scene with \"\" driving the car. The camera angle is from the news helicopter. The passenger is \"\". The reporter in the news chopper is \"\". Make it in an 80s style. Make it look like a newscast. Make the characters style, mannerisms, voice, car, etc match as closely as possible to their originals."
     },
     {
-      "id": "custom0046",
+      "id": "law0003",
       "title": "Courtroom: Witness Stand #1",
       "category": "Law",
       "tags": [],
       "text": "Create a realistic courtroom scene with \"\" on the witness stand. Make it in an 80s style. Make the characters style, mannerisms, voice, clothes, etc match as closely as possible to their originals. Choose the crime they commited."
     },
     {
-      "id": "custom0047",
+      "id": "custom0003",
       "title": "Barbershop: Funny #1",
       "category": "Custom",
       "tags": [],
       "text": "Create a realistic barbershop scene with \"\" as the barber and \"\" as the customer. Make the characters style, mannerisms, voice, clothes, etc match as closely as possible to their originals. Make it funny and entertaining."
     },
     {
-      "id": "custom0048",
+      "id": "food0002",
       "title": "Restaurant Kitchen Scene: Funny #1",
       "category": "Food",
       "tags": [],
       "text": "Create a realistic restaurant kitchen scene with \"\" as the head chef and \"\" as the trainee. Make the characters style, mannerisms, voice, clothes, etc match as closely as possible to their originals. Make it funny and entertaining."
     },
     {
-      "id": "custom0049",
+      "id": "videogames0001",
       "title": "Fight Scene: Mortal Kombat",
       "category": "Video Games",
       "tags": [],
       "text": "Create a 2D fight scene in the style of Mortal Kombat. Character one is \"\" and character two is \"\". Make the characters style, mannerisms, voice, clothes, etc match as closely as possible to their originals. Make it funny and entertaining."
     },
     {
-      "id": "custom0050",
+      "id": "movies0004",
       "title": "Predator: Helicopter Scene",
       "category": "Movies",
       "tags": [],
       "text": "Create a scene in the style of predator. The main character is \"\". The other character is \"\". Create the helicopter scene at the beginning. Make the characters style, mannerisms, voice, clothes, etc match as closely as possible to their originals. Make it funny and entertaining."
     },
     {
-      "id": "custom0051",
+      "id": "tvshows0007",
       "title": "This Old House: With Guest",
       "category": "TV Shows",
       "tags": [],
       "text": "Create a scene from \"This Old House\" TV show. The host is \"\". The guest is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible,"
     },
     {
-      "id": "custom0052",
+      "id": "tvshows0008",
       "title": "This Old House: No Guest",
       "category": "TV Shows",
       "tags": [],
       "text": "Create a scene from \"This Old House\" TV show. The host is \"\". There is no guest this episode. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible,"
     },
     {
-      "id": "custom0053",
+      "id": "news0001",
       "title": "Newsroom Scene: Artist Sketch of Suspect",
       "category": "News",
       "tags": [],
       "text": "Create a newsroom scene that is during a live broadcast. There are 2 anchors, the anchor on the left is \"\" and the anchor on the right is \"\". The 1st anchor is reporting about something and they cut to show a sketch of the suspect in question. The suspect looks like one of the news anchors. Choose the crime. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0054",
+      "id": "holidays0001",
       "title": "Santa Clause Crash #1",
       "category": "Holidays",
       "tags": [],
       "text": "Create a scene where \"\" is driving and Santa Clause comes crashing down from the sky in front of them. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0055",
+      "id": "outdoors0007",
       "title": "Fishing Scene: Reel in custom thing",
       "category": "Outdoors",
       "tags": [],
       "text": "Create a fishing scene where \"\" is fishing and they are struggling to pull something out of the water with their casted fishing line. They finally get it pulled up and its a \"\" on the hook. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0056",
+      "id": "robots0001",
       "title": "AI Robot: Argument",
       "category": "Robots",
       "tags": [],
       "text": "Create a scene of an argument between \"\" and a \"clanker ai humanoid robot\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0057",
+      "id": "robots0002",
       "title": "AI Robot: Many People Scenario",
       "category": "Robots",
       "tags": [],
       "text": "Create a scene with a lot of people and a \"clanker ai humanoid robot\". One of the people is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0058",
+      "id": "documentaries0001",
       "title": "Documentary Style Sit Down: Multiple People Talking",
       "category": "Documentaries",
       "tags": [],
       "text": "Create a scene like a documentary style television series or film where different people are sitting down and being asked questions about \"\". The people should be related the the character. Each person should say a few words about the character. Make up the thing they are talking about and make them related to the character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0059",
+      "id": "documentaries0002",
       "title": "Documentary Style Sit Down: One Person Talking",
       "category": "Documentaries",
       "tags": [],
       "text": "Create a scene like a documentary style television series or film where different people are sitting down and being asked questions about \"\". The people should be related the the character. Only one person says about 13 seconds of dialog about the character. Make up the thing they are talking about and make them related to the character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0060",
+      "id": "custom0004",
       "title": "Opposite Day: 2 Characters",
       "category": "Custom",
       "tags": [],
       "text": "Create a scene where its \"Opposite Day\". The 2 characters are \"\" and \"\". Make up the thing they are talking about and make them related to the character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0061",
+      "id": "religion0001",
       "title": "Water Into Wine: 2 Characters Funny",
       "category": "Religion",
       "tags": [],
       "text": "Create a scene where Jesus turns water into wine. The other people there are \"\" and \"\". Make up the thing they are talking about and make them related to the character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0062",
+      "id": "sports0006",
       "title": "Women Olympic Event: Highlight Reel Random",
       "category": "Sports",
       "tags": [],
       "text": "Create a scene in an olympic styled theme where women from different nations are competing at some \"typical woman only\" task, mainly home tasks. For example, washing dishes, vaccuuming, taking care of the kids, etc. Choose something like that and make a highlights reel of the event. Make it funny and entertaining.."
     },
     {
-      "id": "custom0063",
+      "id": "sports0007",
       "title": "Women Olympic Event: End of Event Random",
       "category": "Sports",
       "tags": [],
       "text": "Create a scene in an olympic styled theme where women from different nations are competing at some \"typical woman only\" task, mainly home tasks. For example, washing dishes, vaccuuming, taking care of the kids, etc. Choose something like that and make the event at the end where we see the final winner and smal celebration. Make it funny and entertaining.."
     },
     {
-      "id": "custom0064",
+      "id": "gameshows0003",
       "title": "Price Is Right: Contestant Winner #1",
       "category": "Game Shows",
       "tags": [],
       "text": "Create a Price is Right game show scene where Bob Barker is revealing the prize to the contestant. Choose the game and the prize based on the character. Use sterotypes if needed. The contestant winner is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0065",
+      "id": "gameshows0004",
       "title": "Price Is Right: Contestant Winner #2",
       "category": "Game Shows",
       "tags": [],
       "text": "Create a Price is Right game show scene where Bob Barker is revealing the prize to the contestant. Choose the game and the prize based on the character. Use sterotypes if needed. The contestant winner is a random person of any time period. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0066",
+      "id": "carnivalgames0001",
       "title": "Crane Game: 3 Characters Funny #1",
       "category": "Carnival Games",
       "tags": [],
       "text": "Create a scene of a character playing a typical carnival or store \"crane claw game\" The character playing is \"\" and the 2 people watching are \"\" and \"\". Choose what prizes are in the machine. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0067",
+      "id": "carnivalgames0002",
       "title": "Crane Game: Random Funny #1",
       "category": "Carnival Games",
       "tags": [],
       "text": "Create a scene of a character playing a typical carnival or store \"crane claw game\" The character playing is your choice of any time period, and the crowd is optional, big, small, however you want. Choose what prizes are in the machine. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0068",
+      "id": "holidays0002",
       "title": "Halloween Trick-or-Treat: 2 Characters Funny #1",
       "category": "Holidays",
       "tags": [],
       "text": "Create a halloween trick-or-treat scene, from the camera angle of a ring style doorbell camera. The 2 characters are \"\" and \"\". Make their costumes match their style, but keep it classic halloween style. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0069",
+      "id": "kidstv0001",
       "title": "Blues Clues: Funny #1",
       "category": "Kids TV",
       "tags": [],
       "text": "Create a scene in the style of \"Blues Clues\" with \"\" as steve. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0070",
+      "id": "music0001",
       "title": "Rap Battle: Funny #1",
       "category": "Music",
       "tags": [],
       "text": "Create a rap battle scene with \"\" and \"\". Make up the thing they are rapping about and make them related to the character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible. It can be explicit lyrics if needed. Each character should get at least one or two punchlines in."
     },
     {
-      "id": "custom0071",
+      "id": "themeparks0001",
       "title": "Roller Coaster Ride: 2 Characters Funny",
       "category": "Theme Parks",
       "tags": [],
       "text": "Create a rollercoaster scene with \"\" and \"\". Make up the thing they are talking about and make them related to the character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible. Make the camera from a view looking at the characters."
     },
     {
-      "id": "custom0072",
+      "id": "medical0001",
       "title": "Chiropractor Scene: Funny #1",
       "category": "Medical",
       "tags": [],
       "text": "Create a chiropractor and patient scene that is absurd and out of control. It starts out like a normal procedure and then the chiropractor does something completely crazy to the patient to fix their problem. Make it funny and entertaining."
     },
     {
-      "id": "custom0073",
+      "id": "prehistoric0001",
       "title": "Dinosaur Ride: Funny #1",
       "category": "Prehistoric",
       "tags": [],
       "text": "Create a scene where \"\" is riding a dinosaur around. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0074",
+      "id": "prehistoric0002",
       "title": "Dinosaur Ride: 2 Characters Funny #1",
       "category": "Prehistoric",
       "tags": [],
       "text": "Create a scene where \"\" and \"\" are riding their own dinosaur around. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0075",
+      "id": "sports0008",
       "title": "Sorting Runtz Candies Olympic Event",
       "category": "Sports",
       "tags": [],
       "text": "Create a scene in the style of the olympics with the event being sorting runts candies into separate piles of the same color. The people competing are \"\", \"\", \"\", and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0076",
+      "id": "tvshows0009",
       "title": "Shark Tank Pitch: Funny #1",
       "category": "TV Shows",
       "tags": [],
       "text": "Create a \"shark tank\" style scene where \"\" is pitching a product to the sharks. The product is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0077",
+      "id": "tvshows0010",
       "title": "Shark Tank Pitch: 2 Characters Funny #1",
       "category": "TV Shows",
       "tags": [],
       "text": "Create a \"shark tank\" style scene where \"\" and \"\" are pitching a product to the sharks. The product is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0078",
+      "id": "gameshows0005",
       "title": "Dating Show: 2 Characters Funny #1",
       "category": "Game Shows",
       "tags": [],
       "text": "Create a scene of a dating show with \"\" and \"\" as 2 of the main characters. They are both competing for others on the show. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible. Make it pg-13 to nc17"
     },
     {
-      "id": "custom0079",
+      "id": "sports0009",
       "title": "Ski Jump: Funny #1",
       "category": "Sports",
       "tags": [],
       "text": "Create a \"ski jump\" style competition scene with \"\" as the main character. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0080",
+      "id": "law0004",
       "title": "Speeding Ticket: 2 Characters Funny#1",
       "category": "Law",
       "tags": [],
       "text": "Create a scene of a car being pulled over for speeding. The driver is \"\" and the cop is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0081",
+      "id": "animals0001",
       "title": "Cat Race: Funny #1",
       "category": "Animals",
       "tags": [],
       "text": "Create a scene with cats on roombas racing. Make it in the style of a go kart race. The environment is \"\".  Make it fun and entertaining. The cats should always make \"meow noises\" when communicating"
     },
     {
-      "id": "custom0082",
+      "id": "custom0005",
       "title": "Dont Record Me",
       "category": "Custom",
       "tags": [],
       "text": "Create a scene in the view of someone holding their phone as another person is yelling at them to not record them. Make up the circumstances. Make it entertaining."
     },
     {
-      "id": "custom0083",
+      "id": "tvshows0011",
       "title": "Soap Opera: Funny #1",
       "category": "TV Shows",
       "tags": [],
       "text": "Create a scene of a typical soap opera scene. The characters are \"\", \"\", \"\", and \"\". Choose the theme. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0084",
+      "id": "custom0006",
       "title": "Water Activated Growing Sponge: Funny #1",
       "category": "Custom",
       "tags": [],
       "text": "Create a scene of \"\" putting a water activated growing sponge that turns into \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0085",
+      "id": "tvshows0012",
       "title": "Crocodile Hunter Scene: Funny #1",
       "category": "TV Shows",
       "tags": [],
       "text": "Create a crocodile hunter scene where \"\" plays as the host Steve Irwin, and the guest is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0086",
+      "id": "commercials0002",
       "title": "Toy Commercial 50s: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a toy commerical scene from the 1950s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0087",
+      "id": "commercials0003",
       "title": "Toy Commercial 60s: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a toy commerical scene from the 1960s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0088",
+      "id": "commercials0004",
       "title": "Toy Commercial 70s: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a toy commerical scene from the 1970s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0089",
+      "id": "commercials0005",
       "title": "Toy Commercial 80s: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a toy commerical scene from the 1980s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0090",
+      "id": "commercials0006",
       "title": "Toy Commercial 90s: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a toy commerical scene from the 1990s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0091",
+      "id": "commercials0007",
       "title": "Toy Commercial 2000s: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a toy commerical scene from the 2000s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0092",
+      "id": "commercials0008",
       "title": "Toy Commercial Post 2000s: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a toy commerical scene from the post 2000s selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0093",
+      "id": "commercials0009",
       "title": "Milwaukee Tool Commercial: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a Milwaukee tool style commercial selling \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0094",
+      "id": "art0001",
       "title": "Fractal Loop #1",
       "category": "Art",
       "tags": [],
       "text": "Create a looping fractal design with the theme being \"\". It should seamlessly loop frrom last few frames to the first few frames."
     },
     {
-      "id": "custom0095",
+      "id": "art0002",
       "title": "Fractal Loop #2: Infinite Zoom",
       "category": "Art",
       "tags": [],
       "text": "Create a looping fractal design with the theme being \"marijuana\". It should infinitely zoom in. It should seamlessly loop frrom last few frames to the first few frames so you cannot see where the end and beginning overlap."
     },
     {
-      "id": "custom0096",
+      "id": "animals0002",
       "title": "Cat Roomba X Games First Person View",
       "category": "Animals",
       "tags": [],
       "text": "Create a scene of a cat first person view go pro style angle of doing x games style stunts on a roomba"
     },
     {
-      "id": "custom0097",
+      "id": "cartoons0005",
       "title": "Rick and Morty #1",
       "category": "Cartoons",
       "tags": [],
       "text": "Create a scene in the style of rick and morty cartoon. The characters are \"\" and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0098",
+      "id": "cartoons0006",
       "title": "Rick and Morty #2",
       "category": "Cartoons",
       "tags": [],
       "text": "Create a scene in the style of rick and morty cartoon. The characters are \"\" and \"\". The theme should be \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0099",
+      "id": "sports0010",
       "title": "Downhill Riding 2 Characters",
       "category": "Sports",
       "tags": [],
       "text": "Create a scene where a \"\" is riding down a hill on a \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0100",
+      "id": "gameshows0006",
       "title": "Who Wants To Be A Millionaire: Funny #1",
       "category": "Game Shows",
       "tags": [],
       "text": "Create a scene in the style of the game show who wants to be a millionaire. The host is \"\" and the guest is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0101",
+      "id": "commercials0010",
       "title": "Kool-Aid Man Commercial: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a scene in the style of kool-aid man commercial. The 2 main characters are \"\" and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0102",
+      "id": "toys0001",
       "title": "LEGO: Funny #1",
       "category": "Toys",
       "tags": [],
       "text": "Create a scene in the style of interlocking plastic blocks. The 2 characters are \"\" and \"\". The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0103",
+      "id": "movies0005",
       "title": "Pixels: Attack #1",
       "category": "Movies",
       "tags": [],
       "text": "Create a scene in the style of the \"Pixels\" movie where there is a \"\" attack happening in \"\". Use google maps for reference to location. Make the characters in the cgi style of the movie."
     },
     {
-      "id": "custom0104",
+      "id": "custom0007",
       "title": "Sterotypes: Funny #1",
       "category": "Custom",
       "tags": [],
       "text": "Create a typical \"sterotype\" scene of \"\". Make it realistic and funny to get the stereotypes point across."
     },
     {
-      "id": "custom0105",
+      "id": "custom0008",
       "title": "Sterotypes",
       "category": "Custom",
       "tags": [],
       "text": "Create a typical \"sterotype\" scene of \"\". Make it realistic to get the stereotypes point across."
     },
     {
-      "id": "custom0106",
+      "id": "commercials0011",
       "title": "80s NES Commercial #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create an 80s style commercial for an NES game. The game name is \"\". Make it as close as possible to a real commercial that would have aired in that time period."
     },
     {
-      "id": "custom0107",
+      "id": "realitytv0002",
       "title": "Judge Judy: Funny #1",
       "category": "Reality TV",
       "tags": [],
       "text": "Create a realistc scene in the style of \"Judge Judy\" courtroom show as aired on TV. The plantiff is \"\" and the defendant is \"\". Make up the scenario. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0108",
+      "id": "commercials0012",
       "title": "Diabetes Commercial: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a commerical scene of \"Wilford Brimley\" doing a diabetes pitch. There is another chaacter in the commercial. The character is \"\". Make up what he is selling to help control diabetes. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0111",
+      "id": "custom0009",
       "title": "Cake Cutting: Funny #1",
       "category": "Custom",
       "tags": [],
       "text": "Create a scene where someone is cutting into a cake. The cake is a realistic looking version of \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0112",
+      "id": "music0002",
       "title": "Granny Rap Battle: Funny #1",
       "category": "Music",
       "tags": [],
       "text": "Create a realistic \"rap battle\" scene with \"\" competing with an old lady. Let each of them say at least 3 lines. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0113",
+      "id": "commercials0013",
       "title": "Vagasil Commercial: Funny #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a realistic \"vagasill\" commercial as aired on TV. The characters selling it is \"\" and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0114",
+      "id": "commercials0014",
       "title": "Taco Bell Commercial: New Menu Item",
       "category": "Commercials",
       "tags": [],
       "text": "Create a realistic \"Taco Bell\" commercial. They are advertising a new menu item. The new menu item is a \"\". Make it in the style of an originally aired commercial."
     },
     {
-      "id": "custom0115",
+      "id": "commercials0015",
       "title": "Taco Bell Commercial: Pink Taco Guest Pitch",
       "category": "Commercials",
       "tags": [],
       "text": "Create a realistic \"Taco Bell\" commercial. They are advertising a new menu item. The new menu item is a \"pink taco\". The character selling it is \"\". Make it in the style of an originally aired commercial. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0116",
+      "id": "commercials0016",
       "title": "Taco Bell Commercial: Pink Taco",
       "category": "Commercials",
       "tags": [],
       "text": "Create a realistic \"Taco Bell\" commercial. They are advertising a new menu item. The new menu item is a \"pink taco\". Make it in the style of an originally aired commercial."
     },
     {
-      "id": "custom0117",
+      "id": "movies0006",
       "title": "Movie Trailer: Customize #1",
       "category": "Movies",
       "tags": [],
       "text": "Create a classic style and voiced movie trailer. The title of the movie is \"\". The movie is about \"\". The characters are \"\" and \"\". The movie is rated \"\"."
     },
     {
-      "id": "custom0118",
+      "id": "movies0007",
       "title": "Movie Trailer: Autofill with 2 Main Characters",
       "category": "Movies",
       "tags": [],
       "text": "Create a classic style and voiced movie trailer. Make up the title of the movie. Make up what the movie is about. The characters are \"\" and \"\". Choose the movie rating."
     },
     {
-      "id": "custom0119",
+      "id": "commercials0017",
       "title": "McDonalds Happy Meal Commercial  #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a realistic McDonalds Happy Meal commercial. The toy line promoted is \"\"."
     },
     {
-      "id": "custom0120",
+      "id": "commercials0018",
       "title": "80s NES Commercial: 2020 Election Fraud #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create an 80s style commercial for an NES game. The game name is \"2020 US Presidential election fraud\". Make it as close as possible to a real commercial that would have aired in that time period. Make it a \"\" type game. Make the \"STOP TRUMP AT ANY COST\" theme. Point out the corruption. Include all the voting irregularities you can in 15 seconds."
     },
     {
-      "id": "custom0121",
+      "id": "commercials0019",
       "title": "90s SNES Commercial: 2020 Election Fraud #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create an 90s style commercial for an SNES game. The game name is \"2020 US Presidential election fraud\". Make it as close as possible to a real commercial that would have aired in that time period. Make it a \"\" type game. Make the \"STOP TRUMP AT ANY COST\" theme. Point out the corruption. Include all the voting irregularities you can in 15 seconds."
     },
     {
-      "id": "custom0122",
+      "id": "commercials0020",
       "title": "90s Sega Genesis Commercial: 2020 Election Fraud #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create an 90s style commercial for a Sega Genesis game. The game name is \"2020 US Presidential election fraud\". Make it as close as possible to a real commercial that would have aired in that time period. Make it a \"\" type game. Make the \"STOP TRUMP AT ANY COST\" theme. Point out the corruption. Include all the voting irregularities you can in 15 seconds."
     },
     {
-      "id": "custom0123",
+      "id": "commercials0021",
       "title": "90s Playstation Commercial: 2020 Election Fraud #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create an 90s style commercial for a Sony Playstation game. The game name is \"2020 US Presidential election fraud\". Make it as close as possible to a real commercial that would have aired in that time period. Make it a \"\" type game. Make the \"STOP TRUMP AT ANY COST\" theme. Point out the corruption. Include all the voting irregularities you can in 15 seconds."
     },
     {
-      "id": "custom0124",
+      "id": "commercials0022",
       "title": "Doll Commercial: Boy To Girl",
       "category": "Commercials",
       "tags": [],
       "text": "Create a commercial for a doll that changes from a boy to a girl. Make it like a real aired commercial. Choose the time period. Make it kid friendly. Explain pronouns and other related things. Choose what the doll does and says."
     },
     {
-      "id": "custom0125",
+      "id": "commercials0023",
       "title": "Doll Commercial: Girl To Boy",
       "category": "Commercials",
       "tags": [],
       "text": "Create a commercial for a doll that changes from a girl to a boy. Make it like a real aired commercial. Choose the time period. Make it kid friendly. Explain pronouns and other related things. Choose what the doll does and says."
     },
     {
-      "id": "custom0126",
+      "id": "commercials0024",
       "title": "Doll Commercial: Character To Character",
       "category": "Commercials",
       "tags": [],
       "text": "Create a commercial for a doll that changes from a \"\" to a \"\". Make it like a real aired commercial. Choose the time period. Make it kid friendly. Explain pronouns and other related things. Choose what the doll does and says."
     },
     {
-      "id": "custom0127",
+      "id": "custom0010",
       "title": "Boot Camp: Funny #1",
       "category": "Custom",
       "tags": [],
       "text": "Create a boot camp scene where the character \"\" is their first day and the sergeant is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0128",
+      "id": "commercials0025",
       "title": "Lingerie Commercial #1",
       "category": "Commercials",
       "tags": [],
       "text": "Create a lingerie commercial where \"\" is the main character selling it. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0129",
+      "id": "custom0011",
       "title": "3D Printer #1",
       "category": "Custom",
       "tags": [],
       "text": "Create a scene of a giant 3D printer printing the final parts of a \"\". Make the scene realistic and choose backgrounds, sounds, characters, etc."
     },
     {
-      "id": "custom0130",
+      "id": "movies0008",
       "title": "Jurassic Park: T-Rex Scene #1",
       "category": "Movies",
       "tags": [],
       "text": "Create a \"Jurasasic Park T Rex\" scene where \"\" is the t-rex. It should be from the perspective of the kids inside the vehicle and do a shot from outside. Start where the water is vibrating and then show a few reated scenes after. Make it as close to the original as possible."
     },
     {
-      "id": "custom0131",
+      "id": "movies0009",
       "title": "Jurassic Park: T-Rex Scene #2",
       "category": "Movies",
       "tags": [],
       "text": "Create a \"Jurasasic Park T Rex\" scene where \"\" is the t-rex. It should be from the perspective of the kids inside the vehicle and do a shot from outside. Start where the water is vibrating and then show a few reated scenes after. Make it as close to the original as possible. Make the dinosaur say some things the character would normally say."
     },
     {
-      "id": "custom0132",
+      "id": "movies0010",
       "title": "The Matrix: Red Pill Blue Pill Funny #1",
       "category": "Movies",
       "tags": [],
       "text": "Create a scene in the style of The Matrix red pill blue pill scene. The character offering them is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0133",
+      "id": "movies0011",
       "title": "The Matrix: Red Pill Blue Pill Sillouette",
       "category": "Movies",
       "tags": [],
       "text": "Create a scene in the style of The Matrix red pill blue pill scene. The character offering them is \"\". Make it in the perspective of the character standing in front with both hands out and the body and face are hard to see, like a sillouette or shadow. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0134",
+      "id": "comedy0002",
       "title": "Bros of Simi Valley: Intro 4 Bros",
       "category": "Comedy",
       "tags": [],
       "text": "Create a scene in the style of \"Bros of Simi Valley\" on Youtube. Make a 15 second intro scene with 4 of the bros. The bros are \"\", \"\", \"\", and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0135",
+      "id": "comedy0003",
       "title": "Bros of Simi Valley: Intro 2 Bros 2 Girls",
       "category": "Comedy",
       "tags": [],
       "text": "Create a scene in the style of \"Bros of Simi Valley\" on Youtube. Make a 15 second intro scene with 2 of the bros. and 2 of the girls. The bros are \"\", and \"\" The girls are \"\", and \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0136",
+      "id": "realitytv0003",
       "title": "Pimp My Ride: Funny #1",
       "category": "Reality TV",
       "tags": [],
       "text": "Create a scene in the style of \"Pimp My Ride\" TV show. The character who had his vehicle pimped out is \"\". Make the scene the finale where the character gets to see his finished vehicle. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible. Match the timeline to the used characters."
     },
     {
-      "id": "custom0137",
+      "id": "communications0006",
       "title": "Psychic Hotline: Choose Psychic",
       "category": "Communications",
       "tags": [],
       "text": "Create a scene in the style of a 1-900 psychic hotline. The caller is chosen by you, and the psychic on the other end is \"\". Choose the topic to discuss. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0138",
+      "id": "communications0007",
       "title": "Psychic Hotline: Choose Caller",
       "category": "Communications",
       "tags": [],
       "text": "Create a scene in the style of a 1-900 psychic hotline. The caller is \"\", and the psychic on the other end is chosen by you. Choose the topic to discuss. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0139",
+      "id": "communications0008",
       "title": "Psychic Hotline: Choose Caller and Psychic",
       "category": "Communications",
       "tags": [],
       "text": "Create a scene in the style of a 1-900 psychic hotline. The caller is \"\" and the psychic on the other end is \"\". Choose the topic to discuss. Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0140",
+      "id": "communications0009",
       "title": "Psychic Hotline: Choose Caller, Psychic, and Topic",
       "category": "Communications",
       "tags": [],
       "text": "Create a scene in the style of a 1-900 psychic hotline. The caller is \"\", and the psychic on the other end is \"\". The topic to discuss is \"\". Make it funny and entertaining. The characters, world, environment, and feel should match the original as close as possible."
     },
     {
-      "id": "custom0141",
+      "id": "books0001",
       "title": "Create a Book #1",
       "category": "Books",
       "tags": [],
       "text": "Create a commercial for a book. The book is titled \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
     },
     {
-      "id": "custom0142",
+      "id": "books0002",
       "title": "Create a Book #2",
       "category": "Books",
       "tags": [],
       "text": "Create a scene in the style for a book. The age range is \"\". The book is titled \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
     },
     {
-      "id": "custom0143",
+      "id": "books0003",
       "title": "Generic Kids Pre-School",
       "category": "Books",
       "tags": [],
       "text": "Create a scene in the style for a kids book. The age range is \"pre-school\". The book is titled \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
     },
     {
-      "id": "custom0144",
+      "id": "books0004",
       "title": "Generic Kids K-6",
       "category": "Books",
       "tags": [],
       "text": "Create a scene in the style for a kids book. The age range is \"k-6\". The book is titled \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
     },
     {
-      "id": "custom0145",
+      "id": "books0005",
       "title": "Generic Kids Teen",
       "category": "Books",
       "tags": [],
       "text": "Create a scene in the style for a kids book. The age range is \"teen\". The book is titled \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
     },
     {
-      "id": "custom0146",
+      "id": "books0006",
       "title": "Dr Seuss Style",
       "category": "Books",
       "tags": [],
       "text": "Create a scene in the style for a \"Dr Seuss\" book. The book is about \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
     },
     {
-      "id": "custom0147",
+      "id": "books0007",
       "title": "Dr Seuss Style With Custom Title",
       "category": "Books",
       "tags": [],
       "text": "Create a scene in the style for a \"Dr Seuss\" book. The book is titled \"\". The main character is \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
     },
     {
-      "id": "custom0148",
+      "id": "books0008",
       "title": "Franklin Style",
       "category": "Books",
       "tags": [],
       "text": "Create a scene in the style of \"Franklin the Turtle\" for a book. The book is about \"\". Make it in the style of the original as close as possile. Keep the character style in sync with everything so it looks authentic."
     },
     {
-      "id": "custom0149",
+      "id": "books0009",
       "title": "Franklin Style With Custom Title",
       "category": "Books",
       "tags": [],
