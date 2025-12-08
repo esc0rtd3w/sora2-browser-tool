@@ -2761,6 +2761,10 @@
   ],
   "characters": [
     {
+      "name": "Aaliyah",
+      "category": "Musicians"
+    },
+    {
       "name": "Aardvark",
       "category": "Animals"
     },
@@ -2779,6 +2783,14 @@
     {
       "name": "Adah Isaacs Menken",
       "category": "Entertainers"
+    },
+    {
+      "name": "Adam West",
+      "category": "Actor/Actress"
+    },
+    {
+      "name": "Adrienne Shelly",
+      "category": "Actor/Actress"
     },
     {
       "name": "Aeschylus",
@@ -2802,7 +2814,7 @@
     },
     {
       "name": "Alan Thicke",
-      "category": "Historical Figures"
+      "category": "Actor/Actress"
     },
     {
       "name": "Alan Turing",
@@ -2811,6 +2823,10 @@
     {
       "name": "Albatross",
       "category": "Animals"
+    },
+    {
+      "name": "Albert Brooks",
+      "category": "Comedians"
     },
     {
       "name": "Albert Einstein",
@@ -2823,6 +2839,10 @@
     {
       "name": "Alessandro Volta",
       "category": "Scientists"
+    },
+    {
+      "name": "Alex Trebek",
+      "category": "TV Host"
     },
     {
       "name": "Alexander Borodin",
@@ -2887,6 +2907,10 @@
     {
       "name": "Anaconda",
       "category": "Animals"
+    },
+    {
+      "name": "Andre the Giant",
+      "category": "Sports Athletes"
     },
     {
       "name": "Andrew Jackson",
@@ -3158,11 +3182,15 @@
     },
     {
       "name": "Brandon Lee",
-      "category": "Historical Figures"
+      "category": "Actor/Actress"
+    },
+    {
+      "name": "Brittany Murphy",
+      "category": "Actor/Actress"
     },
     {
       "name": "Bruce Lee",
-      "category": "Historical Figures"
+      "category": "Sports Athletes"
     },
     {
       "name": "Buddy Holly",
@@ -3423,6 +3451,10 @@
     {
       "name": "Confucius",
       "category": "Philosophers"
+    },
+    {
+      "name": "Coolio",
+      "category": "Musicians"
     },
     {
       "name": "Corn Flakes",
