@@ -627,18 +627,20 @@ class Main(QMainWindow):
         #self.btnMobileUA = QPushButton("Try Mobile WebM"); self.btnMobileUA.clicked.connect(self.use_mobile_ua)
         self.btnClear = QPushButton("Clear reCAPTCHA Cookies"); self.btnClear.clicked.connect(self.clear_recaptcha_cookies)
         self.btnToggle = QPushButton("Top/Bottom"); self.btnToggle.clicked.connect(self.switch_orientation)
-        self.btnExternal = QPushButton("Open Externally"); self.btnExternal.clicked.connect(self.open_external)
+        #self.btnExternal = QPushButton("Open Externally"); self.btnExternal.clicked.connect(self.open_external)
+        self.btnOpenPrivate = QPushButton("Open Private"); self.btnOpenPrivate.clicked.connect(self.open_private)
         self.btnOpenMedia = QPushButton("Open Media"); self.btnOpenMedia.clicked.connect(self.open_media_externally)
         self.btnOpenDownloads = QPushButton("Open Downloads"); self.btnOpenDownloads.clicked.connect(self.open_download_dir)
         self.btnSetDownloadDir = QPushButton("Set Download Directory"); self.btnSetDownloadDir.clicked.connect(self.change_download_dir)
         #row.addWidget(self.uaPreset); row.addWidget(self.uaCustom,1)
-        for b in (self.btnToggle, self.btnExternal, self.btnOpenMedia, self.btnOpenDownloads, self.btnSetDownloadDir):
+        for b in (self.btnToggle, self.btnOpenPrivate, self.btnOpenMedia, self.btnOpenDownloads, self.btnSetDownloadDir):
             row.addWidget(b)
         la_v.addWidget(bar)
 
         # Quick open
         quick = QWidget(); qrow = QHBoxLayout(quick); qrow.setContentsMargins(0,0,0,0); qrow.setSpacing(8)
         self.quick = QLineEdit(); self.quick.setPlaceholderText("https://… (Sora 2 link)")
+        self.quick.returnPressed.connect(self.load_quick)
         btn_open = QPushButton("Open"); btn_open.clicked.connect(self.load_quick)
         qrow.addWidget(self.quick,1); qrow.addWidget(btn_open,0)
         la_v.addWidget(quick)
@@ -1329,7 +1331,21 @@ class Main(QMainWindow):
         if w:
             w.deleteLater()
 
+
+    def _normalize_url_text(self, text: str) -> str:
+        text = (text or "").strip()
+        if not text:
+            return ""
+        try:
+            qurl = QUrl.fromUserInput(text)
+        except Exception:
+            return ""
+        if not qurl.isValid() or qurl.isEmpty():
+            return ""
+        return qurl.toString()
+
     def open_url_in_new_tab(self, url: str):
+        url = self._normalize_url_text(url)
         if not url:
             return
         br = Browser()
@@ -1348,6 +1364,31 @@ class Main(QMainWindow):
         br = self.current_browser()
         url = br.url().toString() if (br and br.url().isValid()) else self.addr.text().strip()
         if url:
+            webbrowser.open(url)
+
+    def open_private(self):
+        br = self.current_browser()
+        url = br.url().toString() if (br and br.url().isValid()) else self.addr.text().strip()
+        url = self._normalize_url_text(url)
+        if not url:
+            return
+
+        opened = False
+        if sys.platform.startswith("win"):
+            # Try common Windows browsers with private/incognito flags
+            for exe, args in [
+                ("msedge.exe", ["-inprivate", url]),
+                ("chrome.exe", ["--incognito", url]),
+                ("firefox.exe", ["-private-window", url]),
+            ]:
+                try:
+                    if QProcess.startDetached(exe, args):
+                        opened = True
+                        break
+                except Exception:
+                    pass
+
+        if not opened:
             webbrowser.open(url)
             
     def open_media_externally(self):
@@ -1371,10 +1412,11 @@ class Main(QMainWindow):
             self.open_url_in_new_tab(u)
             
     def load_left_addr(self):
-        u = self.addr.text().strip()
+        u = self._normalize_url_text(self.addr.text())
         br = self.current_browser()
         if u and br:
             br.setUrl(QUrl(u))
+            self.addr.setText(u)
             
     def refresh_sites_list(self):
         self.listw.clear()
