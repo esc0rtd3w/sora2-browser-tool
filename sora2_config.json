@@ -7,6 +7,7 @@
     "user_agent": "Default (Engine)",
     "mail_url": "https://www.guerrillamail.com/inbox",
     "window_title": "Sora 2 Browser Tool",
+    "private_tabs": true,
     "fullscreen": false,
     "pane_ratio": 0.5
   },

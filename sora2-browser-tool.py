@@ -947,8 +947,7 @@ class Main(QMainWindow):
         self.leftTabs.currentChanged.connect(self.on_left_tab_changed)
         
         # Initial tab
-        _b0 = Browser()
-        self._connect_left_browser(_b0)
+        _b0 = self._create_browser_with_profile(self._get_default_profile())
         try:
             _b0.setHtml(self.startup_html)
         except Exception:
@@ -1360,6 +1359,18 @@ class Main(QMainWindow):
             return ""
         return qurl.toString()
 
+
+    def _get_default_profile(self):
+        # Decide which profile new left tabs should use based on config.window.private_tabs
+        try:
+            win_cfg = self.cfg.get("window") or {}
+        except Exception:
+            win_cfg = {}
+        use_private = bool(win_cfg.get("private_tabs"))
+        if use_private:
+            return getattr(self, "private_profile", None)
+        return getattr(self, "profile", None)
+
     def _create_browser_with_profile(self, profile=None):
         br = Browser()
         if profile is not None:
@@ -1379,7 +1390,7 @@ class Main(QMainWindow):
         url = self._normalize_url_text(url)
         if not url:
             return
-        br = self._create_browser_with_profile(getattr(self, "profile", None))
+        br = self._create_browser_with_profile(self._get_default_profile())
         idx = self.leftTabs.addTab(br, "…")
         self.leftTabs.setCurrentIndex(idx)
         br.setUrl(QUrl(url))
