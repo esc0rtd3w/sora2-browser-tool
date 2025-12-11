@@ -1415,23 +1415,36 @@ class Main(QMainWindow):
         if not url:
             return
 
-        opened = False
         if sys.platform.startswith("win"):
-            # Try common Windows browsers with private/incognito flags
-            for exe, args in [
-                ("msedge.exe", ["-inprivate", url]),
-                ("chrome.exe", ["--incognito", url]),
-                ("firefox.exe", ["-private-window", url]),
-            ]:
-                try:
-                    if QProcess.startDetached(exe, args):
-                        opened = True
-                        break
-                except Exception:
-                    pass
+            # Try common Windows browsers with private/incognito flags, preferring Edge
+            url_arg = url  # keep raw URL for browser
+            edge_paths = []
+            for env_name in ("PROGRAMFILES", "PROGRAMFILES(X86)", "LOCALAPPDATA"):
+                base = os.environ.get(env_name)
+                if base:
+                    edge_paths.append(os.path.join(base, "Microsoft", "Edge", "Application", "msedge.exe"))
 
-        if not opened:
-            webbrowser.open(url)
+            # Try specific Edge paths first
+            candidates = [(p, ["-inprivate", url_arg]) for p in edge_paths]
+            # Then fall back to generic exe names for Edge/Chrome/Firefox
+            candidates.extend([
+                ("msedge.exe", ["-inprivate", url_arg]),
+                ("chrome.exe", ["--incognito", url_arg]),
+                ("firefox.exe", ["-private-window", url_arg]),
+            ])
+
+            for exe, args in candidates:
+                try:
+                    result = QProcess.startDetached(exe, args)
+                    ok = bool(result[0]) if isinstance(result, tuple) else bool(result)
+                except Exception:
+                    ok = False
+                if ok:
+                    return
+
+        # Fallback: normal external open if private/incognito couldn't be launched
+        webbrowser.open(url)
+
 
     def open_media_externally(self):
         js = r"(()=>{const v=document.querySelector('video');return v?(v.currentSrc||v.src||''):'';})()"
