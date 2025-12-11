@@ -38,7 +38,7 @@ from PyQt6.QtWidgets import (QTextEdit,
     QMessageBox, QInputDialog, QTabWidget, QCheckBox, QCompleter, QFileDialog,
     QSizePolicy, QWidgetAction
 )
-from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineProfile
+from PyQt6.QtWebEngineCore import QWebEngineSettings, QWebEngineProfile, QWebEnginePage
 from PyQt6.QtWebEngineWidgets import QWebEngineView
 from PyQt6.QtGui import QDesktopServices
 
@@ -483,6 +483,21 @@ class Main(QMainWindow):
         except Exception:
             pass
             
+        # Private off-the-record profile for in-pane private tabs
+        self.private_profile = QWebEngineProfile("sora2_private_profile", self)
+        try:
+            self.private_profile.setOffTheRecord(True)
+        except Exception:
+            # Fallback: use a temp directory and clear on exit (not strictly off-the-record)
+            priv_dir = os.path.join(tempfile.gettempdir(), "sora2_private_profile")
+            os.makedirs(priv_dir, exist_ok=True)
+            self.private_profile.setPersistentStoragePath(priv_dir)
+            self.private_profile.setCachePath(os.path.join(priv_dir, "cache"))
+        try:
+            self.private_profile.setHttpAcceptLanguage("en-US,en;q=0.9")
+        except Exception:
+            pass
+
         window_cfg = self.cfg.get("window") or {}
         ua_label = window_cfg.get("user_agent", "Default (Engine)")
         if not isinstance(ua_label, str):
@@ -629,11 +644,12 @@ class Main(QMainWindow):
         self.btnToggle = QPushButton("Top/Bottom"); self.btnToggle.clicked.connect(self.switch_orientation)
         #self.btnExternal = QPushButton("Open Externally"); self.btnExternal.clicked.connect(self.open_external)
         self.btnOpenPrivate = QPushButton("Open Private"); self.btnOpenPrivate.clicked.connect(self.open_private)
+        self.btnOpenPrivateExternal = QPushButton("Open Private External"); self.btnOpenPrivateExternal.clicked.connect(self.open_private_external)
         self.btnOpenMedia = QPushButton("Open Media"); self.btnOpenMedia.clicked.connect(self.open_media_externally)
         self.btnOpenDownloads = QPushButton("Open Downloads"); self.btnOpenDownloads.clicked.connect(self.open_download_dir)
         self.btnSetDownloadDir = QPushButton("Set Download Directory"); self.btnSetDownloadDir.clicked.connect(self.change_download_dir)
         #row.addWidget(self.uaPreset); row.addWidget(self.uaCustom,1)
-        for b in (self.btnToggle, self.btnOpenPrivate, self.btnOpenMedia, self.btnOpenDownloads, self.btnSetDownloadDir):
+        for b in (self.btnToggle, self.btnOpenPrivate, self.btnOpenPrivateExternal, self.btnOpenMedia, self.btnOpenDownloads, self.btnSetDownloadDir):
             row.addWidget(b)
         la_v.addWidget(bar)
 
@@ -1344,17 +1360,37 @@ class Main(QMainWindow):
             return ""
         return qurl.toString()
 
-    def open_url_in_new_tab(self, url: str):
-        url = self._normalize_url_text(url)
-        if not url:
-            return
+    def _create_browser_with_profile(self, profile=None):
         br = Browser()
+        if profile is not None:
+            try:
+                page = QWebEnginePage(profile, br)
+                br.setPage(page)
+            except Exception:
+                pass
         self._connect_left_browser(br)
         try:
             br.setZoomFactor(getattr(self, "left_zoom", 1.0))
         except Exception:
             pass
+        return br
+
+    def open_url_in_new_tab(self, url: str):
+        url = self._normalize_url_text(url)
+        if not url:
+            return
+        br = self._create_browser_with_profile(getattr(self, "profile", None))
         idx = self.leftTabs.addTab(br, "…")
+        self.leftTabs.setCurrentIndex(idx)
+        br.setUrl(QUrl(url))
+        self.addr.setText(url)
+
+    def open_url_in_private_tab(self, url: str):
+        url = self._normalize_url_text(url)
+        if not url:
+            return
+        br = self._create_browser_with_profile(getattr(self, "private_profile", None))
+        idx = self.leftTabs.addTab(br, "Private")
         self.leftTabs.setCurrentIndex(idx)
         br.setUrl(QUrl(url))
         self.addr.setText(url)
@@ -1367,42 +1403,36 @@ class Main(QMainWindow):
             webbrowser.open(url)
 
     def open_private(self):
+        # Open current URL in an in-pane private tab using the off-the-record profile
+        br = self.current_browser()
+        url = br.url().toString() if (br and br.url().isValid()) else self.addr.text().strip()
+        self.open_url_in_private_tab(url)
+
+    def open_private_external(self):
         br = self.current_browser()
         url = br.url().toString() if (br and br.url().isValid()) else self.addr.text().strip()
         url = self._normalize_url_text(url)
         if not url:
             return
 
+        opened = False
         if sys.platform.startswith("win"):
             # Try common Windows browsers with private/incognito flags
-            url_arg = url  # keep raw URL for browser
-            # Potential Edge install locations
-            edge_paths = []
-            for env_name in ("PROGRAMFILES", "PROGRAMFILES(X86)", "LOCALAPPDATA"):
-                base = os.environ.get(env_name)
-                if base:
-                    edge_paths.append(os.path.join(base, "Microsoft", "Edge", "Application", "msedge.exe"))
-
-            # Try specific Edge paths first
-            candidates = [(p, ["-inprivate", url_arg]) for p in edge_paths]
-            # Then fall back to generic exe names for Edge/Chrome/Firefox
-            candidates.extend([
-                ("msedge.exe", ["-inprivate", url_arg]),
-                ("chrome.exe", ["--incognito", url_arg]),
-                ("firefox.exe", ["-private-window", url_arg]),
-            ])
-
-            for exe, args in candidates:
+            for exe, args in [
+                ("msedge.exe", ["-inprivate", url]),
+                ("chrome.exe", ["--incognito", url]),
+                ("firefox.exe", ["-private-window", url]),
+            ]:
                 try:
-                    result = QProcess.startDetached(exe, args)
-                    ok = bool(result[0]) if isinstance(result, tuple) else bool(result)
+                    if QProcess.startDetached(exe, args):
+                        opened = True
+                        break
                 except Exception:
-                    ok = False
-                if ok:
-                    return
+                    pass
 
-        # Fallback: normal external open if private/incognito couldn't be launched
-        webbrowser.open(url)
+        if not opened:
+            webbrowser.open(url)
+
     def open_media_externally(self):
         js = r"(()=>{const v=document.querySelector('video');return v?(v.currentSrc||v.src||''):'';})()"
         def cb(u):
